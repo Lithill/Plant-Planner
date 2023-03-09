@@ -1,0 +1,53 @@
+.container {  display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 7fr;
+    gap: 10px 10px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "nav nav"
+      "page page";
+  }
+  
+  .nav {  display: grid;
+    grid-template-columns: 15fr 2fr 2fr;
+    grid-template-rows: 1fr;
+    gap: 10px 10px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "name my-plants login";
+    grid-area: nav;
+  }
+  
+  .name { grid-area: name; }
+  
+  .my-plants { grid-area: my-plants; }
+  
+  .login { grid-area: login; }
+  
+  .page {  display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+    gap: 10px 10px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "left-col right-col";
+    grid-area: page;
+  }
+  
+  .left-col {  display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 4fr;
+    gap: 10px 10px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "title"
+      "instructions";
+    grid-area: left-col;
+  }
+  
+  .title { grid-area: title; }
+  
+  .instructions { grid-area: instructions; }
+  
+  .right-col { grid-area: right-col; }
+  
