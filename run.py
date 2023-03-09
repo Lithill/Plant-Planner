@@ -34,7 +34,7 @@ def index():
 
 @app.route("/login")
 def login():
-    return render_template("login.html")
+    return render_template("login.html", page_title="Log In / Sign Up")
 
 
 if __name__ == "__main__":
