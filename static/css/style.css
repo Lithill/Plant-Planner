@@ -31,6 +31,11 @@ p {
   font-size: 1.6rem;
 }
 
+h1 span {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 5px;
+}
+
 /************************************ Buttons */
 
 button {
@@ -164,7 +169,7 @@ a:link {
 .left-col {  
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 7fr;
+  grid-template-rows: 1fr 2fr;
   gap: 10px 10px;
   grid-auto-flow: row;
   grid-template-areas:
@@ -178,12 +183,13 @@ a:link {
 
 .title { 
   grid-area: title; 
+  background-image: url("../images/grass.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 40px;
   display:flex;
   justify-content:center;
-  align-items:center;
-  /* background-image: url("../images/grass.webp");
-  background-size: cover;
-  background-repeat: no-repeat; */
+  align-items:flex-end;
 }
 
 .instructions { 
