@@ -8,15 +8,16 @@ function edit() {
 
 function scrap_question() {
     console.log("scrap question got hit")
-    document.getElementById("delete-overlay").style.display === "block";
+    document.getElementById("delete-overlay").style.display = "block";
 }
 
 function scrap() {
     document.querySelector("#plant-form").classList.toggle("toggle");
+    document.getElementById("delete-overlay").style.display = "none";
 }
 
 function keep_plant() {
-    document.getElementById("delete-overlay").style.display === "none"
+    document.getElementById("delete-overlay").style.display = "none";
 }
 
 function submit() {

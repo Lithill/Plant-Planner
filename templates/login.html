@@ -7,7 +7,28 @@
         <div class="instructions">
         </div>
     </div>
+    <!-- Right Colum -->
     <div class="right-col">
-        <h1>Right Column</h1>
+        <div class="login-div">
+            <!-- Login box -->
+            <div class="login-section">
+                <!-- return false? -->
+                <form class="login-form" id="login-form-id" onsubmit="return false">
+                        <label class="email-text" for="email"><h2>Email:</h2></label>
+                        <input class="email-box" type="text" id="email" name="email" placeholder='E.g. "Jo Bloggs"' required> 
+                        <label class="password-text" for="password"><h2>Password:</h2></label>
+                        <input class="password-box" type="text" id="password" name="password" placeholder='Make sure you use a strong and unique password' required> 
+                </form>
+                <div class="login-button">
+                    <button type="submit" id="login-button">
+                        <h2>Submit</h2>
+                    </button>
+                </div>
+            </div>
+            <!-- Under login box -->
+            <div class="three-plants">
+                <div class="new-user"></div>
+            </div>
+        </div>
     </div>
 {% endblock %}
