@@ -22,13 +22,98 @@
     </div>
     <!-- Right Column -->
     <div class="right-col">
-        <div class="plant-divs hidden">
-            <h2>Click to add a plant</h2>
-            <button onclick="addButton()">
-                <img src="../static/images/add.webp" alt="Add Button" id="add-button">
-            </button>
-        </div>
+        <!-- Plant form div -->
         <div class="plant-divs">
+            <div class="plant-image-section">
+                <button onclick="pic()">
+                    <img src="../static/images/no-image-found.webp" alt="No Image Found" class="plant-image">
+                </button>
+            </div>
+            <div class="plant-name">
+                <div class="common-name">
+                    <!-- Want 'return false below?' -->
+                    <form id="common-name" onsubmit="return false">
+                        <label for="common-name">What is the plant's common name?</label><br>
+                        <input type="text" id="common-name" name="common-name" placeholder='E.g. "East Indian Butterfly Plant"' required> 
+                    </form>
+                </div>
+                <div class="latin-name">
+                    <form id="latin-name" onsubmit="return false">
+                        <label for="latin-name">What is the plant's latin name?</label><br>
+                        <input type="text" id="latin-name" name="latin-name" placeholder='E.g. "Phalaenopsis amabilis"'> 
+                    </form>
+                </div>
+            </div>
+            <div class="main-info">
+                <div class="water-interval">
+                    <form id="water-interval" onsubmit="return false">
+                        <label for="water-interval">How many days should there be between watering?</label><br>
+                        <select name="next-water" id="next-water">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="last-watered">
+                    <form id="last-watered" onsubmit="return false">
+                        <label for="last-watered">When did you last water this plant?</label><br>
+                        <input type="date" id="last-watered" name="last-watered">
+                    </form>
+                </div>
+                <div class="next-water hidden">
+                    <form id="next-water" onsubmit="return false">
+                        <label for="next-water">When did you last water this plant?</label><br>
+                        
+                    </form>
+                </div>
+            </div>
+            <div class="edit">
+                <button onclick="edit()">
+                    <img src="../static/images/edit.webp" alt="Edit Button" id="edit-button">
+                </button>
+            </div>
+            <div class="delete">
+                <button onclick="delete()">
+                    <img src="../static/images/delete.webp" alt="Delete Button" id="delete-button">
+                </button>
+                <div class="submit">
+                    <button onclick="submit()">
+                        <img src="../static/images/save.webp" alt="Submit Button" id="submit-button">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Add button div -->
+        <div class="add-plant">
             <h2>Click to add a plant</h2>
             <button onclick="addButton()">
                 <img src="../static/images/add.webp" alt="Add Button" id="add-button">

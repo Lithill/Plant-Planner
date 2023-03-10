@@ -4,6 +4,14 @@ body {
   color: #0B0E5B;
 }
 
+.hidden {
+  display: none;
+}
+
+form {
+  margin-top: 10px;
+}
+
 /************************************ Font */
 
 h1 {
@@ -37,7 +45,7 @@ button {
   text-decoration: none;
 }
 
-#add-button {
+#add-button, #edit-button, #delete-button, #submit-button {
   height: 5vh;
 	width: auto;
 }
@@ -109,7 +117,7 @@ a:link {
 
 .page {  
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 3fr;
   grid-template-rows: 1fr;
   gap: 10px 10px;
   grid-auto-flow: row;
@@ -137,6 +145,9 @@ a:link {
 
 .title { 
   grid-area: title; 
+  display:flex;
+  justify-content:center;
+  align-items:center;
   /* background-image: url("../images/grass.webp");
   background-size: cover;
   background-repeat: no-repeat; */
@@ -150,14 +161,101 @@ a:link {
 
 .right-col { 
   grid-area: right-col; 
-  margin: 40px;
+  /* margin: 40px; */
   justify-items: center;
   text-align: center;
 }
 
-.plant-divs {
+.add-plant {
   border-style: solid;
   border-width: 5px;
   border-color: #0B0E5B;
   margin: 50px;
+}
+
+/************************************ Plant Divs */
+
+.plant-divs {  display: grid;
+  grid-template-columns: 5fr 5fr 9fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "plant-image-section plant-name main-info edit delete";
+  border-style: solid;
+  border-width: 5px;
+  border-color: #0B0E5B;
+  margin: 50px;
+  align-items: center;
+  justify-items: center;
+}
+
+.plant-image-section { 
+  grid-area: plant-image-section; 
+}
+
+.plant-image {
+  height: 25vh;
+  width: auto;
+}
+
+.plant-name {  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px 10px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "common-name"
+    "latin-name";
+  grid-area: plant-name;
+  margin: 10px;
+}
+
+.common-name { grid-area: common-name; }
+
+.latin-name { grid-area: latin-name; }
+
+.main-info {  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px 10px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "water-interval"
+    "last-watered";
+  grid-area: main-info;
+  align-items: center;
+  justify-items: center;
+  margin: 10px;
+}
+
+.water-interval { 
+  grid-area: water-interval; 
+}
+
+.last-watered { 
+  grid-area: last-watered; 
+}
+
+.next-water { 
+  grid-area: next-water; 
+}
+
+.edit { 
+  grid-area: edit; 
+}
+
+.delete {
+  display: grid; 
+  grid-template-columns: 1fr; 
+  grid-template-rows: 1fr 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "."
+    "submit"; 
+  grid-area: delete; 
+}
+
+.submit { 
+  grid-area: submit; 
 }
