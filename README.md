@@ -1,108 +1,296 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Plant Planner
 
-Welcome Rossanne,
+This website has been created to help people to know when to water their plants. It has been designed with a range of different screen sizes in mind. 
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+!["Am I Responsive" image](#)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+[View the live project here](https://lithill.github.io/Plant-Planner/)
 
-## Gitpod Reminders
+## Table of Contents
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+1. [User Experience](#user-experience)
+3. [Design](#design)
+5. [Features](#features)
+6. [Accessibility](#accessibility)
+7. [Technologies Used](#technologies-used)
+8. [Deployment and Local Development](#deployment-&-local-development)
+9. [Testing](#testing)
+10. [Credits](#credits)
+    
+## User Experience
 
-`python3 -m http.server`
+### Initial Discussion
 
-A blue button should appear to click: _Make Public_,
+It may be helpful for people with with less-than-green thumbs to have an automated list of when their indoor plants next need to be watered. It is usual for people to just water all of their plants perhaps once a week, but different plants need different amounts of water. 
 
-Another blue button should appear to click: _Open Browser_.
+#### Key information for the site
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+* How to use the website
+* Ability for user to sign up and log in
+* Ability for user to add, edit and delete their own plants
+* Ability for user to edit when they last watered each plant
 
-A blue button should appear to click: _Make Public_,
+### User Stories
 
-Another blue button should appear to click: _Open Browser_.
+#### Client Goals
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+* To be able to view the site on a range of device sizes.
+* To have a list that shows them when they need to water their plants, in order of the plants that need watering the soonest. 
 
-To log into the Heroku toolbelt CLI:
+#### First Time Visitor Goals
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+* To sign up
+* To add all their plants 
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+#### Returning Visitor Goals 
 
-------
+* To sign in
+* To edit when they last watered their plants
 
-## Release History
+#### Longer Term Visitor Goals 
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+* To sign in
+* To check when they need to water their plants
+* To edit when they last watered their plants
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+## Design
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+### Early Design Phases
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+The design was created desktop-first. 
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+![Index Page](static/images/readme/my_plants.jpg)
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+A clean and unclutered approach was saught, so that the use could easily see the information that they need.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+![Login Page](static/images/readme/sign-in.jpg)
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+### Colour scheme
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+The website sparingly uses a palette of neutral natural colours, which was felt to be suitable for a website designed for gardeners. 
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+![Colour Scheme](static/images/readme/colour-palette.jpg)
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+### Typography
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+Google Fonts was used for the following fonts:
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+* Merriweather is a serif font. This is used for the headings.
+* Arimo is a sans-serif font. This is used for all other text.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+### Wireframes
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+The Wireframes were made via [Paint.net](https://www.getpaint.net/).  
 
-------
+#### Mobile Wireframe
 
-## FAQ about the uptime script
 
-**Why have you added this script?**
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+#### Desktop Wireframe
 
-**How will this affect me?**
+![Index Page](static/images/readme/my_plants.jpg)
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+![Login Page](static/images/readme/sign-in.jpg)
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+## Features
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+The website is made up of two pages. 
 
-**So….?**
+The index page has the following features:
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+* Buttons:
+   * Add button, which adds an 'add a plant' div containing text boxes to the page
 
-**Can I opt out?**
+   ![Add button](#)
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+   * Edit buttons, which enables the user to edit some of the plant information
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+   ![Edit buttons](#)
 
-**Anything more?**
+   * Delete buttons, which enables the user to delete a plant div
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+   ![Delete buttons](#)
 
----
 
-Happy coding!
+The login page has the following features:
+
+* 
+
+### Future Features
+
+* Add 'feeding' to the plant information. 
+* Add email alerts, so that the user can get notifications when they need to water / feed plants.
+
+## Accessibility
+
+I have been mindful during coding to ensure that the website is as accessible as possible. I have achieved this by:
+
+* Using semantic HTML.
+* Using descriptive alt attributes on images on the site.
+* Supplying information for screen readers where there are icons used and no text, such as footer icons.
+* Guaranteeing adequate colour contrast throughout the site.
+
+## Technologies Used
+
+### Languages Used
+
+HTML5, CSS3, Python and JavaScript were used to create this website.
+
+### Frameworks, Libraries & Programs Used
+
+* [Google Fonts](https://fonts.google.com/) was used to import East Sea Dokdo and Eater.
+* [Git](https://git-scm.com/) was used for version control by using the Gitpod terminal to commit to Git and Push to GitHub.
+* [GitHub](https://github.com/) was used to store the projects' code after being pushed from Replit, and to handle version control.
+* [Paint.Net](https://www.getpaint.net/download.html) was used to edit the Dall-E 2 images.
+* [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/) was used to troubleshoot and test features and solve issues with responsiveness and styling.
+* [Am I Responsive?](https://ui.dev/amiresponsive) was used to show the website on a range of devices.
+* [Unicorn Revealer](https://chrome.google.com/webstore/detail/unicorn-revealer/lmlkphhdlngaicolpmaakfmhplagoaln?hl=en-GB) was used for debugging.
+* [Layoutit!](https://grid.layoutit.com/) was used to create the CSS grid.
+* [Google auth](#) ?
+* [Gspread](#) ?
+* [Flask](#) ?
+
+## Deployment & Local Development
+
+### Deployment
+
+This project was deployed to GitHub Pages using the following steps:
+
+1. Log into GitHub and locate the [GitHub Repository](https://github.com/Lithill/Plant-Planner).
+2. Click the settings button (above the "add file" button).
+3. Click on "Pages" on the left-hand-side column.
+4. Under "Source", click the dropdown called "Main", select folder ""/root" and click "save".
+5. Refresh the page.
+6. Click on the "Visit site" button at the top of the page.
+
+### Local Deployment
+
+#### How to Fork
+
+To fork the Brain Worms repository:
+
+1) Log in (or sign up) to GitHub.
+2) Go to the repository for this project, at [GitHub Repository](https://github.com/Lithill/Plant-Planner).
+3) Click the Fork button in the top right corner.
+
+#### How to Clone
+
+To clone the Brain Worms repository:
+
+1) Log in (or sign up) to GitHub.
+2) Go to the repository for this project, at [GitHub Repository](https://github.com/Lithill/Plant-Planner).
+3) Above the list of files, click "Code".
+4) Click "Open with GitHub Desktop" to clone and open the repository with GitHub Desktop.
+5) Click "Choose..." and, using Windows Explorer, navigate to a local path where you want to clone the repository.
+6) Click "Clone".
+   
+## Testing
+
+Testing was ongoing throughout the entire build. I utilised Chrome developer tools while building to pinpoint and troubleshoot any issues as I went along. Both manual and automated testing were employed. The difference between these two types of tests is that:
+
+* manual testing is conducted by a person, who is seeing if they can break the product, or otherwise whether it behaves as expected for users.
+* automatic testing is conducted by automation frameworks, or some other kind of tool or piece of software. 
+
+I personally tested the page and had X people also manually test it on their own devices. For automated testing, I used W3C validator, CSS validator and Lighthouse.  
+
+### W3C Validator
+
+The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTML on all pages of the website. 
+
+Results from the [check](#).
+
+### CSS Validator
+
+The [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) was used to validate the CSS in the style.css file.
+
+Results from the [check](#).
+
+### JSHint Validator
+
+The [JSHint Validator](https://jshint.com/) was used to validate the JavaScript in the script.js file.
+
+Results from the [check](#).
+
+### Solved Bugs
+
+1.
+   1. Expected behaviour: 
+   2. Actual behaviour: 
+   3. Solution: 
+
+2.
+   1. Expected behaviour: 
+   2. Actual behaviour: 
+   3. Solution: 
+
+3.
+   1. Expected behaviour: 
+   2. Actual behaviour: 
+   3. Solution: 
+
+4.
+   1. Expected behaviour: 
+   2. Actual behaviour: 
+   3. Solution: 
+
+5.
+   1. Expected behaviour: 
+   2. Actual behaviour: 
+   3. Solution: 
+
+### Known Bugs
+
+No currently known bugs.
+
+### Lighthouse
+
+I used Lighthouse through Chrome Developer Tools to test accessibility, performance, best practices and SEO of the website.
+
+#### Initial Testing
+
+[Mobile](#)
+
+Improvements recommended:
+
+* 
+
+#### Fixes and Most Recent Lighthouse Testing
+
+After fixing the recommended areas, this is the lighthouse tests that the webpage received:
+
+[Desktop](#) ~ [Mobile](#)
+
+### Full Testing
+
+To fully test my website, I used Google Chrome Developer Tools to ensure that the page was responsive on all available screen sizes. Testing was performed on a variety of browsers (Chrome, Microsoft Edge and Firefox) and devices (Gigabyte gaming laptop, iPhone SE, Android one+ 9 mobile, Lenovo Legion Laptop, Huawei P Smart Phone, Fair Phone).
+
+#### Buttons:
+
+Tested each button on the page. Each button worked as expected or was appropriately disabled. All buttons were clicked during a variety of game-play-states, and in a variety of orders. 
+
+## Credits
+
+Thanks are given for the following blogs and tutorials:
+
+* 
+
+### Code Used
+
+* 
+
+### Content
+
+Content for the website was made by Rossanne Hamilton.
+
+### Media Used
+
+* [Ttreis's image on Pixabay](https://pixabay.com/vectors/calendar-icon-minimalist-time-1559935/) was edited to create the logo. 
+* [OpenClipart-Vector's image on Pixabay](https://pixabay.com/vectors/sapling-plant-growing-seedling-154734/) was edited and added to the above image to create the logo. 
+* The add button was made by the creator.
+
+### Acknowledgements
+
+I would like to acknowledge the following people who helped me along the way in completing my second milestone project:
+
+- My mentor Mitko Bachvarov for helpful feedback and sharing links for further learning.
+- My tutor Robert Mclaughlin for helpful feedback and sharing links for further learning.
