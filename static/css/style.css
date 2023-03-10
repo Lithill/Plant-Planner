@@ -1,9 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Arimo');
+
+body {
+  color: #0B0E5B;
+}
+
+#logo-text {
+  font-size: 1.6rem;
+}
+
+#logo {
+  height: 5vh;
+	width: auto;
+  margin-right: 10px;
+}
+
+h1, h2, li {
+  font-family: Merriweather;
+}
+
+p {
+  font-family: Arimo;
+  text-align: center;
+}
+
+.left-col, .right-col {
+  margin: 40px;
+  justify-items: center;
+}
+
 li {
   display: inline-block;
 }
 
 a:link { 
   text-decoration: none; 
+  display:flex;
+  align-items:center;
+  width:100%;
+  font-size: 1.1rem;
 }
 
 .container {  display: grid;
@@ -24,6 +58,7 @@ a:link {
   grid-template-areas:
     "nav-ul";
   grid-area: nav;
+  margin: 10px;
 }
 
 .nav-ul {  display: grid;
@@ -52,7 +87,8 @@ a:link {
   grid-area: page;
 }
 
-.left-col {  display: grid;
+.left-col {  
+  display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 4fr;
   gap: 10px 10px;
@@ -63,7 +99,12 @@ a:link {
   grid-area: left-col;
 }
 
-.title { grid-area: title; }
+.title { 
+  grid-area: title; 
+  /* background-image: url("../images/grass.webp");
+  background-size: cover;
+  background-repeat: no-repeat; */
+}
 
 .instructions { grid-area: instructions; }
 
