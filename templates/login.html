@@ -20,14 +20,17 @@
                         <input class="password-box" type="text" id="password" name="password" placeholder='Make sure you use a strong and unique password' required> 
                 </form>
                 <div class="login-button">
-                    <button type="submit" id="login-button">
+                    <button type="submit" id="login-button" onclick="loginSubmit()">
                         <h2>Submit</h2>
                     </button>
                 </div>
             </div>
             <!-- Under login box -->
             <div class="three-plants">
-                <div class="new-user"></div>
+                <div class="new-user">
+                    <p id="new-user" onclick="newUser()">- New user? Click here to create an account -</p>
+                    <p id="forgot-password" onclick="forgotPassword()">- Forgot your password? Click here to reset -</p>
+                </div>
             </div>
         </div>
     </div>

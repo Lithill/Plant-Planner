@@ -41,7 +41,7 @@ button {
   text-decoration: none;
 }
 
-#add-button, #edit-button, #delete-button, #submit-button, #login-submit-button {
+#add-button, #edit-button, #delete-button, #plant-submit-button, #login-submit-button {
   height: 5vh;
 	width: auto;
   background-color: white;
@@ -67,6 +67,11 @@ button {
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  cursor: pointer;
+}
+
+#new-user, #forgot-password {
+  cursor: pointer;
 }
 
 /************************************ Links */
@@ -122,6 +127,15 @@ a:link {
   margin-right: 10px;
 }
 
+.three-plants {
+  background-image: url("../images/pots.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  height: 30vh;
+  width: auto;
+}
+
 /************************************ Base CSS */
 
 .container {  display: grid;
@@ -150,7 +164,7 @@ a:link {
 .left-col {  
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 4fr;
+  grid-template-rows: 1fr 7fr;
   gap: 10px 10px;
   grid-auto-flow: row;
   grid-template-areas:
@@ -317,6 +331,7 @@ a:link {
   grid-template-areas:
     "login-section"
     "three-plants";
+  height: 80vh;
 }
 
 .login-section {  display: grid;
@@ -345,6 +360,9 @@ a:link {
   border-width: 5px;
   border-color: #0B0E5B;
   border-radius: 25px;
+}
+
+.email-box, .password-box {
   margin: 50px;
 }
 

@@ -1,3 +1,5 @@
+////////////////////////////// Index Page
+
 function pic() {
     alert("Do you want to add an image?");
 }
@@ -26,4 +28,18 @@ function submit() {
 
 function addButton() {
     document.querySelector("#plant-form").classList.toggle("toggle");
+}
+
+////////////////////////////// Login Page
+
+function newUser() {
+    alert("You are a new user");
+}
+
+function forgotPassword() {
+    alert("You forgot your password");
+}
+
+function loginSubmit() {
+    alert("You are trying to submit this form");
 }
