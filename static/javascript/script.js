@@ -1,5 +1,10 @@
 ////////////////////////////// Index Page
 
+let plantCommonName;
+let plantLatinName;
+let waterInterval;
+let lastWatered;
+
 function pic() {
     alert("Do you want to add an image?");
 }
@@ -23,7 +28,11 @@ function keep_plant() {
 }
 
 function submit() {
-    alert("Do you want to save this plant?");
+    plantCommonName = document.getElementById("common-name").value;
+    plantLatinName = document.getElementById("latin-name").value;
+    waterInterval = document.getElementById("water-interval").value;
+    lastWatered = document.getElementById("last-watered").value;
+    alert(`Do you want to save the details for ${plantCommonName} (${plantLatinName})? Its water interval is ${waterInterval} and you last watered it on ${lastWatered}`);
 }
 
 function addButton() {

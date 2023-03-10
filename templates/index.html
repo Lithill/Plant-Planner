@@ -38,13 +38,13 @@
             <div class="plant-name">
                 <div class="common-name">
                     <!-- Want 'return false below?' -->
-                    <form id="common-name" onsubmit="return false">
+                    <form onsubmit="return false">
                         <label for="common-name">What is the plant's common name?</label><br>
                         <input type="text" id="common-name" name="common-name" placeholder='E.g. "East Indian Butterfly Plant"' required> 
                     </form>
                 </div>
                 <div class="latin-name">
-                    <form id="latin-name" onsubmit="return false">
+                    <form onsubmit="return false">
                         <label for="latin-name">What is the plant's latin name?</label><br>
                         <input type="text" id="latin-name" name="latin-name" placeholder='E.g. "Phalaenopsis amabilis"'> 
                     </form>
@@ -52,9 +52,9 @@
             </div>
             <div class="main-info">
                 <div class="water-interval">
-                    <form id="water-interval" onsubmit="return false">
+                    <form onsubmit="return false">
                         <label for="water-interval">How many days should there be between watering?</label><br>
-                        <select name="next-water" id="next-water">
+                        <select name="water-interval" id="water-interval">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -90,7 +90,7 @@
                     </form>
                 </div>
                 <div class="last-watered">
-                    <form id="last-watered" onsubmit="return false">
+                    <form onsubmit="return false">
                         <label for="last-watered">When did you last water this plant?</label><br>
                         <input type="date" id="last-watered" name="last-watered">
                     </form>
