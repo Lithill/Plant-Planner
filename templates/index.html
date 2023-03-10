@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+    <!-- Left Column -->
     <div class="left-col">
         <div class="title">
             <h1>{{ page_title }}</h1>
@@ -19,8 +20,15 @@
             </p>
         </div>
     </div>
+    <!-- Right Column -->
     <div class="right-col">
-        <div id="add-plants">
+        <div class="plant-divs hidden">
+            <h2>Click to add a plant</h2>
+            <button onclick="addButton()">
+                <img src="../static/images/add.webp" alt="Add Button" id="add-button">
+            </button>
+        </div>
+        <div class="plant-divs">
             <h2>Click to add a plant</h2>
             <button onclick="addButton()">
                 <img src="../static/images/add.webp" alt="Add Button" id="add-button">

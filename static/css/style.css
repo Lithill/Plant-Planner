@@ -4,34 +4,7 @@ body {
   color: #0B0E5B;
 }
 
-#logo-text {
-  font-size: 1.6rem;
-}
-
-button {
-  background-color: white;
-  border: none;
-  color: none;
-  text-align: center;
-  text-decoration: none;
-}
-
-#add-plants {
-  border-style: solid;
-  border-width: 5px;
-  border-color: #0B0E5B;
-}
-
-#logo {
-  height: 5vh;
-	width: auto;
-  margin-right: 10px;
-}
-
-#add-button {
-  height: 5vh;
-	width: auto;
-}
+/************************************ Font */
 
 h1 {
   font-size: 1.5rem;
@@ -50,11 +23,26 @@ p {
   text-align: center;
 }
 
-.left-col, .right-col {
-  margin: 40px;
-  justify-items: center;
-  text-align: center;
+#logo-text {
+  font-size: 1.6rem;
 }
+
+/************************************ Buttons */
+
+button {
+  background-color: white;
+  border: none;
+  color: none;
+  text-align: center;
+  text-decoration: none;
+}
+
+#add-button {
+  height: 5vh;
+	width: auto;
+}
+
+/************************************ Links */
 
 li {
   display: inline-block;
@@ -68,15 +56,7 @@ a:link {
   font-size: 1.1rem;
 }
 
-.container {  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 7fr;
-  gap: 10px 10px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "nav nav"
-    "page page";
-}
+/************************************ Nav bar */
 
 .nav {  display: grid;
   grid-template-columns: 1fr;
@@ -103,9 +83,32 @@ a:link {
 
 .my-plants { grid-area: my-plants; }
 
-.login { grid-area: login; }
+.login { 
+  grid-area: login; 
+}
 
-.page {  display: grid;
+/************************************ Images */
+
+#logo {
+  height: 5vh;
+	width: auto;
+  margin-right: 10px;
+}
+
+/************************************ Base CSS */
+
+.container {  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 7fr;
+  gap: 10px 10px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "nav nav"
+    "page page";
+}
+
+.page {  
+  display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr;
   gap: 10px 10px;
@@ -114,6 +117,8 @@ a:link {
     "left-col right-col";
   grid-area: page;
 }
+
+/************************************ Left Column */
 
 .left-col {  
   display: grid;
@@ -125,6 +130,9 @@ a:link {
     "title"
     "instructions";
   grid-area: left-col;
+  margin: 40px;
+  justify-items: center;
+  text-align: center;
 }
 
 .title { 
@@ -134,14 +142,22 @@ a:link {
   background-repeat: no-repeat; */
 }
 
-.instructions { grid-area: instructions; }
+.instructions { 
+  grid-area: instructions; 
+}
 
-/* Right Column */
+/************************************ Right Column */
 
 .right-col { 
   grid-area: right-col; 
+  margin: 40px;
+  justify-items: center;
+  text-align: center;
 }
 
-#add-plants {
+.plant-divs {
+  border-style: solid;
+  border-width: 5px;
+  border-color: #0B0E5B;
   margin: 50px;
 }
