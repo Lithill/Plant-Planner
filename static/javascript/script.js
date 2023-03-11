@@ -34,28 +34,33 @@ function keep_plant() {
     document.getElementById("delete-overlay").style.display = "none";
 }
 
-// Submits user plant information and adds it to the html
+// Verifies the user plant information before  
+// calling a function that will add it to a new div
 function submit() {
     plantCommonName = document.getElementById("common-name").value;
     plantLatinName = document.getElementById("latin-name").value;
     waterInterval = document.getElementById("water-interval").value;
     lastWatered = document.getElementById("last-watered").value;
-
-    let pastOrFuture = (isFutureDate(lastWatered));
-    
-    if (pastOrFuture === "future") {
+    let userDate = (isFutureDate(lastWatered));
+   
+    if (userDate === "future") {
         alert('Please do not choose a date in the future');
+    } else if (plantCommonName.length === 0) {
+        alert("Please enter the plant's common name");
+    } else if (plantLatinName.length === 0) {
+        alert("Please enter the plant's latin name");
     } else {
         createDiv(lastWatered, imageUrl, waterInterval);
     }
 }
 
+// Submits user plant information and adds it to the html
 function createDiv(lastWatered, imageUrl, waterInterval) {
     const newDiv = document.createElement("div");
     let date = new Date(lastWatered);
     let imgDiv = whichImage(imageUrl);
     let when = whenToWater(waterInterval, lastWatered);
-    
+
     //Some of the following code was edited from Vadakkumpadath's code 
     //found on Stack Overflow. 
     //https://stackoverflow.com/questions/16270761/how-to-insert-a-large-block-of-html-in-javascript
