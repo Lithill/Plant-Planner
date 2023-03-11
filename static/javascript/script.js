@@ -45,7 +45,7 @@ function submit() {
     lastWatered = document.getElementById("last-watered").value;
     let userDate = (isFutureDate(lastWatered));
    
-    if (userDate === "future" || undefined) {
+    if (userDate === "future") {
         alert('Please do not choose a date in the future');
     } else if (plantCommonName.length === 0) {
         alert("Please enter the plant's common name");
@@ -128,13 +128,12 @@ function isFutureDate(dateGiven) {
     }
 }
 
-// Clears input fields
+// Clears input fields apart from water-interval, which resets
 function clearInput(){
     inputArray = [
         document.getElementById("image-url"), 
         document.getElementById("common-name"), 
         document.getElementById("latin-name"), 
-        document.getElementById("water-interval"),
         document.getElementById("last-watered") 
     ];
     
@@ -143,6 +142,8 @@ function clearInput(){
             inputArray[i].value = "";
         }
     }
+
+    document.getElementById("water-interval").value = 1;
 }
 
 //Picks whether to use a default image or user inputed image

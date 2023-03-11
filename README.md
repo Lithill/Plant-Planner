@@ -214,9 +214,9 @@ Results from the [check](#).
 ### Solved Bugs
 
 1.
-   1. Expected behaviour: 
-   2. Actual behaviour: 
-   3. Solution: 
+   1. Expected behaviour: Default image appears on new div if user does not enter a url for the image. 
+   2. Actual behaviour: An error was thrown in the console. Function would not work.
+   3. Solution: Since clearing the input fields at certain points of the user journey. Input value from the image input field could sometimgs be undefined, and sometimes be a string with no length. Added a boolean to reflect this.
 
 2.
    1. Expected behaviour: 
