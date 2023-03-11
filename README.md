@@ -219,14 +219,14 @@ Results from the [check](#).
    3. Solution: Since clearing the input fields at certain points of the user journey. Input value from the image input field could sometimgs be undefined, and sometimes be a string with no length. Added a boolean to reflect this.
 
 2.
-   1. Expected behaviour: 
-   2. Actual behaviour: 
-   3. Solution: 
+   1. Expected behaviour: New plant div says if it needed watering in the past or future.
+   2. Actual behaviour: New plant div was always returning as needing watering in the past, even if it was in the future.
+   3. Solution: The code was using a string instead of a date, which confused the code.
 
 3.
-   1. Expected behaviour: 
-   2. Actual behaviour: 
-   3. Solution: 
+   1. Expected behaviour: If current date and date to be watered are the same, then display would read "needs to be watered today"
+   2. Actual behaviour: Display read that it was in the past.
+   3. Solution: CurrentDate was returning hours and minutes as part of the date, so this needed to be eliminated.
 
 4.
    1. Expected behaviour: 

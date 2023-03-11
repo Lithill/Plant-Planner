@@ -139,10 +139,12 @@ function isFutureDate(dateGiven) {
     var CurrentDate = new Date();
     GivenDate = new Date(GivenDate);
 
-    if(GivenDate > CurrentDate){
+    if (GivenDate > CurrentDate) {
         return "future";
-    } else {
+    } else if (GivenDate < CurrentDate.setHours(0,0,0,0)) {
         return "past";
+    } else {
+        return "present";
     }
 }
 
