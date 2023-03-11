@@ -45,7 +45,7 @@ function submit() {
     lastWatered = document.getElementById("last-watered").value;
     let userDate = (isFutureDate(lastWatered));
    
-    if (userDate === "future") {
+    if (userDate === "future" || undefined) {
         alert('Please do not choose a date in the future');
     } else if (plantCommonName.length === 0) {
         alert("Please enter the plant's common name");
@@ -149,7 +149,7 @@ function clearInput(){
 function whichImage(urlVar) {
     let imgSection;
 
-    if (urlVar.length === 0) {
+    if ((urlVar === undefined) || (urlVar.length === 0)) {
         imgSection = `<img src="../static/images/no-image-found.webp" alt="Default Image" id="default-image"></img>`
     } else {
         imgSection = `<img src="${imageUrl}" alt="User Image of ${plantCommonName}" class="user-image"></img>`
