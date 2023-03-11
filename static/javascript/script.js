@@ -34,8 +34,58 @@ function submit() {
     plantLatinName = document.getElementById("latin-name").value;
     waterInterval = document.getElementById("water-interval").value;
     lastWatered = document.getElementById("last-watered").value;
-    alert(`Do you want to save the details for ${plantCommonName} (${plantLatinName})? Its water interval is ${waterInterval} and you last watered it on ${lastWatered}`);
+    const newDiv = document.createElement("div");
+
+    newDiv.setAttribute('class', 'class-name');
+    
+    // alert(`Do you want to save the details for ${plantCommonName} (${plantLatinName})? Its water interval is ${waterInterval} and you last watered it on ${lastWatered}`);
+  
+    newDiv.innerHTML = `
+        <div class="user-plant-divs">
+            <div class="user-plant-image-section">
+                <img src="../static/images/no-image-found.webp" alt="No Image Found" class="plant-image">
+            </div>
+            <div class="user-plant-name">
+                <div class="user-common-name">
+                    <h2>${plantCommonName}</h2>
+                </div>
+                <div class="user-latin-name">
+                    <h3>(${plantLatinName})</h3>
+                </div>
+            </div>
+            <div class="user-main-info">
+                <div class="user-water-interval">
+                    <p>Water every ${waterInterval} day(s)</p>
+                </div>
+                <div class="user-last-watered">
+                    <p>Last watered on ${lastWatered} day(s)</p>
+                </div>
+                <div class="user-next-water">
+                    <p>Needs to be watered on... ${lastWatered}</p>
+                </div>
+            </div>
+            <div class="user-edit">
+                <button onclick="edit()">
+                    <img src="../static/images/edit.webp" alt="Edit Button" id="edit-button">
+                </button>
+            </div>
+            <div class="user-delete">
+                <button onclick="scrap_question()">
+                    <img src="../static/images/delete.webp" alt="Delete Button" id="delete-button">
+                </button>
+                <div class="user-submit hidden">
+                    <button onclick="submit()">
+                        <img src="../static/images/save.webp" alt="Submit Button" id="plant-submit-button">
+                    </button>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    document.getElementById("insert-here").appendChild(newDiv);
+    scrap();
 }
+
 
 // Toggles visibility of plant form
 function addButton() {

@@ -276,7 +276,8 @@ Thanks are given for the following blogs and tutorials:
 
 ### Code Used
 
-* 
+* [Vadakkumpadath's solution on Stack Overflow](https://stackoverflow.com/questions/16270761/how-to-insert-a-large-block-of-html-in-javascript)
+was used to create the html for the new plant divs. 
 
 ### Content
 

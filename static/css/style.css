@@ -200,12 +200,11 @@ a:link {
 
 .right-col { 
   grid-area: right-col; 
-  /* margin: 40px; */
   justify-items: center;
   text-align: center;
 }
 
-.add-plant {
+.add-plant, #insert-here {
   border-style: solid;
   border-width: 5px;
   border-color: #0B0E5B;
@@ -213,7 +212,11 @@ a:link {
   border-radius: 25px;
 }
 
-/************************************ Plant Divs */
+#insert-here {
+  display: none;
+}
+
+/************************************ Form Plant Divs */
 
 .plant-divs {  
   display: grid;
@@ -302,6 +305,82 @@ a:link {
 .submit { 
   grid-area: submit; 
 }
+
+/****************************** User Plant Divs */
+
+.user-plant-divs {  
+  display: grid;
+  grid-template-columns: 5fr 5fr 9fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "user-plant-image user-plant-name user-main-info user-edit user-delete";
+  border-style: solid;
+  border-width: 5px;
+  border-color: #0B0E5B;
+  border-radius: 25px;
+  margin: 50px;
+  align-items: center;
+  justify-items: center;
+}
+
+.user-plant-image { 
+  grid-area: user-plant-image; 
+}
+
+.user-plant-name {  
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "user-common-name"
+    "user-latin-name";
+  grid-area: user-plant-name;
+}
+
+.user-common-name { 
+  grid-area: user-common-name; 
+}
+
+.user-latin-name { 
+  grid-area: user-latin-name; 
+}
+
+.user-main-info {  
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "user-water-interval"
+    "user-last-watered"
+    "user-next-water";
+  grid-area: user-main-info;
+}
+
+.user-water-interval { 
+  grid-area: user-water-interval; 
+}
+
+.user-last-watered { 
+  grid-area: user-last-watered; 
+}
+
+.user-next-water { 
+  grid-area: user-next-water; 
+}
+
+.user-edit { 
+  grid-area: user-edit; 
+}
+
+.user-delete { 
+  grid-area: user-delete; }
+
 
 /****************************** Overlays and hidden */
 
