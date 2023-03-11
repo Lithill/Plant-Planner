@@ -6,18 +6,6 @@ let waterInterval;
 let lastWatered;
 let imageUrl;
 
-//Code below is a spliced version of 
-//https://www.daterangepicker.com/'s Single Date Picker, and 
-//Giusy Martin's code on Stack Overflow at
-//https://stackoverflow.com/questions/37138775/how-to-disable-future-dates-in-daterangepicker#:~:text=daterangepicker(%7B%20autoUpdateInput%3A%20false%2C%20locale,%2DMM%2DYY'%20%7D%20%7D)%3B
-$('input[name="last-watered"]').daterangepicker({
-    singleDatePicker: true,
-    maxDate: new Date(),
-    locale: {
-        format: 'DD/MM/YY'
-    }
-})
-
 /////////// Plant Form
 
 // Edits plant image
@@ -52,17 +40,26 @@ function submit() {
     plantLatinName = document.getElementById("latin-name").value;
     waterInterval = document.getElementById("water-interval").value;
     lastWatered = document.getElementById("last-watered").value;
+
+    let pastOrFuture = (isFutureDate(lastWatered));
+    
+    if (pastOrFuture === "future") {
+        alert('Please do not choose a date in the future');
+    } else {
+        createDiv(lastWatered, imageUrl, waterInterval);
+    }
+}
+
+function createDiv(lastWatered, imageUrl, waterInterval) {
     const newDiv = document.createElement("div");
-
     let date = new Date(lastWatered);
-
+    let imgDiv = whichImage(imageUrl);
+    let when = whenToWater(waterInterval, lastWatered);
+    
     //Some of the following code was edited from Vadakkumpadath's code 
     //found on Stack Overflow. 
     //https://stackoverflow.com/questions/16270761/how-to-insert-a-large-block-of-html-in-javascript
     newDiv.setAttribute('class', 'user-plant-section');
-      
-    let imgDiv = whichImage(imageUrl);
-    let when = whenToWater(waterInterval, lastWatered);
 
     newDiv.innerHTML = `
         <div class="user-plant-divs">
@@ -105,9 +102,22 @@ function submit() {
             </div>
         </div>
     `;
-    
+        
     document.getElementById("insert-here").appendChild(newDiv);
     scrap();
+}
+
+
+function isFutureDate(dateGiven) {
+    var GivenDate = dateGiven;
+    var CurrentDate = new Date();
+    GivenDate = new Date(GivenDate);
+
+    if(GivenDate > CurrentDate){
+        return "future";
+    }else{
+        return "past";
+    }
 }
 
 //Picks whether to use a default image or user inputed image
