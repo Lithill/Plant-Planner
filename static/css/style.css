@@ -22,7 +22,7 @@ h1, h2, li {
   font-family: Merriweather;
 }
 
-p {
+p, label {
   font-family: Arimo;
   text-align: center;
 }
@@ -138,6 +138,11 @@ a:link {
   background-repeat: no-repeat;
   background-position: bottom right;
   height: 30vh;
+  width: auto;
+}
+
+.user-image, #default-image {
+  height: 25vh;
   width: auto;
 }
 
@@ -388,10 +393,16 @@ a:link {
 	background-color: white; 
 	z-index: 2; 
 	border: 4px solid #0B0E5B;
+  border-radius: 25px;
 	position:absolute;
   top:50%;
   left:50%;
   transform:translate(-50%, -50%);
+  padding: 10px;
+}
+
+input {
+  padding: 5px;
 }
 
 .hidden {

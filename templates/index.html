@@ -16,24 +16,36 @@
                 You can edit each plant's watering details by clicking on the pen button.
             </p>
             <p>
-                You can delet each plant by clicking on the bin button.
+                You can delete each plant by clicking on the bin button.
             </p>
         </div>
     </div>
     <!-- Right Column -->
     <div class="right-col">
         <div id="insert-here"></div>
-        <!-- Overlay -->
+        <!-- Overlays -->
         <div class="overlay" id="delete-overlay">
 			<p id="overlay-text">Do you want to delete this plant?</p>
 			<button class ="yes-button" onclick="scrap()">Yes, delete</button>
             <button class ="no-button" onclick="keep_plant()">No, keep</button>
 		</div>
+        <div class="overlay" id="image-overlay">
+			<form onsubmit="return false">
+                <label for="image-url">Please enter the url of the image you would like to use:</label><br>
+                <br>
+                <input type="text" id="image-url" name="image-url" placeholder='E.g. "https://live.staticflickr.com/65535/52736301396_035a969ff6_c_d.jpg"' required> 
+                <br><br>
+                <button onclick="addUserPic()">
+                    <img src="../static/images/save.webp" alt="Submit Button" id="plant-submit-button">
+                </button>
+            </form>
+		</div>
         <!-- Plant form div -->
         <div class="plant-divs toggle" id="plant-form">
             <div class="plant-image-section">
                 <button onclick="pic()">
-                    <img src="../static/images/no-image-found.webp" alt="No Image Found" class="plant-image">
+                    <p>Click here to add a photo</p>
+                    <img src="../static/images/add-image.webp" alt="No Image Found" class="plant-image">
                 </button>
             </div>
             <div class="plant-name">
@@ -103,6 +115,7 @@
                     </form>
                 </div>
             </div>
+            <!-- Buttons -->
             <div class="edit hidden">
                 <button onclick="edit()">
                     <img src="../static/images/edit.webp" alt="Edit Button" id="edit-button">

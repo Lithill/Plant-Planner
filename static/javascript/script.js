@@ -4,12 +4,18 @@ let plantCommonName;
 let plantLatinName;
 let waterInterval;
 let lastWatered;
+let imageUrl;
 
 /////////// Plant Form
 
 // Edits plant image
 function pic() {
-    alert("Do you want to add an image?");
+    document.getElementById("image-overlay").style.display = "block";
+}
+
+function addUserPic() {
+    imageUrl = document.getElementById("image-url").value;
+    document.getElementById("image-overlay").style.display = "none";
 }
 
 // Makes deletion overlay visible
@@ -40,10 +46,12 @@ function submit() {
     
     // alert(`Do you want to save the details for ${plantCommonName} (${plantLatinName})? Its water interval is ${waterInterval} and you last watered it on ${lastWatered}`);
   
+    let imgDiv = whichImage(imageUrl);
+
     newDiv.innerHTML = `
         <div class="user-plant-divs">
             <div class="user-plant-image-section">
-                <img src="../static/images/no-image-found.webp" alt="No Image Found" class="plant-image">
+                ${imgDiv}
             </div>
             <div class="user-plant-name">
                 <div class="user-common-name">
@@ -86,6 +94,17 @@ function submit() {
     scrap();
 }
 
+function whichImage(urlVar) {
+    let imgSection;
+
+    if (urlVar === undefined) {
+        imgSection = `<img src="../static/images/add-image.webp" alt="Default Image" id="default-image"></img>`
+    } else {
+        imgSection = `<img src="${imageUrl}" alt="User Image of ${plantCommonName}" class="user-image"></img>`
+    }
+
+    return imgSection;
+}
 
 // Toggles visibility of plant form
 function addButton() {
