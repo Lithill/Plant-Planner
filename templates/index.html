@@ -59,7 +59,7 @@
                 <div class="latin-name">
                     <form onsubmit="return false">
                         <label for="latin-name">What is the plant's latin name?</label><br>
-                        <input type="text" id="latin-name" name="latin-name" placeholder='E.g. "Phalaenopsis amabilis"'> 
+                        <input type="text" id="latin-name" name="latin-name" placeholder='E.g. "Phalaenopsis amabilis"' required> 
                     </form>
                 </div>
             </div>
@@ -67,7 +67,7 @@
                 <div class="water-interval">
                     <form onsubmit="return false">
                         <label for="water-interval">How many days should there be between watering?</label><br>
-                        <select name="water-interval" id="water-interval">
+                        <select name="water-interval" id="water-interval" required>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -105,7 +105,7 @@
                 <div class="last-watered">
                     <form onsubmit="return false">
                         <label for="last-watered">When did you last water this plant?</label><br>
-                        <input id="last-watered" name="last-watered">
+                        <input id="last-watered" name="last-watered" required>
                     </form>
                 </div>
             </div>
