@@ -6,6 +6,15 @@ let waterInterval;
 let lastWatered;
 let imageUrl;
 
+//Code below is a spliced version of 
+//https://www.daterangepicker.com/'s Single Date Picker, and 
+//Giusy Martin's code on Stack Overflow at
+//https://stackoverflow.com/questions/37138775/how-to-disable-future-dates-in-daterangepicker#:~:text=daterangepicker(%7B%20autoUpdateInput%3A%20false%2C%20locale,%2DMM%2DYY'%20%7D%20%7D)%3B
+$('input[name="last-watered"]').daterangepicker({
+    singleDatePicker: true,
+    maxDate: new Date()
+})
+
 /////////// Plant Form
 
 // Edits plant image

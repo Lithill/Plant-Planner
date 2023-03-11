@@ -134,7 +134,7 @@ I have been mindful during coding to ensure that the website is as accessible as
 
 ### Languages Used
 
-HTML5, CSS3, Python and JavaScript were used to create this website.
+HTML5, CSS3, Python,  and JavaScript were used to create this website.
 
 ### Frameworks, Libraries & Programs Used
 
@@ -146,6 +146,8 @@ HTML5, CSS3, Python and JavaScript were used to create this website.
 * [Am I Responsive?](https://ui.dev/amiresponsive) was used to show the website on a range of devices.
 * [Unicorn Revealer](https://chrome.google.com/webstore/detail/unicorn-revealer/lmlkphhdlngaicolpmaakfmhplagoaln?hl=en-GB) was used for debugging.
 * [Layoutit!](https://grid.layoutit.com/) was used to create the CSS grid.
+* [jQuery](https://jquery.com/) was used for the date picker.
+* [Date Range Picker](https://www.daterangepicker.com/) was also used for the date picker.
 * [Google auth](#) ?
 * [Gspread](#) ?
 * [Flask](#) ?
