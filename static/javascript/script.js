@@ -98,7 +98,7 @@ function whichImage(urlVar) {
     let imgSection;
 
     if (urlVar === undefined) {
-        imgSection = `<img src="../static/images/add-image.webp" alt="Default Image" id="default-image"></img>`
+        imgSection = `<img src="../static/images/no-image-found.webp" alt="Default Image" id="default-image"></img>`
     } else {
         imgSection = `<img src="${imageUrl}" alt="User Image of ${plantCommonName}" class="user-image"></img>`
     }
