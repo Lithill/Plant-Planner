@@ -8,17 +8,18 @@ let imageUrl;
 
 /////////// Plant Form
 
-// Edits plant image
+// Makes image overlay visible
 function pic() {
     document.getElementById("image-overlay").style.display = "block";
 }
 
+// Sets imageUrl value from input, and hides image overlay
 function addUserPic() {
     imageUrl = document.getElementById("image-url").value;
     document.getElementById("image-overlay").style.display = "none";
 }
 
-// Makes deletion overlay visible
+// Makes deletion-overlay visible
 function scrap_question() {
     document.getElementById("delete-overlay").style.display = "block";
 }
@@ -30,13 +31,13 @@ function scrap() {
     clearInput();
 }
 
-// Hides delete overlay
+// Hides delete-overlay
 function keep_plant() {
     document.getElementById("delete-overlay").style.display = "none";
 }
 
-// Verifies the user plant information before  
-// calling a function that will add it to a new div
+// Verifies the user plant information and then  
+// calls a function that will add it to a new div
 function submit() {
     plantCommonName = document.getElementById("common-name").value;
     plantLatinName = document.getElementById("latin-name").value;
@@ -113,6 +114,7 @@ function createDiv(lastWatered, imageUrl, waterInterval) {
     scrap();
 }
 
+// Returns whether date selected is in the past or future
 // Code taken and edited from https://www.codexworld.com/how-to/check-given-date-is-greater-than-today-javascript/
 function isFutureDate(dateGiven) {
     var GivenDate = dateGiven;
@@ -147,7 +149,7 @@ function clearInput(){
 function whichImage(urlVar) {
     let imgSection;
 
-    if (urlVar === undefined) {
+    if (urlVar.length === 0) {
         imgSection = `<img src="../static/images/no-image-found.webp" alt="Default Image" id="default-image"></img>`
     } else {
         imgSection = `<img src="${imageUrl}" alt="User Image of ${plantCommonName}" class="user-image"></img>`
