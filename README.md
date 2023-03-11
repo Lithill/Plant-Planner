@@ -272,7 +272,8 @@ Tested each button on the page. Each button worked as expected or was appropriat
 
 Thanks are given for the following blogs and tutorials:
 
-* 
+* [How to Clear Input Fields in JavaScript](https://linuxhint.com/clear-input-fields-javascript/#2)
+on the linuxhint website. 
 
 ### Code Used
 

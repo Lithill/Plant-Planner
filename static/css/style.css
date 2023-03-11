@@ -394,7 +394,7 @@ a:link {
 	z-index: 2; 
 	border: 4px solid #0B0E5B;
   border-radius: 25px;
-	position:absolute;
+	position: fixed;
   top:50%;
   left:50%;
   transform:translate(-50%, -50%);
