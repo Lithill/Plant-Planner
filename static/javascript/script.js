@@ -44,6 +44,8 @@ function submit() {
     waterInterval = document.getElementById("water-interval").value;
     lastWatered = document.getElementById("last-watered").value;
     let userDate = (isFutureDate(lastWatered));
+
+    console.log(`lastWatered is: ${typeof lastWatered}`)
    
     if (userDate === "future") {
         alert('Please do not choose a date in the future');
@@ -51,6 +53,8 @@ function submit() {
         alert("Please enter the plant's common name");
     } else if (plantLatinName.length === 0) {
         alert("Please enter the plant's latin name");
+    } else if (lastWatered.length === 0) {
+        alert("Please enter a date");
     } else {
         createDiv(lastWatered, imageUrl, waterInterval);
     }
