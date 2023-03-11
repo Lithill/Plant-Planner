@@ -44,8 +44,6 @@ function submit() {
     waterInterval = document.getElementById("water-interval").value;
     lastWatered = document.getElementById("last-watered").value;
     let userDate = (isFutureDate(lastWatered));
-
-    console.log(`lastWatered is: ${typeof lastWatered}`)
    
     if (userDate === "future") {
         alert('Please do not choose a date in the future');
@@ -65,7 +63,7 @@ function createDiv(lastWatered, imageUrl, waterInterval) {
     const newDiv = document.createElement("div");
     let date = new Date(lastWatered);
     let imgDiv = whichImage(imageUrl);
-    let when = whenToWater(waterInterval, lastWatered);
+    let inputWaterText = chooseWaterText(waterInterval, lastWatered);
 
     //Some of the following code was edited from Vadakkumpadath's code 
     //found on Stack Overflow. 
@@ -93,7 +91,7 @@ function createDiv(lastWatered, imageUrl, waterInterval) {
                     <p>Last watered on ${date.toLocaleDateString()}</p>
                 </div>
                 <div class="user-next-water">
-                    <p>Needs to be watered on ${when}</p>
+                    <p>${inputWaterText}</p>
                 </div>
             </div>
             <div class="user-edit">
@@ -118,6 +116,22 @@ function createDiv(lastWatered, imageUrl, waterInterval) {
     scrap();
 }
 
+function chooseWaterText(int, string) {
+    let when = whenToWater(int, string);
+
+    console.log(`isFutureDate(when) is: ${isFutureDate(when)}`);
+
+    // return `Needs to be watered ${when}`;
+
+    if ((isFutureDate(when)) === "past") {
+        return `Overdue! Needed water since ${when.toLocaleDateString()}`;
+    } else if ((isFutureDate(when)) === "future") {
+        return `Needs to be watered ${when.toLocaleDateString()}`;
+    } else {
+        return 'Needs to be watered today';
+    }
+}
+
 // Returns whether date selected is in the past or future
 // Code taken and edited from https://www.codexworld.com/how-to/check-given-date-is-greater-than-today-javascript/
 function isFutureDate(dateGiven) {
@@ -127,7 +141,7 @@ function isFutureDate(dateGiven) {
 
     if(GivenDate > CurrentDate){
         return "future";
-    }else{
+    } else {
         return "past";
     }
 }
@@ -169,7 +183,7 @@ function whenToWater(interval, userDate) {
     let date = new Date(userDate);
     let num = Number(interval);
     date.setDate(date.getDate() + num);
-    return date.toLocaleDateString();
+    return date;
 }
 
 // Toggles visibility of plant form
