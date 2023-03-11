@@ -36,7 +36,7 @@ function submit() {
     lastWatered = document.getElementById("last-watered").value;
     const newDiv = document.createElement("div");
 
-    newDiv.setAttribute('class', 'class-name');
+    newDiv.setAttribute('class', 'user-plant-section');
     
     // alert(`Do you want to save the details for ${plantCommonName} (${plantLatinName})? Its water interval is ${waterInterval} and you last watered it on ${lastWatered}`);
   
