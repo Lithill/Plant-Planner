@@ -278,6 +278,8 @@ Thanks are given for the following blogs and tutorials:
 
 * [Vadakkumpadath's solution on Stack Overflow](https://stackoverflow.com/questions/16270761/how-to-insert-a-large-block-of-html-in-javascript)
 was used to create the html for the new plant divs. 
+* [Stephen Wrighton's answer on Stack Overflow](https://stackoverflow.com/questions/1296358/how-to-subtract-days-from-a-plain-date)
+was used to create the html for the new plant divs. 
 
 ### Content
 
