@@ -27,6 +27,7 @@ function scrap_question() {
 function scrap() {
     document.querySelector("#plant-form").classList.toggle("toggle");
     document.getElementById("delete-overlay").style.display = "none";
+    clearInput();
 }
 
 // Hides delete overlay
@@ -112,7 +113,7 @@ function createDiv(lastWatered, imageUrl, waterInterval) {
     scrap();
 }
 
-
+// Code taken and edited from https://www.codexworld.com/how-to/check-given-date-is-greater-than-today-javascript/
 function isFutureDate(dateGiven) {
     var GivenDate = dateGiven;
     var CurrentDate = new Date();
@@ -122,6 +123,23 @@ function isFutureDate(dateGiven) {
         return "future";
     }else{
         return "past";
+    }
+}
+
+// Clears input fields
+function clearInput(){
+    inputArray = [
+        document.getElementById("image-url"), 
+        document.getElementById("common-name"), 
+        document.getElementById("latin-name"), 
+        document.getElementById("water-interval"),
+        document.getElementById("last-watered") 
+    ];
+    
+    for (let i = 0; i < inputArray.length; i++) {
+        if (inputArray[i].value !="") {
+            inputArray[i].value = "";
+        }
     }
 }
 

@@ -280,6 +280,8 @@ Thanks are given for the following blogs and tutorials:
 was used to create the html for the new plant divs. 
 * [Stephen Wrighton's answer on Stack Overflow](https://stackoverflow.com/questions/1296358/how-to-subtract-days-from-a-plain-date)
 was used to create the html for the new plant divs. 
+* [Codexworld's code](https://www.codexworld.com/how-to/check-given-date-is-greater-than-today-javascript/)
+was used to create a function that tells whether the user has picked a future date. 
 
 ### Content
 
