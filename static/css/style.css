@@ -56,6 +56,20 @@ button {
   text-decoration: none;
 }
 
+.overlay-button {
+  background-color: #0B0E5B;
+  border-style: solid;
+  border-width: 5px;
+  border-color: #0B0E5B;
+  margin: 10px;
+  border-radius: 25px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
 .login-button {
   display:flex;
   align-items:center;

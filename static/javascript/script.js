@@ -25,21 +25,21 @@ function addUserPic() {
 
 // Makes deletion-overlay visible
 function scrap_question() {
-    document.getElementById("delete-overlay").style.display = "block";
+    document.getElementById("delete-form-overlay").style.display = "block";
     dim();
 }
 
 // Hides and errases plant form information
-function scrap() {
+function scrapPlantForm() {
     document.querySelector("#plant-form").classList.toggle("toggle");
-    document.getElementById("delete-overlay").style.display = "none";
+    document.getElementById("delete-form-overlay").style.display = "none";
     undim();
     clearInput();
 }
 
-// Hides delete-overlay
-function keep_plant() {
-    document.getElementById("delete-overlay").style.display = "none";
+// Hides delete-form-overlay
+function keepFormPlant() {
+    document.getElementById("delete-form-overlay").style.display = "none";
     undim();
 }
 
@@ -84,18 +84,18 @@ function createDiv(lastWatered, imageUrl, waterInterval) {
             </div>
             <div class="user-plant-name">
                 <div class="user-common-name">
-                    <h2>${plantCommonName}</h2>
+                    <h2 contenteditable="true">${plantCommonName}</h2>
                 </div>
                 <div class="user-latin-name">
-                    <h3>(${plantLatinName})</h3>
+                    <h3 contenteditable="true">(${plantLatinName})</h3>
                 </div>
             </div>
             <div class="user-main-info">
                 <div class="user-water-interval">
-                    <p>Water every ${waterInterval} day(s)</p>
+                    <p>Water every <splan class="editable">${waterInterval}</splan> day(s)</p>
                 </div>
                 <div class="user-last-watered">
-                    <p>Last watered on ${date.toLocaleDateString()}</p>
+                    <p>Last watered on <splan class="editable">${date.toLocaleDateString()}</splan></p>
                 </div>
                 <div class="user-next-water">
                     <p>${inputWaterText}</p>
@@ -120,20 +120,24 @@ function createDiv(lastWatered, imageUrl, waterInterval) {
     `;
         
     document.getElementById("insert-here").appendChild(newDiv);
-    scrap();
+    scrapPlantForm();
 }
 
+// Delete user plant
+function deletePlant() {
+    alert('You are trying to delete a plant');
+}
+
+// Returns whether plant needed to be watered in the past,
+// needs to be watered today,
+//or should be watered in the future
 function chooseWaterText(int, string) {
     let when = whenToWater(int, string);
 
-    console.log(`isFutureDate(when) is: ${isFutureDate(when)}`);
-
-    // return `Needs to be watered ${when}`;
-
     if ((isFutureDate(when)) === "past") {
-        return `Overdue! Needed water since ${when.toLocaleDateString()}`;
+        return `Overdue! Needed water since <splan class="editable">${when.toLocaleDateString()}</span>`;
     } else if ((isFutureDate(when)) === "future") {
-        return `Needs to be watered ${when.toLocaleDateString()}`;
+        return `Needs to be watered <splan class="editable">${when.toLocaleDateString()}</span>`;
     } else {
         return 'Needs to be watered today';
     }
@@ -215,6 +219,7 @@ function undim() {
 // Edits plant
 function edit() {
     alert("Do you want to edit this plant?");
+    document.getElementsByClassName("editable").enable = true;
 }
 
 ////////////////////////////// Login Page
