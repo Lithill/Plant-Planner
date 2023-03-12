@@ -6,34 +6,41 @@ let waterInterval;
 let lastWatered;
 let imageUrl;
 
+document.getElementById("dim").style.display = "none";
+
 /////////// Plant Form
 
 // Makes image overlay visible
 function pic() {
     document.getElementById("image-overlay").style.display = "block";
+    dim();
 }
 
 // Sets imageUrl value from input, and hides image overlay
 function addUserPic() {
     imageUrl = document.getElementById("image-url").value;
     document.getElementById("image-overlay").style.display = "none";
+    undim();
 }
 
 // Makes deletion-overlay visible
 function scrap_question() {
     document.getElementById("delete-overlay").style.display = "block";
+    dim();
 }
 
 // Hides and errases plant form information
 function scrap() {
     document.querySelector("#plant-form").classList.toggle("toggle");
     document.getElementById("delete-overlay").style.display = "none";
+    undim();
     clearInput();
 }
 
 // Hides delete-overlay
 function keep_plant() {
     document.getElementById("delete-overlay").style.display = "none";
+    undim();
 }
 
 // Verifies the user plant information and then  
@@ -191,6 +198,16 @@ function whenToWater(interval, userDate) {
 // Toggles visibility of plant form
 function addButton() {
     document.querySelector("#plant-form").classList.toggle("toggle");
+}
+
+// Dims the background
+function dim() {
+    document.getElementById("dim").style.display = "block";
+}
+
+// Undims the background
+function undim() {
+    document.getElementById("dim").style.display = "none";
 }
 
 /////////// Added Plants

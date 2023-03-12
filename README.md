@@ -283,6 +283,8 @@ was used to create the html for the new plant divs.
 was used to create the html for the new plant divs. 
 * [Codexworld's code](https://www.codexworld.com/how-to/check-given-date-is-greater-than-today-javascript/)
 was used to create a function that tells whether the user has picked a future date. 
+* [Rich Bradshaw's code](https://stackoverflow.com/questions/5995252/how-to-dim-your-webpage-to-center-your-attention-on-a-banner-dim-bright-effect)
+was used to create a dimming function. 
 
 ### Content
 
