@@ -16,11 +16,13 @@ function pic() {
     dim();
 }
 
-// Sets imageUrl value from input, and hides image overlay
+// Adds user pic if given, hides image overlay
 function addUserPic() {
     imageUrl = document.getElementById("image-url").value;
     document.getElementById("image-overlay").style.display = "none";
     undim();
+    document.getElementById("plant-image").src=`${whichImage(imageUrl)}`;
+    console.log(`${whichImage(imageUrl)}`);
 }
 
 // Makes deletion-overlay visible
@@ -65,11 +67,22 @@ function submit() {
     }
 }
 
+function pickAlt(urlVar, string) {
+    let alt;
+
+    if ((urlVar === undefined) || (urlVar.length === 0)) {
+        alt = "Default Image";
+    } else {
+        alt = `User Image of ${string}`;
+    }
+
+    return alt;
+}
+
 // Submits user plant information and adds it to the html
 function createDiv(lastWatered, imageUrl, waterInterval) {
     const newDiv = document.createElement("div");
     let date = new Date(lastWatered);
-    let imgDiv = whichImage(imageUrl);
 
     //Some of the following code was edited from Vadakkumpadath's code 
     //found on Stack Overflow. 
@@ -79,7 +92,7 @@ function createDiv(lastWatered, imageUrl, waterInterval) {
     newDiv.innerHTML = `
         <div class="user-plant-divs">
             <div class="user-plant-image-section">
-                ${imgDiv}
+            <img src="${whichImage(imageUrl)}" alt="${pickAlt(imageUrl, plantCommonName)}" id="default-image"></img>
             </div>
             <div class="user-plant-name">
                 <div class="user-common-name">
@@ -190,9 +203,9 @@ function whichImage(urlVar) {
     let imgSection;
 
     if ((urlVar === undefined) || (urlVar.length === 0)) {
-        imgSection = `<img src="../static/images/no-image-found.webp" alt="Default Image" id="default-image"></img>`
+        imgSection = "../static/images/no-image-found.webp";
     } else {
-        imgSection = `<img src="${imageUrl}" alt="User Image of ${plantCommonName}" class="user-image"></img>`
+        imgSection = `${imageUrl}`;
     }
 
     return imgSection;
