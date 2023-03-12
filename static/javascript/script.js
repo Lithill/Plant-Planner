@@ -70,7 +70,6 @@ function createDiv(lastWatered, imageUrl, waterInterval) {
     const newDiv = document.createElement("div");
     let date = new Date(lastWatered);
     let imgDiv = whichImage(imageUrl);
-    let inputWaterText = chooseWaterText(waterInterval, lastWatered);
 
     //Some of the following code was edited from Vadakkumpadath's code 
     //found on Stack Overflow. 
@@ -92,13 +91,13 @@ function createDiv(lastWatered, imageUrl, waterInterval) {
             </div>
             <div class="user-main-info">
                 <div class="user-water-interval">
-                    <p>Water every ${waterInterval} day(s)</p>
+                    <p>${waterIntervalText(waterInterval)}</p>
                 </div>
                 <div class="user-last-watered">
                     <p>Last watered on ${date.toLocaleDateString()}</p>
                 </div>
                 <div class="user-next-water">
-                    <p>${inputWaterText}</p>
+                    <p>${chooseWaterText(waterInterval, lastWatered)}</p>
                 </div>
             </div>
             <div class="user-edit">
@@ -121,6 +120,15 @@ function createDiv(lastWatered, imageUrl, waterInterval) {
         
     document.getElementById("insert-here").appendChild(newDiv);
     scrapPlantForm();
+}
+
+// Returns appropriate text depending on water interval
+function waterIntervalText(intOrString) {
+    if (Number(intOrString) === 1) {
+        return "Water every day";
+    } else {
+        return `Water every ${intOrString} days`;
+    }
 }
 
 // Delete user plant
