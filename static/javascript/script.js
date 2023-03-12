@@ -101,17 +101,17 @@ function createDiv(lastWatered, imageUrl, waterInterval) {
                 </div>
             </div>
             <div class="user-edit">
-                <button onclick="edit()">
-                    <img src="../static/images/edit.webp" alt="Edit Button" id="edit-button">
+                <button onclick="edit()" id="edit-button">
+                    <img src="../static/images/edit.webp" alt="Edit Button" id="edit-button-pic">
                 </button>
             </div>
             <div class="user-delete">
-                <button onclick="deletePlant()">
-                    <img src="../static/images/delete.webp" alt="Delete Button" id="delete-button">
+                <button onclick="deletePlant()" id="delete-button">
+                    <img src="../static/images/delete.webp" alt="Delete Button" id="delete-button-pic">
                 </button>
                 <div class="user-submit hidden">
-                    <button onclick="submit()">
-                        <img src="../static/images/save.webp" alt="Submit Button" id="plant-submit-button">
+                    <button onclick="submit()" id="plant-submit-button">
+                        <img src="../static/images/save.webp" alt="Submit Button" id="plant-submit-button-pic">
                     </button>
                 </div>
             </div>
@@ -212,14 +212,26 @@ function addButton() {
     document.querySelector("#plant-form").classList.toggle("toggle");
 }
 
-// Dims the background
+// Dims the background and disables inappropriate buttons
 function dim() {
     document.getElementById("dim").style.display = "block";
+    document.querySelector("#pic-button").disabled = true;
+    document.querySelector("#pic-button").disabled = true;
+    document.querySelector("#edit-button").disabled = true;
+    document.querySelector("#delete-button").disabled = true;
+    document.querySelector("#plant-submit-button").disabled = true;
+    document.querySelector("#add-button").disabled = true;
 }
 
 // Undims the background
 function undim() {
     document.getElementById("dim").style.display = "none";
+    document.querySelector("#pic-button").disabled = false;
+    document.querySelector("#pic-button").disabled = false;
+    document.querySelector("#edit-button").disabled = false;
+    document.querySelector("#delete-button").disabled = false;
+    document.querySelector("#plant-submit-button").disabled = false;
+    document.querySelector("#add-button").disabled = false;
 }
 
 /////////// Added Plants

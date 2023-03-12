@@ -46,7 +46,7 @@ button {
   text-decoration: none;
 }
 
-#add-button, #edit-button, #delete-button, #plant-submit-button, #login-submit-button {
+#add-button-pic, #edit-button-pic, #delete-button-pic, #plant-submit-button-pic, #login-submit-button {
   height: 5vh;
 	width: auto;
   background-color: white;

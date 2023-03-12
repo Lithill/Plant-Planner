@@ -33,17 +33,17 @@
 			<form onsubmit="return false">
                 <label for="image-url">Please enter the url of the image you would like to use:</label><br>
                 <br>
-                <input type="text" id="image-url" name="image-url" placeholder='E.g. "https://live.staticflickr.com/65535/52736301396_035a969ff6_c_d.jpg"' required> 
+                <input type="text" id="image-url" name="image-url" placeholder='E.g. "https://live.staticflickr.com/65535/52736301396_035a969ff6_c_d.jpg"'> 
                 <br><br>
                 <button onclick="addUserPic()">
-                    <img src="../static/images/save.webp" alt="Submit Button" id="plant-submit-button">
+                    <img src="../static/images/save.webp" alt="Submit Button" id="plant-submit-button-pic">
                 </button>
             </form>
 		</div>
         <!-- Plant form div -->
         <div class="plant-divs toggle" id="plant-form">
             <div class="plant-image-section">
-                <button onclick="pic()">
+                <button onclick="pic()" id="pic-button">
                     <p>Click here to add a photo</p>
                     <img src="../static/images/add-image.webp" alt="No Image Found" class="plant-image">
                 </button>
@@ -111,26 +111,26 @@
             </div>
             <!-- Buttons -->
             <div class="edit hidden">
-                <button onclick="edit()">
-                    <img src="../static/images/edit.webp" alt="Edit Button" id="edit-button">
+                <button onclick="edit()" id="edit-button">
+                    <img src="../static/images/edit.webp" alt="Edit Button" id="edit-button-pic">
                 </button>
             </div>
             <div class="delete">
-                <button onclick="scrap_question()">
-                    <img src="../static/images/delete.webp" alt="Delete Button" id="delete-button">
+                <button onclick="scrap_question()" id="delete-button">
+                    <img src="../static/images/delete.webp" alt="Delete Button" id="delete-button-pic">
                 </button>
                 <div class="submit">
-                    <button onclick="submit()">
-                        <img src="../static/images/save.webp" alt="Submit Button" id="plant-submit-button">
+                    <button onclick="submit()" id="plant-submit-button">
+                        <img src="../static/images/save.webp" alt="Submit Button" id="plant-submit-button-pic">
                     </button>
                 </div>
             </div>
         </div>
         <!-- Add button div -->
-        <div class="add-plant">
+        <div class="add-plant" id="add-button">
             <h2>Click to add a plant</h2>
             <button onclick="addButton()">
-                <img src="../static/images/add.webp" alt="Add Button" id="add-button">
+                <img src="../static/images/add.webp" alt="Add Button" id="add-button-pic">
             </button>
         </div>
     </div>
