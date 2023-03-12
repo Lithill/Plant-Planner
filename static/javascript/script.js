@@ -84,18 +84,18 @@ function createDiv(lastWatered, imageUrl, waterInterval) {
             </div>
             <div class="user-plant-name">
                 <div class="user-common-name">
-                    <h2 contenteditable="true">${plantCommonName}</h2>
+                    <h2>${plantCommonName}</h2>
                 </div>
                 <div class="user-latin-name">
-                    <h3 contenteditable="true">(${plantLatinName})</h3>
+                    <h3>(${plantLatinName})</h3>
                 </div>
             </div>
             <div class="user-main-info">
                 <div class="user-water-interval">
-                    <p>Water every <splan class="editable">${waterInterval}</splan> day(s)</p>
+                    <p>Water every ${waterInterval} day(s)</p>
                 </div>
                 <div class="user-last-watered">
-                    <p>Last watered on <splan class="editable">${date.toLocaleDateString()}</splan></p>
+                    <p>Last watered on ${date.toLocaleDateString()}</p>
                 </div>
                 <div class="user-next-water">
                     <p>${inputWaterText}</p>
@@ -107,7 +107,7 @@ function createDiv(lastWatered, imageUrl, waterInterval) {
                 </button>
             </div>
             <div class="user-delete">
-                <button onclick="scrap_question()">
+                <button onclick="deletePlant()">
                     <img src="../static/images/delete.webp" alt="Delete Button" id="delete-button">
                 </button>
                 <div class="user-submit hidden">
@@ -135,9 +135,9 @@ function chooseWaterText(int, string) {
     let when = whenToWater(int, string);
 
     if ((isFutureDate(when)) === "past") {
-        return `Overdue! Needed water since <splan class="editable">${when.toLocaleDateString()}</span>`;
+        return `Overdue! Needed water since ${when.toLocaleDateString()}`;
     } else if ((isFutureDate(when)) === "future") {
-        return `Needs to be watered <splan class="editable">${when.toLocaleDateString()}</span>`;
+        return `Needs to be watered ${when.toLocaleDateString()}`;
     } else {
         return 'Needs to be watered today';
     }
@@ -219,7 +219,6 @@ function undim() {
 // Edits plant
 function edit() {
     alert("Do you want to edit this plant?");
-    document.getElementsByClassName("editable").enable = true;
 }
 
 ////////////////////////////// Login Page
