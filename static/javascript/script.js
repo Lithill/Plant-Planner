@@ -22,7 +22,6 @@ function addUserPic() {
     document.getElementById("image-overlay").style.display = "none";
     undim();
     document.getElementById("plant-image").src=`${whichImage(imageUrl)}`;
-    console.log(`${whichImage(imageUrl)}`);
 }
 
 // Makes deletion-overlay visible

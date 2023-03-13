@@ -1,27 +1,25 @@
-import gspread
-from google.oauth2.service_account import Credentials
 import os
 import json
 from flask import Flask, render_template
 
 ################### Worksheet usage
 
-SCOPE = [
-    "https://www.googleapis.com/auth/spreadsheets",
-    "https://www.googleapis.com/auth/drive.file",
-    "https://www.googleapis.com/auth/drive"
-    ]
+# SCOPE = [
+#     "https://www.googleapis.com/auth/spreadsheets",
+#     "https://www.googleapis.com/auth/drive.file",
+#     "https://www.googleapis.com/auth/drive"
+#     ]
 
-CREDS = Credentials.from_service_account_file('creds.json')
-SCOPED_CREDS = CREDS.with_scopes(SCOPE)
-GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-SHEET = GSPREAD_CLIENT.open('plant_planner_sheet')
+# CREDS = Credentials.from_service_account_file('creds.json')
+# SCOPED_CREDS = CREDS.with_scopes(SCOPE)
+# GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
+# SHEET = GSPREAD_CLIENT.open('plant_planner_sheet')
 
-plants = SHEET.worksheet('plants')
+# plants = SHEET.worksheet('plants')
 
-data = plants.get_all_values()
+# data = plants.get_all_values()
 
-print(data)
+# print(data)
 
 ################### Flask
 
