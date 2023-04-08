@@ -2,11 +2,44 @@ from flask import Flask, render_template
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
+from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
+
 
 # Create a Flask Instance
 app = Flask(__name__)
+# Add Database
+# Change below to postgres at some point
+# Tutorial will say later how to do this
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 # Change this key when put it in gitignore
 app.config['SECRET_KEY'] = "g_EQCyO0}um0MFmst0.:0cwUb0T1[f9f"
+# Initialise the database
+db = SQLAlchemy(app)
+
+
+# Create Model
+class Users(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(200), nullable=False)
+    email = db.Column(db.String(120), nullable=False, unique=True)
+    date_added = db.Column(db.DateTime, default=datetime.utcnow)
+
+    # Create a String
+    def __repr__(self):
+        return '<Name %r>' % self.name
+
+
+# Create a Form Class
+class UserForm(FlaskForm):
+    name = StringField("Name", validators=[DataRequired()])
+    email = StringField("Email", validators=[DataRequired()])
+    submit = SubmitField("Submit")
+
+
+@app.route('/user/add', methods=['GET', 'POST'])
+def add_user():
+    return render_template("add_user.html")
 
 
 # Create a Form Class
