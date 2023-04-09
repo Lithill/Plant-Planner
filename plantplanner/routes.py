@@ -13,16 +13,22 @@ def add_user():
     if form.validate_on_submit():
         user = Users.query.filter_by(email=form.email.data).first()
         if user is None:
+            # Hash the password
+            hashed_pw = generate_password_hash(
+                form.password_hash.data, "sha256"
+                )
             user = Users(
                 name=form.name.data,
                 email=form.email.data,
-                favourite_colour=form.favourite_colour.data)
+                favourite_colour=form.favourite_colour.data,
+                password_hash=hashed_pw)
             db.session.add(user)
             db.session.commit()
         name = form.name.data
         form.name.data = ''  # clears the form
         form.email.data = ''  # clears the form
         form.favourite_colour.data = ''  # clears the form
+        form.password_hash.data = ''  # clears the form
         flash("User Added Successfully!")
     our_users = Users.query.order_by(Users.date_added)
     return render_template(
