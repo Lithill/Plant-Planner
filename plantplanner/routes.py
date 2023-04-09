@@ -1,6 +1,6 @@
 from flask import Flask, render_template, flash, request, redirect, url_for
 from plantplanner import app, db
-from plantplanner.models import Users, UserForm, NamerForm
+from plantplanner.models import Users, UserForm, NamerForm, PasswordForm
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -67,6 +67,31 @@ def page_not_found(e):
 @app.errorhandler(500)
 def page_not_found(e):
     return render_template("500.html"), 500
+
+
+# Create Password Test Page
+@app.route('/test_pw', methods=['GET', 'POST'])
+def test_pw():
+    email = None
+    password = None
+    pw_to_check = None
+    passed = None
+    form = PasswordForm()
+
+    # Validate Form
+    if form.validate_on_submit():
+        email = form.email.data
+        password = form.password_hash.data
+        # Clear the form
+        form.email.data = ''
+        form.password_hash.data = ''
+        # flash("Form Submitted Successfully!")
+
+    return render_template(
+        "test_pw.html",
+        email=email,
+        password=password,
+        form=form)
 
 
 # Create Name Page

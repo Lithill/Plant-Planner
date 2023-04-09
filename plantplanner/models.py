@@ -56,3 +56,11 @@ class UserForm(FlaskForm):
 class NamerForm(FlaskForm):
     name = StringField("What's Your Name", validators=[DataRequired()])
     submit = SubmitField("Submit")
+
+
+class PasswordForm():
+    email = StringField("What's your email?", validators=[DataRequired()])
+    password_hash = PasswordField(
+        "What's your password?", validators=[DataRequired()]
+        )
+    submit = SubmitField("Submit")
