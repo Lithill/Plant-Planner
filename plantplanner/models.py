@@ -10,6 +10,7 @@ class Users(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(200), nullable=False)
     email = db.Column(db.String(120), nullable=False, unique=True)
+    favourite_colour = db.Column(db.String(120))
     date_added = db.Column(db.DateTime, default=datetime.utcnow)
 
     # Create a String
@@ -21,6 +22,7 @@ class Users(db.Model):
 class UserForm(FlaskForm):
     name = StringField("Name", validators=[DataRequired()])
     email = StringField("Email", validators=[DataRequired()])
+    favourite_colour = StringField("Favourite Colour")
     submit = SubmitField("Submit")
 
 

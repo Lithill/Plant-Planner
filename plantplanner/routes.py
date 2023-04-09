@@ -14,12 +14,14 @@ def add_user():
         if user is None:
             user = Users(
                 name=form.name.data,
-                email=form.email.data)
+                email=form.email.data,
+                favourite_colour=form.favourite_colour.data)
             db.session.add(user)
             db.session.commit()
         name = form.name.data
         form.name.data = ''  # clears the form
-        form.name.email = ''  # clears the form
+        form.email.data = ''  # clears the form
+        form.favourite_colour.data = ''  # clears the form
         flash("User Added Successfully!")
     our_users = Users.query.order_by(Users.date_added)
     return render_template(
@@ -85,6 +87,7 @@ def update(id):
     if request.method == "POST":
         name_to_update.name = request.form['name']
         name_to_update.email = request.form['email']
+        name_to_update.favourite_colour = request.form['favourite_colour']
         try:
             db.session.commit()
             flash("User Updated Successfully!")
