@@ -5,6 +5,7 @@ from wtforms import StringField, SubmitField, PasswordField, BooleanField
 from wtforms import ValidationError
 from wtforms.validators import DataRequired, EqualTo, Length
 from werkzeug.security import generate_password_hash, check_password_hash
+from flask_wtf import FlaskForm
 
 
 # Create Model
@@ -58,7 +59,7 @@ class NamerForm(FlaskForm):
     submit = SubmitField("Submit")
 
 
-class PasswordForm():
+class PasswordForm(FlaskForm):
     email = StringField("What's your email?", validators=[DataRequired()])
     password_hash = PasswordField(
         "What's your password?", validators=[DataRequired()]

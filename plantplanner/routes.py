@@ -3,6 +3,7 @@ from plantplanner import app, db
 from plantplanner.models import Users, UserForm, NamerForm, PasswordForm
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
+from flask_wtf import FlaskForm
 
 
 @app.route('/user/add', methods=['GET', 'POST'])
