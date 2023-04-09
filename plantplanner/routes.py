@@ -2,6 +2,7 @@ from flask import Flask, render_template, flash, request, redirect, url_for
 from plantplanner import app, db
 from plantplanner.models import Users, UserForm, NamerForm
 from flask_sqlalchemy import SQLAlchemy
+from werkzeug.security import generate_password_hash, check_password_hash
 
 
 @app.route('/user/add', methods=['GET', 'POST'])
@@ -94,13 +95,15 @@ def update(id):
             return render_template(
                 "update.html",
                 form=form,
-                name_to_update=name_to_update)
+                name_to_update=name_to_update,
+                id=id)
         except:
             flash("It looks like something went wrong... Please try again")
             return render_template(
                 "update.html",
                 form=form,
-                name_to_update=name_to_update)
+                name_to_update=name_to_update,
+                id=id)
     else:
         return render_template(
             "update.html",

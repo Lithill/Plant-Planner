@@ -3,7 +3,7 @@ from datetime import datetime
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
-
+from werkzeug.security import generate_password_hash, check_password_hash
 
 # Create Model
 class Users(db.Model):
