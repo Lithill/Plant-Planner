@@ -9,33 +9,33 @@
         </div>
     {% endfor %}
 
-    <h1>Add Blog Post:</h1>
+    <h1>Blog Posts</h1>
     <br>
     <div class="shadow p-3 mb-5 bg-body-tertiary rounded">
         <form method="POST">
             {{ form.hidden_tag() }}
-
+        
             {{ form.title.label(
             class="form-label") }}
-
+        
             {{ form.title(
             class="form-control") }}
             <br>
             {{ form.author.label(
             class="form-label") }}
-        
+            
             {{ form.author(
             class="form-control") }}
             <br>
             {{ form.slug.label(
             class="form-label") }}
-        
+            
             {{ form.slug(
             class="form-control") }}
             <br>
             {{ form.content.label(
             class="form-label") }}
-            
+                
             {{ form.content(
             class="form-control", rows="5") }}
             <br>
@@ -43,5 +43,6 @@
             class="btn btn-primary") }}
         </form>
     </div>
+    <a href="{{ url_for('posts')}}" class="btn btn-outline-secondary btn-sm">Back to Blog</a>
 
 {% endblock %}

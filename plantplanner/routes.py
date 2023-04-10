@@ -217,3 +217,26 @@ def posts():
 def post(id):
     post = Posts.query.get_or_404(id)
     return render_template('post.html', post=post)
+
+
+@app.route('/posts/edit/<int:id>', methods=['GET', 'POST'])
+def edit_post(id):
+    post = Posts.query.get_or_404(id)
+    form = PostForm()
+    if form.validate_on_submit():
+        post.title = form.title.data
+        post.author = form.author.data
+        post.slug = form.slug.data
+        post.content = form.content.data
+        # update database
+        db.session.add(post)
+        db.session.commit()
+        # Flash message
+        flash("Post has been updated")
+        # Redirect to post page
+        return redirect(url_for('post', id=post.id))
+    form.title.data = post.title
+    form.author.data = post.author
+    form.slug.data = post.slug
+    form.content.data = post.content
+    return render_template('edit_post.html', form=form)
