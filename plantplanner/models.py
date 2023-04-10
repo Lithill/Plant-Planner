@@ -7,10 +7,14 @@ from wtforms.validators import DataRequired, EqualTo, Length
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_wtf import FlaskForm
 from wtforms.widgets import TextArea
+from flask_login import UserMixin, login_user, LoginManager
+from flask_login import login_required, logout_user, current_user
+
 
 # Create Users Model
-class Users(db.Model):
+class Users(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(20), nullable=False, unique=True)
     name = db.Column(db.String(200), nullable=False)
     email = db.Column(db.String(120), nullable=False, unique=True)
     favourite_colour = db.Column(db.String(120))
@@ -56,6 +60,7 @@ class PostForm(FlaskForm):
 # Create a UserForm Class
 class UserForm(FlaskForm):
     name = StringField("Name", validators=[DataRequired()])
+    username = StringField("Username", validators=[DataRequired()])
     email = StringField("Email", validators=[DataRequired()])
     favourite_colour = StringField("Favourite Colour")
     password_hash = PasswordField(
@@ -83,4 +88,11 @@ class PasswordForm(FlaskForm):
     password_hash = PasswordField(
         "What's your password?", validators=[DataRequired()]
         )
+    submit = SubmitField("Submit")
+
+
+# Create login form
+class LoginForm(FlaskForm):
+    username = StringField("Username", validators=[DataRequired()])
+    password = PasswordField("Password", validators=[DataRequired()])
     submit = SubmitField("Submit")

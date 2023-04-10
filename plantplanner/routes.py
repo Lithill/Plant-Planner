@@ -1,10 +1,12 @@
 from flask import Flask, render_template, flash, request, redirect, url_for
 from plantplanner import app, db
 from plantplanner.models import Users, UserForm, NamerForm, PasswordForm
-from plantplanner.models import Posts, PostForm
+from plantplanner.models import Posts, PostForm, LoginForm
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_wtf import FlaskForm
+from flask_login import UserMixin, login_user, LoginManager
+from flask_login import login_required, logout_user, current_user
 
 
 @app.route('/user/add', methods=['GET', 'POST'])
@@ -21,6 +23,7 @@ def add_user():
                 )
             user = Users(
                 name=form.name.data,
+                username=form.username.data,
                 email=form.email.data,
                 favourite_colour=form.favourite_colour.data,
                 password_hash=hashed_pw)
@@ -28,6 +31,7 @@ def add_user():
             db.session.commit()
         name = form.name.data
         form.name.data = ''  # clears the form
+        form.username.data = ''  # clears the form
         form.email.data = ''  # clears the form
         form.favourite_colour.data = ''  # clears the form
         form.password_hash.data = ''  # clears the form
@@ -261,3 +265,49 @@ def delete_post(id):
         # Grab all the posts from the database
         posts = Posts.query.order_by(Posts.date_posted)
         return render_template("posts.html", posts=posts)
+
+
+# Create Login Page
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    form = LoginForm()
+    if form.validate_on_submit():
+        user = Users.query.filter_by(username=form.username.data).first()
+        if user:
+            # Check the hash
+            if check_password_hash(user.password_hash, form.password.data):
+                login_user(user)
+                flash("Login successful")
+                return redirect(url_for('dashboard'))
+            else:
+                flash("Wrong password - try again")
+        else:
+            flash("That use doesn't exist - try again")
+    return render_template('login.html', form=form)
+
+
+# Create logout function
+@app.route('/logout', methods=['GET', 'POST'])
+@login_required
+def logout():
+    logout_user()
+    flash("You have logged out")
+    return redirect(url_for('login'))
+
+
+# Create Dashboard Page
+@app.route('/dashboard', methods=['GET', 'POST'])
+@login_required
+def dashboard():
+    return render_template('dashboard.html')
+
+
+# Flask_Login
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = 'login'
+
+
+@login_manager.user_loader
+def load_user(user_id):
+    return Users.query.get(int(user_id))
