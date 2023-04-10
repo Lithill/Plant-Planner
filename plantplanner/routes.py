@@ -1,6 +1,7 @@
 from flask import Flask, render_template, flash, request, redirect, url_for
 from plantplanner import app, db
 from plantplanner.models import Users, UserForm, NamerForm, PasswordForm
+from plantplanner.models import Posts, PostForm
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_wtf import FlaskForm
@@ -174,3 +175,32 @@ def delete(id):
             form=form,
             name=name,
             our_users=our_users)
+
+
+# Add Post Page
+@app.route('/add-post', methods=['GET', 'POST'])
+def add_post():
+    form = PostForm()
+
+    if form.validate_on_submit():
+        post = Posts(
+            title=form.title.data,
+            content=form.content.data,
+            author=form.author.data,
+            slug=form.slug.data
+            )
+        # Clear the form
+        form.title.data = ''
+        form.content.data = ''
+        form.author.data = ''
+        form.slug.data = ''
+
+        # Add post to database
+        db.session.add(post)
+        db.session.commit()
+
+        # Return a message
+        flash("Post submitted successfully")
+
+    # Redirect to the webpage
+    return render_template("add_post.html", form=form)
