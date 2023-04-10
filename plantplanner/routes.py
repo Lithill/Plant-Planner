@@ -83,15 +83,23 @@ def test_pw():
     if form.validate_on_submit():
         email = form.email.data
         password = form.password_hash.data
+
         # Clear the form
         form.email.data = ''
         form.password_hash.data = ''
-        # flash("Form Submitted Successfully!")
+
+        # Look up user by email address
+        pw_to_check = Users.query.filter_by(email=email).first()
+
+        # Check hashed password
+        passed = check_password_hash(pw_to_check.password_hash, password)
 
     return render_template(
         "test_pw.html",
         email=email,
         password=password,
+        pw_to_check=pw_to_check,
+        passed=passed,
         form=form)
 
 
