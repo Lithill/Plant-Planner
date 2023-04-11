@@ -1,12 +1,13 @@
 from flask import Flask, render_template, flash, request, redirect, url_for
 from plantplanner import app, db
-from plantplanner.models import Users, UserForm, NamerForm, PasswordForm
-from plantplanner.models import Posts, PostForm, LoginForm
+from plantplanner.models import Users, Posts
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_wtf import FlaskForm
 from flask_login import UserMixin, login_user, LoginManager
 from flask_login import login_required, logout_user, current_user
+from plantplanner.webforms import LoginForm, PostForm, UserForm, PasswordForm
+from plantplanner.webforms import NamerForm, SearchForm
 
 
 # Add Post Page
@@ -72,6 +73,13 @@ def add_user():
         form=form,
         name=name,
         our_users=our_users)
+
+
+# Pass info to navbar
+@app.context_processor
+def base():
+    form = SearchForm()
+    return dict(form=form)
 
 
 # Create Dashboard Page
@@ -282,6 +290,25 @@ def posts():
     # Grab all the posts from the database
     posts = Posts.query.order_by(Posts.date_posted)
     return render_template("posts.html", posts=posts)
+
+
+# Create search function
+@app.route('/search', methods=["POST"])
+def search():
+    form = SearchForm()
+    posts = Posts.query
+    if form.validate_on_submit():
+        # Get data from submitted form
+        post.searched = form.searched.data
+        # Query the database
+        posts = posts.filter(Posts.content.like('%' + post.searched + '%'))
+        posts = posts.order_by(Posts.title).all()
+
+        return render_template(
+            "search.html",
+            form=form,
+            searched=post.searched,
+            posts=posts)
 
 
 # Create Password Test Page
