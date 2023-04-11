@@ -76,6 +76,18 @@ def add_user():
         our_users=our_users)
 
 
+# Create admin page
+@app.route('/admin')
+@login_required
+def admin():
+    id = current_user.id
+    if id == 1:
+        return render_template("admin.html")
+    else:
+        flash("Sorry you must be the admin to access the admin page")
+        return redirect(url_for('dashboard'))
+
+
 # Pass info to navbar
 @app.context_processor
 def base():
