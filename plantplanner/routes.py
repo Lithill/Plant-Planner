@@ -8,6 +8,7 @@ from flask_login import UserMixin, login_user, LoginManager
 from flask_login import login_required, logout_user, current_user
 from plantplanner.webforms import LoginForm, PostForm, UserForm, PasswordForm
 from plantplanner.webforms import NamerForm, SearchForm
+from flask_ckeditor import CKEditor
 
 
 # Add Post Page
