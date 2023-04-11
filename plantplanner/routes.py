@@ -191,11 +191,6 @@ def index():
         stuff=stuff)
 
 
-@login_manager.user_loader
-def load_user(user_id):
-    return Users.query.get(int(user_id))
-
-
 # Create Login Page
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -213,6 +208,17 @@ def login():
         else:
             flash("That use doesn't exist - try again")
     return render_template('login.html', form=form)
+
+
+# Flask_Login
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = 'login'
+
+
+@login_manager.user_loader
+def load_user(user_id):
+    return Users.query.get(int(user_id))
 
 
 # Create logout function
@@ -302,6 +308,7 @@ def test_pw():
 
 # Update Database Record
 @app.route('/update/<int:id>', methods=['GET', 'POST'])
+@login_required
 def update(id):
     form = UserForm()
     name_to_update = Users.query.get_or_404(id)
@@ -336,9 +343,3 @@ def update(id):
 @app.route('/user/<name>')
 def user(name):
     return render_template("user.html", user_name=name)
-
-
-# Flask_Login
-login_manager = LoginManager()
-login_manager.init_app(app)
-login_manager.login_view = 'login'
