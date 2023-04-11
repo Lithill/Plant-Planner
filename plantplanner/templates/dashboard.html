@@ -17,18 +17,29 @@
             {{ current_user.name }}
         </div>
         <div class="card-body">
-            <h5 class="card-title">Welcome to your user dashboard</h5>
+            <h5 class="card-title"></h5>
             <p class="card-text">
-                <strong>Name: </strong>{{ current_user.name }}<br>
-                <strong>Username: </strong>{{ current_user.username }}<br>
-                <strong>User Id: </strong>{{ current_user.id }}<br>
-                <strong>Email: </strong>{{ current_user.email }}<br>
-                <strong>Favourite Colour: </strong>{{ current_user.favourite_colour }}<br>
-                <strong>Date Joined: </strong>{{ current_user.date_added }}<br>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-8">
+                            <strong>Name: </strong>{{ current_user.name }}<br>
+                            <strong>Username: </strong>{{ current_user.username }}<br>
+                            <strong>User Id: </strong>{{ current_user.id }}<br>
+                            <strong>Email: </strong>{{ current_user.email }}<br>
+                            <strong>Favourite Colour: </strong>{{ current_user.favourite_colour }}<br>
+                            <strong>Date Joined: </strong>{{ current_user.date_added }}<br>
+                            <!-- Buttons -->
+                            <br>
+                            <a href="{{ url_for('update', id=current_user.id)}}" class="btn btn-success btn-sm">Update Profile</a> 
+                            <a href="{{ url_for('logout') }}" class="btn btn-primary btn-sm">Logout</a>
+                            <a href="{{ url_for('delete',id=current_user.id)}}" class="btn btn-danger btn-sm">Delete</a>
+                        </div>
+                        <div class="col-4">
+                            <img src="{{ url_for('static', filename='../static/images/user.png') }}" alt="Default user picture" class="profile-pic">
+                        </div>
+                    </div>
+                </div>
             </p>
-            <a href="{{ url_for('update', id=current_user.id)}}" class="btn btn-success btn-sm">Update Profile</a> 
-            <a href="{{ url_for('logout') }}" class="btn btn-primary btn-sm">Logout</a>
-            <a href="{{ url_for('delete',id=current_user.id)}}" class="btn btn-danger btn-sm">Delete</a>
         </div>
     </div>
     <br>
