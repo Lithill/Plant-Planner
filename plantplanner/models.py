@@ -7,6 +7,19 @@ from plantplanner.webforms import LoginForm, PostForm, UserForm, PasswordForm
 from plantplanner.webforms import NamerForm
 
 
+# Create Blog Post Model
+class Posts(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(255))
+    content = db.Column(db.Text)
+    # author = db.Column(db.String(255))
+    date_posted = db.Column(db.DateTime, default=datetime.utcnow)
+    slug = db.Column(db.String(255))
+    # Foreign key to link users 
+    # (refer to primary key of the user)
+    poster_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+
+
 # Create Users Model
 class Users(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
@@ -17,6 +30,8 @@ class Users(db.Model, UserMixin):
     date_added = db.Column(db.DateTime, default=datetime.utcnow)
     # Password
     password_hash = db.Column(db.String(128))
+    # User can have many posts
+    posts = db.relationship('Posts', backref='poster')
 
     @property
     def password(self):
@@ -33,12 +48,3 @@ class Users(db.Model, UserMixin):
     def __repr__(self):
         return '<Name %r>' % self.name
 
-
-# Create Blog Post Model
-class Posts(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(255))
-    content = db.Column(db.Text)
-    author = db.Column(db.String(255))
-    date_posted = db.Column(db.DateTime, default=datetime.utcnow)
-    slug = db.Column(db.String(255))
