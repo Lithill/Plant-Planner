@@ -107,6 +107,7 @@ def dashboard():
         name_to_update.email = request.form['email']
         name_to_update.favourite_colour = request.form['favourite_colour']
         name_to_update.username = request.form['username']
+        name_to_update.about_author = request.form['about_author']
         try:
             db.session.commit()
             flash("User Updated Successfully!")

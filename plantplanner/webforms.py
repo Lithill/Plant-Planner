@@ -1,7 +1,7 @@
 from plantplanner import db
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, PasswordField, BooleanField
-from wtforms import ValidationError
+from wtforms import ValidationError, TextAreaField
 from wtforms.validators import DataRequired, EqualTo, Length
 from wtforms.widgets import TextArea
 from flask_ckeditor import CKEditorField
@@ -22,6 +22,7 @@ class UserForm(FlaskForm):
     username = StringField("Username", validators=[DataRequired()])
     email = StringField("Email", validators=[DataRequired()])
     favourite_colour = StringField("Favourite Colour")
+    about_author = TextAreaField("About Author")
     password_hash = PasswordField(
         'Password',
         validators=[DataRequired(), EqualTo(
