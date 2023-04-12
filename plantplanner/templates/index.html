@@ -2,12 +2,17 @@
 
 {% block content %}
 
-    <h1>Hello World!</h1>
-
-    <p>This is my index page</p>
-
-    <p>My name is {{ first_name }}</p>
-
-    <p>{{ stuff|title }}</p>
+    {% if current_user.is_authenticated %}
+        <h1>Welcome Back to Plant Planner</h1>
+        <p>Plant Planner is a website where you can keep track of when you need to water your houseplants.</p>
+        <h2>Quick Links:</h2>
+        <a type="button" class="btn btn-outline-success" href="{{ url_for('add_post') }}">Add a Plant</a>
+        <a type="button" class="btn btn-outline-success" href="{{ url_for('posts') }}">See Your Plants</a>
+    {% else %}
+        <h1>Welcome to Plant Planner</h1>
+        <p>Plant Planner is a website where you can keep track of when you need to water your houseplants.</p>
+        <p>You must <a type="button" class="btn btn-outline-success" href="{{ url_for('login') }}">Log In</a> before you can add a plant</p>
+        <p>Don't have an account? <a type="button" class="btn btn-outline-success" href="{{ url_for('add_user') }}">Register</a> here</p>
+    {% endif %}
 
 {% endblock %}
