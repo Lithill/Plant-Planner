@@ -64,7 +64,6 @@ def add_user():
                 name=form.name.data,
                 username=form.username.data,
                 email=form.email.data,
-                favourite_colour=form.favourite_colour.data,
                 password_hash=hashed_pw)
             db.session.add(user)
             db.session.commit()
@@ -72,7 +71,6 @@ def add_user():
         form.name.data = ''  # clears the form
         form.username.data = ''  # clears the form
         form.email.data = ''  # clears the form
-        form.favourite_colour.data = ''  # clears the form
         form.password_hash.data = ''  # clears the form
         flash("User Added Successfully!")
     our_users = Users.query.order_by(Users.date_added)
@@ -112,7 +110,6 @@ def dashboard():
     if request.method == "POST":
         name_to_update.name = request.form['name']
         name_to_update.email = request.form['email']
-        name_to_update.favourite_colour = request.form['favourite_colour']
         name_to_update.username = request.form['username']
         name_to_update.about_author = request.form['about_author']
         name_to_update.profile_pic = request.files['profile_pic']
@@ -392,7 +389,6 @@ def update(id):
     if request.method == "POST":
         name_to_update.name = request.form['name']
         name_to_update.email = request.form['email']
-        name_to_update.favourite_colour = request.form['favourite_colour']
         name_to_update.username = request.form['username']
         try:
             db.session.commit()

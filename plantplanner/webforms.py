@@ -30,7 +30,6 @@ class UserForm(FlaskForm):
     name = StringField("Name", validators=[DataRequired()])
     username = StringField("Username", validators=[DataRequired()])
     email = StringField("Email", validators=[DataRequired()])
-    favourite_colour = StringField("Favourite Colour")
     about_author = TextAreaField("About Author")
     password_hash = PasswordField(
         'Password',

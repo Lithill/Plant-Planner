@@ -33,12 +33,6 @@
                 {{ form.email(
                 class="form-control", value=name_to_update.email) }}
                 <br>
-                {{ form.favourite_colour.label(
-                    class="form-label") }}
-    
-                {{ form.favourite_colour(
-                class="form-control", value=name_to_update.favourite_colour) }}
-                <br>
                 {{ form.submit(
                 class="btn btn-primary") }}
                 <a href="{{ url_for('delete', id=id)}}" class="btn btn-danger">Delete</a>

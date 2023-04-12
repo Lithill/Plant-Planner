@@ -26,7 +26,6 @@
                             <strong>Username: </strong>{{ current_user.username }}<br>
                             <strong>User Id: </strong>{{ current_user.id }}<br>
                             <strong>Email: </strong>{{ current_user.email }}<br>
-                            <strong>Favourite Colour: </strong>{{ current_user.favourite_colour }}<br>
                             <strong>Date Joined: </strong>{{ current_user.date_added }}<br>
                             <strong>About Author: </strong>{{ current_user.about_author }}<br>
                             <strong>Profile Pic: </strong>{{ current_user.profile_pic }}<br>
@@ -70,12 +69,6 @@
         
                 {{ form.email(
                 class="form-control", value=name_to_update.email) }}
-                <br>
-                {{ form.favourite_colour.label(
-                    class="form-label") }}
-    
-                {{ form.favourite_colour(
-                class="form-control", value=name_to_update.favourite_colour) }}
                 <br>
                 <textarea name="about_author" class="form-control">{{ name_to_update.about_author }}</textarea>
                 <br>
