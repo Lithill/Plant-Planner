@@ -10,21 +10,38 @@
     {% endfor %}
 
     {% for plant in current_user.plants %}
-        <div class="shadow p-3 mb-5 bg-body-tertiary rounded">
-            <h2><a href="{{ url_for('plant', id=plant.id) }}">{{ plant.common_name }}</a></h2>
-            <small><strong>By:</strong> {{ plant.poster.name }} <strong>| Date:</strong> {{ plant.date_posted }}</small><br><br>
-            <p><strong>Latin Name: </strong> {{ plant.latin_name }}</p>
-            <p><strong>Days Between Watering: </strong> {{ plant.water_interval }}</p>
-            <p><strong>Last Watered: </strong> {{ plant.last_watered_date }} </p>
-            {{ plant.content|safe }}
-            <br><br>
-            <a href="{{ url_for('plant', id=plant.id) }}" class="btn btn-outline-secondary">View Plant</a>
-            {% if plant.poster_id == current_user.id %}
-                <a href="{{ url_for('edit_plant', id=plant.id) }}" class="btn btn-outline-secondary">Edit Plant</a>
-                <a href="{{ url_for('delete_plant', id=plant.id) }}" class="btn btn-outline-danger">Delete Plant</a>
-            {% endif %}
-            <br><br>
+        <div class="card">
+            <br>
+            <div class="row">
+                <div class="col-2"></div>
+                <!-- Common Name -->
+                <div class="col-2 text-nowrap"><h5><strong><u>{{ plant.common_name }}</u></h5></strong></div>
+                <!-- Water Interval -->
+                <div class="col-7"><p>{{ '- water every ' ~ plant.water_interval ~ ' days' }}</p></div>
+                <!-- Delete Button -->
+                <div class="col-1"><a href="{{ url_for('delete_plant', id=plant.id) }}"><img src="../static/images/delete.webp" alt="Delete" id="logo"></a></div>
+            </div>
+            <div class="row">
+                <div class="col-2"></div>
+                <!-- Latin Name -->
+                <div class="col-2"><p><i>{{ plant.latin_name }}</i></p></div>
+                <!-- Last Watered -->
+                <div class="col-7"><p>{{ '- last watered on ' ~ plant.last_watered_date.strftime('%d-%m-%Y') }}</p></div>
+                <!-- Edit Button -->
+                <div class="col-1"><a href="{{ url_for('edit_plant', id=plant.id) }}"><img src="../static/images/edit.webp" alt="Update" id="logo"></a></div>
+            </div>
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-2"></div>
+                <!-- Next Watered -->
+                <div class="col-7"><p>- needs to be watered on</p></div>
+                <!-- See More Button -->
+                <div class="col-1"><a href="{{ url_for('plant', id=plant.id) }}"><img src="../static/images/more.webp" alt="See More" id="logo"></a></div>
+            </div>  
+            <br>       
+            <!-- {{ plant.content|safe }} -->   
         </div>
+        <br>
     {% endfor %}
 
 {% endblock %}
