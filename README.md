@@ -26,10 +26,12 @@
       - CREATE DATABASE plantplanner;
       - \q
       - python3
-      - from pantplanner import db
+      - from plantplanner import db
       - db.create_all()
       - exit()
    * To delete the database (please note that you must delete and re-create the database if you change the models. Migration is not set up)
+      - set_pg
+      - psql
       - DROP DATABASE plantplanner;
       - \q
    * pipenv install python-dotenv

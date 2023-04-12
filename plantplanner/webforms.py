@@ -5,6 +5,7 @@ from wtforms import ValidationError, TextAreaField
 from wtforms.validators import DataRequired, EqualTo, Length
 from wtforms.widgets import TextArea
 from flask_ckeditor import CKEditorField
+from flask_wtf.file import FileField
 
 
 # Create Post Form
@@ -34,6 +35,7 @@ class UserForm(FlaskForm):
         'Confirm password',
         validators=[DataRequired()]
         )
+    profile_pic = FileField("Profile Pic")
     submit = SubmitField("Submit")
 
 

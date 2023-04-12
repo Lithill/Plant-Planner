@@ -9,6 +9,9 @@ from flask_login import login_required, logout_user, current_user
 from plantplanner.webforms import LoginForm, PostForm, UserForm, PasswordForm
 from plantplanner.webforms import NamerForm, SearchForm
 from flask_ckeditor import CKEditor
+from werkzeug.utils import secure_filename
+import uuid as uuid
+import os
 
 
 # Add Post Page
@@ -108,8 +111,20 @@ def dashboard():
         name_to_update.favourite_colour = request.form['favourite_colour']
         name_to_update.username = request.form['username']
         name_to_update.about_author = request.form['about_author']
+        name_to_update.profile_pic = request.files['profile_pic']
+        # Get image name
+        pic_filename = secure_filename(name_to_update.profile_pic.filename)
+        # Set UUID for pic (don't want same name on different pics)
+        pic_name = str(uuid.uuid1()) + "_" + pic_filename
+        # Save pic
+        saver = request.files['profile_pic']
+        # Change it to a string to save to database
+        name_to_update.profile_pic = pic_name
         try:
             db.session.commit()
+            saver.save(
+                os.path.join(app.config['UPLOAD_FOLDER']), pic_name
+                )
             flash("User Updated Successfully!")
             return render_template(
                 "dashboard.html",
