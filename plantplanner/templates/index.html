@@ -3,9 +3,9 @@
 {% block content %}
 
     {% if current_user.is_authenticated %}
-        <h1>Welcome Back to Plant Planner</h1>
+        <h1>Welcome back to Plant Planner</h1>
         <p>Plant Planner is a website where you can keep track of when you need to water your houseplants.</p>
-        <h2>Quick Links:</h2>
+        <h2>Quick links:</h2>
         <a type="button" class="btn btn-outline-success" href="{{ url_for('add_plant') }}">Add a Plant</a>
         <a type="button" class="btn btn-outline-success" href="{{ url_for('plants') }}">See Your Plants</a>
     {% else %}
