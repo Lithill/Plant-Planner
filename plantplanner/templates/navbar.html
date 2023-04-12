@@ -22,10 +22,10 @@
                     </li>
                 {% endif %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('add_post') }}">Add Blog Post</a>
+                    <a class="nav-link" href="{{ url_for('add_plant') }}">Add Plant</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('posts') }}">Posts</a>
+                    <a class="nav-link" href="{{ url_for('plants') }}">My Plants</a>
                 </li>
             </ul>
             <form method="POST" action="{{ url_for('search') }}" class="d-flex" role="search">

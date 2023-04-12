@@ -1,6 +1,6 @@
 from flask import Flask, render_template, flash, request, redirect, url_for
 from plantplanner import app, db
-from plantplanner.models import Users, Posts
+from plantplanner.models import Users, Plants
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_wtf import FlaskForm
@@ -62,11 +62,11 @@ def account():
 # Add Post Page
 @app.route('/add-post', methods=['GET', 'POST'])
 # @login_required
-def add_post():
+def add_plant():
     form = PostForm()
     if form.validate_on_submit():
         poster = current_user.id
-        post = Posts(
+        plant = Plants(
             common_name=form.common_name.data,
             content=form.content.data,
             poster_id=poster,
@@ -81,7 +81,7 @@ def add_post():
         form.water_interval.data = ''
         form.last_watered_date.data = ''
 
-        # Add post to database
+        # Add plant to database
         db.session.add(post)
         db.session.commit()
 
@@ -90,7 +90,7 @@ def add_post():
     else:
         flash("Post failed to be submitted")
     # Redirect to the webpage
-    return render_template("add_post.html", form=form)
+    return render_template("add_plant.html", form=form)
 
 
 @app.route('/user/add', methods=['GET', 'POST'])
@@ -162,39 +162,39 @@ def delete(id):
         return redirect(url_for('account'))
 
 
-@app.route('/posts/delete/<int:id>')
+@app.route('/plants/delete/<int:id>')
 @login_required
 def delete_post(id):
-    post_to_delete = Posts.query.get_or_404(id)
+    post_to_delete = Plants.query.get_or_404(id)
     id = current_user.id
     if id == post_to_delete.poster.id:
         try:
             db.session.delete(post_to_delete)
             db.session.commit()
             # Return a message
-            flash("Blog post was deleted")
-            # Grab all the posts from the database
-            posts = Posts.query.order_by(Posts.date_posted)
-            return render_template("posts.html", posts=posts)
+            flash("Plant was deleted")
+            # Grab all the plants from the database
+            plants = Plants.query.order_by(Plants.date_posted)
+            return render_template("plants.html", plants=plants)
 
         except:
             # Return an error message
             flash("There was a problem deleting the post")
-            # Grab all the posts from the database
-            posts = Posts.query.order_by(Posts.date_posted)
-            return render_template("posts.html", posts=posts)
+            # Grab all the plants from the database
+            plants = Plants.query.order_by(Plants.date_posted)
+            return render_template("plants.html", plants=plants)
     else:
         # Return a message
         flash("You aren't authorised to delete that post")
-        # Grab all the posts from the database
-        posts = Posts.query.order_by(Posts.date_posted)
-        return render_template("posts.html", posts=posts)
+        # Grab all the plants from the database
+        plants = Plants.query.order_by(Plants.date_posted)
+        return render_template("plants.html", plants=plants)
 
 
-@app.route('/posts/edit/<int:id>', methods=['GET', 'POST'])
+@app.route('/plants/edit/<int:id>', methods=['GET', 'POST'])
 @login_required
 def edit_post(id):
-    post = Posts.query.get_or_404(id)
+    plant = Plants.query.get_or_404(id)
     form = PostForm()
     if form.validate_on_submit():
         post.common_name = form.common_name.data
@@ -207,7 +207,7 @@ def edit_post(id):
         db.session.commit()
         # Flash message
         flash("Post has been updated")
-        # Redirect to post page
+        # Redirect to plant page
         return redirect(url_for('post', id=post.id))
     if current_user.id == post.poster_id:
         form.common_name.data = post.common_name
@@ -218,8 +218,8 @@ def edit_post(id):
         return render_template('edit_post.html', form=form)
     else:
         flash("You aren't authorised to edit this post")
-        posts = Posts.query.order_by(Posts.date_posted)
-        return render_template("posts.html", posts=posts)
+        plants = Plants.query.order_by(Plants.date_posted)
+        return render_template("plants.html", plants=plants)
 
 
 # Create a route decorator
@@ -286,36 +286,36 @@ def page_not_found(e):
     return render_template("500.html"), 500
 
 
-@app.route('/posts/<int:id>')
+@app.route('/plants/<int:id>')
 def post(id):
-    post = Posts.query.get_or_404(id)
+    plant = Plants.query.get_or_404(id)
     return render_template('post.html', post=post)
 
 
-@app.route('/posts')
-def posts():
-    # Grab all the posts from the database
-    posts = Posts.query.order_by(Posts.date_posted)
-    return render_template("posts.html", posts=posts)
+@app.route('/plants')
+def plants():
+    # Grab all the plants from the database
+    plants = Plants.query.order_by(Plants.date_posted)
+    return render_template("plants.html", plants=plants)
 
 
 # Create search function
 @app.route('/search', methods=["POST"])
 def search():
     form = SearchForm()
-    posts = Posts.query
+    plants = Plants.query
     if form.validate_on_submit():
         # Get data from submitted form
         post.searched = form.searched.data
         # Query the database
-        posts = posts.filter(Posts.content.like('%' + post.searched + '%'))
-        posts = posts.order_by(Posts.common_name).all()
+        plants = plants.filter(Plants.content.like('%' + post.searched + '%'))
+        plants = plants.order_by(Plants.common_name).all()
 
         return render_template(
             "search.html",
             form=form,
             searched=post.searched,
-            posts=posts)
+            plants=plants)
 
 
 # Create Password Test Page

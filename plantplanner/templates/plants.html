@@ -9,10 +9,10 @@
         </div>
     {% endfor %}
 
-    <h1>Blog Posts</h1>
+    <h1>My Plants</h1>
     <br>
 
-    {% for post in posts %}
+    {% for plant in plants %}
         <div class="shadow p-3 mb-5 bg-body-tertiary rounded">
             <h2><a href="{{ url_for('post', id=post.id) }}">{{ post.common_name }}</a></h2>
             <small><strong>By:</strong> {{ post.poster.name }} <strong>| Date:</strong> {{ post.date_posted }}</small><br><br>

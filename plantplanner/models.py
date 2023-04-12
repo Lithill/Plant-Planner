@@ -8,7 +8,7 @@ from plantplanner.webforms import NamerForm, SearchForm
 
 
 # Create Blog Post Model
-class Posts(db.Model):
+class Plants(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     common_name = db.Column(db.String(255), nullable=False)  # used to be title
     latin_name = db.Column(db.String(255))  # used to be slug
@@ -33,8 +33,8 @@ class Users(db.Model, UserMixin):
     profile_pic = db.Column(db.String, nullable=True)
     # Password
     password_hash = db.Column(db.String(128))
-    # User can have many posts
-    posts = db.relationship('Posts', backref='poster')
+    # User can have many plants
+    plants = db.relationship('Plants', backref='poster')
 
     @property
     def password(self):
