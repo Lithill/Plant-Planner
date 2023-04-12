@@ -37,11 +37,7 @@
                             <a href="{{ url_for('delete',id=current_user.id)}}" class="btn btn-danger btn-sm">Delete</a>
                         </div>
                         <div class="col-4">
-							{% if current_user.profile_pic %}
                             <img src="{{ url_for('static', filename='images/user.png') }}" alt="Default user picture" class="profile-pic">
-							{% else %}
-							<img src="{{ url_for('static', filename='images/' + current_user.profile_pic) }}" alt="User profile picture" class="profile-pic">
-							{% endif %}
 						</div>
                     </div>
                 </div>
