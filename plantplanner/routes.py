@@ -6,7 +6,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_wtf import FlaskForm
 from flask_login import UserMixin, login_user, LoginManager
 from flask_login import login_required, logout_user, current_user
-from plantplanner.webforms import LoginForm, PostForm, UserForm, PasswordForm
+from plantplanner.webforms import LoginForm, PlantForm, UserForm, PasswordForm
 from plantplanner.webforms import NamerForm, SearchForm
 from flask_ckeditor import CKEditor
 from werkzeug.utils import secure_filename
@@ -63,7 +63,7 @@ def account():
 @app.route('/add-plant', methods=['GET', 'POST'])
 # @login_required
 def add_plant():
-    form = PostForm()
+    form = PlantForm()
     if form.validate_on_submit():
         poster = current_user.id
         plant = Plants(
@@ -195,7 +195,7 @@ def delete_plant(id):
 @login_required
 def edit_plant(id):
     plant = Plants.query.get_or_404(id)
-    form = PostForm()
+    form = PlantForm()
     if form.validate_on_submit():
         plant.common_name = form.common_name.data
         plant.latin_name = form.latin_name.data

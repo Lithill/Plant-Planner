@@ -9,8 +9,8 @@ from flask_ckeditor import CKEditorField
 from flask_wtf.file import FileField
 
 
-# Create Post Form
-class PostForm(FlaskForm):
+# Create Plant Form
+class PlantForm(FlaskForm):
     common_name = StringField("Common Name", validators=[DataRequired()])
     content = CKEditorField('Content', validators=[DataRequired()])
     author = StringField("Author")
