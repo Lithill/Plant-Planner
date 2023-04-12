@@ -60,7 +60,7 @@ def account():
 
 
 # Add Post Page
-@app.route('/add-post', methods=['GET', 'POST'])
+@app.route('/add-plant', methods=['GET', 'POST'])
 # @login_required
 def add_plant():
     form = PostForm()
@@ -82,7 +82,7 @@ def add_plant():
         form.last_watered_date.data = ''
 
         # Add plant to database
-        db.session.add(post)
+        db.session.add(plant)
         db.session.commit()
 
         # Return a message
@@ -164,12 +164,12 @@ def delete(id):
 
 @app.route('/plants/delete/<int:id>')
 @login_required
-def delete_post(id):
-    post_to_delete = Plants.query.get_or_404(id)
+def delete_plant(id):
+    plant_to_delete = Plants.query.get_or_404(id)
     id = current_user.id
-    if id == post_to_delete.poster.id:
+    if id == plant_to_delete.poster.id:
         try:
-            db.session.delete(post_to_delete)
+            db.session.delete(plant_to_delete)
             db.session.commit()
             # Return a message
             flash("Plant was deleted")
@@ -179,13 +179,13 @@ def delete_post(id):
 
         except:
             # Return an error message
-            flash("There was a problem deleting the post")
+            flash("There was a problem deleting the plant")
             # Grab all the plants from the database
             plants = Plants.query.order_by(Plants.date_posted)
             return render_template("plants.html", plants=plants)
     else:
         # Return a message
-        flash("You aren't authorised to delete that post")
+        flash("You aren't authorised to delete that plant")
         # Grab all the plants from the database
         plants = Plants.query.order_by(Plants.date_posted)
         return render_template("plants.html", plants=plants)
@@ -193,31 +193,31 @@ def delete_post(id):
 
 @app.route('/plants/edit/<int:id>', methods=['GET', 'POST'])
 @login_required
-def edit_post(id):
+def edit_plant(id):
     plant = Plants.query.get_or_404(id)
     form = PostForm()
     if form.validate_on_submit():
-        post.common_name = form.common_name.data
-        post.latin_name = form.latin_name.data
-        post.content = form.content.data
-        post.water_interval = form.water_interval.data
-        post.last_watered_date = form.last_watered_date.data
+        plant.common_name = form.common_name.data
+        plant.latin_name = form.latin_name.data
+        plant.content = form.content.data
+        plant.water_interval = form.water_interval.data
+        plant.last_watered_date = form.last_watered_date.data
         # update database
-        db.session.add(post)
+        db.session.add(plant)
         db.session.commit()
         # Flash message
         flash("Post has been updated")
         # Redirect to plant page
-        return redirect(url_for('post', id=post.id))
-    if current_user.id == post.poster_id:
-        form.common_name.data = post.common_name
-        form.latin_name.data = post.latin_name
-        form.content.data = post.content
-        form.water_interval.data = post.water_interval
-        form.last_watered_date.data = post.last_watered_date
-        return render_template('edit_post.html', form=form)
+        return redirect(url_for('plant', id=plant.id))
+    if current_user.id == plant.poster_id:
+        form.common_name.data = plant.common_name
+        form.latin_name.data = plant.latin_name
+        form.content.data = plant.content
+        form.water_interval.data = plant.water_interval
+        form.last_watered_date.data = plant.last_watered_date
+        return render_template('edit_plant.html', form=form)
     else:
-        flash("You aren't authorised to edit this post")
+        flash("You aren't authorised to edit this plant")
         plants = Plants.query.order_by(Plants.date_posted)
         return render_template("plants.html", plants=plants)
 
@@ -287,9 +287,9 @@ def page_not_found(e):
 
 
 @app.route('/plants/<int:id>')
-def post(id):
+def plant(id):
     plant = Plants.query.get_or_404(id)
-    return render_template('post.html', post=post)
+    return render_template('plant.html', plant=plant)
 
 
 @app.route('/plants')
@@ -306,15 +306,15 @@ def search():
     plants = Plants.query
     if form.validate_on_submit():
         # Get data from submitted form
-        post.searched = form.searched.data
+        plant.searched = form.searched.data
         # Query the database
-        plants = plants.filter(Plants.content.like('%' + post.searched + '%'))
+        plants = plants.filter(Plants.content.like('%' + plant.searched + '%'))
         plants = plants.order_by(Plants.common_name).all()
 
         return render_template(
             "search.html",
             form=form,
-            searched=post.searched,
+            searched=plant.searched,
             plants=plants)
 
 
