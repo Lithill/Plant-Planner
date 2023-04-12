@@ -26,13 +26,15 @@ def add_post():
             content=form.content.data,
             poster_id=poster,
             latin_name=form.latin_name.data,
-            water_interval=form.water_interval.data
+            water_interval=form.water_interval.data,
+            last_watered_date=form.last_watered_date.data
             )
         # Clear the form
         form.common_name.data = ''
         form.content.data = ''
         form.latin_name.data = ''
         form.water_interval.data = ''
+        form.last_watered_date.data = ''
 
         # Add post to database
         db.session.add(post)
@@ -40,7 +42,8 @@ def add_post():
 
         # Return a message
         flash("Post submitted successfully")
-
+    else:
+        flash("Post failed to be submitted")
     # Redirect to the webpage
     return render_template("add_post.html", form=form)
 
@@ -213,6 +216,7 @@ def edit_post(id):
         post.latin_name = form.latin_name.data
         post.content = form.content.data
         post.water_interval = form.water_interval.data
+        post.last_watered_date = form.last_watered_date.data
         # update database
         db.session.add(post)
         db.session.commit()
@@ -225,6 +229,7 @@ def edit_post(id):
         form.latin_name.data = post.latin_name
         form.content.data = post.content
         form.water_interval.data = post.water_interval
+        form.last_watered_date.data = post.last_watered_date
         return render_template('edit_post.html', form=form)
     else:
         flash("You aren't authorised to edit this post")

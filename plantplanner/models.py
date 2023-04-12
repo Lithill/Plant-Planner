@@ -13,6 +13,7 @@ class Posts(db.Model):
     common_name = db.Column(db.String(255), nullable=False)  # used to be title
     latin_name = db.Column(db.String(255))  # used to be slug
     water_interval = db.Column(db.Integer, nullable=False)
+    last_watered_date = db.Column(db.Date, nullable=False)
     content = db.Column(db.Text)
     # author = db.Column(db.String(255))
     date_posted = db.Column(db.DateTime, default=datetime.utcnow)

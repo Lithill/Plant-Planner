@@ -38,7 +38,13 @@
                 class="form-label") }}
                     
                 {{ form.water_interval(
-                class="form-control", rows="5") }}
+                class="form-control") }}
+                <br>
+                {{ form.last_watered_date.label(
+                 class="form-label") }}
+                        
+                {{ form.last_watered_date(
+                class="form-control") }}
                 <br>
                 {{ form.submit(
                 class="btn btn-primary") }}

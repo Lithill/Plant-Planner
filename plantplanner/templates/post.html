@@ -16,6 +16,7 @@
         <small><strong>By:</strong> {{ post.poster.name }} <strong>| Date:</strong> {{ post.date_posted }}</small><br><br>
         <p><strong>Latin Name: </strong> {{ post.latin_name }}</p>
         <p><strong>Days Between Watering: </strong> {{ post.water_interval }}</p>
+        <p><strong>Last Watered: </strong> {{ post.last_watered_date }} </p>
         {{ post.content|safe }}<br><br>
         {% if post.poster.about_author %}
             {{ post.poster.about_author }}

@@ -4,6 +4,7 @@ from wtforms import StringField, SubmitField, PasswordField, BooleanField
 from wtforms import ValidationError, TextAreaField, IntegerField, validators
 from wtforms.validators import DataRequired, EqualTo, Length, NumberRange
 from wtforms.widgets import TextArea
+from wtforms.fields import DateField, DateTimeField
 from flask_ckeditor import CKEditorField
 from flask_wtf.file import FileField
 
@@ -17,6 +18,9 @@ class PostForm(FlaskForm):
     water_interval = IntegerField(
         "How many days should there be between watering?",
         [validators.NumberRange(min=1, max=182)]
+        )
+    last_watered_date = DateField(
+        'When did you last water this plant?'
         )
     submit = SubmitField("Submit")
 
