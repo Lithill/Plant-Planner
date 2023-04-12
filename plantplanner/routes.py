@@ -26,12 +26,12 @@ def add_post():
             common_name=form.common_name.data,
             content=form.content.data,
             poster_id=poster,
-            slug=form.slug.data
+            latin_name=form.latin_name.data
             )
         # Clear the form
         form.common_name.data = ''
         form.content.data = ''
-        form.slug.data = ''
+        form.latin_name.data = ''
 
         # Add post to database
         db.session.add(post)
@@ -209,7 +209,7 @@ def edit_post(id):
     form = PostForm()
     if form.validate_on_submit():
         post.common_name = form.common_name.data
-        post.slug = form.slug.data
+        post.latin_name = form.latin_name.data
         post.content = form.content.data
         # update database
         db.session.add(post)
@@ -220,7 +220,7 @@ def edit_post(id):
         return redirect(url_for('post', id=post.id))
     if current_user.id == post.poster_id:
         form.common_name.data = post.common_name
-        form.slug.data = post.slug
+        form.latin_name.data = post.latin_name
         form.content.data = post.content
         return render_template('edit_post.html', form=form)
     else:

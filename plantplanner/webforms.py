@@ -13,7 +13,7 @@ class PostForm(FlaskForm):
     common_name = StringField("Common Name", validators=[DataRequired()])
     content = CKEditorField('Content', validators=[DataRequired()])
     author = StringField("Author")
-    slug = StringField("Slug", validators=[DataRequired()])
+    latin_name = StringField("Latin Name")
     submit = SubmitField("Submit")
 
 

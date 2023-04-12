@@ -14,6 +14,7 @@
     <div class="shadow p-3 mb-5 bg-body-tertiary rounded">
         <h2>{{ post.common_name }}</h2>
         <small><strong>By:</strong> {{ post.poster.name }} <strong>| Date:</strong> {{ post.date_posted }}</small><br><br>
+        <p><strong>Latin Name: </strong> {{ post.latin_name|safe }}</p>
         {{ post.content|safe }}<br><br>
         {% if post.poster.about_author %}
             {{ post.poster.about_author }}
