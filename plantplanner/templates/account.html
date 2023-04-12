@@ -9,7 +9,7 @@
         </div>
     {% endfor %}
 
-    <h2>Dashboard</h2>
+    <h2>User Account</h2>
     <br>
 
     <div class="card">
@@ -49,7 +49,7 @@
             Update Profile
         </div>
         <div class="card-body">
-            <form action="/dashboard" method="POST" enctype="multipart/form-data">
+            <form action="/account" method="POST" enctype="multipart/form-data">
                 {{ form.hidden_tag() }}
 
                 {{ form.name.label(

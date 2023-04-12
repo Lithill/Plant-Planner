@@ -14,6 +14,51 @@ import uuid as uuid
 import os
 
 
+# Create User Account Page
+@app.route('/account', methods=['GET', 'POST'])
+@login_required
+def account():
+    form = UserForm()
+    id = current_user.id
+    name_to_update = Users.query.get_or_404(id)
+    if request.method == "POST":
+        name_to_update.name = request.form['name']
+        name_to_update.email = request.form['email']
+        name_to_update.username = request.form['username']
+        name_to_update.about_author = request.form['about_author']
+        name_to_update.profile_pic = request.files['profile_pic']
+        # Grab Image Name
+        pic_filename = secure_filename(name_to_update.profile_pic.filename)
+        # Set UUID
+        pic_name = str(uuid.uuid1()) + "_" + pic_filename
+        # Save That Image
+        saver = request.files['profile_pic']
+        # Change it to a string to save to db
+        name_to_update.profile_pic = pic_name
+        try:
+            db.session.commit()
+            saver.save(os.path.join(app.config['UPLOAD_FOLDER'], pic_name))
+            flash("User Updated Successfully!")
+            return render_template(
+                "account.html",
+                form=form,
+                name_to_update=name_to_update)
+        except:
+            flash("Error! Looks like there was a problem...try again!")
+            return render_template(
+                "account.html",
+                form=form,
+                name_to_update=name_to_update
+                )
+    else:
+        return render_template(
+            "account.html",
+            form=form,
+            name_to_update=name_to_update,
+            id=id)
+    return render_template('account.html')
+
+
 # Add Post Page
 @app.route('/add-post', methods=['GET', 'POST'])
 # @login_required
@@ -88,51 +133,6 @@ def base():
     return dict(form=form)
 
 
-# Create Dashboard Page
-@app.route('/dashboard', methods=['GET', 'POST'])
-@login_required
-def dashboard():
-    form = UserForm()
-    id = current_user.id
-    name_to_update = Users.query.get_or_404(id)
-    if request.method == "POST":
-        name_to_update.name = request.form['name']
-        name_to_update.email = request.form['email']
-        name_to_update.username = request.form['username']
-        name_to_update.about_author = request.form['about_author']
-        name_to_update.profile_pic = request.files['profile_pic']
-        # Grab Image Name
-        pic_filename = secure_filename(name_to_update.profile_pic.filename)
-        # Set UUID
-        pic_name = str(uuid.uuid1()) + "_" + pic_filename
-        # Save That Image
-        saver = request.files['profile_pic']
-        # Change it to a string to save to db
-        name_to_update.profile_pic = pic_name
-        try:
-            db.session.commit()
-            saver.save(os.path.join(app.config['UPLOAD_FOLDER'], pic_name))
-            flash("User Updated Successfully!")
-            return render_template(
-                "dashboard.html",
-                form=form,
-                name_to_update=name_to_update)
-        except:
-            flash("Error! Looks like there was a problem...try again!")
-            return render_template(
-                "dashboard.html",
-                form=form,
-                name_to_update=name_to_update
-                )
-    else:
-        return render_template(
-            "dashboard.html",
-            form=form,
-            name_to_update=name_to_update,
-            id=id)
-    return render_template('dashboard.html')
-
-
 @app.route('/delete/<int:id>')
 @login_required
 def delete(id):
@@ -159,7 +159,7 @@ def delete(id):
                 our_users=our_users)
     else:
         flash("Sorry, you can't delete that user")
-        return redirect(url_for('dashboard'))
+        return redirect(url_for('account'))
 
 
 @app.route('/posts/delete/<int:id>')
@@ -245,7 +245,7 @@ def login():
             if check_password_hash(user.password_hash, form.password.data):
                 login_user(user)
                 flash("Login successful")
-                return redirect(url_for('dashboard'))
+                return redirect(url_for('account'))
             else:
                 flash("Wrong password - try again")
         else:
