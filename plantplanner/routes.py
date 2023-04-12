@@ -19,19 +19,20 @@ import os
 # @login_required
 def add_post():
     form = PostForm()
-
     if form.validate_on_submit():
         poster = current_user.id
         post = Posts(
             common_name=form.common_name.data,
             content=form.content.data,
             poster_id=poster,
-            latin_name=form.latin_name.data
+            latin_name=form.latin_name.data,
+            water_interval=form.water_interval.data
             )
         # Clear the form
         form.common_name.data = ''
         form.content.data = ''
         form.latin_name.data = ''
+        form.water_interval.data = ''
 
         # Add post to database
         db.session.add(post)
@@ -211,6 +212,7 @@ def edit_post(id):
         post.common_name = form.common_name.data
         post.latin_name = form.latin_name.data
         post.content = form.content.data
+        post.water_interval = form.water_interval.data
         # update database
         db.session.add(post)
         db.session.commit()
@@ -222,6 +224,7 @@ def edit_post(id):
         form.common_name.data = post.common_name
         form.latin_name.data = post.latin_name
         form.content.data = post.content
+        form.water_interval.data = post.water_interval
         return render_template('edit_post.html', form=form)
     else:
         flash("You aren't authorised to edit this post")
