@@ -285,23 +285,6 @@ def logout():
     return redirect(url_for('login'))
 
 
-# Create Name Page
-@app.route('/name', methods=['GET', 'POST'])
-def name():
-    name = None
-    form = NamerForm()
-    # Validate Form
-    if form.validate_on_submit():
-        name = form.name.data
-        form.name.data = ''
-        flash("Form Submitted Successfully!")
-
-    return render_template(
-        "name.html",
-        name=name,
-        form=form)
-
-
 # Creating Custom Error Pages
 # Invalid URL
 @app.errorhandler(404)
@@ -411,8 +394,3 @@ def update(id):
             form=form,
             name_to_update=name_to_update,
             id=id)
-
-# https://5000-lithill-plantplanner-zz84eujkqj4.ws-eu93.gitpod.io//user/Ross
-@app.route('/user/<name>')
-def user(name):
-    return render_template("user.html", user_name=name)
