@@ -43,14 +43,16 @@ def account():
                 "account.html",
                 form=form,
                 name_to_update=name_to_update,
-                page_instructions="This is your user account")
+                page_instructions="You can make changes to your account here",
+                page_title="My Account")
         except:
             flash("Error! Looks like there was a problem...try again!")
             return render_template(
                 "account.html",
                 form=form,
                 name_to_update=name_to_update,
-                page_instructions="This is your user account"
+                page_instructions="You can make changes to your account here",
+                page_title="My Account"
                 )
     else:
         return render_template(
@@ -58,10 +60,12 @@ def account():
             form=form,
             name_to_update=name_to_update,
             id=id,
-            page_instructions="This is your user account")
+            page_instructions="You can make changes to your account here",
+            page_title="My Account")
     return render_template(
         'account.html',
-        page_instructions="This is your user account")
+        page_instructions="You can make changes to your account here",
+        page_title="My Account")
 
 
 # Add Post Page
@@ -98,7 +102,8 @@ def add_plant():
     return render_template(
         "add_plant.html",
         form=form,
-        page_instructions="Add a plant here")
+        page_instructions="Answer the questions and click 'Submit' to add a plant",
+        page_title="Add a Plant")
 
 
 @app.route('/user/add', methods=['GET', 'POST'])
@@ -132,7 +137,8 @@ def add_user():
         form=form,
         name=name,
         our_users=our_users,
-        page_instructions="Add User")
+        page_instructions="Answer the questions and then click 'submit' to create an account.",
+        page_title="Create an Account")
 
 
 # Pass info to navbar
@@ -159,7 +165,8 @@ def delete(id):
                 form=form,
                 name=name,
                 our_users=our_users,
-                page_instructions="Delete Stuff")
+                page_instructions="Delete Stuff",
+                page_title="Delete")
         except:
             flash("Sorry, there was a problem deleting the user")
             return render_template(
@@ -167,7 +174,8 @@ def delete(id):
                 form=form,
                 name=name,
                 our_users=our_users,
-                page_instructions="Delete Stuff")
+                page_instructions="Delete Stuff",
+                page_title="Delete")
     else:
         flash("Sorry, you can't delete that user")
         return redirect(url_for('account'))
@@ -189,7 +197,8 @@ def delete_plant(id):
             return render_template(
                 "plants.html",
                 plants=plants,
-                page_instructions="Delete a plant")
+                page_instructions="Instructions here",
+                page_title="Delete a Plant")
 
         except:
             # Return an error message
@@ -199,7 +208,8 @@ def delete_plant(id):
             return render_template(
                 "plants.html",
                 plants=plants,
-                page_instructions="Delete a plant")
+                page_instructions="Instructions here",
+                page_title="Delete a Plant")
     else:
         # Return a message
         flash("You aren't authorised to delete that plant")
@@ -208,7 +218,8 @@ def delete_plant(id):
         return render_template(
             "plants.html",
             plants=plants,
-            page_instructions="Delete a plant")
+            page_instructions="Instructions here",
+            page_title="Delete a Plant")
 
 
 @app.route('/plants/edit/<int:id>', methods=['GET', 'POST'])
@@ -238,14 +249,16 @@ def edit_plant(id):
         return render_template(
             'edit_plant.html',
             form=form,
-            page_instructions="Edit a plant")
+            page_instructions="Instructions here",
+            page_title="Edit a Plant")
     else:
         flash("You aren't authorised to edit this plant")
         plants = Plants.query.order_by(Plants.date_posted)
         return render_template(
             "plants.html",
             plants=plants,
-            page_instructions="Edit a plant")
+            page_instructions="Instructions here",
+            page_title="Delete a Plant")
 
 
 # Create a route decorator
@@ -258,7 +271,8 @@ def index():
         "index.html",
         first_name=first_name,
         stuff=stuff,
-        page_instructions="This is the index page")
+        page_instructions="Plant Planner is a website where you can keep track of when you need to water your houseplants.",
+        page_title="Plant Planner")
 
 
 # Create Login Page
@@ -280,7 +294,8 @@ def login():
     return render_template(
         'login.html',
         form=form,
-        page_instructions="Log in to your user account")
+        page_instructions="Sign in to your user account",
+        page_title="Log In")
 
 
 # Flask_Login
@@ -309,7 +324,8 @@ def logout():
 def page_not_found(e):
     return render_template(
         "404.html",
-        page_instructions="There's no page here"
+        page_instructions="There's no page here",
+        page_title="Page Title Here"
         ), 404
 
 
@@ -318,7 +334,8 @@ def page_not_found(e):
 def page_not_found(e):
     return render_template(
         "500.html",
-        page_instructions="There's no page here"
+        page_instructions="There's no page here",
+        page_title="Page Title Here"
         ), 500
 
 
@@ -328,7 +345,8 @@ def plant(id):
     return render_template(
         'plant.html',
         plant=plant,
-        page_instructions="This is one of your plants")
+        page_instructions="This is one of your plants",
+        page_title="My Plant")
 
 
 @app.route('/plants')
@@ -340,7 +358,8 @@ def plants():
     return render_template(
         "plants.html",
         plants=plants,
-        page_instructions="These are your plants")
+        page_instructions="These are your plants",
+        page_title="My Plants")
 
 
 # Create Password Test Page
@@ -386,7 +405,8 @@ def update(id):
                 form=form,
                 name_to_update=name_to_update,
                 id=id,
-                page_instructions="Update here")
+                page_instructions="Update here",
+                page_title="Update")
         except:
             flash("It looks like something went wrong... Please try again")
             return render_template(
@@ -394,11 +414,13 @@ def update(id):
                 form=form,
                 name_to_update=name_to_update,
                 id=id,
-                page_instructions="Update here")
+                page_instructions="Update here",
+                page_title="Update")
     else:
         return render_template(
             "update.html",
             form=form,
             name_to_update=name_to_update,
             id=id,
-            page_instructions="Update here")
+            page_instructions="Update here",
+            page_title="Update")
