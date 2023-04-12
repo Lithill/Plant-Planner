@@ -1,10 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Arimo');
+
 body {
-    color: #00137F;
+  color: #0B0E5B;
 }
+
+/************************************ Font */
+
+h1, h2, li {
+    font-family: Merriweather;
+}
+  
+p, label {
+    font-family: Arimo;
+    text-align: center;
+}
+  
+/* #logo-text {
+    font-size: 1.6rem;
+} */
+  
+/* h1 span {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px;
+} */
+
+/************************************ Images */
 
 .three-plants {
     width: 50%;
     height: auto;
+    margin-left: auto;
+    margin-top: auto;
 }
 
 .profile-pic {
@@ -12,4 +38,11 @@ body {
     height: auto;
     display: block;
     margin-left: auto;
+}
+
+/************************************ Buttons */
+
+.card {
+    border-color: #0B0E5B;
+    border-width: 2px;
 }

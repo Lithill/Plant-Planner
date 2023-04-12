@@ -8,7 +8,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 {% if current_user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('account') }}">User Account</a>
+                        <a class="nav-link" href="{{ url_for('account') }}">My Account</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
@@ -22,7 +22,7 @@
                     </li>
                 {% endif %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('add_plant') }}">Add Plant</a>
+                    <a class="nav-link" href="{{ url_for('add_plant') }}">Add a Plant</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('plants') }}">My Plants</a>
