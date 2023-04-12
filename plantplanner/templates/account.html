@@ -8,19 +8,29 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     {% endfor %}
-    <div>
-        <p class="text-start"><strong>Name: </strong>{{ current_user.name }}</p>
-        <p class="text-start"><strong>Username: </strong>{{ current_user.username }}</p>
-        <p class="text-start"><strong>User Id: </strong>{{ current_user.id }}</p>
-        <p class="text-start"><strong>Email: </strong>{{ current_user.email }}</p>
-        <p class="text-start"><strong>Date Joined: </strong>{{ current_user.date_added }}</p>
-        <p class="text-start"><strong>About Author: </strong>{{ current_user.about_author }}</p>
-        <p class="text-start"><strong>Profile Pic: </strong>{{ current_user.profile_pic }}</p>
-        <!-- Buttons -->
-        <br>
-        <a href="{{ url_for('update', id=current_user.id)}}" class="btn btn-success btn-sm">Update Profile</a> 
-        <a href="{{ url_for('logout') }}" class="btn btn-primary btn-sm">Logout</a>
-        <a href="{{ url_for('delete',id=current_user.id)}}" class="btn btn-danger btn-sm">Delete</a>
+    <div class="row">
+        <div class="col-11">
+            <p class="text-start"><strong>Name: </strong>{{ current_user.name }}</p>
+        </div>
+        <div class="col-1">
+            <a href="{{ url_for('delete', id=current_user.id)}}"><img src="../static/images/delete.webp" alt="Delete" id="logo"></a>
+        </div>
     </div>
+    <div class="row">
+        <div class="col-11">
+            <p class="text-start"><strong>Username: </strong>{{ current_user.username }}</p>
+        </div>
+        <div class="col-1">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-11">
+            <p class="text-start"><strong>Email: </strong>{{ current_user.email }}</p>
+        </div>
+        <div class="col-1">
+            <a href="{{ url_for('update', id=current_user.id)}}"><img src="../static/images/edit.webp" alt="Update" id="logo"></a>
+        </div>
+    </div>
+    
 
 {% endblock %}
