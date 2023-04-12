@@ -40,6 +40,12 @@ p, label {
     margin-left: auto;
 }
 
+#logo {
+    height: 5vh;
+      width: auto;
+    margin-right: 10px;
+}
+
 /************************************ Buttons */
 
 .card {
