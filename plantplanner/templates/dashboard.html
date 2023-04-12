@@ -37,8 +37,12 @@
                             <a href="{{ url_for('delete',id=current_user.id)}}" class="btn btn-danger btn-sm">Delete</a>
                         </div>
                         <div class="col-4">
-                            <img src="{{ url_for('static', filename='../static/images/user.png') }}" alt="Default user picture" class="profile-pic">
-                        </div>
+							{% if current_user.profile_pic %}
+                            <img src="{{ url_for('static', filename='images/user.png') }}" alt="Default user picture" class="profile-pic">
+							{% else %}
+							<img src="{{ url_for('static', filename='images/' + current_user.profile_pic) }}" alt="User profile picture" class="profile-pic">
+							{% endif %}
+						</div>
                     </div>
                 </div>
             </p>
@@ -79,6 +83,7 @@
                 <br>
                 <textarea name="about_author" class="form-control">{{ name_to_update.about_author }}</textarea>
                 <br>
+				<!-- <input type=file> -->
                 {{ form.profile_pic.label(
                 class="form-label") }}
     

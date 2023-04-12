@@ -112,32 +112,29 @@ def dashboard():
         name_to_update.username = request.form['username']
         name_to_update.about_author = request.form['about_author']
         name_to_update.profile_pic = request.files['profile_pic']
-        # Get image name
+        # Grab Image Name
         pic_filename = secure_filename(name_to_update.profile_pic.filename)
-        # Set UUID for pic (don't want same name on different pics)
+        # Set UUID
         pic_name = str(uuid.uuid1()) + "_" + pic_filename
-        # Save pic
+        # Save That Image
         saver = request.files['profile_pic']
-        # Change it to a string to save to database
+        # Change it to a string to save to db
         name_to_update.profile_pic = pic_name
         try:
             db.session.commit()
-            saver.save(
-                os.path.join(app.config['UPLOAD_FOLDER']), pic_name
-                )
+            saver.save(os.path.join(app.config['UPLOAD_FOLDER'], pic_name))
             flash("User Updated Successfully!")
             return render_template(
                 "dashboard.html",
                 form=form,
-                name_to_update=name_to_update,
-                id=id)
+                name_to_update=name_to_update)
         except:
-            flash("It looks like something went wrong... Please try again")
+            flash("Error! Looks like there was a problem...try again!")
             return render_template(
                 "dashboard.html",
                 form=form,
-                name_to_update=name_to_update,
-                id=id)
+                name_to_update=name_to_update
+                )
     else:
         return render_template(
             "dashboard.html",
