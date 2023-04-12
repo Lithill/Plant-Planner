@@ -293,7 +293,9 @@ def plant(id):
 
 
 @app.route('/plants')
+@login_required
 def plants():
+    id = current_user.id
     # Grab all the plants from the database
     plants = Plants.query.order_by(Plants.date_posted)
     return render_template("plants.html", plants=plants)
