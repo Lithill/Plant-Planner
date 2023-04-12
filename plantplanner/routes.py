@@ -299,25 +299,6 @@ def plants():
     return render_template("plants.html", plants=plants)
 
 
-# Create search function
-@app.route('/search', methods=["POST"])
-def search():
-    form = SearchForm()
-    plants = Plants.query
-    if form.validate_on_submit():
-        # Get data from submitted form
-        plant.searched = form.searched.data
-        # Query the database
-        plants = plants.filter(Plants.content.like('%' + plant.searched + '%'))
-        plants = plants.order_by(Plants.common_name).all()
-
-        return render_template(
-            "search.html",
-            form=form,
-            searched=plant.searched,
-            plants=plants)
-
-
 # Create Password Test Page
 @app.route('/test_pw', methods=['GET', 'POST'])
 def test_pw():
