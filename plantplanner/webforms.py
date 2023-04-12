@@ -10,7 +10,7 @@ from flask_wtf.file import FileField
 
 # Create Post Form
 class PostForm(FlaskForm):
-    title = StringField("Title", validators=[DataRequired()])
+    common_name = StringField("Common Name", validators=[DataRequired()])
     content = CKEditorField('Content', validators=[DataRequired()])
     author = StringField("Author")
     slug = StringField("Slug", validators=[DataRequired()])

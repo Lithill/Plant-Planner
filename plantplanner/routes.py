@@ -23,13 +23,13 @@ def add_post():
     if form.validate_on_submit():
         poster = current_user.id
         post = Posts(
-            title=form.title.data,
+            common_name=form.common_name.data,
             content=form.content.data,
             poster_id=poster,
             slug=form.slug.data
             )
         # Clear the form
-        form.title.data = ''
+        form.common_name.data = ''
         form.content.data = ''
         form.slug.data = ''
 
@@ -208,7 +208,7 @@ def edit_post(id):
     post = Posts.query.get_or_404(id)
     form = PostForm()
     if form.validate_on_submit():
-        post.title = form.title.data
+        post.common_name = form.common_name.data
         post.slug = form.slug.data
         post.content = form.content.data
         # update database
@@ -219,7 +219,7 @@ def edit_post(id):
         # Redirect to post page
         return redirect(url_for('post', id=post.id))
     if current_user.id == post.poster_id:
-        form.title.data = post.title
+        form.common_name.data = post.common_name
         form.slug.data = post.slug
         form.content.data = post.content
         return render_template('edit_post.html', form=form)
@@ -333,7 +333,7 @@ def search():
         post.searched = form.searched.data
         # Query the database
         posts = posts.filter(Posts.content.like('%' + post.searched + '%'))
-        posts = posts.order_by(Posts.title).all()
+        posts = posts.order_by(Posts.common_name).all()
 
         return render_template(
             "search.html",

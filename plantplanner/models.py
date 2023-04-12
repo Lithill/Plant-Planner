@@ -10,7 +10,7 @@ from plantplanner.webforms import NamerForm, SearchForm
 # Create Blog Post Model
 class Posts(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(255))
+    common_name = db.Column(db.String(255)) # used to be title
     content = db.Column(db.Text)
     # author = db.Column(db.String(255))
     date_posted = db.Column(db.DateTime, default=datetime.utcnow)
