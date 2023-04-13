@@ -362,7 +362,7 @@ def plants():
     return render_template(
         "plants.html",
         plants=plants,
-        page_instructions="These are your plants",
+        page_instructions="Click the '+' button to add a plant",
         page_title="My Plants")
 
 
