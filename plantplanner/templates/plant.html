@@ -9,22 +9,51 @@
         </div>
     {% endfor %}
 
-    <h1>{{ plant.common_name }}</h1>
-    <br>
-    <div class="shadow p-3 mb-5 bg-body-tertiary rounded">
-        <small><strong>By:</strong> {{ plant.poster.name }} <strong>| Date:</strong> {{ plant.date_posted }}</small><br><br>
-        <p><strong>Latin Name: </strong> {{ plant.latin_name }}</p>
-        <p><strong>Days Between Watering: </strong> {{ plant.water_interval }}</p>
-        <p><strong>Last Watered: </strong> {{ plant.last_watered_date }} </p>
-        {{ plant.notes|safe }}<br><br>
-        {% if plant.poster.about_author %}
-            {{ plant.poster.about_author }}
-        {% endif %}
+    <div class="row">
+        <div class="col-2"></div>
+        <!-- Common Name -->
+        <div class="col-2 text-nowrap"><h5><strong><u>{{ plant.common_name }}</u></h5></strong></div>
+        <!-- Water Interval -->
+        <div class="col-7"><p>{{ '- water every ' ~ plant.water_interval ~ ' days' }}</p></div>
+        <!-- Delete Button -->
+        <div class="col-1"><a href="{{ url_for('delete_plant', id=plant.id) }}"><img src="../static/images/delete.webp" alt="Delete" class="delete-button"></a></div>
     </div>
+    <div class="row">
+        <div class="col-2"></div>
+        <!-- Latin Name -->
+        <div class="col-2 text-nowrap"><p><i>{{ plant.latin_name }}</i></p></div>
+        <!-- Last Watered -->
+        <div class="col-7"><p>{{ '- last watered on ' ~ plant.last_watered_date.strftime('%d-%m-%Y') }}</p></div>
+        <!-- Edit Button -->
+        <div class="col-1"><a href="{{ url_for('edit_plant', id=plant.id) }}"><img src="../static/images/edit.webp" alt="Update" class="edit-button"></a></div>
+    </div>
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-2"></div>
+        <!-- Next Watered -->
+        <div class="col-7"><p>- needs to be watered on</p></div>
+        <!-- Go Back Button -->
+        <div class="col-1"><a href="{{ url_for('plants') }}"><img src="{{ url_for('static', filename='images/back.webp') }}" alt="Go Back" class="back-button"></a></div>
+    </div>
+    <hr>
+    <div class="row text-start">
+        <div class="col-1">
+            <strong><u>Notes:</u></strong>
+        </div>
+        <div class="col-11 text-start">
+            {{ plant.notes|safe }}
+        </div>
+    </div>
+    <br>         
+
+
+
+
+
+
+
+
     <a href="{{ url_for('plants')}}" class="btn btn-outline-secondary btn-sm">Back to Blog</a>
-    {% if plant.poster_id == current_user.id %}
-        <a href="{{ url_for('delete_plant', id=plant.id)}}" class="btn btn-outline-danger btn-sm">Delete Plant</a>
-        <a href="{{ url_for('edit_plant', id=plant.id)}}" class="btn btn-outline-secondary btn-sm">Edit Plant</a>
-    {% endif %}
+
 
 {% endblock %}
