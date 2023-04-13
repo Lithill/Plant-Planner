@@ -12,6 +12,10 @@ body {
     background-repeat: no-repeat;
 }
 
+footer {
+    padding: 5px;
+}
+
 /************************************ Navbar */
 
 .navbar .navbar-nav .nav-link {
@@ -38,6 +42,10 @@ p, label {
     font-family: Arimo;
     text-align: center;
 }
+
+small {
+    color: #a4a4a2;
+}
   
 /* #logo-text {
     font-size: 1.6rem;
@@ -50,12 +58,12 @@ p, label {
 
 /************************************ Images */
 
-.three-plants {
+/* .three-plants {
     width: 50%;
     height: auto;
     margin-left: auto;
     margin-top: auto;
-}
+} */
 
 .profile-pic {
     width: 50%;
@@ -72,6 +80,21 @@ p, label {
 
 .plant-pic {
     padding-left: 20px;
+}
+
+#three-plants {
+	width: 20%;
+    height: auto;
+    margin-left: auto;
+    margin-bottom: auto;
+	background-image: url("../images/right-logo.webp");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: right bottom;
+	position: fixed;
+	bottom: 15px;
+	right: 15px;
+	z-index: 6;
 }
 
 /************************************ Buttons */
@@ -96,6 +119,13 @@ button {
     height: 5vh;
     width: auto;
     margin-right: 10px;
+}
+
+.sm-button {
+    height: 4vh;
+    width: auto;
+    /* text-align: center;
+    display: inblock; */
 }
 
 /************************************ Media Queries */
