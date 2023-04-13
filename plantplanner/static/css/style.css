@@ -60,15 +60,27 @@ p, label {
 
 #logo {
     height: 5vh;
-      width: auto;
+    width: auto;
     margin-right: 10px;
 }
 
 /************************************ Buttons */
 
+button {
+    background: transparent;
+    border: none !important;
+    font-size:0;
+}
+
 .card {
     border-color: #0B0E5B;
     border-width: 2px;
+}
+
+.save-button, .delete-button, .edit-button, .more-button, .back-button {
+    height: 5vh;
+    width: auto;
+    margin-right: 10px;
 }
 
 /************************************ Media Queries */

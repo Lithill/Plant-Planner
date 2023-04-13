@@ -16,7 +16,7 @@ class PlantForm(FlaskForm):
     author = StringField("Author")
     latin_name = StringField("Latin Name")
     water_interval = IntegerField(
-        "How many days should there be between watering?",
+        "How many days between watering?",
         [validators.NumberRange(min=1, max=182)]
         )
     last_watered_date = DateField(

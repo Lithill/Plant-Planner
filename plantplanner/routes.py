@@ -249,8 +249,8 @@ def edit_plant(id):
         return render_template(
             'edit_plant.html',
             form=form,
-            page_instructions="Instructions here",
-            page_title="Edit a Plant")
+            page_instructions="Change the information in the field boxes and click the tick",
+            page_title="Edit Plant")
     else:
         flash("You aren't authorised to edit this plant")
         plants = Plants.query.order_by(Plants.date_posted)

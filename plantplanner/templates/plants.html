@@ -19,7 +19,7 @@
                 <!-- Water Interval -->
                 <div class="col-7"><p>{{ '- water every ' ~ plant.water_interval ~ ' days' }}</p></div>
                 <!-- Delete Button -->
-                <div class="col-1"><a href="{{ url_for('delete_plant', id=plant.id) }}"><img src="../static/images/delete.webp" alt="Delete" id="logo"></a></div>
+                <div class="col-1"><a href="{{ url_for('delete_plant', id=plant.id) }}"><img src="../static/images/delete.webp" alt="Delete" class="delete-button"></a></div>
             </div>
             <div class="row">
                 <div class="col-2"></div>
@@ -28,7 +28,7 @@
                 <!-- Last Watered -->
                 <div class="col-7"><p>{{ '- last watered on ' ~ plant.last_watered_date.strftime('%d-%m-%Y') }}</p></div>
                 <!-- Edit Button -->
-                <div class="col-1"><a href="{{ url_for('edit_plant', id=plant.id) }}"><img src="../static/images/edit.webp" alt="Update" id="logo"></a></div>
+                <div class="col-1"><a href="{{ url_for('edit_plant', id=plant.id) }}"><img src="../static/images/edit.webp" alt="Update" class="edit-button"></a></div>
             </div>
             <div class="row">
                 <div class="col-2"></div>
@@ -36,7 +36,7 @@
                 <!-- Next Watered -->
                 <div class="col-7"><p>- needs to be watered on</p></div>
                 <!-- See More Button -->
-                <div class="col-1"><a href="{{ url_for('plant', id=plant.id) }}"><img src="../static/images/more.webp" alt="See More" id="logo"></a></div>
+                <div class="col-1"><a href="{{ url_for('plant', id=plant.id) }}"><img src="../static/images/more.webp" alt="See More" class="more-button"></a></div>
             </div>  
             <br>       
             <!-- {{ plant.content|safe }} -->   
