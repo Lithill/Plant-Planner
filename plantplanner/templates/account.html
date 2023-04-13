@@ -21,6 +21,7 @@
             <p class="text-start"><strong>Username: </strong>{{ current_user.username }}</p>
         </div>
         <div class="col-1">
+            <a href="{{ url_for('update', id=current_user.id)}}"><img src="../static/images/edit.webp" alt="Update" id="logo"></a>
         </div>
     </div>
     <div class="row">
@@ -28,7 +29,6 @@
             <p class="text-start"><strong>Email: </strong>{{ current_user.email }}</p>
         </div>
         <div class="col-1">
-            <a href="{{ url_for('update', id=current_user.id)}}"><img src="../static/images/edit.webp" alt="Update" id="logo"></a>
         </div>
     </div>
     

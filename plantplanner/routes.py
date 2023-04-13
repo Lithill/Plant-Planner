@@ -391,7 +391,7 @@ def test_pw():
         passed = check_password_hash(pw_to_check.password_hash, password)
 
 
-# Update Database Record
+# Update User
 @app.route('/update/<int:id>', methods=['GET', 'POST'])
 @login_required
 def update(id):
@@ -409,8 +409,8 @@ def update(id):
                 form=form,
                 name_to_update=name_to_update,
                 id=id,
-                page_instructions="Update here",
-                page_title="Update")
+                page_instructions="Enter what you'd like to edit in the text boxes. Then click the tick.",
+                page_title="Edit User")
         except:
             flash("It looks like something went wrong... Please try again")
             return render_template(
@@ -418,13 +418,13 @@ def update(id):
                 form=form,
                 name_to_update=name_to_update,
                 id=id,
-                page_instructions="Update here",
-                page_title="Update")
+                page_instructions="Enter what you'd like to edit in the text boxes. Then click the tick.",
+                page_title="Edit User")
     else:
         return render_template(
             "update.html",
             form=form,
             name_to_update=name_to_update,
             id=id,
-            page_instructions="Update here",
-            page_title="Update")
+            page_instructions="Enter what you'd like to edit in the text boxes. Then click the tick.",
+            page_title="Edit User")

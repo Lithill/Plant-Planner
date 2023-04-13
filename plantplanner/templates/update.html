@@ -9,36 +9,30 @@
         </div>
     {% endfor %}
     {% if id == current_user.id %}
-        <h1>Update User...</h1>
         <br>
-        <div class="shadow p-3 mb-5 bg-body-tertiary rounded">
+        <div>
             <form action="/update/{{ name_to_update.id }}" method="POST">
                 {{ form.hidden_tag() }}
-
-                {{ form.name.label(
-                class="form-label") }}
-
-                {{ form.name(
-                class="form-control", value=name_to_update.name) }}
+                <div class="row">
+                    <div class="col-2 text-end">{{ form.name.label(class="form-label") ~ ':' }}</div>
+                    <div class="col-9">{{ form.name(class="form-control", value=name_to_update.name) }}</div>
+                    <div class="col-1"><a href="{{ url_for('account') }}"><img src="{{ url_for('static', filename='images/back.webp') }}" alt="Go Back" class="back-button"></a></div>
+                </div>
                 <br>
-                {{ form.username.label(
-                class="form-label") }}
-    
-                {{ form.username(
-                class="form-control", value=name_to_update.username) }}
+                <div class="row">
+                    <div class="col-2 text-end">{{ form.username.label(class="form-label") ~ ':' }}</div>
+                    <div class="col-9">{{ form.username(class="form-control", value=name_to_update.username) }}</div>
+                    <div class="col-1"><a href="{{ url_for('delete', id=id)}}"><img src="../static/images/delete.webp" alt="Delete" class="delete-button"></a></div>
+                </div>
                 <br>
-                {{ form.email.label(
-                    class="form-label") }}
-        
-                {{ form.email(
-                class="form-control", value=name_to_update.email) }}
+                <div class="row">
+                    <div class="col-2 text-end">{{ form.email.label(class="form-label") ~ ':' }}</div>
+                    <div class="col-9">{{ form.email(class="form-control", value=name_to_update.email) }}</div>
+                    <div class="col-1"><button type=submit><img src="{{ url_for('static', filename='images/save.webp') }}" alt="Save" class="save-button"></button></div>
+                </div>
                 <br>
-                {{ form.submit(
-                class="btn btn-primary") }}
-                <a href="{{ url_for('delete', id=id)}}" class="btn btn-danger">Delete</a>
             </form>
         </div>
-        <br><br><br>
     {% else %}
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             Sorry. You can't edit this user.
