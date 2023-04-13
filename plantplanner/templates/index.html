@@ -3,11 +3,26 @@
 {% block content %}
 
     {% if current_user.is_authenticated %}
-        <h2>Quick links:</h2>
+        <h2 class="text-start">Quick links:</h2>
         <br>
-        <a type="button" class="btn btn-outline-success" href="{{ url_for('add_plant') }}">Add a Plant</a>
-        <br><br>
-        <a type="button" class="btn btn-outline-success" href="{{ url_for('plants') }}">See Your Plants</a>
+        <div class="row">
+            <div class="col-5 text-end">
+                <a href="{{ url_for('add_plant') }}"><img src="../static/images/add.webp" alt="Add plant" class="add-button"></a>
+            </div>
+            <div class="col-7 text-start">
+                <a href="{{ url_for('add_plant') }}"><u>Add a plant</u></a>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-5 text-end">
+                <a href="{{ url_for('add_plant') }}"><img src="../static/images/eye.webp" alt="See Your Plants" class="add-button"></a>
+            </div>
+            <div class="col-7 text-start">
+                <a href="{{ url_for('plants') }}"><u>View your plants</u></a>
+            </div>
+        </div>
+        <br>
     {% else %}
         <p>You must <a type="button" class="btn btn-outline-success" href="{{ url_for('login') }}">Log In</a> before you can add a plant</p>
         <p>Don't have an account? <a type="button" class="btn btn-outline-success" href="{{ url_for('add_user') }}">Register</a> here</p>
