@@ -16,16 +16,16 @@
             {{ form.hidden_tag() }}
             <div class="row">
                 <!-- Common Name Label -->
-                <div class="col-3">
-                    <strong>{{ form.common_name.label(class="form-label")}}</strong>
+                <div class="col-3 text-end">
+                    <strong>{{ form.common_name.label(class="form-label") ~ ':' }}</strong>
                 </div>
                 <!-- Common Name Field -->
                 <div class="col-3">
                     {{ form.common_name(class="form-control")}}
                 </div>
                 <!-- Latin Name Label -->
-                <div class="col-2">
-                    <strong>{{ form.latin_name.label(class="form-label") }}</strong>
+                <div class="col-2 text-end">
+                    <strong>{{ form.latin_name.label(class="form-label") ~ ':' }}</strong>
                 </div>
                 <!-- Latin Name Label -->
                 <div class="col-3">
@@ -39,16 +39,16 @@
             <br>
             <div class="row">
                 <!-- Water Interval Label -->
-                <div class="col-3">
-                    <strong>{{ form.water_interval.label(class="form-label") }}</strong>
+                <div class="col-3 text-end">
+                    <strong>{{ form.water_interval.label(class="form-label") ~ ':' }}</strong>
                 </div>
                 <!-- Water Interval Field -->
                 <div class="col-3">
                     {{ form.water_interval(class="form-control") }}
                 </div>
                 <!-- Last Watered Label -->
-                <div class="col-2">
-                    <strong>{{ form.last_watered_date.label(class="form-label") }}</strong>
+                <div class="col-2 text-nowrap text-end">
+                    <strong>{{ form.last_watered_date.label(class="form-label") ~ ':' }}</strong>
                 </div>
                 <!-- Last Watered Field -->
                 <div class="col-3">
@@ -73,7 +73,7 @@
             <!-- Notes Label -->
             <div class="row">
                 <div class="col-12">
-                    <strong>{{ form.notes.label(class="form-label") }}</strong>
+                    <strong>{{ form.notes.label(class="form-label")~ ':' }}</strong>
                 </div>
             </div>
             <!-- Notes Field -->
