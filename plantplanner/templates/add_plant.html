@@ -26,10 +26,10 @@
                 {{ form.latin_name(
                 class="form-control") }}
                 <br>
-                {{ form.content.label(
+                {{ form.notes.label(
                 class="form-label") }}
                 
-                {{ form.content(
+                {{ form.notes(
                 class="form-control", rows="5") }}
                 <br>
                 {{ form.water_interval.label(
@@ -48,7 +48,7 @@
                 class="btn btn-primary") }}
             </form>
             {{ ckeditor.load() }}
-            {{ ckeditor.config(name='content') }}
+            {{ ckeditor.config(name='notes') }}
         </div>
     {% else  %}
         <h2>Must be logged in</h2>

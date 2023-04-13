@@ -16,7 +16,7 @@
         <p><strong>Latin Name: </strong> {{ plant.latin_name }}</p>
         <p><strong>Days Between Watering: </strong> {{ plant.water_interval }}</p>
         <p><strong>Last Watered: </strong> {{ plant.last_watered_date }} </p>
-        {{ plant.content|safe }}<br><br>
+        {{ plant.notes|safe }}<br><br>
         {% if plant.poster.about_author %}
             {{ plant.poster.about_author }}
         {% endif %}

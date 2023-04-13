@@ -12,7 +12,7 @@ from flask_wtf.file import FileField
 # Create Plant Form
 class PlantForm(FlaskForm):
     common_name = StringField("Common Name", validators=[DataRequired()])
-    content = CKEditorField('Content', validators=[DataRequired()])
+    notes = CKEditorField('Notes', validators=[DataRequired()])
     author = StringField("Author")
     latin_name = StringField("Latin Name")
     water_interval = IntegerField(

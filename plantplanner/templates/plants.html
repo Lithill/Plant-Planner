@@ -24,7 +24,7 @@
             <div class="row">
                 <div class="col-2"></div>
                 <!-- Latin Name -->
-                <div class="col-2"><p><i>{{ plant.latin_name }}</i></p></div>
+                <div class="col-2 text-nowrap"><p><i>{{ plant.latin_name }}</i></p></div>
                 <!-- Last Watered -->
                 <div class="col-7"><p>{{ '- last watered on ' ~ plant.last_watered_date.strftime('%d-%m-%Y') }}</p></div>
                 <!-- Edit Button -->
@@ -38,8 +38,7 @@
                 <!-- See More Button -->
                 <div class="col-1"><a href="{{ url_for('plant', id=plant.id) }}"><img src="../static/images/more.webp" alt="See More" class="more-button"></a></div>
             </div>  
-            <br>       
-            <!-- {{ plant.content|safe }} -->   
+            <br>         
         </div>
         <br>
     {% endfor %}

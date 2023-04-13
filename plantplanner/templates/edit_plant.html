@@ -63,13 +63,13 @@
             <!-- Notes Label -->
             <div class="row">
                 <div class="col-12">
-                    <strong>{{ form.content.label(class="form-label") }}</strong>
+                    <strong>{{ form.notes.label(class="form-label") }}</strong>
                 </div>
             </div>
             <!-- Notes Field -->
             <div class="row">
                 <div class="col-12">
-                    {{ form.content(class="form-control", rows="5") }}
+                    {{ form.notes(class="form-control", rows="5") }}
                 </div>
             </div>
             
@@ -78,7 +78,7 @@
     
         </form>
         {{ ckeditor.load() }}
-        {{ ckeditor.config(name='content') }}
+        {{ ckeditor.config(name='notes') }}
     </div>
 
 {% endblock %}
