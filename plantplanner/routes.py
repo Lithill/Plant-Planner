@@ -202,7 +202,6 @@ def delete_plant(id):
                 page_instructions="These are your plants",
                 page_title="My Plants"
                 )
-
         except:
             # Return an error message
             flash("There was a problem deleting the plant")
@@ -329,8 +328,8 @@ def logout():
 def page_not_found(e):
     return render_template(
         "404.html",
-        page_instructions="There's no page here",
-        page_title="Page Title Here"
+        page_instructions="",
+        page_title="404 Error"
         ), 404
 
 
@@ -339,8 +338,8 @@ def page_not_found(e):
 def page_not_found(e):
     return render_template(
         "500.html",
-        page_instructions="There's no page here",
-        page_title="Page Title Here"
+        page_instructions="",
+        page_title="500 Error"
         ), 500
 
 
