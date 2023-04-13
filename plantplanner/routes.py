@@ -165,8 +165,8 @@ def delete(id):
                 form=form,
                 name=name,
                 our_users=our_users,
-                page_instructions="Delete Stuff",
-                page_title="Delete")
+                page_instructions="These are your plants",
+                page_title="My Plants")
         except:
             flash("Sorry, there was a problem deleting the user")
             return render_template(
@@ -174,8 +174,8 @@ def delete(id):
                 form=form,
                 name=name,
                 our_users=our_users,
-                page_instructions="Delete Stuff",
-                page_title="Delete")
+                page_instructions="These are your plants",
+                page_title="My Plants")
     else:
         flash("Sorry, you can't delete that user")
         return redirect(url_for('account'))
@@ -197,8 +197,9 @@ def delete_plant(id):
             return render_template(
                 "plants.html",
                 plants=plants,
-                page_instructions="Instructions here",
-                page_title="Delete a Plant")
+                page_instructions="These are your plants",
+                page_title="My Plants"
+                )
 
         except:
             # Return an error message
@@ -208,8 +209,8 @@ def delete_plant(id):
             return render_template(
                 "plants.html",
                 plants=plants,
-                page_instructions="Instructions here",
-                page_title="Delete a Plant")
+                page_instructions="These are your plants",
+                page_title="My Plants")
     else:
         # Return a message
         flash("You aren't authorised to delete that plant")
@@ -218,8 +219,8 @@ def delete_plant(id):
         return render_template(
             "plants.html",
             plants=plants,
-            page_instructions="Instructions here",
-            page_title="Delete a Plant")
+            page_instructions="These are your plants",
+            page_title="My Plants")
 
 
 @app.route('/plants/edit/<int:id>', methods=['GET', 'POST'])

@@ -10,46 +10,73 @@
     {% endfor %}
 
     {% if current_user.is_authenticated %}
-        <div class="shadow p-3 mb-5 bg-body-tertiary rounded">
-            <form method="POST">
-                {{ form.hidden_tag() }}
-
-                {{ form.common_name.label(
-                class="form-label") }}
-
-                {{ form.common_name(
-                class="form-control") }}
-                <br>
-                {{ form.latin_name.label(
-                class="form-label") }}
-            
-                {{ form.latin_name(
-                class="form-control") }}
-                <br>
-                {{ form.notes.label(
-                class="form-label") }}
-                
-                {{ form.notes(
-                class="form-control", rows="5") }}
-                <br>
-                {{ form.water_interval.label(
-                class="form-label") }}
-                    
-                {{ form.water_interval(
-                class="form-control") }}
-                <br>
-                {{ form.last_watered_date.label(
-                 class="form-label") }}
-                        
-                {{ form.last_watered_date(
-                class="form-control") }}
-                <br>
-                {{ form.submit(
-                class="btn btn-primary") }}
-            </form>
-            {{ ckeditor.load() }}
-            {{ ckeditor.config(name='notes') }}
-        </div>
+    <div>
+        <br>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <div class="row">
+                <!-- Common Name Label -->
+                <div class="col-3">
+                    <strong>{{ form.common_name.label(class="form-label")}}</strong>
+                </div>
+                <!-- Common Name Field -->
+                <div class="col-3">
+                    {{ form.common_name(class="form-control")}}
+                </div>
+                <!-- Latin Name Label -->
+                <div class="col-2">
+                    <strong>{{ form.latin_name.label(class="form-label") }}</strong>
+                </div>
+                <!-- Latin Name Label -->
+                <div class="col-3">
+                    {{ form.latin_name(class="form-control") }}
+                </div>
+                <!-- Go Back Button -->
+                <div class="col-1">
+                    <a href="{{ url_for('plants') }}"><img src="{{ url_for('static', filename='images/back.webp') }}" alt="Go Back" class="back-button"></a>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <!-- Water Interval Label -->
+                <div class="col-3">
+                    <strong>{{ form.water_interval.label(class="form-label") }}</strong>
+                </div>
+                <!-- Water Interval Field -->
+                <div class="col-3">
+                    {{ form.water_interval(class="form-control") }}
+                </div>
+                <!-- Last Watered Label -->
+                <div class="col-2">
+                    <strong>{{ form.last_watered_date.label(class="form-label") }}</strong>
+                </div>
+                <!-- Last Watered Field -->
+                <div class="col-3">
+                    {{ form.last_watered_date(class="form-control") }}
+                </div>
+                <!-- Submit Button -->
+                <div class="col-1">
+                    <button type=submit><img src="{{ url_for('static', filename='images/save.webp') }}" alt="Save" class="save-button"></button>  
+                </div>
+            </div>
+            <br>
+            <!-- Notes Label -->
+            <div class="row">
+                <div class="col-12">
+                    <strong>{{ form.notes.label(class="form-label") }}</strong>
+                </div>
+            </div>
+            <!-- Notes Field -->
+            <div class="row">
+                <div class="col-12">
+                    {{ form.notes(class="form-control", rows="5") }}
+                </div>
+            </div>     
+            <br>
+        </form>
+        {{ ckeditor.load() }}
+        {{ ckeditor.config(name='notes') }}
+    </div>
     {% else  %}
         <h2>Must be logged in</h2>
         <p>Sorry, you must be logged in to access this page</p>
