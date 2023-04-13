@@ -77,7 +77,12 @@ button {
     border-width: 2px;
 }
 
-.save-button, .delete-button, .edit-button, .more-button, .back-button {
+.save-button,
+.delete-button,
+.edit-button,
+.more-button,
+.back-button,
+.add-button {
     height: 5vh;
     width: auto;
     margin-right: 10px;
