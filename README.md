@@ -301,10 +301,12 @@ on Comedy.com's youtube channel.
 
 * [Codemy's walkthrough](https://www.youtube.com/watch?v=0Qxtt4veJIc&list=PLCC34OHNcOtolz2Vd9ZSeSXWc8Bq23yEz&index=1)
 was used to set up the initial bones of the project. 
-* [coding Yaar's](https://codingyaar.com/responsive-bootstrap-navbar-right-align/)
+* [Coding Yaar's](https://codingyaar.com/responsive-bootstrap-navbar-right-align/)
 custom code for right-align bootstrap navbars. 
-* [coding Yaar's](https://codingyaar.com/responsive-bootstrap-navbar-with-vertical-line-separator/)
+* [Coding Yaar's](https://codingyaar.com/responsive-bootstrap-navbar-with-vertical-line-separator/)
 custom code for vertical line separated bootstrap navbar links. 
+* [Pablo Santa Cruz's](https://stackoverflow.com/questions/25120621/python-get-date-in-future-x-days-and-hours-left-to-date)
+ code for calculating dates. 
 
 ### Content
 

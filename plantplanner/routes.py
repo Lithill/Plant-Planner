@@ -10,6 +10,7 @@ from plantplanner.webforms import LoginForm, PlantForm, UserForm, PasswordForm
 from plantplanner.webforms import NamerForm, SearchForm
 from flask_ckeditor import CKEditor
 from werkzeug.utils import secure_filename
+from datetime import datetime, timedelta
 import uuid as uuid
 import os
 
@@ -75,6 +76,12 @@ def add_plant():
     form = PlantForm()
     if form.validate_on_submit():
         poster = current_user.id
+        # Calculate next_water date
+        # Taken from https://stackoverflow.com/questions/25120621/python-get-date-in-future-x-days-and-hours-left-to-date
+        dt = form.last_watered_date.data
+        td = timedelta(days=form.water_interval.data)
+        date = dt + td
+        # Add plant to database
         plant = Plants(
             common_name=form.common_name.data,
             notes=form.notes.data,
@@ -82,7 +89,8 @@ def add_plant():
             poster_id=poster,
             latin_name=form.latin_name.data,
             water_interval=form.water_interval.data,
-            last_watered_date=form.last_watered_date.data
+            last_watered_date=form.last_watered_date.data,
+            next_water=date
             )
         # Clear the form
         form.common_name.data = ''
@@ -230,12 +238,19 @@ def edit_plant(id):
     plant = Plants.query.get_or_404(id)
     form = PlantForm()
     if form.validate_on_submit():
+        # Calculate next_water date
+        # Taken from https://stackoverflow.com/questions/25120621/python-get-date-in-future-x-days-and-hours-left-to-date
+        dt = form.last_watered_date.data
+        td = timedelta(days=form.water_interval.data)
+        date = dt + td
+        # Add plant to database
         plant.common_name = form.common_name.data
         plant.latin_name = form.latin_name.data
         plant.notes = form.notes.data
         plant.pic_url = form.pic_url.data
         plant.water_interval = form.water_interval.data
         plant.last_watered_date = form.last_watered_date.data
+        plant.next_water = date
         # update database
         db.session.add(plant)
         db.session.commit()
