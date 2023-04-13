@@ -2,6 +2,7 @@ from plantplanner import db
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, PasswordField, BooleanField
 from wtforms import ValidationError, TextAreaField, IntegerField, validators
+from wtforms import URLField
 from wtforms.validators import DataRequired, EqualTo, Length, NumberRange
 from wtforms.widgets import TextArea
 from wtforms.fields import DateField, DateTimeField
@@ -13,7 +14,7 @@ from flask_wtf.file import FileField
 class PlantForm(FlaskForm):
     common_name = StringField("Common Name", validators=[DataRequired()])
     notes = CKEditorField('Notes', validators=[DataRequired()])
-    author = StringField("Author")
+    pic_url = URLField("Image Url")
     latin_name = StringField("Latin Name")
     water_interval = IntegerField(
         "Days between watering?",

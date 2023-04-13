@@ -15,7 +15,7 @@ class Plants(db.Model):
     water_interval = db.Column(db.Integer, nullable=False)
     last_watered_date = db.Column(db.Date, nullable=False)
     notes = db.Column(db.Text)
-    # author = db.Column(db.String(255))
+    pic_url = db.Column(db.String(255))
     date_posted = db.Column(db.DateTime, default=datetime.utcnow)
     # Foreign key to link users 
     # (refer to primary key of the user)

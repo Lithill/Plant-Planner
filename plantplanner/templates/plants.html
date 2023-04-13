@@ -13,31 +13,65 @@
         <div class="card">
             <br>
             <div class="row">
-                <div class="col-2"></div>
-                <!-- Common Name -->
-                <div class="col-2 text-nowrap"><h5><strong><u>{{ plant.common_name }}</u></h5></strong></div>
-                <!-- Water Interval -->
-                <div class="col-7"><p>{{ '- water every ' ~ plant.water_interval ~ ' days' }}</p></div>
-                <!-- Delete Button -->
-                <div class="col-1"><a href="{{ url_for('delete_plant', id=plant.id) }}"><img src="../static/images/delete.webp" alt="Delete" class="delete-button"></a></div>
+                <!-- Plant Image -->
+                <div class="col-3">
+                    <img src="{{ plant.pic_url }}" alt="{{ plant.common_name }} image" class="img-fluid plant-pic">
+                </div>
+                <!-- Nested grid -->
+                <div class="col-9">
+                    <!-- Row 1 -->
+                    <div class="row">
+                        <!-- Col 1 -->
+                        <div class="col-5">
+                            <!-- Common Name -->
+                            <h5><strong><u>{{ plant.common_name }}</u></h5></strong>
+                        </div>
+                        <!-- Col 2 -->
+                        <div class="col-5">
+                            <!-- Water Interval -->
+                            <p>{{ '- water every ' ~ plant.water_interval ~ ' days' }}</p>
+                        </div>
+                        <!-- Col 3 -->
+                        <div class="col-2">
+                            <!-- Delete Button -->
+                            <a href="{{ url_for('delete_plant', id=plant.id) }}"><img src="../static/images/delete.webp" alt="Delete" class="delete-button"></a>
+                        </div>
+                    </div>
+                    <!-- Row 2 -->
+                    <div class="row">
+                        <!-- Col 1 -->
+                        <div class="col-5">
+                            <!-- Latin Name -->
+                            <p><i>{{ plant.latin_name }}</i></p>
+                        </div>
+                        <!-- Col 2 -->
+                        <div class="col-5">
+                            <!-- Last Watered -->
+                            <p>{{ '- last watered on ' ~ plant.last_watered_date.strftime('%d-%m-%Y') }}</p>
+                        </div>
+                        <!-- Col 3 -->
+                        <div class="col-2">
+                            <!-- Edit Button -->
+                            <a href="{{ url_for('edit_plant', id=plant.id) }}"><img src="../static/images/edit.webp" alt="Update" class="edit-button"></a>
+                        </div>
+                    </div>
+                    <!-- Row 3 -->
+                    <div class="row">
+                        <!-- Col 1 -->
+                        <div class="col-5"></div>
+                        <!-- Col 2 -->
+                        <div class="col-5">
+                            <!-- Next Watered -->
+                            <p>- needs to be watered on</p>
+                        </div>
+                        <!-- Col 3 -->
+                        <div class="col-2">
+                            <!-- See More Button -->
+                            <a href="{{ url_for('plant', id=plant.id) }}"><img src="../static/images/more.webp" alt="See More" class="more-button"></a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="row">
-                <div class="col-2"></div>
-                <!-- Latin Name -->
-                <div class="col-2 text-nowrap"><p><i>{{ plant.latin_name }}</i></p></div>
-                <!-- Last Watered -->
-                <div class="col-7"><p>{{ '- last watered on ' ~ plant.last_watered_date.strftime('%d-%m-%Y') }}</p></div>
-                <!-- Edit Button -->
-                <div class="col-1"><a href="{{ url_for('edit_plant', id=plant.id) }}"><img src="../static/images/edit.webp" alt="Update" class="edit-button"></a></div>
-            </div>
-            <div class="row">
-                <div class="col-2"></div>
-                <div class="col-2"></div>
-                <!-- Next Watered -->
-                <div class="col-7"><p>- needs to be watered on</p></div>
-                <!-- See More Button -->
-                <div class="col-1"><a href="{{ url_for('plant', id=plant.id) }}"><img src="../static/images/more.webp" alt="See More" class="more-button"></a></div>
-            </div>  
             <br>         
         </div>
         <br>

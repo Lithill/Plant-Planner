@@ -78,6 +78,7 @@ def add_plant():
         plant = Plants(
             common_name=form.common_name.data,
             notes=form.notes.data,
+            pic_url=form.pic_url.data,
             poster_id=poster,
             latin_name=form.latin_name.data,
             water_interval=form.water_interval.data,
@@ -86,6 +87,7 @@ def add_plant():
         # Clear the form
         form.common_name.data = ''
         form.notes.data = ''
+        form.pic_url.data = ''
         form.latin_name.data = ''
         form.water_interval.data = ''
         form.last_watered_date.data = ''
@@ -232,6 +234,7 @@ def edit_plant(id):
         plant.common_name = form.common_name.data
         plant.latin_name = form.latin_name.data
         plant.notes = form.notes.data
+        plant.pic_url = form.pic_url.data
         plant.water_interval = form.water_interval.data
         plant.last_watered_date = form.last_watered_date.data
         # update database
@@ -245,6 +248,7 @@ def edit_plant(id):
         form.common_name.data = plant.common_name
         form.latin_name.data = plant.latin_name
         form.notes.data = plant.notes
+        form.pic_url.data = plant.pic_url
         form.water_interval.data = plant.water_interval
         form.last_watered_date.data = plant.last_watered_date
         return render_template(
