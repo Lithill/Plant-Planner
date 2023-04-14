@@ -141,14 +141,17 @@ HTML5, CSS3, Python,  and JavaScript were used to create this website.
 * [Google Fonts](https://fonts.google.com/) was used to import East Sea Dokdo and Eater.
 * [Git](https://git-scm.com/) was used for version control by using the Gitpod terminal to commit to Git and Push to GitHub.
 * [GitHub](https://github.com/) was used to store the projects' code after being pushed from Replit, and to handle version control.
-* [Paint.Net](https://www.getpaint.net/download.html) was used to edit the Dall-E 2 images.
+* [Paint.Net](https://www.getpaint.net/download.html) was used to edit images.
 * [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/) was used to troubleshoot and test features and solve issues with responsiveness and styling.
 * [Am I Responsive?](https://ui.dev/amiresponsive) was used to show the website on a range of devices.
 * [Unicorn Revealer](https://chrome.google.com/webstore/detail/unicorn-revealer/lmlkphhdlngaicolpmaakfmhplagoaln?hl=en-GB) was used for debugging.
-* [Layoutit!](https://grid.layoutit.com/) was used to create the CSS grid.
-* [SQLAlchemy version 1.4.46](https://www.sqlalchemy.org/) was used to connect Python code with the database.
+* [SQLAlchemy](https://www.sqlalchemy.org/) was used to connect Python code with the database.
 * [Psycopg2](https://www.psycopg.org/docs/) was used to connect Python code with the database. 
-* [Flask](#) ?
+* [Flask](https://flask.palletsprojects.com/en/2.2.x/) is the web application framework which was used to build the website.
+* [Bootstrap](https://getbootstrap.com/) was used for CSS shortcuts.
+* [PostgreSQL](https://www.postgresql.org/) was the object-relational database system used.
+* [ElephantSQL](https://www.elephantsql.com/) was used to host the database.
+* [Heroku](https://www.heroku.com/) was used to deploy the website.
 
 ## Deployment & Local Development
 
