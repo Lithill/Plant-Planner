@@ -21,6 +21,10 @@ body {
     width: 100%;
 }
 
+.center-links {
+    text-align:center;
+}
+
 /************************************ Navbar */
 
 .navbar .navbar-nav .nav-link {
@@ -67,11 +71,6 @@ small {
 
 /************************************ Images */
 
-.three-plants:hover {
-    opacity: 0;
-    pointer-events: none;
-}
-
 .profile-pic {
     width: 50%;
     height: auto;
@@ -89,19 +88,22 @@ small {
     padding-left: 20px;
 }
 
+/* #three-plants-div {
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+} */
+
 #three-plants {
 	width: 20%;
     height: auto;
-    margin-left: auto;
-    margin-bottom: auto;
 	background-image: url("../images/right-logo.webp");
 	background-repeat: no-repeat;
-	background-size: contain;
-	background-position: right bottom;
+	background-size: contain; 
 	position: fixed;
-	bottom: 15px;
-	right: 15px;
-	z-index: 6;
+	bottom: 40px;
+    left: 40px;
+	z-index: 200;  
 }
 
 /************************************ Buttons */
@@ -131,8 +133,7 @@ button {
 .sm-button {
     height: 4vh;
     width: auto;
-    /* text-align: center;
-    display: inblock; */
+    display: inline-block;
 }
 
 /************************************ Media Queries */

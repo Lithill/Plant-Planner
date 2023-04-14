@@ -258,6 +258,11 @@ Results from the [check](#).
    3. Solution: src code needed Jinja template. (E.g. {{ url_for('static', filename='images/add.webp') }})
 
 3.
+   1. Expected behaviour: When clicking on buttons on plants page, they always work
+   2. Actual behaviour: Clicking on buttons on plants page does not work when three plants image div is over it
+   3. Solution: Move three plants image
+
+4.
    1. Expected behaviour: 
    2. Actual behaviour: 
    3. Solution: 
