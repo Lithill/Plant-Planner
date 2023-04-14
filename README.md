@@ -250,6 +250,11 @@ Results from the [check](#).
    3. Solution: Import FlaskForm from flask_wtf, and pass FlaskForm into the form.
 
 2.
+   1. Expected behaviour: Button images continue to be visible after deleting a plant from the plant.html page
+   2. Actual behaviour: Button images break after deleting a plant from the plant.html page
+   3. Solution: src code needed Jinja template. (E.g. {{ url_for('static', filename='images/add.webp') }})
+
+3.
    1. Expected behaviour: 
    2. Actual behaviour: 
    3. Solution: 

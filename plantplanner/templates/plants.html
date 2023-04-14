@@ -46,7 +46,7 @@
                         <!-- Col 3 -->
                         <div class="col-2">
                             <!-- Delete Button -->
-                            <a href="{{ url_for('delete_plant', id=plant.id) }}"><img src="../static/images/delete.webp" alt="Delete" class="delete-button"></a>
+                            <a href="{{ url_for('delete_plant', id=plant.id) }}"><img src="{{ url_for('static', filename='images/delete.webp') }}" alt="Delete" class="delete-button"></a>
                         </div>
                     </div>
                     <!-- Row 2 -->
@@ -64,7 +64,7 @@
                         <!-- Col 3 -->
                         <div class="col-2">
                             <!-- Edit Button -->
-                            <a href="{{ url_for('edit_plant', id=plant.id) }}"><img src="../static/images/edit.webp" alt="Update" class="edit-button"></a>
+                            <a href="{{ url_for('edit_plant', id=plant.id) }}"><img src="{{ url_for('static', filename='images/edit.webp') }}" alt="Update" class="edit-button"></a>
                         </div>
                     </div>
                     <!-- Row 3 -->
@@ -79,7 +79,7 @@
                         <!-- Col 3 -->
                         <div class="col-2">
                             <!-- See More Button -->
-                            <a href="{{ url_for('plant', id=plant.id) }}"><img src="../static/images/eye.webp" alt="See More" class="more-button"></a>
+                            <a href="{{ url_for('plant', id=plant.id) }}"><img src="{{ url_for('static', filename='images/eye.webp') }}" alt="See More" class="more-button"></a>
                         </div>
                     </div>
                 </div>
@@ -96,7 +96,7 @@
         </div>
         <br>
         <div class="row">
-            <a href="{{ url_for('add_plant') }}"><img src="../static/images/add.webp" alt="Add plant" class="add-button"></a>
+            <a href="{{ url_for('add_plant') }}"><img src="{{ url_for('static', filename='images/add.webp') }}" alt="Add plant" class="add-button"></a>
         </div> 
         <br>         
     </div>
