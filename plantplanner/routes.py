@@ -106,6 +106,7 @@ def add_plant():
 
         # Return a message
         flash("Post submitted successfully")
+        return redirect(url_for('plants'))
     else:
         flash("Post failed to be submitted")
     # Redirect to the webpage
@@ -140,7 +141,8 @@ def add_user():
         form.username.data = ''  # clears the form
         form.email.data = ''  # clears the form
         form.password_hash.data = ''  # clears the form
-        flash("User Added Successfully!")
+        flash("User Added Successfully! Please log in")
+        return redirect(url_for('login'))
     our_users = Users.query.order_by(Users.date_added)
     return render_template(
         "add_user.html",
@@ -305,7 +307,7 @@ def login():
             if check_password_hash(user.password_hash, form.password.data):
                 login_user(user)
                 flash("Login successful")
-                return redirect(url_for('account'))
+                return redirect(url_for('plants'))
             else:
                 flash("Wrong password - try again")
         else:
@@ -373,7 +375,7 @@ def plant(id):
 def plants():
     id = current_user.id
     # Grab all the plants from the database
-    plants = Plants.query.order_by(Plants.date_posted)
+    plants = Plants.query.order_by(Plants.next_water)
     return render_template(
         "plants.html",
         plants=plants,

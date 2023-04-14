@@ -9,7 +9,8 @@
         </div>
     {% endfor %}
 
-    {% for plant in current_user.plants %}
+    {% for plant in plants %}
+        {% if plant.poster_id == current_user.id %}
         <div class="card">
             <br>
             <div class="row">
@@ -82,6 +83,7 @@
             <br>         
         </div>
         <br>
+        {% endif %}
     {% endfor %}
     <div class="card">
         <br>
