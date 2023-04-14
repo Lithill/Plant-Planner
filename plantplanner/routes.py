@@ -69,23 +69,19 @@ def account():
         page_title="My Account")
 
 
-# def validate_date(form, field):
-#     if field.data > date.today():
-#         flash("The date cannot be in the future!")
-#         return redirect(url_for('add_plant'))
-
-
-# Add Post Page
+# Add Plant Page
 @app.route('/add-plant', methods=['GET', 'POST'])
 @login_required
 def add_plant():
     form = PlantForm()
+    today = date.today()
     if form.validate_on_submit():
+        # flash("The variable, val is: {}".format(val))
+        # flash("The variable, today is: {}".format(today))
+
         poster = current_user.id
 
-        # validate_date(form, form.last_watered_date)
-
-        if form.last_watered_date > date.today():
+        if form.last_watered_date.data > date.today():
             flash("The date cannot be in the future!")
             return redirect(url_for('add_plant'))
         else:
@@ -128,6 +124,7 @@ def add_plant():
         form=form,
         page_instructions="Answer the questions and click 'Submit' to add a plant",
         page_title="Add a Plant")
+
 
 
 @app.route('/user/add', methods=['GET', 'POST'])
