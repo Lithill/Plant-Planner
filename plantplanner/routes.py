@@ -76,14 +76,9 @@ def add_plant():
     form = PlantForm()
     today = date.today()
     if form.validate_on_submit():
-        # flash("The variable, val is: {}".format(val))
-        # flash("The variable, today is: {}".format(today))
-
         poster = current_user.id
-
         if form.last_watered_date.data > date.today():
             flash("The date cannot be in the future!")
-            return redirect(url_for('add_plant'))
         else:
             # Calculate next_water date
             # Taken from https://stackoverflow.com/questions/25120621/python-get-date-in-future-x-days-and-hours-left-to-date
