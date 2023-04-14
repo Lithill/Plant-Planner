@@ -10,7 +10,7 @@ from plantplanner.webforms import LoginForm, PlantForm, UserForm, PasswordForm
 from plantplanner.webforms import NamerForm, SearchForm
 from flask_ckeditor import CKEditor
 from werkzeug.utils import secure_filename
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 import uuid as uuid
 import os
 
@@ -69,6 +69,12 @@ def account():
         page_title="My Account")
 
 
+# def validate_date(form, field):
+#     if field.data > date.today():
+#         flash("The date cannot be in the future!")
+#         return redirect(url_for('add_plant'))
+
+
 # Add Post Page
 @app.route('/add-plant', methods=['GET', 'POST'])
 @login_required
@@ -76,37 +82,44 @@ def add_plant():
     form = PlantForm()
     if form.validate_on_submit():
         poster = current_user.id
-        # Calculate next_water date
-        # Taken from https://stackoverflow.com/questions/25120621/python-get-date-in-future-x-days-and-hours-left-to-date
-        dt = form.last_watered_date.data
-        td = timedelta(days=form.water_interval.data)
-        date = dt + td
-        # Add plant to database
-        plant = Plants(
-            common_name=form.common_name.data,
-            notes=form.notes.data,
-            pic_url=form.pic_url.data,
-            poster_id=poster,
-            latin_name=form.latin_name.data,
-            water_interval=form.water_interval.data,
-            last_watered_date=form.last_watered_date.data,
-            next_water=date
-            )
-        # Clear the form
-        form.common_name.data = ''
-        form.notes.data = ''
-        form.pic_url.data = ''
-        form.latin_name.data = ''
-        form.water_interval.data = ''
-        form.last_watered_date.data = ''
 
-        # Add plant to database
-        db.session.add(plant)
-        db.session.commit()
+        # validate_date(form, form.last_watered_date)
 
-        # Return a message
-        flash("Post submitted successfully")
-        return redirect(url_for('plants'))
+        if form.last_watered_date > date.today():
+            flash("The date cannot be in the future!")
+            return redirect(url_for('add_plant'))
+        else:
+            # Calculate next_water date
+            # Taken from https://stackoverflow.com/questions/25120621/python-get-date-in-future-x-days-and-hours-left-to-date
+            dt = form.last_watered_date.data
+            td = timedelta(days=form.water_interval.data)
+            next_water_date = dt + td
+            # Add plant to database
+            plant = Plants(
+                common_name=form.common_name.data,
+                notes=form.notes.data,
+                pic_url=form.pic_url.data,
+                poster_id=poster,
+                latin_name=form.latin_name.data,
+                water_interval=form.water_interval.data,
+                last_watered_date=form.last_watered_date.data,
+                next_water=next_water_date
+                )
+            # Clear the form
+            form.common_name.data = ''
+            form.notes.data = ''
+            form.pic_url.data = ''
+            form.latin_name.data = ''
+            form.water_interval.data = ''
+            form.last_watered_date.data = ''
+
+            # Add plant to database
+            db.session.add(plant)
+            db.session.commit()
+
+            # Return a message
+            flash("Post submitted successfully")
+            return redirect(url_for('plants'))
     else:
         flash("Post failed to be submitted")
     # Redirect to the webpage
