@@ -154,7 +154,7 @@ def add_user():
         form=form,
         name=name,
         our_users=our_users,
-        page_instructions="Answer the questions and then click 'submit' to create an account.",
+        page_instructions="Answer the questions and then click the tick to create an account.",
         page_title="Create an Account")
 
 
