@@ -51,6 +51,10 @@ p, label {
 small {
     color: #a4a4a2;
 }
+
+.blue-text {
+    color: #0B0E5B;
+}
   
 /* #logo-text {
     font-size: 1.6rem;
@@ -63,12 +67,10 @@ small {
 
 /************************************ Images */
 
-/* .three-plants {
-    width: 50%;
-    height: auto;
-    margin-left: auto;
-    margin-top: auto;
-} */
+.three-plants:hover {
+    opacity: 0;
+    pointer-events: none;
+}
 
 .profile-pic {
     width: 50%;

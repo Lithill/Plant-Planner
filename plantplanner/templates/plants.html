@@ -11,9 +11,9 @@
 
     {% for plant in plants %}
         {% if plant.poster_id == current_user.id %}
-        <div class="card">
+        <div>
             <br>
-            <div class="row">
+            <div class="row blue-text">
                 <!-- Plant Image -->
                 <div class="col-3">
                     {% if plant.pic_url %}
@@ -86,10 +86,10 @@
             </div>
             <br>         
         </div>
-        <br>
+        <hr>
         {% endif %}
     {% endfor %}
-    <div class="card">
+    <div>
         <br>
         <div class="row">
             <a href="{{ url_for('add_plant') }}"><u>Click to add a plant</u></a>
