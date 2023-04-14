@@ -59,7 +59,7 @@
                         <!-- Col 2 -->
                         <div class="col-5">
                             <!-- Last Watered -->
-                            <p>{{ '- last watered on ' ~ plant.last_watered_date }}</p>
+                            <p>{{ '- last watered on ' ~ plant.last_watered_date.strftime('%A, %B %d') }}</p>
                         </div>
                         <!-- Col 3 -->
                         <div class="col-2">
@@ -74,7 +74,7 @@
                         <!-- Col 2 -->
                         <div class="col-5">
                             <!-- Next Watered -->
-                            <p>- needs to be watered on {{ plant.next_water }}</p>
+                            <p>- needs to be watered on {{ plant.next_water.strftime('%A, %B %d') }}</p>
                         </div>
                         <!-- Col 3 -->
                         <div class="col-2">
