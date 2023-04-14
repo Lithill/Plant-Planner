@@ -16,7 +16,11 @@
             <div class="row">
                 <!-- Plant Image -->
                 <div class="col-3">
-                    <img src="{{ plant.pic_url }}" alt="{{ plant.common_name }} image" class="img-fluid plant-pic">
+                    {% if plant.pic_url %}
+                        <img src="{{ plant.pic_url }}" alt="{{ plant.common_name }} image" class="img-fluid plant-pic">
+                    {% else %}
+                        <img src="{{ url_for('static', filename='images/add-image.webp') }}" alt="No image found" class="img-fluid plant-pic">
+                    {% endif %}
                 </div>
                 <!-- Nested grid -->
                 <div class="col-9">
