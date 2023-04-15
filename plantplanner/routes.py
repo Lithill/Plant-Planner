@@ -49,7 +49,7 @@ def account():
                 "account.html",
                 form=form,
                 name_to_update=name_to_update,
-                page_instructions="You can make changes to your account here",
+                page_instructions="You can make changes to your account by pressing the edit button",
                 page_title="My Account")
         except:
             flash("Error! Looks like there was a problem...try again!")
@@ -57,7 +57,7 @@ def account():
                 "account.html",
                 form=form,
                 name_to_update=name_to_update,
-                page_instructions="You can make changes to your account here",
+                page_instructions="You can make changes to your account by pressing the edit button",
                 page_title="My Account"
                 )
     else:
@@ -66,11 +66,11 @@ def account():
             form=form,
             name_to_update=name_to_update,
             id=id,
-            page_instructions="You can make changes to your account here",
+            page_instructions="You can make changes to your account by pressing the edit button",
             page_title="My Account")
     return render_template(
         'account.html',
-        page_instructions="You can make changes to your account here",
+        page_instructions="You can make changes to your account by pressing the edit button",
         page_title="My Account")
 
 
@@ -306,7 +306,7 @@ def index():
         "index.html",
         first_name=first_name,
         stuff=stuff,
-        page_instructions="Plant Planner is a website where you can keep track of when you need to water your houseplants.",
+        page_instructions="Keep track of when you need to water your houseplants.",
         page_title="Plant Planner")
 
 
