@@ -15,6 +15,7 @@ class Plants(db.Model):
     water_interval = db.Column(db.Integer, nullable=False)
     last_watered_date = db.Column(db.Date, nullable=False)
     next_water = db.Column(db.Date)
+    overdue = db.Column(db.Boolean)
     notes = db.Column(db.Text)
     pic_url = db.Column(db.String(255))
     date_posted = db.Column(db.DateTime, default=datetime.utcnow)

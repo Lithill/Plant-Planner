@@ -11,8 +11,13 @@ from plantplanner.webforms import NamerForm, SearchForm
 from flask_ckeditor import CKEditor
 from werkzeug.utils import secure_filename
 from datetime import datetime, timedelta, date
+from jinja2 import Environment, FileSystemLoader
+from flask_moment import Moment
 import uuid as uuid
 import os
+
+
+moment = Moment(app)
 
 
 # Create User Account Page
@@ -75,6 +80,7 @@ def account():
 def add_plant():
     form = PlantForm()
     today = date.today()
+
     if form.validate_on_submit():
         poster = current_user.id
         if form.last_watered_date.data > date.today():
@@ -203,6 +209,11 @@ def delete(id):
 def delete_plant(id):
     plant_to_delete = Plants.query.get_or_404(id)
     id = current_user.id
+
+    # Create a datetime variable for today's date
+    # Then pass it through the template
+    now = datetime.utcnow().date()
+
     if id == plant_to_delete.poster.id:
         try:
             db.session.delete(plant_to_delete)
@@ -214,6 +225,7 @@ def delete_plant(id):
             return render_template(
                 "plants.html",
                 plants=plants,
+                now=now,
                 page_instructions="These are your plants",
                 page_title="My Plants"
                 )
@@ -367,24 +379,40 @@ def page_not_found(e):
 
 @app.route('/plants/<int:id>')
 def plant(id):
+
+    # Create a datetime variable for today's date
+    # Then pass it through the template
+    now = datetime.utcnow().date()
+
     plant = Plants.query.get_or_404(id)
     return render_template(
         'plant.html',
+        now=now,
         plant=plant,
         page_instructions="This is one of your plants",
         page_title="My Plant")
+
+
+# def overdue(last_watered_date):
+#     return last_watered_date < date.today()
 
 
 @app.route('/plants')
 @login_required
 def plants():
     id = current_user.id
+
+    # Create a datetime variable for today's date
+    # Then pass it through the template
+    now = datetime.utcnow().date()
+
     # Grab all the plants from the database
     plants = Plants.query.order_by(Plants.next_water)
     return render_template(
         "plants.html",
         plants=plants,
         page_instructions="Click the '+' button to add a plant",
+        now=now,
         page_title="My Plants")
 
 

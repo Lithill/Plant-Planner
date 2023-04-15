@@ -70,10 +70,22 @@
                     <!-- Col 1 -->
                     <div class="col-5"></div>
                     <!-- Col 2 -->
-                    <div class="col-5">
-                        <!-- Next Watered -->
-                        <p>- needs to be watered on {{ plant.next_water.strftime('%A, %B %d') }}</p>
-                    </div>
+                    {% if plant.next_water < now %}
+                        <div class="col-5 red-text">
+                            <!-- Next Watered -->
+                            <p>- needed to be watered on {{ plant.next_water.strftime('%A, %B %d') }}</p>
+                        </div>
+                    {% elif plant.next_water <= now %}
+                        <div class="col-5 red-text">
+                            <!-- Next Watered -->
+                            <p>- needs to be watered today!</p>
+                        </div>
+                    {% else %}
+                        <div class="col-5">
+                            <!-- Next Watered -->
+                            <p>- needs to be watered on {{ plant.next_water.strftime('%A, %B %d') }}</p>
+                        </div>
+                    {% endif %}
                     <!-- Col 3 -->
                     <div class="col-2">
                         <!-- Back Button -->

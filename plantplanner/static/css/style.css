@@ -59,6 +59,10 @@ small {
 .blue-text {
     color: #0B0E5B;
 }
+
+.red-text {
+    color: red;
+}
   
 /* #logo-text {
     font-size: 1.6rem;
