@@ -79,7 +79,6 @@ def account():
 @login_required
 def add_plant():
     form = PlantForm()
-    today = date.today()
 
     if form.validate_on_submit():
         poster = current_user.id
@@ -117,15 +116,13 @@ def add_plant():
             # Return a message
             flash("Post submitted successfully")
             return redirect(url_for('plants'))
-    else:
-        flash("Post failed to be submitted")
+
     # Redirect to the webpage
     return render_template(
         "add_plant.html",
         form=form,
         page_instructions="Answer the questions and click 'Submit' to add a plant",
         page_title="Add a Plant")
-
 
 
 @app.route('/user/add', methods=['GET', 'POST'])
