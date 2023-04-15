@@ -299,20 +299,18 @@ Tested each button on the page. Each button worked as expected or was appropriat
 
 ## Credits
 
-Thanks are given for the following blogs and tutorials:
+Thanks are given for the following posts and tutorials:
 
-* [How to Clear Input Fields in JavaScript](https://linuxhint.com/clear-input-fields-javascript/#2)
-on the linuxhint website. 
 * [Good explanation of cascade (ON DELETE/UPDATE) behavior](https://dba.stackexchange.com/questions/44956/good-explanation-of-cascade-on-delete-update-behavior)
 by Johntron on Stack Exchange. 
 * [Good tutorial of flash in Flask](https://www.youtube.com/watch?v=abCSKRMGZ3A)
 on Comedy.com's youtube channel. 
-* [Good tutorial of password hashing in Flask](https://www.youtube.com/watch?v=8ebIEefhBpM)
-on Comedy.com's youtube channel. 
+* [Cognitive Robot's post on Stack Overflow](https://stackoverflow.com/questions/52674364/flask-app-cant-passing-a-value-to-a-confirmation-modal-before-deleting-a-post)
+helped me understand how to write the delete plant modal. 
 
 ### Code Used
 
-* [Codemy's walkthrough](https://www.youtube.com/watch?v=0Qxtt4veJIc&list=PLCC34OHNcOtolz2Vd9ZSeSXWc8Bq23yEz&index=1)
+* [Codemy's Flask Blog walkthrough](https://www.youtube.com/watch?v=0Qxtt4veJIc&list=PLCC34OHNcOtolz2Vd9ZSeSXWc8Bq23yEz&index=1)
 was used to set up the initial bones of the project. 
 * [Coding Yaar's](https://codingyaar.com/responsive-bootstrap-navbar-right-align/)
 custom code for right-align bootstrap navbars. 
