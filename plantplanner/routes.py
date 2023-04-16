@@ -218,7 +218,7 @@ def delete_plant(id):
             # Return a message
             flash("Plant was deleted")
             # Grab all the plants from the database
-            plants = Plants.query.order_by(Plants.date_posted)
+            plants = Plants.query.order_by(Plants.next_water)
             return render_template(
                 "plants.html",
                 plants=plants,
@@ -230,20 +230,22 @@ def delete_plant(id):
             # Return an error message
             flash("There was a problem deleting the plant")
             # Grab all the plants from the database
-            plants = Plants.query.order_by(Plants.date_posted)
+            plants = Plants.query.order_by(Plants.next_water)
             return render_template(
                 "plants.html",
                 plants=plants,
+                now=now,
                 page_instructions="These are your plants",
                 page_title="My Plants")
     else:
         # Return a message
         flash("You aren't authorised to delete that plant")
         # Grab all the plants from the database
-        plants = Plants.query.order_by(Plants.date_posted)
+        plants = Plants.query.order_by(Plants.next_water)
         return render_template(
             "plants.html",
             plants=plants,
+            now=now,
             page_instructions="These are your plants",
             page_title="My Plants")
 

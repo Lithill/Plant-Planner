@@ -263,13 +263,13 @@ Results from the [check](#).
    3. Solution: Move three plants image
 
 4.
-   1. Expected behaviour: Plant form will submit when use only fills out common name, water interval and last watered
-   2. Actual behaviour: Plant form also needs notes filled in before it will submit
-   3. Solution: 
-
-5.
    1. Expected behaviour: Plants list is always in order of when plants need to be watered - soonest at the top
    2. Actual behaviour: Plants list re-orders itself after deleting a plant
+   3. Solution: Did not change code on the delete route when added the list-by-water-date functionality
+
+5.
+   1. Expected behaviour: Plant form will submit when use only fills out common name, water interval and last watered
+   2. Actual behaviour: Plant form also needs notes filled in before it will submit
    3. Solution: 
 
 6.
