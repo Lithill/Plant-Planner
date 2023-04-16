@@ -318,6 +318,8 @@ custom code for right-align bootstrap navbars.
 custom code for vertical line separated bootstrap navbar links. 
 * [Pablo Santa Cruz's](https://stackoverflow.com/questions/25120621/python-get-date-in-future-x-days-and-hours-left-to-date)
  code for calculating dates. 
+ * [Shinichi Okada's](https://medium.com/mkdir-awesome/how-to-change-the-bootstrap-5-tooltip-background-and-arrow-color-67e6c5aea510)
+ code for customising bootstrap tooltips. 
 
 ### Content
 
@@ -334,6 +336,7 @@ Content for the website was made by Rossanne Hamilton.
 * [Eliona's image on Pixabay](https://pixabay.com/de/illustrations/pfeil-zeigen-anzeigen-drehen-1314462/) was edited and used for the back button.
 * [Coffeebeanworks' image on Pixabay](https://pixabay.com/illustrations/social-media-social-media-icons-2083456/) was edited and used for the social media icons.
 * [Mohamed Hassan's image on Pixabay](https://pixabay.com/illustrations/eye-computer-icon-vector-2387853/) was edited and used for the view button. 
+* [Clker-Free-Vector-Images' image on Pixabay](https://pixabay.com/vectors/question-mark-question-icon-blue-310100/) was edited and used for the question button. 
 * The add button was made by the creator.
 
 ### Acknowledgements
