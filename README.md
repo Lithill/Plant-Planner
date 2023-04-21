@@ -268,7 +268,7 @@ Results from the [check](#).
    3. Solution: Did not change code on the delete route when added the list-by-water-date functionality
 
 5.
-   1. Expected behaviour: Plant form will submit when use only fills out common name, water interval and last watered
+   1. Expected behaviour: Plant form will submit when user only fills out common name, water interval and last watered
    2. Actual behaviour: Plant form also needs notes filled in before it will submit
    3. Solution: 
 

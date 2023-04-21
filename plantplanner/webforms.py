@@ -14,7 +14,7 @@ import datetime
 # Create Plant Form
 class PlantForm(FlaskForm):
     common_name = StringField("Common Name", validators=[DataRequired()])
-    notes = CKEditorField('Notes', validators=[DataRequired()])
+    notes = CKEditorField('Notes')
     pic_url = URLField("Image Url")
     latin_name = StringField("Latin Name")
     water_interval = IntegerField(
