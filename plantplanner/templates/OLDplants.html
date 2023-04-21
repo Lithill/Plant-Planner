@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% for message in get_flashed_messages() %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endfor %}
+
+    {% for plant in plants %}
+
+        <!-- Delete modal -->
+        <div class="modal fade blue-text" id="exampleModal{{ plant.id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel{{ plant.id }}">Are you sure...</h5>
+                    </div>
+                    <div class="modal-body">
+                        <p>...that you want to delete your <strong>{{ plant.common_name }}</strong>?</p>
+                        <p><ul>! This action is irreversible !</ul></p>
+                    </div>
+                    <div class="modal-footer text-end">
+                        <a href="{{ url_for('delete_plant', id=plant.id) }}"><img src="{{ url_for('static', filename='images/delete-red.webp') }}" alt="Delete" class="delete-button"></a>
+                        <button type="button" data-bs-dismiss="modal" class="text-end">
+                            <img src="{{ url_for('static', filename='images/close.webp') }}" alt="Close" class="delete-button">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+  
+        {% if plant.poster_id == current_user.id %}
+        <div>
+            <br>
+            <div class="row blue-text">
+                <!-- Plant Image -->
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    {% if plant.pic_url %}
+                        <img src="{{ plant.pic_url }}" alt="{{ plant.common_name }} image" class="img-fluid plant-pic">
+                    {% else %}
+                        <img src="{{ url_for('static', filename='images/add-image.webp') }}" alt="No image found" class="img-fluid plant-pic">
+                    {% endif %}
+                </div>
+                <!-- Nested grid -->
+                <div class="col-9">
+                    <!-- Row 1 -->
+                    <div class="row">
+                        <!-- Col 1 -->
+                        <div class="col-sm-12 col-md-6 col-lg-5">
+                            <!-- Common Name -->
+                            <h5><strong><u>{{ plant.common_name }}</u></h5></strong>
+                        </div>
+                        <!-- Col 2 -->
+                        {% if plant.water_interval == 1 %}
+                            <div class="col-5">
+                                <!-- Water Interval -->
+                                <p>- water every day</p>
+                            </div>
+                        {% else %}
+                            <div class="col-5">
+                                <!-- Water Interval -->
+                                <p>{{ '- water every ' ~ plant.water_interval ~ ' days' }}</p>
+                            </div>
+                        {% endif %}
+                        <!-- Col 3 -->
+                        <div class="col-2">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal{{plant.id}}">
+                                <img src="{{ url_for('static', filename='images/delete.webp') }}" alt="Delete" class="delete-button">
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Row 2 -->
+                    <div class="row">
+                        <!-- Col 1 -->
+                        <div class="col-5">
+                            <!-- Latin Name -->
+                            <p><i>{{ plant.latin_name }}</i></p>
+                        </div>
+                        <!-- Col 2 -->
+                        <div class="col-5">
+                            <!-- Last Watered -->
+                            <p>{{ '- last watered on ' ~ plant.last_watered_date.strftime('%A, %B %d') }}</p>
+                        </div>
+                        <!-- Col 3 -->
+                        <div class="col-2">
+                            <!-- Edit Button -->
+                            <a href="{{ url_for('edit_plant', id=plant.id) }}"><img src="{{ url_for('static', filename='images/edit.webp') }}" alt="Update" class="edit-button"></a>
+                        </div>
+                    </div>
+                    <!-- Row 3 -->
+                    <div class="row">
+                        <!-- Col 1 -->
+                        <div class="col-5"></div>
+                        <!-- Col 2 -->
+                        {% if plant.next_water < now %}
+                            <div class="col-5 red-text">
+                                <!-- Next Watered -->
+                                <p>- needed to be watered on {{ plant.next_water.strftime('%A, %B %d') }}</p>
+                            </div>
+                        {% elif plant.next_water <= now %}
+                            <div class="col-5 red-text">
+                                <!-- Next Watered -->
+                                <p>- needs to be watered today!</p>
+                            </div>
+                        {% else %}
+                            <div class="col-5">
+                                <!-- Next Watered -->
+                                <p>- needs to be watered on {{ plant.next_water.strftime('%A, %B %d') }}</p>
+                            </div>
+                        {% endif %}
+                        <!-- Col 3 -->
+                        <div class="col-2">
+                            <!-- See More Button -->
+                            <a href="{{ url_for('plant', id=plant.id) }}"><img src="{{ url_for('static', filename='images/eye.webp') }}" alt="See More" class="more-button"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>         
+        </div>
+        <hr>
+        {% endif %}
+    {% endfor %}
+    <div>
+        <br>
+        <div class="row">
+            <a href="{{ url_for('add_plant') }}"><u>Click to add a plant</u></a>
+        </div>
+        <br>
+        <div class="row">
+            <a href="{{ url_for('add_plant') }}"><img src="{{ url_for('static', filename='images/add.webp') }}" alt="Add plant" class="add-button"></a>
+        </div> 
+        <br>         
+    </div>
+{% endblock %}

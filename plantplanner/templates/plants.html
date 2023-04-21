@@ -33,94 +33,71 @@
         </div>
   
         {% if plant.poster_id == current_user.id %}
-        <div>
-            <br>
-            <div class="row blue-text">
-                <!-- Plant Image -->
-                <div class="col-3">
-                    {% if plant.pic_url %}
-                        <img src="{{ plant.pic_url }}" alt="{{ plant.common_name }} image" class="img-fluid plant-pic">
-                    {% else %}
-                        <img src="{{ url_for('static', filename='images/add-image.webp') }}" alt="No image found" class="img-fluid plant-pic">
-                    {% endif %}
+        
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <!-- Plant Image -->
+            <div class="col">
+                {% if plant.pic_url %}
+                    <img src="{{ plant.pic_url }}" alt="{{ plant.common_name }} image" class="img-fluid plant-pic">
+                {% else %}
+                    <img src="{{ url_for('static', filename='images/add-image.webp') }}" alt="No image found" class="img-fluid plant-pic">
+                {% endif %}
+            </div>
+            <!-- Common Name -->
+            <div class="col make-middle">
+                <h5><strong><u>{{ plant.common_name }}</u></h5></strong>
+            </div>
+            <!-- Latin Name -->
+            <div class="col make-middle">
+                <p><i>{{plant.latin_name}}</i></p>
+            </div>
+            <!-- Water Interval -->
+            <div class="col make-middle">
+                {% if plant.water_interval == 1 %}
+                    <p>- water every day</p>
+                {% else %}
+                    <p>{{ '- water every ' ~ plant.water_interval ~ ' days' }}</p>
+                {% endif %}
+            </div>
+            <!-- Last Watered -->
+            <div class="col make-middle">
+                <p>{{ '- last watered on ' ~ plant.last_watered_date.strftime('%A, %B %d') }}</p>
+            </div>
+            <!-- Next Watered -->
+            <div class="col make-middle">
+                {% if plant.next_water < now %}
+                    <div class="red-text">
+                        <p>- needed to be watered on {{ plant.next_water.strftime('%A, %B %d') }}</p>
+                    </div>
+                {% elif plant.next_water <= now %}
+                    <div>
+                        <p>- needs to be watered today!</p>
+                    </div>
+                {% else %}
+                    <div>
+                        <p>- needs to be watered on {{ plant.next_water.strftime('%A, %B %d') }}</p>
+                    </div>
+                {% endif %}
+            </div>
+            <!-- Buttons -->
+            <div class="row">
+                <div class="col-4 make-middle">
+                    <!-- Delete -->
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal{{plant.id}}">
+                        <img src="{{ url_for('static', filename='images/delete.webp') }}" alt="Delete" class="delete-button">
+                    </button>
                 </div>
-                <!-- Nested grid -->
-                <div class="col-9">
-                    <!-- Row 1 -->
-                    <div class="row">
-                        <!-- Col 1 -->
-                        <div class="col-5">
-                            <!-- Common Name -->
-                            <h5><strong><u>{{ plant.common_name }}</u></h5></strong>
-                        </div>
-                        <!-- Col 2 -->
-                        {% if plant.water_interval == 1 %}
-                            <div class="col-5">
-                                <!-- Water Interval -->
-                                <p>- water every day</p>
-                            </div>
-                        {% else %}
-                            <div class="col-5">
-                                <!-- Water Interval -->
-                                <p>{{ '- water every ' ~ plant.water_interval ~ ' days' }}</p>
-                            </div>
-                        {% endif %}
-                        <!-- Col 3 -->
-                        <div class="col-2">
-                            <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal{{plant.id}}">
-                                <img src="{{ url_for('static', filename='images/delete.webp') }}" alt="Delete" class="delete-button">
-                            </button>
-                        </div>
-                    </div>
-                    <!-- Row 2 -->
-                    <div class="row">
-                        <!-- Col 1 -->
-                        <div class="col-5">
-                            <!-- Latin Name -->
-                            <p><i>{{ plant.latin_name }}</i></p>
-                        </div>
-                        <!-- Col 2 -->
-                        <div class="col-5">
-                            <!-- Last Watered -->
-                            <p>{{ '- last watered on ' ~ plant.last_watered_date.strftime('%A, %B %d') }}</p>
-                        </div>
-                        <!-- Col 3 -->
-                        <div class="col-2">
-                            <!-- Edit Button -->
-                            <a href="{{ url_for('edit_plant', id=plant.id) }}"><img src="{{ url_for('static', filename='images/edit.webp') }}" alt="Update" class="edit-button"></a>
-                        </div>
-                    </div>
-                    <!-- Row 3 -->
-                    <div class="row">
-                        <!-- Col 1 -->
-                        <div class="col-5"></div>
-                        <!-- Col 2 -->
-                        {% if plant.next_water < now %}
-                            <div class="col-5 red-text">
-                                <!-- Next Watered -->
-                                <p>- needed to be watered on {{ plant.next_water.strftime('%A, %B %d') }}</p>
-                            </div>
-                        {% elif plant.next_water <= now %}
-                            <div class="col-5 red-text">
-                                <!-- Next Watered -->
-                                <p>- needs to be watered today!</p>
-                            </div>
-                        {% else %}
-                            <div class="col-5">
-                                <!-- Next Watered -->
-                                <p>- needs to be watered on {{ plant.next_water.strftime('%A, %B %d') }}</p>
-                            </div>
-                        {% endif %}
-                        <!-- Col 3 -->
-                        <div class="col-2">
-                            <!-- See More Button -->
-                            <a href="{{ url_for('plant', id=plant.id) }}"><img src="{{ url_for('static', filename='images/eye.webp') }}" alt="See More" class="more-button"></a>
-                        </div>
-                    </div>
+                <div class="col-4 make-middle">
+                    <!-- Edit Button -->
+                    <a href="{{ url_for('edit_plant', id=plant.id) }}"><img src="{{ url_for('static', filename='images/edit.webp') }}" alt="Update" class="edit-button"></a>
+                </div>
+                <div class="col-4 make-middle">
+                    <!-- See More -->
+                    <a href="{{ url_for('plant', id=plant.id) }}"><img src="{{ url_for('static', filename='images/eye.webp') }}" alt="See More" class="more-button"></a>
                 </div>
             </div>
-            <br>         
         </div>
+
         <hr>
         {% endif %}
     {% endfor %}

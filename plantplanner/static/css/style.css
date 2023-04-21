@@ -63,6 +63,12 @@ small {
 .red-text {
     color: red;
 }
+
+.make-middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
   
 /* #logo-text {
     font-size: 1.6rem;
