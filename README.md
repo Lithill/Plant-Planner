@@ -13,7 +13,7 @@ This website has been created to help people to know when to water their plants.
 5. [Features](#features)
 6. [Accessibility](#accessibility)
 7. [Technologies Used](#technologies-used)
-8. [Deployment and Local Development](#deployment-&-local-development)
+8. [Deployment and Local Development](#deployment-and-local-development)
 9. [Testing](#testing)
 10. [Credits](#credits)
     
@@ -155,7 +155,7 @@ HTML5, CSS3, Python,  and JavaScript were used to create this website.
 * [ElephantSQL](https://www.elephantsql.com/) was used to host the database.
 * [Heroku](https://www.heroku.com/) was used to deploy the website.
 
-## Deployment & Local Development
+## Deployment and Local Development
 
 ### Deployment
 
