@@ -378,7 +378,9 @@ def page_not_found(e):
 
 
 @app.route('/plants/<int:id>')
+@login_required
 def plant(id):
+    # id = current_user.id
 
     # Create a datetime variable for today's date
     # Then pass it through the template

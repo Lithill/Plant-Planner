@@ -9,6 +9,7 @@
         </div>
     {% endfor %}
 
+    {% if plant.poster_id == current_user.id %}
     <!-- Delete modal -->
     <div class="modal fade blue-text" id="exampleModal{{ plant.id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -129,6 +130,12 @@
             {{ plant.notes|safe }}
         </div>
     </div>
-    <br>         
+    <br>
+    {% else %}
+    <br>
+    <p><strong>You are not authorised to see this plant</strong></p>  
+    {% endif %}
+    
+    
 
 {% endblock %}

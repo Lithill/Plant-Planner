@@ -273,13 +273,15 @@ Results from the [check](#).
    3. Solution: Change instructions, and add logout to the routes file
 
 6.
-   1. Expected behaviour: Cannot see plant that belongs to a deleted user
-   2. Actual behaviour: Can see plant after deleting the user. (this means that cascade delete isn't working AND user auth isn't working on the single plant page. Is user somehow still logged in? Is the model not set up correctly?)
-   3. Solution: 
-
-7.
    1. Expected behaviour: Individual plant pages should only be visible to logged-in user
    2. Actual behaviour: Individual plant pages can be viewed by other users and people not logged in
+   3. Solution: Add login required to routes, and jinja if statement to html page
+
+
+
+7.
+   1. Expected behaviour: Cannot see plant that belongs to a deleted user
+   2. Actual behaviour: Can see plant after deleting the user. (this means that cascade delete isn't working AND user auth isn't working on the single plant page. Is user somehow still logged in? Is the model not set up correctly?)
    3. Solution: 
 
 ### Known Bugs
