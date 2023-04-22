@@ -20,7 +20,6 @@
         <br>         
     </div>
     {% for plant in plants %}
-        <hr>
         <!-- Delete modal -->
         <div class="modal fade blue-text" id="exampleModal{{ plant.id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
@@ -43,7 +42,7 @@
         </div>
   
         {% if plant.poster_id == current_user.id %}
-        
+        <hr>
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
             <!-- Plant Image -->
             <div class="col">
