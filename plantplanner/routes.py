@@ -121,7 +121,7 @@ def add_plant():
     return render_template(
         "add_plant.html",
         form=form,
-        page_instructions="Answer the questions and click 'Submit' to add a plant.",
+        page_instructions="Answer the questions and click the tick to add a plant.",
         page_title="Add a Plant")
 
 

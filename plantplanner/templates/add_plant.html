@@ -12,80 +12,85 @@
     {% if current_user.is_authenticated %}
     <div>
         <br>
+        <!-- Add Plant Form -->
         <form method="POST" class="blue-text">
             {{ form.hidden_tag() }}
-            <div class="row">
+            <div class="row text-end">
+                <small>* Required</small>
+            </div>
+            <br>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
                 <!-- Common Name Label -->
-                <div class="col-3 text-end" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="(Required) Enter the common name of your plant.">
+                <div class="col text-nowrap" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="(Required) Enter the common name of your plant.">
                     <strong>* {{ form.common_name.label(class="form-label") ~ ':'}}</strong>
                 </div>
                 <!-- Common Name Field -->
-                <div class="col-3">
+                <div class="col text-nowrap">
                     {{ form.common_name(class="form-control")}}
                 </div>
                 <!-- Latin Name Label -->
-                <div class="col-2 text-end" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="(Optional) Enter the latin name of your plant">
+                <div class="col text-nowrap" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="(Optional) Enter the latin name of your plant">
                     <strong>{{ form.latin_name.label(class="form-label") ~ ':'}}</strong>
                 </div>
-                <!-- Latin Name Label -->
-                <div class="col-3">
+                <!-- Latin Name Field -->
+                <div class="col text-nowrap">
                     {{ form.latin_name(class="form-control") }}
                 </div>
-                <!-- Go Back Button -->
-                <div class="col-1">
-                    <a href="{{ url_for('plants') }}"><img src="{{ url_for('static', filename='images/back.webp') }}" alt="Go Back" class="back-button"></a>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <!-- Water Interval Label -->
-                <div class="col-3 text-end" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="(Required) How many days should there be between watering?">
+                <!-- Days Between Watering Label -->
+                <div class="col text-nowrap" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="(Required) How many days should there be between watering?">
                     <strong>* {{ form.water_interval.label(class="form-label") ~ ':'}}</strong>
                 </div>
-                <!-- Water Interval Field -->
-                <div class="col-3">
+                <!-- Days Between Watering Field -->
+                <div class="col text-nowrap">
                     {{ form.water_interval(class="form-control") }}
                 </div>
-                <!-- Last Watered Label -->
-                <div class="col-2 text-end text-nowrap" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="(Required) When did you last water this plant?">
+                <!-- Date Last Watered Label -->
+                <div class="col text-nowrap" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="(Required) When did you last water this plant?">
                     <strong>* {{ form.last_watered_date.label(class="form-label") ~ ':'}}</strong>
                 </div>
-                <!-- Last Watered Field -->
-                <div class="col-3">
+                <!-- Date Last Watered Field -->
+                <div class="col text-nowrap">
                     {{ form.last_watered_date(class="form-control") }}
                 </div>
-                <!-- Submit Button -->
-                <div class="col-1">
-                    <button type=submit><img src="{{ url_for('static', filename='images/save.webp') }}" alt="Save" class="save-button"></button>  
-                </div>
             </div>
             <br>
-            <div class="row">
-                <!-- Pic Url Label -->
-                <div class="col-3 text-end" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="(Optional) Upload your photo to a hosting platform such as Flikr, and then paste the image URL here">
+            <div class="row row-cols-1 row-cols-md-1 row-cols-lg-1 g-4">
+                <!-- Image URL label -->
+                <div class="col text-nowrap" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="(Optional) Upload your photo to a hosting platform such as Flikr, and then paste the image URL here">
                     <strong>{{ form.pic_url.label(class="form-label") ~ ':'}}</strong>
                 </div>
-                <div class="col-8">
-                    {{ form.pic_url(class="form-control") }}
-                </div>
+                <!-- Image URL Field -->
+                <div class="col">{{ form.pic_url(class="form-control") }}</div>
             </div>
             <br>
-            <!-- Notes Label -->
-            <div class="row">
-                <div class="col-6 text-start" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="(Optional) Write notes about your plants here. E.g. how to double check that it needs watering, or when you last gave it fertiliser">
+            <div class="row row-cols-1 row-cols-md-1 row-cols-lg-1 g-4">
+                <!-- Notes Label -->
+                <div class="col text-nowrap" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="(Optional) Write notes about your plants here. E.g. how to double check that it needs watering, or when you last gave it fertiliser">
                     <strong>{{ form.notes.label(class="form-label") ~ ':'}}</strong>
                 </div>
-                <div class="col-6 text-end">
-                    <small>* Required</small>
-                </div>
-            </div>
-            <!-- Notes Field -->
-            <div class="row">
-                <div class="col-12">
+                <!-- Notes Field -->
+                <div class="col">
                     {{ form.notes(class="form-control", rows="5") }}
                 </div>
-            </div>     
-            <br>
+            </div>
+            <!-- Buttons -->
+            <div class="row ">
+                <div class="d-flex bd-highlight">
+                    <!-- Back Button -->
+                    <div class="p-2 flex-grow-1 bd-highlight text-end">
+                        <a href="{{ url_for('plants') }}">
+                            <img src="{{ url_for('static', filename='images/back.webp') }}" alt="Go Back" class="back-button">
+                        </a>
+                    </div>
+                    <!-- Submit Button -->
+                    <div class="p-2 bd-highlight">
+                        <button type=submit>
+                            <img src="{{ url_for('static', filename='images/save.webp') }}" alt="Save" class="save-button">
+                        </button>
+                    </div>
+                </div>
+            </div>
+
         </form>
         {{ ckeditor.load() }}
         {{ ckeditor.config(name='notes') }}

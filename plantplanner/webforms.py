@@ -18,7 +18,7 @@ class PlantForm(FlaskForm):
     pic_url = URLField("Image Url")
     latin_name = StringField("Latin Name")
     water_interval = IntegerField(
-        "Days between watering?",
+        "Watering Interval",
         [validators.NumberRange(min=1, max=182)]
         )
     last_watered_date = DateField(
