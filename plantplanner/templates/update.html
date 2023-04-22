@@ -13,20 +13,20 @@
         <div>
             <form action="/update/{{ name_to_update.id }}" method="POST">
                 {{ form.hidden_tag() }}
-                <div class="row">
-                    <div class="col-2 text-end">{{ form.name.label(class="form-label") ~ ':' }}</div>
+                <div class="row" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Edit your name. Field cannot be left blank">
+                    <div class="col-2 text-end"><strong>{{ form.name.label(class="form-label") ~ ':' }}</strong></div>
                     <div class="col-9">{{ form.name(class="form-control", value=name_to_update.name) }}</div>
                     <div class="col-1"><a href="{{ url_for('account') }}"><img src="{{ url_for('static', filename='images/back.webp') }}" alt="Go Back" class="back-button"></a></div>
                 </div>
                 <br>
-                <div class="row">
-                    <div class="col-2 text-end">{{ form.username.label(class="form-label") ~ ':' }}</div>
+                <div class="row" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Edit your username. Field cannot be left blank">
+                    <div class="col-2 text-end"><strong>{{ form.username.label(class="form-label") ~ ':' }}</strong></div>
                     <div class="col-9">{{ form.username(class="form-control", value=name_to_update.username) }}</div>
                     <div class="col-1"><a href="{{ url_for('delete', id=id)}}"><img src="../static/images/delete.webp" alt="Delete" class="delete-button"></a></div>
                 </div>
                 <br>
-                <div class="row">
-                    <div class="col-2 text-end">{{ form.email.label(class="form-label") ~ ':' }}</div>
+                <div class="row" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Edit your email address. Field cannot be left blank">
+                    <div class="col-2 text-end"><strong>{{ form.email.label(class="form-label") ~ ':' }}</strong></div>
                     <div class="col-9">{{ form.email(class="form-control", value=name_to_update.email) }}</div>
                     <div class="col-1"><button type=submit><img src="{{ url_for('static', filename='images/save.webp') }}" alt="Save" class="save-button"></button></div>
                 </div>
