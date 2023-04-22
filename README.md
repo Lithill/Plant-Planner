@@ -4,7 +4,7 @@ This website has been created to help people to know when to water their plants.
 
 !["Am I Responsive" image](#)
 
-[View the live project here](https://lithill.github.io/Plant-Planner/)
+[View the live project here](#)
 
 ## Table of Contents
 
@@ -21,7 +21,7 @@ This website has been created to help people to know when to water their plants.
 
 ### Initial Discussion
 
-It may be helpful for people with with less-than-green thumbs to have an automated list of when their indoor plants next need to be watered. It is usual for people to just water all of their plants perhaps once a week, but different plants need different amounts of water. 
+It may be helpful for people with with less-than-green thumbs to have an automated list of when their indoor plants next need to be watered. It is usual for people to just water all of their house plants at the same time, perhaps once a week, but different plants need different amounts of water. 
 
 #### Key information for the site
 
@@ -50,78 +50,119 @@ It may be helpful for people with with less-than-green thumbs to have an automat
 #### Longer Term Visitor Goals 
 
 * To sign in
-* To check when they need to water their plants
 * To edit when they last watered their plants
+* To check when they need to water their plants
 
 ## Design
 
-### Early Design Phases
+### Early Design Phases / Wireframes
 
-The design was created desktop-first. 
+The Wireframes were made via [Paint.net](https://www.getpaint.net/).
 
-![Index Page](static/images/readme/my_plants.jpg)
+A clean and unclutered approach was sought, so that the user could easily see the information they needed.
 
-A clean and unclutered approach was saught, so that the user could easily see the information that they need.
+![Index Page](plantplanner/static/images/readme/my_plants.jpg)
 
-![Login Page](static/images/readme/sign-in.jpg)
+This website was designed desktop-first. This caused issues further on in the development.
+
+![Login Page](plantplanner/static/images/readme/sign_in.jpg)
+
+This is because it was decided early on that Bootstrap would be used in order to speed up the process. But at the time this decision was made, it wasn't understood that Bootstrap is a mobile-first framework.
+
+![Add Plant Page](plantplanner/static/images/readme/add_plant.jpg)
+
+The design also changed during development because it was felt that the base template functionality of Flask could be better utilised. This in turn helped to create more uniform user interface.
 
 ### Colour scheme
 
-The website sparingly uses a palette of neutral natural colours, which was felt to be suitable for a website designed for gardeners. 
+The website sparingly uses a colour palette often found in nature. This was felt to be suitable for a website designed for gardeners. 
 
-![Colour Scheme](static/images/readme/colour-palette.jpg)
+![Colour Scheme](plantplanner/static/images/readme/colour_palette.jpg)
 
 ### Typography
 
-Google Fonts was used for the following fonts:
+Google Fonts was used to import the following fonts:
 
-* Merriweather is a serif font. This is used for the headings.
-* Arimo is a sans-serif font. This is used for all other text.
-
-### Wireframes
-
-The Wireframes were made via [Paint.net](https://www.getpaint.net/).  
-
-#### Mobile Wireframe
-
-
-
-#### Desktop Wireframe
-
-![Index Page](static/images/readme/my_plants.jpg)
-
-![Login Page](static/images/readme/sign-in.jpg)
+* Merriweather is a serif font. This is used for the navigation bar and headings.
+* Arimo is a sans-serif font. This is used for all other text.  
 
 ## Features
 
-The website is made up of # pages. 
+The website is made up of 9 pages:
 
-The plants page is filtered by when the plants next need to be watered, so that the plants most in need of watering are at the top. Plants that need watering now also have red text. 
+* Index
+* Register
+* Log in
+* Account dashboard
+* Edit account
+* My plants
+* Plant profile
+* Add plants
+* Edit plants
+
+### Index
 
 The index page has the following features:
 
-* Buttons:
-   * Add button, which adds an 'add a plant' div containing text boxes to the page
+If the user is not signed in, they will see the following buttons:
 
-   ![Add button](#)
+   * Log in button, which takes the user to the log in page
 
-   * Edit buttons, which enables the user to edit some of the plant information
+   ![Add plant button](plantplanner/static/images/readme/login.webp)
 
-   ![Edit buttons](#)
+   * Register button, which takes the user to the registration page
 
-   * Delete buttons, which enables the user to delete a plant div
+   ![Add plant button](plantplanner/static/images/readme/register.webp)
 
-   ![Delete buttons](#)
+If the user is signed in, they will see the following buttons:
+
+   * Add button, which takes the user to the "Add Plant" page.
+
+   ![Add plant button](plantplanner/static/images/readme/add_plant_button.webp)
+
+   * View your plants buttons, which takes the user to their plants page. 
+
+   ![View your plants button](plantplanner/static/images/readme/view_plants_button.webp)
+
+### Register
+
+The registration page has the following features:
+
+* A form the takes the users name, username, email address and password, and sends this to the database. 
+
+   ![View your plants button](plantplanner/static/images/readme/register_form.webp)
+
+* The password is hidden from view, and confirmed using two password fields. 
+
+   ![View your plants button](plantplanner/static/images/readme/password.webp)
+
+* Form validation is used on all fields.
+
+   ![View your plants button](plantplanner/static/images/readme/name_validation.webp)
+
+Add password validation here
 
 
-The login page has the following features:
+### Log in
+### Account dashboard
+### Edit account
+### My plants
 
-* 
+The plants page is filtered by when the plants next need to be watered, so that the plants most in need of watering are at the top. Plants that need watering now also have red text. 
+
+### Plant profile
+### Add plants
+### Edit plants
+
+
+
+
 
 ### Future Features
 
 * Add 'feeding' to the plant information. 
 * Add email alerts, so that the user can get notifications when they need to water / feed plants.
+* Add ability for user to change their password
 
 ## Accessibility
 
@@ -219,7 +260,7 @@ To clone the Plant Planner repository:
    * pipenv install python-dotenv
    * pip install flask_login
    * pip install flask-ckeditor
-   
+
 ## Testing
 
 Testing was ongoing throughout the entire build. I utilised Chrome developer tools while building to pinpoint and troubleshoot any issues as I went along. Both manual and automated testing were employed. The difference between these two types of tests is that:
@@ -264,7 +305,9 @@ Results from the [check](#).
 | 5  | When user is deleted, user should be redirected back to register page, and not appear signed in | When user is deleted, user looks like they are on "My Plants" page, and can see "Logout" on the navbar | Change instructions, and add logout to the routes file |
 | 6  | Individual plant pages should only be visible to logged-in user | Individual plant pages can be viewed by other users and people not logged in | Add login required to routes, and jinja if statement to html page |
 | 7  | Cannot see plant that belongs to a deleted user | Can see plant after deleting the user. (this means that cascade delete isn't working AND user auth isn't working on the single plant page. Is user somehow still logged in? Is the model not set up correctly?) | Add delete ascade to user model |
-| 8  | For there only to be one horizontal line above each plant on the My Plants page | There are extra lines at the bottom of plants in the My Plants page | Move <hr> into the if statement on the plants page |
+| 8  | For there only to be one horizontal line above each plant on the My Plants page | There are extra lines at the bottom of plants in the My Plants page | Move the horizontal line into the if statement on the plants page |
+
+| 9  | User registration form tells the user when their passwords do not match | Does not tell the user when their passords do not match | Solution |
 
 ### Known Bugs
 
