@@ -121,7 +121,7 @@ def add_plant():
     return render_template(
         "add_plant.html",
         form=form,
-        page_instructions="Answer the questions and click 'Submit' to add a plant",
+        page_instructions="Answer the questions and click 'Submit' to add a plant.",
         page_title="Add a Plant")
 
 
@@ -413,7 +413,7 @@ def plants():
     return render_template(
         "plants.html",
         plants=plants,
-        page_instructions="Click the '+' button to add a plant",
+        page_instructions="Click the '+' button to add a plant. The plant list is ordered based on the date they need to be watered.",
         now=now,
         page_title="My Plants")
 

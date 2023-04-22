@@ -19,9 +19,8 @@
         </div> 
         <br>         
     </div>
-    <hr>
     {% for plant in plants %}
-
+        <hr>
         <!-- Delete modal -->
         <div class="modal fade blue-text" id="exampleModal{{ plant.id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
@@ -81,7 +80,7 @@
                         <p>- needed to be watered on {{ plant.next_water.strftime('%A, %B %d') }}</p>
                     </div>
                 {% elif plant.next_water <= now %}
-                    <div>
+                    <div class="red-text">
                         <p>- needs to be watered today!</p>
                     </div>
                 {% else %}
@@ -110,8 +109,6 @@
                 </div>
             </div>
         </div>
-
-        <hr>
         {% endif %}
     {% endfor %}
 {% endblock %}
