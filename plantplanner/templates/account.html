@@ -29,32 +29,40 @@
             </div>
         </div>
     </div>
-
-
+    <!-- User Details -->
     <div class="row">
+        <!-- User Name -->
         <div class="col-11">
             <p class="text-start"><strong>Name: </strong>{{ current_user.name }}</p>
         </div>
-        <!-- Delete button - open modal -->
-        <div class="col-1">
-            <button type="button" data-bs-toggle="modal" data-bs-target="#userDelete">
-                <img src="{{ url_for('static', filename='images/delete.webp') }}" alt="Delete" class="delete-button">
-            </button>
-        </div>
     </div>
+    <!-- User Username -->
     <div class="row">
         <div class="col-11">
             <p class="text-start"><strong>Username: </strong>{{ current_user.username }}</p>
         </div>
-        <div class="col-1">
-            <a href="{{ url_for('update', id=current_user.id)}}"><img src="../static/images/edit.webp" alt="Update" id="logo"></a>
-        </div>
     </div>
+    <!-- User Email -->
     <div class="row">
         <div class="col-11">
             <p class="text-start"><strong>Email: </strong>{{ current_user.email }}</p>
         </div>
         <div class="col-1">
+        </div>
+    </div>
+    <!-- Buttons -->
+    <div class="row ">
+        <div class="d-flex bd-highlight">
+            <!-- Edit Button -->
+            <div class="p-2 flex-grow-1 bd-highlight text-end">
+                <a href="{{ url_for('update', id=current_user.id)}}"><img src="../static/images/edit.webp" alt="Update" id="logo"></a>
+            </div>
+            <!-- Delete button - open modal -->
+            <div class="p-2 bd-highlight">
+                <button type="button" data-bs-toggle="modal" data-bs-target="#userDelete">
+                    <img src="{{ url_for('static', filename='images/delete.webp') }}" alt="Delete" class="delete-button">
+                </button>
+            </div>
         </div>
     </div>
     
