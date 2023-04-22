@@ -13,15 +13,17 @@
             {{ form.hidden_tag() }}
             <br>
             <div class="row blue-text text-end">
-                <div class="col-3"><strong>{{ form.username.label(class="form-label") ~ ':' }}</strong></div>
+                <div class="col-3 text-nowrap"><strong>{{ form.username.label(class="form-label") ~ ':' }}</strong></div>
                 <div class="col-8">{{ form.username( class="form-control") }}</div>
-                <div class="col-1"><button type=submit><img src="{{ url_for('static', filename='images/save.webp') }}" alt="Save" class="save-button"></button></div>
             </div>
             <br>
             <div class="row blue-text text-end">
-                <div class="col-3"><strong>{{ form.password.label(class="form-label") ~ ':' }}</strong></div>
+                <div class="col-3 text-nowrap"><strong>{{ form.password.label(class="form-label") ~ ':' }}</strong></div>
                 <div class="col-8">{{ form.password(class="form-control") }}</div>
-                <div class="col-1"></div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="text-end"><button type=submit><img src="{{ url_for('static', filename='images/save.webp') }}" alt="Save" class="save-button"></button></div>
             </div>
             <br>
         </form>
