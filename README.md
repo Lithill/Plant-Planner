@@ -245,6 +245,12 @@ The [JSHint Validator](https://jshint.com/) was used to validate the JavaScript 
 
 Results from the [check](#).
 
+### Pep8 Validator
+
+The [Python Validator](https://www.pythonchecker.com/) was used to validate the Python code.
+
+Results from the [check](#).
+
 ### Solved Bugs
 
 | Bug Number  | Expected behaviour | Actual behaviour | Solution |
