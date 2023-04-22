@@ -268,13 +268,18 @@ Results from the [check](#).
    3. Solution: Did not change code on the delete route when added the list-by-water-date functionality
 
 5.
-   1. Expected behaviour: Plant form will submit when user only fills out common name, water interval and last watered
-   2. Actual behaviour: Plant form also needs notes filled in before it will submit
-   3. Solution: 
+   1. Expected behaviour: When user is deleted, user should be redirected back to register page, and not appear signed in
+   2. Actual behaviour: When user is deleted, user looks like they are on "My Plants" page, and can see "Logout" on the navbar
+   3. Solution: Change instructions, and add logout to the routes file
 
 6.
-   1. Expected behaviour: 
-   2. Actual behaviour: 
+   1. Expected behaviour: Cannot see plant that belongs to a deleted user
+   2. Actual behaviour: Can see plant after deleting the user. (this means that cascade delete isn't working AND user auth isn't working on the single plant page. Is user somehow still logged in? Is the model not set up correctly?)
+   3. Solution: 
+
+7.
+   1. Expected behaviour: Individual plant pages should only be visible to logged-in user
+   2. Actual behaviour: Individual plant pages can be viewed by other users and people not logged in
    3. Solution: 
 
 ### Known Bugs

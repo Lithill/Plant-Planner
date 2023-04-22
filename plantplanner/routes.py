@@ -180,13 +180,14 @@ def delete(id):
             db.session.commit()
             flash("User Deleted Successfully!")
             our_users = Users.query.order_by(Users.date_added)
+            logout_user()
             return render_template(
                 "add_user.html",
                 form=form,
                 name=name,
                 our_users=our_users,
-                page_instructions="These are your plants",
-                page_title="My Plants")
+                page_instructions="Answer the questions to create an account",
+                page_title="Create an Account")
         except:
             flash("Sorry, there was a problem deleting the user")
             return render_template(
