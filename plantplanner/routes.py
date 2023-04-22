@@ -328,7 +328,7 @@ def login():
             else:
                 flash("Wrong password - try again")
         else:
-            flash("That use doesn't exist - try again")
+            flash("That user doesn't exist - try again")
     return render_template(
         'login.html',
         form=form,

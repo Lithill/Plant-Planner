@@ -36,7 +36,8 @@ class Users(db.Model, UserMixin):
     # Password
     password_hash = db.Column(db.String(128))
     # User can have many plants
-    plants = db.relationship('Plants', backref='poster')
+    plants = db.relationship(
+        'Plants', backref='poster', cascade="all, delete", lazy=True)
 
     @property
     def password(self):
