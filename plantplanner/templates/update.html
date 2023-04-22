@@ -4,7 +4,7 @@
 
     {% for message in get_flashed_messages() %}
         <div class="alert alert-success alert-dismissible fade show" role="alert">
-            Hi {{ name|title }} - {{ message }}
+            {{ message }}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     {% endfor %}
@@ -34,28 +34,49 @@
         <div>
             <form action="/update/{{ name_to_update.id }}" method="POST">
                 {{ form.hidden_tag() }}
-                <div class="row" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Edit your name. Field cannot be left blank">
-                    <div class="col-2 text-end"><strong>{{ form.name.label(class="form-label") ~ ':' }}</strong></div>
-                    <div class="col-9">{{ form.name(class="form-control", value=name_to_update.name) }}</div>
-                    <div class="col-1"><a href="{{ url_for('account') }}"><img src="{{ url_for('static', filename='images/back.webp') }}" alt="Go Back" class="back-button"></a></div>
-                </div>
-                <br>
-                <div class="row" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Edit your username. Field cannot be left blank">
-                    <div class="col-2 text-end"><strong>{{ form.username.label(class="form-label") ~ ':' }}</strong></div>
-                    <div class="col-9">{{ form.username(class="form-control", value=name_to_update.username) }}</div>
-                    <div class="col-1">
-                        <button type="button" data-bs-toggle="modal" data-bs-target="#userDelete">
-                            <img src="{{ url_for('static', filename='images/delete.webp') }}" alt="Delete" class="delete-button">
-                        </button>
+
+                <div class="row row-cols-1 row-cols-md-1 row-cols-lg-1 g-4">
+                    <!-- Name Label -->
+                    <div class="col text-nowrap text-start">
+                        <strong>{{ form.name.label(class="form-label") ~ ':' }}</strong>
+                    </div>
+                    <!-- Name Field -->
+                    <div class="col">
+                        {{ form.name(class="form-control", value=name_to_update.name) }}
+                    </div>
+                    <!-- Username Label -->
+                    <div class="col text-nowrap text-start">
+                        <strong>{{ form.username.label(class="form-label") ~ ':' }}</strong>
+                    </div>
+                    <!-- Username Field -->
+                    <div class="col">
+                        {{ form.username(class="form-control", value=name_to_update.username) }}
+                    </div>
+                    <!-- Email Label -->
+                    <div class="col text-nowrap text-start">
+                        <strong>{{ form.email.label(class="form-label") ~ ':' }}</strong>
+                    </div>
+                    <!-- Email Field -->
+                    <div class="col">
+                        {{ form.email(class="form-control", value=name_to_update.email) }}
                     </div>
                 </div>
                 <br>
-                <div class="row" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Edit your email address. Field cannot be left blank">
-                    <div class="col-2 text-end"><strong>{{ form.email.label(class="form-label") ~ ':' }}</strong></div>
-                    <div class="col-9">{{ form.email(class="form-control", value=name_to_update.email) }}</div>
-                    <div class="col-1"><button type=submit><img src="{{ url_for('static', filename='images/save.webp') }}" alt="Save" class="save-button"></button></div>
+                <!-- Buttons -->
+                <div class="row">
+                    <div class="d-flex bd-highlight">
+                        <!-- Delete Button -->
+                        <div class="p-2 flex-grow-1 bd-highlight text-end">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#userDelete">
+                                <img src="{{ url_for('static', filename='images/delete.webp') }}" alt="Delete" class="delete-button">
+                            </button>
+                        </div>
+                        <!-- Save Button -->
+                        <div class="p-2 bd-highlight">
+                            <div class="col-1"><button type=submit><img src="{{ url_for('static', filename='images/save.webp') }}" alt="Save" class="save-button"></button>
+                        </div>
+                    </div>
                 </div>
-                <br>
             </form>
         </div>
     {% else %}
