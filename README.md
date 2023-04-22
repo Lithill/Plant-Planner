@@ -177,7 +177,7 @@ I have been mindful during coding to ensure that the website is as accessible as
 
 ### Languages Used
 
-HTML5, CSS3, Python,  and JavaScript were used to create this website.
+HTML5, CSS3, Python, and JavaScript were used to create this website.
 
 ### Frameworks, Libraries & Programs Used
 
@@ -191,7 +191,7 @@ HTML5, CSS3, Python,  and JavaScript were used to create this website.
 * [SQLAlchemy](https://www.sqlalchemy.org/) was used to connect Python code with the database.
 * [Psycopg2](https://www.psycopg.org/docs/) was used to connect Python code with the database. 
 * [Flask](https://flask.palletsprojects.com/en/2.2.x/) is the web application framework which was used to build the website.
-* [Bootstrap](https://getbootstrap.com/) was used for CSS shortcuts.
+* [Bootstrap 5](https://getbootstrap.com/) was used for CSS shortcuts.
 * [PostgreSQL](https://www.postgresql.org/) was the object-relational database system used.
 * [ElephantSQL](https://www.elephantsql.com/) was used to host the database.
 * [Heroku](https://www.heroku.com/) was used to deploy the website.
@@ -231,13 +231,15 @@ To clone the Plant Planner repository:
 6) Click "Clone".
 
 ### How to set up the gitpod environment after session times out:
-   In the terminal type:
+   In the terminal, type:
       - set_pg
       - psql
    
 ### How to run the server to see the website in the browser:
-   In the terminal type:
+   In the terminal, type:
       - python3 run.py
+   
+   Make sure that you consistently run this and the above commands in the same terminal. 
    
 ### Installations and commands in the terminal - needed if forking or using a different workspace
    * pip3 install 'Flask-SQLAlchemy<3' psycopg2 sqlalchemy==1.4.46
@@ -268,7 +270,7 @@ Testing was ongoing throughout the entire build. I utilised Chrome developer too
 * manual testing is conducted by a person, who is seeing if they can break the product, or otherwise whether it behaves as expected for users.
 * automatic testing is conducted by automation frameworks, or some other kind of tool or piece of software. 
 
-I personally tested the page and had X people also manually test it on their own devices. For automated testing, I used W3C validator, CSS validator and Lighthouse.  
+I personally tested the page and had X people also manually test it on their own devices. For automated testing, I used W3C validator, CSS validator, Python Checker and Lighthouse.  
 
 ### W3C Validator
 
@@ -307,11 +309,11 @@ Results from the [check](#).
 | 7  | Cannot see plant that belongs to a deleted user | Can see plant after deleting the user. (this means that cascade delete isn't working AND user auth isn't working on the single plant page. Is user somehow still logged in? Is the model not set up correctly?) | Add delete ascade to user model |
 | 8  | For there only to be one horizontal line above each plant on the My Plants page | There are extra lines at the bottom of plants in the My Plants page | Move the horizontal line into the if statement on the plants page |
 
-| 9  | User registration form tells the user when their passwords do not match | Does not tell the user when their passords do not match | Solution |
-
 ### Known Bugs
 
-No currently known bugs.
+| Bug Number  | Expected behaviour | Actual behaviour | Solution |
+| ---:        |    :----:          |        :----:    | :---     |
+| 9  | User registration form tells the user when their passwords do not match | Does not tell the user when their passords do not match | ? |
 
 ### Lighthouse
 
