@@ -61,7 +61,7 @@ The design was created desktop-first.
 
 ![Index Page](static/images/readme/my_plants.jpg)
 
-A clean and unclutered approach was saught, so that the use could easily see the information that they need.
+A clean and unclutered approach was saught, so that the user could easily see the information that they need.
 
 ![Login Page](static/images/readme/sign-in.jpg)
 

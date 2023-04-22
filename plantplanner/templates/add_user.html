@@ -29,52 +29,41 @@
             <form method="POST" class="text-end">
                 {{ form.hidden_tag() }}
                 <br>
-                <div class="row">
-                    <div class="col-3"><strong>{{ form.name.label(class="form-label") ~ ':' }}</strong></div>
+                <div class="row" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="(Required) Tell us your name">
+                    <div class="col-3"><strong>* {{ form.name.label(class="form-label") ~ ':' }}</strong></div>
                     <div class="col-8">{{ form.name(class="form-control") }}</div>
                     <div class="col-1"><button type=submit><img src="{{ url_for('static', filename='images/save.webp') }}" alt="Save" class="save-button"></button></div>
                 </div>
                 <br>
-                <div class="row">
-                    <div class="col-3"><strong>{{ form.username.label(class="form-label") ~ ':' }}</strong></div>
+                <div class="row" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="(Required) Tell us your username">
+                    <div class="col-3"><strong>* {{ form.username.label(class="form-label") ~ ':' }}</strong></div>
                     <div class="col-8">{{ form.username(class="form-control") }}</div>
                     <div class="col-1"></div>
                 </div>
                 <br>
-                <div class="row">
-                    <div class="col-3"><strong>{{ form.email.label(class="form-label") ~ ':' }}</strong></div>
+                <div class="row" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="(Required) Tell us your email address">
+                    <div class="col-3"><strong>* {{ form.email.label(class="form-label") ~ ':' }}</strong></div>
                     <div class="col-8">{{ form.email(class="form-control") }}</div>
                     <div class="col-1"></div>
                 </div>
                 <br>
-                <div class="row">
-                    <div class="col-3"><strong>{{ form.password_hash.label(class="form-label") ~ ':' }}</strong></div>
+                <div class="row" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="(Required) What password would you like to use?">
+                    <div class="col-3"><strong>* {{ form.password_hash.label(class="form-label") ~ ':' }}</strong></div>
                     <div class="col-8">{{ form.password_hash(class="form-control") }}</div>
                     <div class="col-1"></div>
                 </div>
                 <br>
-                <div class="row">
-                    <div class="col-3"><strong>{{ form.password_hash2.label(class="form-label") ~ ':' }}</strong></div>
+                <div class="row" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="(Required) Please re-enter your password. It must match the password above">
+                    <div class="col-3"><strong>* {{ form.password_hash2.label(class="form-label") ~ ':' }}</strong></div>
                     <div class="col-8">{{ form.password_hash2(class="form-control") }}</div>
                     <div class="col-1"></div>
+                </div>
+                <div class="text-end">
+                    <small>* Required</small>
                 </div>
                 <br>
             </form>
         </div>
-        <br><br><br>
-        <table class="table table-hover table-bordered table-striped">
-            {% for our_user in our_users %}
-                <tr>
-                    <td>
-                        {{ our_user.id }}. 
-                        <a href="{{ url_for('update', id=our_user.id)}}">{{ our_user.name }}</a> 
-                        - {{ our_user.email }} 
-                        - <a href="{{ url_for('delete', id=our_user.id)}}">Delete</a> 
-                        - PW: {{ our_user.password_hash }}
-                    </td>
-                </tr>
-            {% endfor %}
-        </table>
 
     {% endif %}
 
