@@ -94,7 +94,9 @@ The Wireframes were made via [Paint.net](https://www.getpaint.net/).
 
 ## Features
 
-The website is made up of two pages. 
+The website is made up of # pages. 
+
+The plants page is filtered by when the plants next need to be watered, so that the plants most in need of watering are at the top. Plants that need watering now also have red text. 
 
 The index page has the following features:
 
