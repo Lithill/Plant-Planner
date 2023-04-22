@@ -247,40 +247,15 @@ Results from the [check](#).
 
 ### Solved Bugs
 
-1.
-   1. Expected behaviour: Form is visible when navigating to test_pw.html
-   2. Actual behaviour: Jinja error - AttributeError: 'PasswordForm' object has no attribute 'validate_on_submit'
-   3. Solution: Import FlaskForm from flask_wtf, and pass FlaskForm into the form.
-
-2.
-   1. Expected behaviour: Button images continue to be visible after deleting a plant from the plant.html page
-   2. Actual behaviour: Button images break after deleting a plant from the plant.html page
-   3. Solution: src code needed Jinja template. (E.g. {{ url_for('static', filename='images/add.webp') }})
-
-3.
-   1. Expected behaviour: When clicking on buttons on plants page, they always work
-   2. Actual behaviour: Clicking on buttons on plants page does not work when three plants image div is over it
-   3. Solution: Move three plants image
-
-4.
-   1. Expected behaviour: Plants list is always in order of when plants need to be watered - soonest at the top
-   2. Actual behaviour: Plants list re-orders itself after deleting a plant
-   3. Solution: Did not change code on the delete route when added the list-by-water-date functionality
-
-5.
-   1. Expected behaviour: When user is deleted, user should be redirected back to register page, and not appear signed in
-   2. Actual behaviour: When user is deleted, user looks like they are on "My Plants" page, and can see "Logout" on the navbar
-   3. Solution: Change instructions, and add logout to the routes file
-
-6.
-   1. Expected behaviour: Individual plant pages should only be visible to logged-in user
-   2. Actual behaviour: Individual plant pages can be viewed by other users and people not logged in
-   3. Solution: Add login required to routes, and jinja if statement to html page
-
-7.
-   1. Expected behaviour: Cannot see plant that belongs to a deleted user
-   2. Actual behaviour: Can see plant after deleting the user. (this means that cascade delete isn't working AND user auth isn't working on the single plant page. Is user somehow still logged in? Is the model not set up correctly?)
-   3. Solution: Add delete ascade to user model
+| Bug Number  | Expected behaviour | Actual behaviour | Solution |
+| ---:        |    :----:          |        :----:    | :---     |
+| 1  | Form is visible when navigating to test_pw.html | Jinja error - AttributeError: 'PasswordForm' object has no attribute 'validate_on_submit' | Import FlaskForm from flask_wtf, and pass FlaskForm into the form. |
+| 2  | Button images continue to be visible after deleting a plant from the plant.html page  | Button images break after deleting a plant from the plant.html page | src code needed Jinja template. (E.g. {{ url_for('static', filename='images/add.webp') }}) |
+| 3  | When clicking on buttons on plants page, they always work | Clicking on buttons on plants page does not work when three plants image div is over it | Move three plants image |
+| 4  | Plants list is always in order of when plants need to be watered - soonest at the top | Plants list re-orders itself after deleting a plant | Did not change code on the delete route when added the list-by-water-date functionality |
+| 5  | When user is deleted, user should be redirected back to register page, and not appear signed in | When user is deleted, user looks like they are on "My Plants" page, and can see "Logout" on the navbar | Change instructions, and add logout to the routes file |
+| 6  | Individual plant pages should only be visible to logged-in user | Individual plant pages can be viewed by other users and people not logged in | Add login required to routes, and jinja if statement to html page |
+| 7  | Cannot see plant that belongs to a deleted user | Can see plant after deleting the user. (this means that cascade delete isn't working AND user auth isn't working on the single plant page. Is user somehow still logged in? Is the model not set up correctly?) | Add delete ascade to user model |
 
 ### Known Bugs
 
