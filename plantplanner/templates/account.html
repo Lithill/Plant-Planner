@@ -8,12 +8,38 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     {% endfor %}
+
+    <!-- Delete modal -->
+    <div class="modal fade blue-text" id="userDelete" tabindex="-1" aria-labelledby="userDeleteLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="userDeleteLabel">Are you sure...</h5>
+                </div>
+                <div class="modal-body">
+                    <p>...that you want to delete this user account?</p>
+                    <p><ul>! This action is irreversible !</ul></p>
+                </div>
+                <div class="modal-footer text-end">
+                    <a href="{{ url_for('delete', id=current_user.id)}}"><img src="../static/images/delete-red.webp" alt="Delete" id="logo"></a>
+                    <button type="button" data-bs-dismiss="modal" class="text-end">
+                        <img src="{{ url_for('static', filename='images/close.webp') }}" alt="Close" class="delete-button">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <div class="row">
         <div class="col-11">
             <p class="text-start"><strong>Name: </strong>{{ current_user.name }}</p>
         </div>
+        <!-- Delete button - open modal -->
         <div class="col-1">
-            <a href="{{ url_for('delete', id=current_user.id)}}"><img src="../static/images/delete.webp" alt="Delete" id="logo"></a>
+            <button type="button" data-bs-toggle="modal" data-bs-target="#userDelete">
+                <img src="{{ url_for('static', filename='images/delete.webp') }}" alt="Delete" class="delete-button">
+            </button>
         </div>
     </div>
     <div class="row">
