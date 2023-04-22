@@ -32,7 +32,7 @@
                         <p><ul>! This action is irreversible !</ul></p>
                     </div>
                     <div class="modal-footer text-end">
-                        <a href="{{ url_for('delete_plant', id=plant.id) }}"><img src="{{ url_for('static', filename='images/delete-red.webp') }}" alt="Delete" class="delete-button"></a>
+                        <a href="{{ url_for('delete_plant', id=plant.id) }}"><img src="{{ url_for('static', filename='images/delete_red.webp') }}" alt="Delete" class="delete-button"></a>
                         <button type="button" data-bs-dismiss="modal" class="text-end">
                             <img src="{{ url_for('static', filename='images/close.webp') }}" alt="Close" class="delete-button">
                         </button>
@@ -49,7 +49,7 @@
                 {% if plant.pic_url %}
                     <img src="{{ plant.pic_url }}" alt="{{ plant.common_name }} image" class="img-fluid plant-pic">
                 {% else %}
-                    <img src="{{ url_for('static', filename='images/add-image.webp') }}" alt="No image found" class="img-fluid plant-pic">
+                    <img src="{{ url_for('static', filename='images/add_add .add image.webp') }}" alt="No image found" class="img-fluid plant-pic">
                 {% endif %}
             </div>
             <!-- Common Name -->
