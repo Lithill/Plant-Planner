@@ -294,7 +294,7 @@ def edit_plant(id):
         return render_template(
             "plants.html",
             plants=plants,
-            page_instructions="Instructions here",
+            page_instructions="Please go to the 'My Plants' page to see what plants you can edit",
             page_title="Delete a Plant")
 
 
