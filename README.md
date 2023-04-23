@@ -364,6 +364,8 @@ custom code for vertical line separated bootstrap navbar links.
  code for calculating dates. 
  * [Shinichi Okada's](https://medium.com/mkdir-awesome/how-to-change-the-bootstrap-5-tooltip-background-and-arrow-color-67e6c5aea510)
  code for customising bootstrap tooltips. 
+  * [w3schools](https://www.w3schools.blog/email-validation-javascript-js)
+ code for email validation was adapted for the validateEmail javascript function. 
 
 ### Content
 

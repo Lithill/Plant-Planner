@@ -26,7 +26,7 @@
         </table>
     {% else %}
         <div>
-            <form method="POST" class="text-end">
+            <form method="POST" class="text-end" name="addUser">
                 {{ form.hidden_tag() }}
                 <div class="text-end">
                     <small>* Required</small>
@@ -37,46 +37,51 @@
                         <strong>* {{ form.name.label(class="form-label") ~ ':' }}</strong>
                     </div>
                     <!-- Name Field -->
-                    <div class="col">
-                        {{ form.name(class="form-control") }}
+                    <div class="col" id="nameFieldCol">
+                        {{ form.name(class="form-control", id="nameField") }}
                     </div>
+                    <p id="name-error"></p>
                     <!-- Username Label -->
                     <div class="col text-nowrap text-start">
                         <strong>* {{ form.username.label(class="form-label") ~ ':' }}</strong>
                     </div>
                     <!-- Username Field -->
                     <div class="col">
-                        {{ form.username(class="form-control") }}
+                        {{ form.username(class="form-control", id="usernameField") }}
                     </div>
+                    <p id="username-error"></p>
                     <!-- Email Label -->
                     <div class="col text-nowrap text-start">
                         <strong>* {{ form.email.label(class="form-label") ~ ':' }}</strong>
                     </div>
                     <!-- Email Field -->
                     <div class="col">
-                        {{ form.email(class="form-control") }}
+                        {{ form.email(class="form-control", id="emailField") }}
                     </div>
+                    <p id="email-error"></p>
                     <!-- Password Label -->
                     <div class="col text-nowrap text-start">
                         <strong>* {{ form.password_hash.label(class="form-label") ~ ':' }}</strong>
                     </div>
                     <!-- Password Field -->
                     <div class="col">
-                        {{ form.password_hash(class="form-control") }}
+                        {{ form.password_hash(class="form-control", id="passwordHash") }}
                     </div>
+                    <p id="password-error"></p>
                     <!-- Password Label2 -->
                     <div class="col text-nowrap text-start">
                         <strong>* {{ form.password_hash2.label(class="form-label") ~ ':' }}</strong>
                     </div>
                     <!-- Password Field2 -->
                     <div class="col">
-                        {{ form.password_hash2(class="form-control") }}
+                        {{ form.password_hash2(class="form-control", id="passwordHash2") }}
                     </div>
+                    <p id="password-error-2"></p>
                 </div>
                 <br>
                 <!-- Buttons -->
                 <div class="text-end">
-                    <button type=submit><img src="{{ url_for('static', filename='images/save.webp') }}" alt="Save" class="save-button"></button>
+                    <button type=submit onclick="validateform()"><img src="{{ url_for('static', filename='images/save.webp') }}" alt="Save" class="save-button"></button>
                 </div>
                 <br>
             </form>

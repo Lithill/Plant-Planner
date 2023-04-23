@@ -69,15 +69,6 @@ small {
     justify-content: center;
     align-items: center;
 }
-  
-/* #logo-text {
-    font-size: 1.6rem;
-} */
-  
-/* h1 span {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 5px;
-} */
 
 a {
     white-space: nowrap;
@@ -102,12 +93,6 @@ a {
     padding-left: 20px;
 }
 
-/* #three-plants-div {
-    display:flex;
-    justify-content:center;
-    align-items:flex-end;
-} */
-
 #three-plants {
 	width: 20%;
     height: auto;
@@ -119,6 +104,27 @@ a {
     left: 40px;
 	z-index: 200;  
 } 
+
+/************************************ Form Fields */
+
+/* .user-name,
+.user-name:focus,
+.user-username,
+.user-username:focus
+ {
+    border: 2px solid #cc0000;
+    border-radius: 4px;
+}  */
+
+#name-error,
+#username-error,
+#email-error,
+#password-error,
+#password-error-2 {
+    color: #cc0000;
+    padding: 0;
+    margin: 0;
+}
 
 /************************************ Tooltip */
 /* Code adapted from https://medium.com/mkdir-awesome/how-to-change-the-bootstrap-5-tooltip-background-and-arrow-color-67e6c5aea510 */
