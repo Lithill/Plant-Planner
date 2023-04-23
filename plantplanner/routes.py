@@ -49,7 +49,7 @@ def account():
                 "account.html",
                 form=form,
                 name_to_update=name_to_update,
-                page_instructions="You can make changes to your account by pressing the edit button",
+                page_instructions="You can make changes to your account by clicking the edit button",
                 page_title="My Account")
         except:
             flash("Error! Looks like there was a problem...try again!")
@@ -57,7 +57,7 @@ def account():
                 "account.html",
                 form=form,
                 name_to_update=name_to_update,
-                page_instructions="You can make changes to your account by pressing the edit button",
+                page_instructions="You can make changes to your account by clicking the edit button",
                 page_title="My Account"
                 )
     else:
@@ -457,12 +457,12 @@ def update(id):
             db.session.commit()
             flash("User Updated Successfully!")
             return render_template(
-                "update.html",
+                "account.html",
                 form=form,
                 name_to_update=name_to_update,
                 id=id,
-                page_instructions="Enter what you'd like to edit in the text boxes. Then click the tick.",
-                page_title="Edit User")
+                page_instructions="You can make changes to your account by clicking the edit button",
+                page_title="My Account")
         except:
             flash("It looks like something went wrong... Please try again")
             return render_template(
