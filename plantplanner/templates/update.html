@@ -32,7 +32,7 @@
         <br>
         <!-- Form -->
         <div>
-            <form action="/update/{{ name_to_update.id }}" method="POST">
+            <form action="/update/{{ name_to_update.id }}" method="POST" name="editUser">
                 {{ form.hidden_tag() }}
 
                 <div class="row row-cols-1 row-cols-md-1 row-cols-lg-1 g-4">
@@ -42,16 +42,18 @@
                     </div>
                     <!-- Name Field -->
                     <div class="col">
-                        {{ form.name(class="form-control", value=name_to_update.name) }}
+                        {{ form.name(class="form-control", value=name_to_update.name, id="editNameField") }}
                     </div>
+                    <p id="edit-name-error"></p>
                     <!-- Username Label -->
                     <div class="col text-nowrap text-start">
                         <strong>{{ form.username.label(class="form-label") ~ ':' }}</strong>
                     </div>
                     <!-- Username Field -->
                     <div class="col">
-                        {{ form.username(class="form-control", value=name_to_update.username) }}
+                        {{ form.username(class="form-control", value=name_to_update.username, id="editUsernameField") }}
                     </div>
+                    <p id="edit-username-error"></p>
                     <!-- Email Label -->
                     <div class="col text-nowrap text-start">
                         <strong>{{ form.email.label(class="form-label") ~ ':' }}</strong>
@@ -73,7 +75,7 @@
                         </div>
                         <!-- Save Button -->
                         <div class="p-2 bd-highlight">
-                            <div class="col-1"><button type=submit><img src="{{ url_for('static', filename='images/save.webp') }}" alt="Save" class="save-button"></button>
+                            <div class="col-1"><button type=submit onclick="editUserForm()"><img src="{{ url_for('static', filename='images/save.webp') }}" alt="Save" class="save-button"></button>
                         </div>
                     </div>
                 </div>

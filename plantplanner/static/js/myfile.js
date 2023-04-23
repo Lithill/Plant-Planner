@@ -67,7 +67,6 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
     let emailLengthBool = checkLength( email, emailLength, emailError, emailTooLong, emailField) //check if email is too long
     let isEmailBool = validateEmail(email, emailError, emailField); 
     reset(emailBlankBool && emailLengthBool && isEmailBool, emailField, emailError) //if all these return fine, clear the warnings
-
 }
 
 // Check if passwords match. If not, show user the error
@@ -83,6 +82,40 @@ function checkPasswordsMatch(string1, string2, mustMatchErr, stringField1, strin
         return false;
     }
 }
+
+///////////////////////////////////////// Edit User Form Validation
+
+function editUserForm() {
+    // Name vars
+    let name = document.editUser.name.value; //string
+    const nameField = document.getElementById("editNameField"); //stringField
+    const nameError = document.getElementById("edit-name-error"); //stringError
+    const nameLength = 200; //stringLength - The maximum chars the string can be
+    const noName = "Please enter your name"; //blankFieldErr
+    const nameTooLong = `Name must be ${nameLength} characters or less`; //tooLongErr
+
+    // Username vars
+    let username = document.editUser.username.value; //string
+    const usernameField = document.getElementById("editUsernameField"); //stringField
+    const usernameError = document.getElementById("edit-username-error"); //stringError
+    const usernameLength = 20; // stringLength - The maximum chars the string can be
+    const noUsername = "Please enter your username"; //blankFieldErr
+    const usernameTooLong = `Username must be ${usernameLength} characters or less`; //tooLongErr
+
+    // Check Name
+    let nameBlankBool = checkBlank(name, nameError, noName, nameField); //check if name field is blank
+    let nameLengthBool = checkLength(name, nameLength, nameError, nameTooLong, nameField); //check if name is too long
+    reset(nameBlankBool && nameLengthBool, nameField, nameError); //if all these return fine, clear the warnings
+
+    // Check Username
+    // let usernameBlankBool = checkBlank(username, usernameError, noUsername, usernameField); //check if username field is blank
+    checkBlank(username, usernameError, noUsername, usernameField); //check if username field is blank
+    // let usernameLengthBool = checkLength(username, usernameLength, usernameError, usernameTooLong, usernameField); //check if username is too long
+    checkLength(username, usernameLength, usernameError, usernameTooLong, usernameField); //check if username is too long - causing a rollback error
+    // reset(usernameBlankBool && usernameLengthBool, usernameField, usernameError); //if all these return fine, clear the warnings
+}
+
+///////////////////////////////////////// Form Validation Functions
 
 // Check if field is blank
 function checkBlank(string, stringError, blankFieldErr, stringField) {
