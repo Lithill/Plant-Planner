@@ -55,20 +55,6 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
     reset(emailBlankBool && isEmailBool, emailField, emailError) //if all these return fine, clear the warnings
 }
 
-// Check if passwords match. If not, show user the error
-function checkPasswordsMatch(string1, string2, mustMatchErr, stringField1, stringError2, stringField2, stringError1) {
-
-    if (string1 == string2) {
-        return true;
-    } else {
-        stringError1.innerHTML = mustMatchErr;
-        stringField1.style.borderColor="#cc0000";
-        stringError2.innerHTML = mustMatchErr;
-        stringField2.style.borderColor="#cc0000";
-        return false;
-    }
-}
-
 ///////////////////////////////////////// Edit User Form Validation
 
 function editUserForm() {
@@ -111,10 +97,11 @@ function addPlantForm() {
     const commonNameError = document.getElementById("common-name-error"); //stringError
     const noCommonName = "Please enter the common name of the plant"; //blankFieldErr
     // Water Interval Vars
-    let waterInterval = document.addPlant.water_interval.value; //integer (but goes into "string" field in check function)
+    let waterInterval = document.addPlant.water_interval.value; //integer or string, (but goes into "string" field in check function)
     const waterIntervalField = document.getElementById("waterIntervalField"); //stringField
     const waterIntervalError = document.getElementById("water-interval-error"); //stringError
     const noWaterInterval = "Please enter the number of days between watering"; //blankFieldErr
+    const wrongNumber = "Please enter a number between 1 and 182"; //wrongNoErr 
     // Last Watered Vars
     let lastWatered = document.addPlant.last_watered_date.value; //integer (but goes into "string" field in check function)
     const lastWateredField = document.getElementById("lastWateredField"); //stringField
@@ -128,7 +115,8 @@ function addPlantForm() {
 
     // Check Water Interval
     let waterIntervalBlankBool = checkBlank(waterInterval, waterIntervalError, noWaterInterval, waterIntervalField); //check if name field is blank
-    reset(waterIntervalBlankBool, waterIntervalField, waterIntervalError); //if all these return fine, clear the warnings
+    let rightRangeBool = range(wrongNumber, waterInterval, waterIntervalError, waterIntervalField); //check if number is between 1 and 182
+    reset(waterIntervalBlankBool && rightRangeBool, waterIntervalField, waterIntervalError); //if all these return fine, clear the warnings
 
     // Check Last Watered
     let lastWateredBlankBool = checkBlank(lastWatered, lastWateredError, noLastWatered, lastWateredField); //check if name field is blank
@@ -149,6 +137,7 @@ function editPlantForm() {
     const waterIntervalField = document.getElementById("editWaterIntervalField"); //stringField
     const waterIntervalError = document.getElementById("edit-water-interval-error"); //stringError
     const noWaterInterval = "Please enter the number of days between watering"; //blankFieldErr
+    const wrongNumber = "Please enter a number between 1 and 182"; //wrongNoErr 
     // Last Watered Vars
     let lastWatered = document.editPlant.last_watered_date.value; //integer (but goes into "string" field in check function)
     const lastWateredField = document.getElementById("editLastWateredField"); //stringField
@@ -162,12 +151,23 @@ function editPlantForm() {
 
     // Check Water Interval
     let waterIntervalBlankBool = checkBlank(waterInterval, waterIntervalError, noWaterInterval, waterIntervalField); //check if name field is blank
-    reset(waterIntervalBlankBool, waterIntervalField, waterIntervalError); //if all these return fine, clear the warnings
+    let rightRangeBool = range(wrongNumber, waterInterval, waterIntervalError, waterIntervalField); //check if number is between 1 and 182
+    reset(waterIntervalBlankBool && rightRangeBool, waterIntervalField, waterIntervalError); //if all these return fine, clear the warnings
 
     // Check Last Watered
     let lastWateredBlankBool = checkBlank(lastWatered, lastWateredError, noLastWatered, lastWateredField); //check if name field is blank
     let dateBool = pastDateOnly(lastWatered, lastWateredError, wrongDate, lastWateredField); //add no-future-dates warning   
     reset(lastWateredBlankBool && dateBool, lastWateredField, lastWateredError); //if all these return fine, clear the warnings
+}
+
+function range(wrongNoErr, string, stringError, stringField) {
+    if ((Number(string) > 0) && (Number(string) < 183)) {
+        return true;
+    } else {
+        stringError.innerHTML = wrongNoErr;
+        stringField.style.borderColor="#cc0000";
+        return false;
+    }
 }
 
 ///////////////////////////////////////// General Form Validation Functions
@@ -236,5 +236,19 @@ function pastDateOnly(date, stringError, errMessage, stringField) {
         return false;
     } else {
         return true;
+    }
+}
+
+// Check if passwords match. If not, show user the error
+function checkPasswordsMatch(string1, string2, mustMatchErr, stringField1, stringError2, stringField2, stringError1) {
+
+    if (string1 == string2) {
+        return true;
+    } else {
+        stringError1.innerHTML = mustMatchErr;
+        stringField1.style.borderColor="#cc0000";
+        stringError2.innerHTML = mustMatchErr;
+        stringField2.style.borderColor="#cc0000";
+        return false;
     }
 }
