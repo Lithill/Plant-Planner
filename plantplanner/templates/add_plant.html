@@ -13,7 +13,7 @@
     <div>
         <br>
         <!-- Add Plant Form -->
-        <form method="POST" class="blue-text">
+        <form method="POST" class="blue-text" name="addPlant">
             {{ form.hidden_tag() }}
             <div class="row text-end">
                 <small>* Required</small>
@@ -26,7 +26,8 @@
                 </div>
                 <!-- Common Name Field -->
                 <div class="col text-nowrap">
-                    {{ form.common_name(class="form-control")}}
+                    {{ form.common_name(class="form-control", id="commonNameField")}}
+                    <p id="common-name-error" class="text-wrap"></p>
                 </div>
                 <!-- Latin Name Label -->
                 <div class="col text-nowrap" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="(Optional) Enter the latin name of your plant">
@@ -84,7 +85,7 @@
                     </div>
                     <!-- Submit Button -->
                     <div class="p-2 bd-highlight">
-                        <button type=submit>
+                        <button type=submit onclick="addPlantForm()">
                             <img src="{{ url_for('static', filename='images/save.webp') }}" alt="Save" class="save-button">
                         </button>
                     </div>
