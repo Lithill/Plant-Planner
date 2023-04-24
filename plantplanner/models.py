@@ -10,8 +10,8 @@ from plantplanner.webforms import NamerForm, SearchForm
 # Create Blog Post Model
 class Plants(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    common_name = db.Column(db.String(255), nullable=False)  
-    latin_name = db.Column(db.String(255)) 
+    common_name = db.Column(db.String(255), nullable=False)
+    latin_name = db.Column(db.String(255))
     water_interval = db.Column(db.Integer, nullable=False)
     last_watered_date = db.Column(db.Date, nullable=False)
     next_water = db.Column(db.Date)

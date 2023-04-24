@@ -26,7 +26,7 @@
                 </div>
                 <!-- Common Name Field -->
                 <div class="col text-nowrap">
-                    {{ form.common_name(class="form-control", id="commonNameField")}}
+                    {{ form.common_name(class="form-control", id="commonNameField", maxlength="255")}}
                     <p id="common-name-error" class="text-wrap"></p>
                 </div>
                 <!-- Latin Name Label -->
@@ -35,7 +35,7 @@
                 </div>
                 <!-- Latin Name Field -->
                 <div class="col text-nowrap">
-                    {{ form.latin_name(class="form-control") }}
+                    {{ form.latin_name(class="form-control", maxlength="255") }}
                 </div>
                 <!-- Days Between Watering Label -->
                 <div class="col text-nowrap" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="(Required) How many days should there be between watering?">
@@ -43,7 +43,8 @@
                 </div>
                 <!-- Days Between Watering Field -->
                 <div class="col text-nowrap">
-                    {{ form.water_interval(class="form-control") }}
+                    {{ form.water_interval(class="form-control", id="waterIntervalField") }}
+                    <p id="water-interval-error" class="text-wrap"></p>
                 </div>
                 <!-- Date Last Watered Label -->
                 <div class="col text-nowrap" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="(Required) When did you last water this plant?">
@@ -51,7 +52,8 @@
                 </div>
                 <!-- Date Last Watered Field -->
                 <div class="col text-nowrap">
-                    {{ form.last_watered_date(class="form-control") }}
+                    {{ form.last_watered_date(class="form-control", id="lastWateredField") }}
+                    <p id="last-watered-error" class="text-wrap"></p>
                 </div>
             </div>
             <br>
@@ -61,7 +63,7 @@
                     <strong>{{ form.pic_url.label(class="form-label") ~ ':'}}</strong>
                 </div>
                 <!-- Image URL Field -->
-                <div class="col">{{ form.pic_url(class="form-control") }}</div>
+                <div class="col">{{ form.pic_url(class="form-control", maxlength="255") }}</div>
             </div>
             <br>
             <div class="row row-cols-1 row-cols-md-1 row-cols-lg-1 g-4">

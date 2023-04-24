@@ -316,6 +316,7 @@ Results from the [check](#).
 | Bug Number  | Expected behaviour | Actual behaviour | Solution |
 | ---:        |    :----:          |        :----:    | :---     |
 | 11  | Email entered on user forms would need an @ and . before being accepted | Strings of just letters are being accepted | Solution |
+| 12  | If there is no input in water interval and last watered fields on add plant form, then they will show a warning | Even if there is no input in these fields, they will not show a warning if the common name field is filled out | Solution |
 
 
 

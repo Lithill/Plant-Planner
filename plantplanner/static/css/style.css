@@ -124,7 +124,9 @@ a {
 #edit-name-error,
 #edit-username-error,
 #edit-email-error,
-#common-name-error {
+#common-name-error,
+#water-interval-error,
+#last-watered-error {
     color: #cc0000;
     padding: 0;
     margin: 0;
