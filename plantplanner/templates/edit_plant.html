@@ -12,7 +12,7 @@
 
     <br>
     <div>
-        <form method="POST">
+        <form method="POST" name="editPlant">
             {{ form.hidden_tag() }}
             <br>
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
@@ -22,7 +22,8 @@
                 </div>
                 <!-- Common Name Field -->
                 <div class="col text-nowrap">
-                    {{ form.common_name(class="form-control")}}
+                    {{ form.common_name(class="form-control", id="editCommonNameField", maxlength="255")}}
+                    <p id="edit-common-name-error" class="text-wrap"></p>
                 </div>
                 <!-- Latin Name Label -->
                 <div class="col text-nowrap" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="(Optional) Enter the latin name of your plant">
@@ -30,7 +31,7 @@
                 </div>
                 <!-- Latin Name Field -->
                 <div class="col text-nowrap">
-                    {{ form.latin_name(class="form-control") }}
+                    {{ form.latin_name(class="form-control", maxlength="255") }}
                 </div>
                 <!-- Days Between Watering Label -->
                 <div class="col text-nowrap" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="(Required) How many days should there be between watering?">
@@ -38,7 +39,8 @@
                 </div>
                 <!-- Days Between Watering Field -->
                 <div class="col text-nowrap">
-                    {{ form.water_interval(class="form-control") }}
+                    {{ form.water_interval(class="form-control", id="editWaterIntervalField") }}
+                    <p id="edit-water-interval-error" class="text-wrap"></p>
                 </div>
                 <!-- Date Last Watered Label -->
                 <div class="col text-nowrap" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="(Required) When did you last water this plant?">
@@ -46,7 +48,8 @@
                 </div>
                 <!-- Date Last Watered Field -->
                 <div class="col text-nowrap">
-                    {{ form.last_watered_date(class="form-control") }}
+                    {{ form.last_watered_date(class="form-control", id="lastWateredField") }}
+                    <p id="edit-last-watered-error" class="text-wrap"></p>
                 </div>
             </div>
             <br>
@@ -56,7 +59,7 @@
                     <strong>{{ form.pic_url.label(class="form-label") ~ ':'}}</strong>
                 </div>
                 <!-- Image URL Field -->
-                <div class="col">{{ form.pic_url(class="form-control") }}</div>
+                <div class="col">{{ form.pic_url(class="form-control", maxlength="255") }}</div>
             </div>
             <br>
             <div class="row row-cols-1 row-cols-md-1 row-cols-lg-1 g-4">
@@ -80,7 +83,7 @@
                     </div>
                     <!-- Submit Button -->
                     <div class="p-2 bd-highlight">
-                        <button type=submit>
+                        <button type=submit onclick="editPlantForm()">
                             <img src="{{ url_for('static', filename='images/save.webp') }}" alt="Save" class="save-button">
                         </button>
                     </div>

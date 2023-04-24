@@ -136,39 +136,41 @@ function addPlantForm() {
     reset(lastWateredBlankBool && dateBool, lastWateredField, lastWateredError); //if all these return fine, clear the warnings
 }
 
-// Get today's date
-function today() {
-    // Taken from https://stackoverflow.com/questions/1531093/how-do-i-get-the-current-date-in-javascript
-    var today = new Date();
-    var dd = String(today.getDate()).padStart(2, '0');
-    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    var yyyy = today.getFullYear();
+///////////////////////////////////////// Edit Plant Form Validation
 
-    today = yyyy + '-' + mm + '-' + dd;
-    return today;
+function editPlantForm() {
+    // Common Name Vars
+    let commonName = document.editPlant.name.value; //string
+    const commonNameField = document.getElementById("editCommonNameField"); //stringField
+    const commonNameError = document.getElementById("edit-common-name-error"); //stringError
+    const noCommonName = "Please enter the common name of the plant"; //blankFieldErr
+    // Water Interval Vars
+    let waterInterval = document.editPlant.water_interval.value; //integer (but goes into "string" field in check function)
+    const waterIntervalField = document.getElementById("editWaterIntervalField"); //stringField
+    const waterIntervalError = document.getElementById("edit-water-interval-error"); //stringError
+    const noWaterInterval = "Please enter the number of days between watering"; //blankFieldErr
+    // Last Watered Vars
+    let lastWatered = document.editPlant.last_watered_date.value; //integer (but goes into "string" field in check function)
+    const lastWateredField = document.getElementById("editLastWateredField"); //stringField
+    const lastWateredError = document.getElementById("edit-last-watered-error"); //stringError
+    const noLastWatered = "Please enter the date you last watered the plant"; //blankFieldErr
+    const wrongDate = "Date cannot be in the future"; //errMessage
+
+    // Check Common Name
+    let commonNameBlankBool = checkBlank(commonName, commonNameError, noCommonName, commonNameField); //check if name field is blank
+    reset(commonNameBlankBool, commonNameField, commonNameError); //if all these return fine, clear the warnings
+
+    // Check Water Interval
+    let waterIntervalBlankBool = checkBlank(waterInterval, waterIntervalError, noWaterInterval, waterIntervalField); //check if name field is blank
+    reset(waterIntervalBlankBool, waterIntervalField, waterIntervalError); //if all these return fine, clear the warnings
+
+    // Check Last Watered
+    let lastWateredBlankBool = checkBlank(lastWatered, lastWateredError, noLastWatered, lastWateredField); //check if name field is blank
+    let dateBool = pastDateOnly(lastWatered, lastWateredError, wrongDate, lastWateredField); //add no-future-dates warning   
+    reset(lastWateredBlankBool && dateBool, lastWateredField, lastWateredError); //if all these return fine, clear the warnings
 }
 
-// Check if date selected is in the past
-function pastDateOnly(date, stringError, errMessage, stringField) {
-
-    let dateToday = String(today());
-    dateToday = dateToday.replace('-', '');
-    dateToday = dateToday.replace('-', '');
-
-    date = String(date);
-    date = date.replace('-', '');
-    date = date.replace('-', '');
-
-    if (date > dateToday) {
-        stringError.innerHTML = errMessage;
-        stringField.style.borderColor="#cc0000";
-        return false;
-    } else {
-        return true;
-    }
-}
-
-///////////////////////////////////////// Form Validation Functions
+///////////////////////////////////////// General Form Validation Functions
 
 // Check if field is blank
 function checkBlank(string, stringError, blankFieldErr, stringField) {
@@ -203,4 +205,36 @@ function validateEmail(string, stringError, stringField) {
         stringField.style.borderColor="#cc0000";
         return false;
     }
-}   
+}
+
+// Get today's date
+function today() {
+    // Taken from https://stackoverflow.com/questions/1531093/how-do-i-get-the-current-date-in-javascript
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+
+    today = yyyy + '-' + mm + '-' + dd;
+    return today;
+}
+
+// Check if date selected is in the past
+function pastDateOnly(date, stringError, errMessage, stringField) {
+
+    let dateToday = String(today());
+    dateToday = dateToday.replace('-', '');
+    dateToday = dateToday.replace('-', '');
+
+    date = String(date);
+    date = date.replace('-', '');
+    date = date.replace('-', '');
+
+    if (date > dateToday) {
+        stringError.innerHTML = errMessage;
+        stringField.style.borderColor="#cc0000";
+        return false;
+    } else {
+        return true;
+    }
+}
