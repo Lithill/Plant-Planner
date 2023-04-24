@@ -318,7 +318,7 @@ Results from the [check](#).
 | 11  | Email entered on user forms would need an @ and . before being accepted | Strings of just letters are being accepted | Solution |
 | 12  | If there is no input in water interval and last watered fields on add plant form, then they will show a warning | Even if there is no input in these fields, they will not show a warning if the common name field is filled out. This is also happening on the eid page - from common name | Solution |
 
-
+Since adding "let rightRangeBool" to edit plant form, the alert has stopped working properly for that field (but not on the add plant form! It is the same JavaScript)
 
 ### Lighthouse
 
