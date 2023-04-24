@@ -309,12 +309,13 @@ Results from the [check](#).
 | 7  | Cannot see plant that belongs to a deleted user | Can see plant after deleting the user. (this means that cascade delete isn't working AND user auth isn't working on the single plant page. Is user somehow still logged in? Is the model not set up correctly?) | Add delete ascade to user model |
 | 8  | For there only to be one horizontal line above each plant on the My Plants page | There are extra lines at the bottom of plants in the My Plants page | Move the horizontal line into the if statement on the plants page |
 | 9  | User registration form tells the user when their passwords do not match | Does not tell the user when their passords do not match | Added form validation via JavaScript |
+| 10  | When username is entered and submitted on the update user form that is longer than 20 characters long, it should warn the user this is not acceptable | When username is entered and submitted on the update user form that is longer than 20 characters long, it returns a SQLalchemy "PendingRollbackError" | Add maxlength to the username field on the edit user form |
 
 ### Known Bugs
 
 | Bug Number  | Expected behaviour | Actual behaviour | Solution |
 | ---:        |    :----:          |        :----:    | :---     |
-| 10  | When username is entered and submitted on the update user form that is longer than 20 characters long, it should warn the user this is not acceptable | When username is entered and submitted on the update user form that is longer than 20 characters long, it returns a SQLalchemy "PendingRollbackError" | Solution |
+
 
 
 ### Lighthouse

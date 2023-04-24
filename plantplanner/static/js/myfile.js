@@ -93,7 +93,6 @@ function editUserForm() {
     const nameLength = 200; //stringLength - The maximum chars the string can be
     const noName = "Please enter your name"; //blankFieldErr
     const nameTooLong = `Name must be ${nameLength} characters or less`; //tooLongErr
-
     // Username vars
     let username = document.editUser.username.value; //string
     const usernameField = document.getElementById("editUsernameField"); //stringField
@@ -101,6 +100,19 @@ function editUserForm() {
     const usernameLength = 20; // stringLength - The maximum chars the string can be
     const noUsername = "Please enter your username"; //blankFieldErr
     const usernameTooLong = `Username must be ${usernameLength} characters or less`; //tooLongErr
+    // Email vars
+    let email = document.editUser.email.value; //string
+    const emailField = document.getElementById("editEmailField"); //stringField
+    const emailError = document.getElementById("edit-email-error"); //stringError
+    const emailLength = 120; // stringLength - The maximum chars the string can be
+    const noEmail = "Please enter your email"; //blankFieldErr
+    const emailTooLong = `Email must be ${emailLength} characters or less`; //tooLongErr
+
+    // Check Email
+    let emailBlankBool = checkBlank(email, emailError, noEmail, emailField) //check if email field is blank
+    let emailLengthBool = checkLength( email, emailLength, emailError, emailTooLong, emailField) //check if email is too long
+    let isEmailBool = validateEmail(email, emailError, emailField); 
+    reset(emailBlankBool && emailLengthBool && isEmailBool, emailField, emailError) //if all these return fine, clear the warnings
 
     // Check Name
     let nameBlankBool = checkBlank(name, nameError, noName, nameField); //check if name field is blank
@@ -108,11 +120,9 @@ function editUserForm() {
     reset(nameBlankBool && nameLengthBool, nameField, nameError); //if all these return fine, clear the warnings
 
     // Check Username
-    // let usernameBlankBool = checkBlank(username, usernameError, noUsername, usernameField); //check if username field is blank
-    checkBlank(username, usernameError, noUsername, usernameField); //check if username field is blank
-    // let usernameLengthBool = checkLength(username, usernameLength, usernameError, usernameTooLong, usernameField); //check if username is too long
-    checkLength(username, usernameLength, usernameError, usernameTooLong, usernameField); //check if username is too long - causing a rollback error
-    // reset(usernameBlankBool && usernameLengthBool, usernameField, usernameError); //if all these return fine, clear the warnings
+    let usernameBlankBool = checkBlank(username, usernameError, noUsername, usernameField); //check if username field is blank
+    let usernameLengthBool = checkLength(username, usernameLength, usernameError, usernameTooLong, usernameField); //check if username is too long
+    reset(usernameBlankBool && usernameLengthBool, usernameField, usernameError); //if all these return fine, clear the warnings
 }
 
 ///////////////////////////////////////// Form Validation Functions

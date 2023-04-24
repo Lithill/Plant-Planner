@@ -51,7 +51,7 @@
                     </div>
                     <!-- Username Field -->
                     <div class="col">
-                        {{ form.username(class="form-control", value=name_to_update.username, id="editUsernameField") }}
+                        {{ form.username(class="form-control", value=name_to_update.username, id="editUsernameField", maxlength="20") }}
                     </div>
                     <p id="edit-username-error"></p>
                     <!-- Email Label -->
@@ -60,8 +60,9 @@
                     </div>
                     <!-- Email Field -->
                     <div class="col">
-                        {{ form.email(class="form-control", value=name_to_update.email) }}
+                        {{ form.email(class="form-control", value=name_to_update.email, id="editEmailField", maxlength="120") }}
                     </div>
+                    <p id="edit-email-error"></p>
                 </div>
                 <br>
                 <!-- Buttons -->

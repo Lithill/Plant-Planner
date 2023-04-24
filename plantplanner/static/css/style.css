@@ -122,7 +122,8 @@ a {
 #password-error,
 #password-error-2,
 #edit-name-error,
-#edit-username-error {
+#edit-username-error,
+#edit-email-error {
     color: #cc0000;
     padding: 0;
     margin: 0;
