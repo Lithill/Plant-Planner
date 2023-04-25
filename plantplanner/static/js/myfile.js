@@ -92,7 +92,7 @@ function editUserForm() {
 
 function addPlantForm() {
     // Common Name Vars
-    let commonName = document.addPlant.name.value; //string
+    let commonName = document.addPlant.common_name.value; //string
     const commonNameField = document.getElementById("commonNameField"); //stringField
     const commonNameError = document.getElementById("common-name-error"); //stringError
     const noCommonName = "Please enter the common name of the plant"; //blankFieldErr
@@ -128,7 +128,7 @@ function addPlantForm() {
 
 function editPlantForm() {
     // Common Name Vars
-    let commonName = document.editPlant.name.value; //string
+    let commonName = document.editPlant.common_name.value; //string
     const commonNameField = document.getElementById("editCommonNameField"); //stringField
     const commonNameError = document.getElementById("edit-common-name-error"); //stringError
     const noCommonName = "Please enter the common name of the plant"; //blankFieldErr

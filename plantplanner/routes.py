@@ -265,9 +265,6 @@ def edit_plant(id):
         td = timedelta(days=form.water_interval.data)
         date = dt + td
 
-        # flash(print("The variable, name is of type:", type(td)))
-        # flash(f"td is {td}")
-
         # Add plant to database
         plant.common_name = form.common_name.data
         plant.latin_name = form.latin_name.data
