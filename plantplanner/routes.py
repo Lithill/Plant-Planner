@@ -256,6 +256,7 @@ def delete_plant(id):
 def edit_plant(id):
     plant = Plants.query.get_or_404(id)
     form = PlantForm()
+    today = datetime.today().strftime('%Y-%m-%d')
 
     if form.validate_on_submit():
         # Calculate next_water date
@@ -292,6 +293,7 @@ def edit_plant(id):
         return render_template(
             'edit_plant.html',
             form=form,
+            today=today,
             page_instructions="Change the information in the field boxes and click the tick",
             page_title="Edit Plant")
     else:
