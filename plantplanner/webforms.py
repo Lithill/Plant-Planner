@@ -19,10 +19,11 @@ class PlantForm(FlaskForm):
     latin_name = StringField("Latin Name")
     water_interval = IntegerField(
         "Watering Interval",
-        [validators.NumberRange(min=1, max=182)]
+        validators=[DataRequired(), NumberRange(min=1, max=182)],
         )
     last_watered_date = DateField(
-        'Date last watered?'
+        'Date last watered?',
+        validators=[DataRequired()]
         )
     submit = SubmitField("Submit")
 
