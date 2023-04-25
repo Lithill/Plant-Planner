@@ -161,7 +161,13 @@ function editPlantForm() {
 }
 
 function range(wrongNoErr, string, stringError, stringField) {
-    if ((Number(string) > 0) && (Number(string) < 183)) {
+    let number = Number(string);
+    
+    if (number == null) {
+        return false;
+    }
+
+    if ((number > 0) && (number < 183)) {
         return true;
     } else {
         stringError.innerHTML = wrongNoErr;
