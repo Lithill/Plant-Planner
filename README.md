@@ -372,6 +372,8 @@ custom code for vertical line separated bootstrap navbar links.
  code for customising bootstrap tooltips. 
   * [w3schools](https://www.w3schools.blog/email-validation-javascript-js)
  code for email validation was adapted for the validateEmail javascript function. 
+ * [Samuel Meddows'](https://stackoverflow.com/questions/1531093/how-do-i-get-the-current-date-in-javascript)
+ code was used for the "today" javascript function. 
 
 ### Content
 
