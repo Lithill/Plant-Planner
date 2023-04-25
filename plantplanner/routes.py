@@ -79,6 +79,7 @@ def account():
 @login_required
 def add_plant():
     form = PlantForm()
+    today = datetime.today().strftime('%Y-%m-%d')
 
     if form.validate_on_submit():
         poster = current_user.id
@@ -119,7 +120,8 @@ def add_plant():
     return render_template(
         "add_plant.html",
         form=form,
-        page_instructions="Answer the questions and click the tick to add a plant.",
+        today=today,
+        page_instructions="Answer the questions and click 'Submit' to add a plant",
         page_title="Add a Plant")
 
 

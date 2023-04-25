@@ -52,7 +52,7 @@
                 </div>
                 <!-- Date Last Watered Field -->
                 <div class="col text-nowrap">
-                    {{ form.last_watered_date(class="form-control", id="lastWateredField") }}
+                    {{ form.last_watered_date(class="form-control", id="lastWateredField", max=today) }}
                     <p id="last-watered-error" class="text-wrap"></p>
                 </div>
             </div>
@@ -97,7 +97,7 @@
         {{ ckeditor.load() }}
         {{ ckeditor.config(name='notes') }}
     </div>
-    {% else  %}
+    {% else %}
         <h2>Must be logged in</h2>
         <p>Sorry, you must be logged in to access this page</p>
         <a href="{{ url_for('login')}}">Login Here</a>

@@ -311,13 +311,13 @@ Results from the [check](#).
 | 9  | User registration form tells the user when their passwords do not match | Does not tell the user when their passords do not match | Added form validation via JavaScript |
 | 10  | When username is entered and submitted on the update user form that is longer than 20 characters long, it should warn the user this is not acceptable | When username is entered and submitted on the update user form that is longer than 20 characters long, it returns a SQLalchemy "PendingRollbackError" | Add maxlength to the username field on the edit user form |
 | 11  | If there is no input in water interval and last watered fields on add plant form, then they will show a warning | Even if there is no input in these fields, they will not show a warning if the common name field is filled out. This is also happening on the edit page - from common name | Added datarequired validators to flask plant forms |
+| 12 | Plant form does not submit if the date is in the future | Plant form submits if date is in the future | Add max date to input in html |
 
 ### Known Bugs
 
 | Bug Number  | Expected behaviour | Actual behaviour | Solution |
 | ---:        |    :----:          |        :----:    | :---     |
 | 11  | Email entered on user forms would need an @ and . before being accepted | Strings of just letters are being accepted | Solution |
-| 12 | Plant form do not submit if the date is in the future | Actual behaviour | Solution |
 
 Since adding "let rightRangeBool" to edit plant form, the alert has stopped working properly for the water interval field (but not on the add plant form? It is the same JavaScript)
 
