@@ -151,21 +151,67 @@ The log in page has the following features:
 
 * A form that takes the users username and password, and compares these to those stored in the database to verify the users identify. 
 
-   ![User form](plantplanner/static/images/readme/login_form.webp)
+   ![Login form](plantplanner/static/images/readme/login_form.webp)
 
 * Form validation is set up for all fields. This appears if the user leaves any fields blank. 
 
-   ![User form](#)
+   ![Login form vaidation](plantplanner/static/images/readme/login_validation.webp)
 
+* Button to submit the form. When the form is submitted, this authenticates the user, and takes them to their plants page.
+
+   ![Submit button](plantplanner/static/images/readme/submit.webp)
+
+### My plants 
+
+This page has the following features:
+
+* A button that takes you to the Add Plant page
+
+   ![Add plant button](plantplanner/static/images/readme/add_plant_button2.webp)
+
+* Self populating plant divs that pull your saved plants data from the database and displays them. These are automatically ordered by the date the plants next need to be watered, so that the plants most in need of watering are at the top. Plants that need watering also have red text to alert the user. The tense of the text also changes depending on whether you needed to have watered the plants in the past, need to water them today, or if you need to water them in the future.
+
+   ![Self populating plant divs](plantplanner/static/images/readme/plant_div.webp)
+
+* Each plant has its own set of buttons which will perform actions on that particular plant:
+
+   * The "see more" button takes the use to a page dedicated to that particular plant, where they will be able to see the plant's notes.
+
+      ![See more button](plantplanner/static/images/readme/see_more.webp)
+   
+   * The edit button takes the user to a page where they can edit the details of the plant.
+
+      ![Edit plant button](plantplanner/static/images/readme/edit_plant.webp)
+   
+   * The "delete" button displays a modal which confirms that the user would like to delete the plant in question.
+
+      ![Delete plant button](plantplanner/static/images/readme/delete_plant.webp)
+      
+* The delete modal confirms with the user that they would like to delete their plant
+
+   ![Delete modal](plantplanner/static/images/readme/delete_modal.webp)
+
+   This modal has two buttons.
+
+   * One button will hide the modal
+
+      ![Close modal button](plantplanner/static/images/readme/modal_close_button.webp)
+
+   * The other button will delete the plant and then hide the modal
+
+      ![Delete button](plantplanner/static/images/readme/modal_delete_button.webp)
+
+### Add plants
+
+* ...
+   ![]()
+
+* ...
+   ![]()
 
 ### Account dashboard
 ### Edit account
-### My plants
-
-The plants page is filtered by when the plants next need to be watered, so that the plants most in need of watering are at the top. Plants that need watering now also have red text. 
-
 ### Plant profile
-### Add plants
 ### Edit plants
 
 
