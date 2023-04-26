@@ -9,21 +9,35 @@
         </div>
     {% endfor %}
     <div>
-        <form method="POST">
+        <form method="POST" name="login">
             {{ form.hidden_tag() }}
             <br>
             <div class="row blue-text text-end">
-                <div class="col-3 text-nowrap"><strong>{{ form.username.label(class="form-label") ~ ':' }}</strong></div>
-                <div class="col-8">{{ form.username( class="form-control") }}</div>
+                <!-- Username Label -->
+                <div class="col-3 text-nowrap">
+                    <strong>{{ form.username.label(class="form-label") ~ ':' }}</strong>
+                </div>
+                <!-- Username Field -->
+                <div class="col-8">
+                    {{ form.username( class="form-control", id="loginUsernameField", maxlength="20") }}
+                </div>
+                <p id="login-username-err"></p>
             </div>
             <br>
             <div class="row blue-text text-end">
-                <div class="col-3 text-nowrap"><strong>{{ form.password.label(class="form-label") ~ ':' }}</strong></div>
-                <div class="col-8">{{ form.password(class="form-control") }}</div>
+                <!-- Password Label -->
+                <div class="col-3 text-nowrap">
+                    <strong>{{ form.password.label(class="form-label") ~ ':' }}</strong>
+                </div>
+                <!-- Password Field -->
+                <div class="col-8">
+                    {{ form.password(class="form-control", id="loginPassword", maxlength="120") }}
+                </div>
+                <p id="login-password-err"></p>
             </div>
             <br>
             <div class="row">
-                <div class="text-end"><button type=submit><img src="{{ url_for('static', filename='images/save.webp') }}" alt="Save" class="save-button"></button></div>
+                <div class="text-end"><button type=submit onclick="loginForm()"><img src="{{ url_for('static', filename='images/save.webp') }}" alt="Save" class="save-button"></button></div>
             </div>
             <br>
         </form>

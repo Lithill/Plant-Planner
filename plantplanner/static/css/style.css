@@ -129,7 +129,9 @@ a {
 #last-watered-error,
 #edit-common-name-error,
 #edit-water-interval-error,
-#edit-last-watered-error {
+#edit-last-watered-error,
+#login-username-err,
+#login-password-err {
     color: #cc0000;
     padding: 0;
     margin: 0;

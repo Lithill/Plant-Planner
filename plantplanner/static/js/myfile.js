@@ -55,6 +55,29 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
     reset(emailBlankBool && isEmailBool, emailField, emailError) //if all these return fine, clear the warnings
 }
 
+///////////////////////////////////////// Login Form Validation
+
+function loginForm() {
+    // Username vars
+    let username = document.login.username.value; //string
+    const usernameField = document.getElementById("loginUsernameField"); //stringField
+    const usernameError = document.getElementById("login-username-err"); //stringError
+    const noUsername = "Please enter your username"; //blankFieldErr
+    // Password vars
+    let password = document.login.password.value; //string
+    const passwordField = document.getElementById("loginPassword"); //stringField
+    const passwordError = document.getElementById("login-password-err"); //stringError
+    const noPassword = "Please enter your password"; //blankFieldErr
+
+    // Check Username
+    let usernameBlankBool = checkBlank(username, usernameError, noUsername, usernameField); //check if username field is blank
+    reset(usernameBlankBool, usernameField, usernameError); //if all these return fine, clear the warnings
+
+    // Check Password
+    let passwordBlankBool = checkBlank(password, passwordError, noPassword, passwordField); //check if password field is blank
+    reset(passwordBlankBool, passwordField, passwordError); //if all these return fine, clear the warnings
+}
+
 ///////////////////////////////////////// Edit User Form Validation
 
 function editUserForm() {
