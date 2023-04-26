@@ -2,9 +2,9 @@
 
 This website has been created to help people to know when to water their plants. It has been designed with a range of different screen sizes in mind. 
 
-!["Am I Responsive" image](#)
+!["Am I Responsive" image](plantplanner/static/images/readme/amiresponsive.webp)
 
-[View the live project here](#)
+[View the live project here](https://plant-planner-app.herokuapp.com/)
 
 ## Table of Contents
 
@@ -63,7 +63,7 @@ A clean and unclutered approach was sought, so that the user could easily see th
 
 ![Index Page](plantplanner/static/images/readme/my_plants.jpg)
 
-This website was designed desktop-first. This caused issues further on in the development.
+This website was designed desktop-first. This caused issues further on in development.
 
 ![Login Page](plantplanner/static/images/readme/sign_in.jpg)
 
@@ -71,7 +71,7 @@ This is because it was decided early on that Bootstrap would be used in order to
 
 ![Add Plant Page](plantplanner/static/images/readme/add_plant.jpg)
 
-The design also changed during development because it was felt that the base template functionality of Flask could be better utilised. This in turn helped to create more uniform user interface.
+The design also changed during development because it was felt that the base template functionality of Flask could be better utilised. This in turn helped to create a more uniform user interface.
 
 ### Colour scheme
 
@@ -120,7 +120,7 @@ If the user is signed in, they will see the following buttons:
 
    ![Add plant button](plantplanner/static/images/readme/add_plant_button.webp)
 
-   * View your plants buttons, which takes the user to their plants page. 
+   * View your plants button, which takes the user to their plants page. 
 
    ![View your plants button](plantplanner/static/images/readme/view_plants_button.webp)
 
@@ -128,22 +128,36 @@ If the user is signed in, they will see the following buttons:
 
 The registration page has the following features:
 
-* A form the takes the users name, username, email address and password, and sends this to the database. 
+* A form that takes the users name, username, email address and password, and sends this to the database. 
 
-   ![View your plants button](plantplanner/static/images/readme/register_form.webp)
+   ![User form](plantplanner/static/images/readme/register_form.webp)
 
 * The password is hidden from view, and confirmed using two password fields. 
 
-   ![View your plants button](plantplanner/static/images/readme/password.webp)
+   ![Password fields](plantplanner/static/images/readme/password.webp)
 
-* Form validation is used on all fields.
+* Form validation is set up for all fields. This appears if the user leaves any fields blank, or if their passwords do not match.
 
-   ![View your plants button](plantplanner/static/images/readme/name_validation.webp)
+   ![Form validation](plantplanner/static/images/readme/reg_form_val.webp)
 
-Add password validation here
+* Button to submit the form. When the form is submitted, this creates a user account, and takes the user to the login page.
+
+   ![Submit button](plantplanner/static/images/readme/submit.webp)
 
 
 ### Log in
+
+The log in page has the following features:
+
+* A form that takes the users username and password, and compares these to those stored in the database to verify the users identify. 
+
+   ![User form](plantplanner/static/images/readme/login_form.webp)
+
+* Form validation is set up for all fields. This appears if the user leaves any fields blank. 
+
+   ![User form](#)
+
+
 ### Account dashboard
 ### Edit account
 ### My plants
