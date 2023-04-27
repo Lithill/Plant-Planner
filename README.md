@@ -387,28 +387,23 @@ This page has the following features:#
 
    ![404](plantplanner/static/images/readme/404.webp)
 
-### 500 page
-
-This page has the following features:
-
-This page has the following features:#
-
-* Informtion to show the user that the page they were looking for wasn't found.
-
-   ![404](plantplanner/static/images/readme/404.webp)
-
 ### All pages have the following features
 
 This page has the following features:
 
-* Navigation bar
-   ![]()
+* Navigation bar, that turns into a hamburger menu on narrower screens. The links included go to the register, login, add a plant and my plants pages. Clicking on "Plant Planner" of the calendar plant icon will also take the user to the home page.
 
-* Footer
-   ![]()
+   ![Navbar](plantplanner/static/images/readme/navbar.webp)
 
-* Page title and information section
-   ![]()
+   ![Narrow Navbar](plantplanner/static/images/readme/small_navbar.webp)
+
+* Footer, which includes working buttons to the home pages of instagram, twitter and facebook.
+
+   ![Footer](plantplanner/static/images/readme/footer.webp)
+
+* Page title and information section, which changes depending on which page the user is on. 
+
+   ![Page title and information](plantplanner/static/images/readme/title.webp)
 
 ### Future Features
 
