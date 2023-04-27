@@ -24,8 +24,10 @@
         </div>
         <br>
     {% else %}
-        <p>You must <a type="button" class="btn btn-outline-success" href="{{ url_for('login') }}">Log In</a> before you can add a plant</p>
-        <p>Don't have an account? <a type="button" class="btn btn-outline-success" href="{{ url_for('add_user') }}">Register</a> here</p>
+        <a class="btn btn-outline-success" href="{{ url_for('login') }}">You must log in before you add a plant</a>
+        <br>
+        <br>
+        <a class="btn btn-outline-success" href="{{ url_for('add_user') }}">Don't have an account? Register here</a>
     {% endif %}
 
 {% endblock %}
