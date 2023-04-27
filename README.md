@@ -309,7 +309,7 @@ This page has the following features:
 
    * A flash message that appear on the page after the user has successfully added a plant
 
-      ![Flash message](#)
+      ![Flash message](plantplanner/static/images/readme/plant_updated.webp)
 
 ### Account dashboard
 
@@ -346,9 +346,11 @@ This page has the following features:
 This page has the following features:
 
 * Pre-populated information about the user. 
+
    ![Edit user form](plantplanner/static/images/readme/edit_user.webp)
 
 * Validation alerts that require the user to make sure all fields are filled in.
+
    ![Edit user form](plantplanner/static/images/readme/edit_user_val.webp)
 
 * Save button, which saves the updated user information, and redirects the user to their account.
@@ -373,19 +375,27 @@ This page has the following features:
 
       ![Close modal](plantplanner/static/images/readme/modal_close_button.webp)
 
+* Flash message on the next page to let the user know that they have successfully updated an account.
 
-
-
-Add tooltips and flash messages to the features
-
+   ![Flash message](plantplanner/static/images/readme/user_updated.webp)
 
 ### 404 page
 
-This page has the following features:
+This page has the following features:#
+
+* Informtion to show the user that the page they were looking for wasn't found.
+
+   ![404](plantplanner/static/images/readme/404.webp)
 
 ### 500 page
 
 This page has the following features:
+
+This page has the following features:#
+
+* Informtion to show the user that the page they were looking for wasn't found.
+
+   ![404](plantplanner/static/images/readme/404.webp)
 
 ### All pages have the following features
 
