@@ -551,13 +551,14 @@ I personally tested the page and had 3 people also manually test it on their own
 
 The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTML on all pages of the website. 
 
-* Results from the [404](#) page check.
-* Results from the [500](#) page check.
+* Results from the [404](plantplanner/static/images/readme/404_val.webp) page check.
+* Results from the [500](plantplanner/static/images/readme/500_val.webp) page check.
 * Results from the [account](#) page check.
 * Results from the [add_plant](#) page check.
 * Results from the [add_user](#) page check.
 * Results from the [edit_plant](#) page check.
-* Results from the [index](plantplanner/static/images/readme/index_val.webp) page check.
+* Results from the [index](plantplanner/static/images/readme/index_val.webp) page check: user not logged in.
+* Results from the [index](plantplanner/static/images/readme/index_logged_in_val.webp) page check: user logged in.
 * Results from the [login](#) page check.
 * Results from the [plant](#) page check.
 * Results from the [update](#) page check.
