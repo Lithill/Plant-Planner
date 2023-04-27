@@ -429,17 +429,17 @@ HTML5, CSS3, Python, and JavaScript were used to create this website.
 
 ### Frameworks, Libraries & Programs Used
 
-* [Google Fonts](https://fonts.google.com/) was used to import East Sea Dokdo and Eater.
+* [Google Fonts](https://fonts.google.com/) was used to import Merriweather and Arimo.
 * [Git](https://git-scm.com/) was used for version control by using the Gitpod terminal to commit to Git and Push to GitHub.
-* [GitHub](https://github.com/) was used to store the projects' code after being pushed from Replit, and to handle version control.
-* [Paint.Net](https://www.getpaint.net/download.html) was used to edit images.
+* [GitHub](https://github.com/) was used to store the projects' code, and to handle version control.
+* [Paint.Net](https://www.getpaint.net/download.html) was used to edit and crop images.
 * [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/) was used to troubleshoot and test features and solve issues with responsiveness and styling.
 * [Am I Responsive?](https://ui.dev/amiresponsive) was used to show the website on a range of devices.
 * [Unicorn Revealer](https://chrome.google.com/webstore/detail/unicorn-revealer/lmlkphhdlngaicolpmaakfmhplagoaln?hl=en-GB) was used for debugging.
 * [SQLAlchemy](https://www.sqlalchemy.org/) was used to connect Python code with the database.
 * [Psycopg2](https://www.psycopg.org/docs/) was used to connect Python code with the database. 
 * [Flask](https://flask.palletsprojects.com/en/2.2.x/) is the web application framework which was used to build the website.
-* [Bootstrap 5](https://getbootstrap.com/) was used for CSS shortcuts.
+* [Bootstrap 5](https://getbootstrap.com/) was used for responsive and pre-designed CSS.
 * [PostgreSQL](https://www.postgresql.org/) was the object-relational database system used.
 * [ElephantSQL](https://www.elephantsql.com/) was used to host the database.
 * [Heroku](https://www.heroku.com/) was used to deploy the website.
@@ -448,14 +448,41 @@ HTML5, CSS3, Python, and JavaScript were used to create this website.
 
 ### Deployment
 
-This project was deployed to GitHub Pages using the following steps:
+This project was deployed to Heroku using the following steps:
 
-1. Log into GitHub and locate the [GitHub Repository](https://github.com/Lithill/Plant-Planner).
-2. Click the settings button (above the "add file" button).
-3. Click on "Pages" on the left-hand-side column.
-4. Under "Source", click the dropdown called "Main", select folder ""/root" and click "save".
-5. Refresh the page.
-6. Click on the "Visit site" button at the top of the page.
+#### ElephantSQL
+
+1. Navigate to ElephantSQL.com and create a user account, using log in with GitHub.
+2. Click “Create New Instance”
+3. Set up your plan. (You can leave the 'tags' field blank.)
+4. Select region.
+5. Select a data center near you
+6. Then click “Review”
+7. Check your details are correct and then click “Create instance”
+8. Return to the ElephantSQL dashboard and click on the database instance name for this project
+9. In the URL section, clicking the copy icon will copy the database URL to your clipboard
+10. Leave this tab open, we will come back here later
+
+#### Heroku
+
+1. Log into Heroku.com and click “New” and then “Create a new app”
+2. Choose a unique name for your app, select the region closest to you and click “Create app”
+3. Go to the Settings tab of your new app
+4. Click Reveal Config Vars
+5. Return to your ElephantSQL tab and copy your database URL
+6. Back on Heroku, add a Config Var called DATABASE_URL and paste your ElephantSQL database URL in as the value. Make sure you click “Add”
+7. Add each of your other environment variables except DEVELOPMENT and DB_URL from the env.py file as a Config Var. 
+8. Navigate to the “Deploy” tab of your app.
+9. In the Deployment method section, select “Connect to GitHub”
+10. Search for your repo and click Connect
+11. Optional: You can click Enable Automatic Deploys in case you make any further changes to the project. This will trigger any time code is pushed to your GitHub repository
+12. As we already have all our changes pushed to GitHub, we will use the Manual deploy section and click Deploy Branch. This will start the build process. When finished, it should look something like this
+13. Now, we have our project in place, and we have an empty database ready for use. As you may remember from our local development, we still need to add our tables to our database. To do this, we can click the “More” button and select “Run console”
+14. Type python3 into the console and click Run
+15. In the terminal that opens, write "from plantplanner import db" and then press enter.
+16. In the terminal, write "db.create_all()" and then press enter.
+17. Exit the Python terminal, by typing exit() and hitting enter, and close the console. Our Heroku database should now have the tables and columns created from our models.py file.
+18. The app should be up and running now, so click the “Open app” button
 
 ### Local Deployment
 
