@@ -18,7 +18,7 @@
                     </div>
                     <div class="modal-body">
                         <p>...that you want to delete this user account?</p>
-                        <p><ul>! This action is irreversible !</ul></p>
+                        <p>! This action is irreversible !</p>
                     </div>
                     <div class="modal-footer text-end">
                         <a href="{{ url_for('delete', id=current_user.id)}}"><img src="../static/images/delete_red.webp" alt="Delete" id="logo"></a>
@@ -67,18 +67,7 @@
                 <br>
                 <!-- Buttons -->
                 <div class="row">
-                    <div class="d-flex bd-highlight">
-                        <!-- Delete Button -->
-                        <div class="p-2 flex-grow-1 bd-highlight text-end">
-                            <button type="button" data-bs-toggle="modal" data-bs-target="#userDelete">
-                                <img src="{{ url_for('static', filename='images/delete.webp') }}" alt="Delete" class="delete-button">
-                            </button>
-                        </div>
-                        <!-- Save Button -->
-                        <div class="p-2 bd-highlight">
-                            <div class="col-1"><button type=submit onclick="editUserForm()"><img src="{{ url_for('static', filename='images/save.webp') }}" alt="Save" class="save-button"></button>
-                        </div>
-                    </div>
+                    <div class="d-flex bd-highlight"></div>
                 </div>
             </form>
         </div>

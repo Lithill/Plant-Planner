@@ -553,7 +553,7 @@ The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTM
 
 * Results from the [404](plantplanner/static/images/readme/404_val.webp) page check.
 * Results from the [500](plantplanner/static/images/readme/500_val.webp) page check.
-* Results from the [account](#) page check.
+* Results from the [account](plantplanner/static/images/readme/account_val.webp) page check.
 * Results from the [add_plant](#) page check.
 * Results from the [add_user](#) page check.
 * Results from the [edit_plant](#) page check.
