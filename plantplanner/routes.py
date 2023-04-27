@@ -113,7 +113,7 @@ def add_plant():
         db.session.commit()
 
         # Return a message
-        flash("Post submitted successfully")
+        flash("Plant added successfully")
         return redirect(url_for('plants'))
 
     # Redirect to the webpage
@@ -277,7 +277,7 @@ def edit_plant(id):
         db.session.add(plant)
         db.session.commit()
         # Flash message
-        flash("Post has been updated")
+        flash("Plant has been updated")
         # Redirect to plant page
         return redirect(url_for('plant', id=plant.id))
     if current_user.id == plant.poster_id:

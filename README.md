@@ -144,6 +144,9 @@ The registration page has the following features:
 
    ![Submit button](plantplanner/static/images/readme/submit.webp)
 
+* A flash message appears on the next page when the user has created a new account successfully. 
+
+   ![Flash message](plantplanner/static/images/readme/user_added_successful.webp)
 
 ### Log in
 
@@ -160,6 +163,10 @@ The log in page has the following features:
 * Button to submit the form. When the form is submitted, this authenticates the user, and takes them to their plants page.
 
    ![Submit button](plantplanner/static/images/readme/submit.webp)
+
+* A flash message appears on the next page when the user has logged in successfully. 
+
+   ![Flash message](plantplanner/static/images/readme/login_successful.webp)
 
 ### My plants 
 
@@ -201,28 +208,204 @@ This page has the following features:
 
       ![Delete button](plantplanner/static/images/readme/modal_delete_button.webp)
 
-### Add plants
+### Add plant
 
-* ...
-   ![]()
+This page has the following features:
 
-* ...
-   ![]()
+* A form to add a new plant to the database. It asks the user for these details of the plant - Common Name / Latin Name / Watering Interval / Date Last Watered / Notes.
 
-### Account dashboard
-### Edit account
+   ![Add plant form](plantplanner/static/images/readme/add_plant_form.webp)
+
+   This form includes:
+
+   * Validation warnings when required fields (Common Name, Latin Name, Watering Interval and Date Last Watered) are not completed. Form validation also alerts the user if they type in a watering interval that is less than 1, or type in a last watered date that is in the past.  
+
+      ![Form validation](plantplanner/static/images/readme/add_plant_form_val.webp)
+
+   * A notes section with a variety of different formatting abilities
+   
+      ![Notes formating options](plantplanner/static/images/readme/notes.webp)
+
+   * A back button that takes the user to their "My Plants" page
+
+      ![Back button](plantplanner/static/images/readme/back_button.webp)
+
+   * A submit button that submits the form data to the database, and redirects the user to their "My Plants" page. 
+
+      ![Submit button](plantplanner/static/images/readme/submit.webp)
+   
+   * Tooltips that appear when the user hovers their mouse over each field label. (They do not appear all at the same time. The below is meant as a quick visual reference only.) 
+
+      ![Tooltips](plantplanner/static/images/readme/plant_upper_tooltips.webp)
+
+      ![Tooltips](plantplanner/static/images/readme/plant_lower_tooltips.webp)
+
+   * A flash message that appear on the page after the user has successfully added a plant
+
+      ![Flash message](plantplanner/static/images/readme/plant_added.webp)
+
+
 ### Plant profile
+
+This page has the following features:
+
+* A div that contains all of the information of the plant that the user previously selected. This includes the watering text appearing red if the user needs to water their plant.
+
+   ![Plant profile](plantplanner/static/images/readme/plant_profile.webp) 
+
+   * Edit button, which takes the user to the plant edit page.
+
+      ![Edit button](plantplanner/static/images/readme/edit_plant.webp)
+
+   * Back button, which takes the user to the my plants page. 
+
+      ![Back button](plantplanner/static/images/readme/back_button.webp)
+
+   * Delete button, which triggers the delete modal.
+
+      ![Delete button](plantplanner/static/images/readme/delete_plant.webp)
+
+   * Delete modal, which confirms that the user would like to delete the plant. 
+
+      ![Delete modal](plantplanner/static/images/readme/delete_plant_modal.webp)
+
+      * This modal has the following features:
+
+         * Delete button, which will delete the plant and return the user to the My Plants page. 
+
+            ![Delete button](plantplanner/static/images/readme/modal_delete_button.webp)
+         
+         * Close button, which will close the delete modal without deleting the plant. 
+
+            ![Close modal button](plantplanner/static/images/readme/modal_close_button.webp)
+
 ### Edit plants
 
+This page has the following features:
+
+* A pre-populated form containing all of the details of the plant the user would like to edit. 
+
+   ![Edit plant form](plantplanner/static/images/readme/edit_plant_form.webp)
+
+   This form includes:
+
+   * The same validation that has been previously mentioned for the Add Plant page. 
+
+      ![Form validation](plantplanner/static/images/readme/edit_plant_form_val.webp)
+   
+   * Back button, which takes the user back to the My Plants page. 
+
+      ![Back button](plantplanner/static/images/readme/back_button.webp)
+
+   * Save button, which saves the edited data to the database, and returns the user to the plant profile page. 
+
+      ![Save button](plantplanner/static/images/readme/submit.webp)
+   
+   * Tooltips that appear when the user hovers their mouse over each field label. (They do not appear all at the same time. The below is meant as a quick visual reference only.) 
+
+      ![Tooltips](plantplanner/static/images/readme/plant_upper_tooltips.webp)
+
+      ![Tooltips](plantplanner/static/images/readme/plant_lower_tooltips.webp)
+
+   * A flash message that appear on the page after the user has successfully added a plant
+
+      ![Flash message](#)
+
+### Account dashboard
+
+This page has the following features:
+
+* The details that the user added during registration, apart from their password. 
+
+   ![User details](plantplanner/static/images/readme/account.webp)
+
+* Edit button, which takes users to the edit account page. 
+
+   ![Edit button](plantplanner/static/images/readme/edit_plant.webp)
+
+* Delete button, which opens a delete modal.
+
+   ![Delete button](plantplanner/static/images/readme/delete_plant.webp)
+
+* Delete modal, which confirms with the user that they want to delete their account.
+
+   ![Delete user modal](plantplanner/static/images/readme/delete_user_modal.webp)
+
+   This modal has the following features:
+
+   * Delete button, which triggers the deleting of the user, and all the plants associated with them. Then redirects them to the registration page. 
+
+      ![Delete button](plantplanner/static/images/readme/modal_delete_button.webp)
+
+   * close button, which closes the modal without deleting the user account. 
+
+      ![Close modal](plantplanner/static/images/readme/modal_close_button.webp)
+
+### Edit account
+
+This page has the following features:
+
+* Pre-populated information about the user. 
+   ![Edit user form](plantplanner/static/images/readme/edit_user.webp)
+
+* Validation alerts that require the user to make sure all fields are filled in.
+   ![Edit user form](plantplanner/static/images/readme/edit_user_val.webp)
+
+* Save button, which saves the updated user information, and redirects the user to their account.
+
+   ![Submit button](plantplanner/static/images/readme/submit.webp)
+
+* Delete button, which triggers the delete modal.
+
+   ![Delete button](plantplanner/static/images/readme/delete_plant.webp)
+
+* Delete modal, which confirms with the user that they want to delete their account.
+
+   ![Delete user modal](plantplanner/static/images/readme/delete_user_modal.webp)
+
+   This modal has the following features:
+
+   * Delete button, which triggers the deleting of the user, and all the plants associated with them. Then redirects them to the registration page. 
+
+      ![Delete button](plantplanner/static/images/readme/modal_delete_button.webp)
+
+   * close button, which closes the modal without deleting the user account. 
+
+      ![Close modal](plantplanner/static/images/readme/modal_close_button.webp)
 
 
 
+
+Add tooltips and flash messages to the features
+
+
+### 404 page
+
+This page has the following features:
+
+### 500 page
+
+This page has the following features:
+
+### All pages have the following features
+
+This page has the following features:
+
+* Navigation bar
+   ![]()
+
+* Footer
+   ![]()
+
+* Page title and information section
+   ![]()
 
 ### Future Features
 
 * Add 'feeding' to the plant information. 
 * Add email alerts, so that the user can get notifications when they need to water / feed plants.
 * Add ability for user to change their password
+* Add ability to differentiate between different months, as plants often need a different amount depending on the time of year. 
 
 ## Accessibility
 
