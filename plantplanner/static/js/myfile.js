@@ -121,13 +121,13 @@ function addPlantForm() {
     const noCommonName = "Please enter the common name of the plant"; //blankFieldErr
     // Water Interval Vars
     let waterInterval = document.addPlant.water_interval.value; //integer or string, (but goes into "string" field in check function)
-    const waterIntervalField = document.getElementById("waterIntervalField"); //stringField
+    const water_interval = document.getElementById("water_interval"); //stringField
     const waterIntervalError = document.getElementById("water-interval-error"); //stringError
     const noWaterInterval = "Please enter the number of days between watering"; //blankFieldErr
     const wrongNumber = "Please enter a number between 1 and 182"; //wrongNoErr 
     // Last Watered Vars
     let lastWatered = document.addPlant.last_watered_date.value; //integer (but goes into "string" field in check function)
-    const lastWateredField = document.getElementById("lastWateredField"); //stringField
+    const last_watered_date = document.getElementById("last_watered_date"); //stringField
     const lastWateredError = document.getElementById("last-watered-error"); //stringError
     const noLastWatered = "Please enter the date you last watered the plant"; //blankFieldErr
     const wrongDate = "Date cannot be in the future"; //errMessage
@@ -137,14 +137,14 @@ function addPlantForm() {
     reset(commonNameBlankBool, common_name, commonNameError); //if all these return fine, clear the warnings
 
     // Check Water Interval
-    let waterIntervalBlankBool = checkBlank(waterInterval, waterIntervalError, noWaterInterval, waterIntervalField); //check if name field is blank
-    let rightRangeBool = range(wrongNumber, waterInterval, waterIntervalError, waterIntervalField); //check if number is between 1 and 182
-    reset(waterIntervalBlankBool && rightRangeBool, waterIntervalField, waterIntervalError); //if all these return fine, clear the warnings
+    let waterIntervalBlankBool = checkBlank(waterInterval, waterIntervalError, noWaterInterval, water_interval); //check if name field is blank
+    let rightRangeBool = range(wrongNumber, waterInterval, waterIntervalError, water_interval); //check if number is between 1 and 182
+    reset(waterIntervalBlankBool && rightRangeBool, water_interval, waterIntervalError); //if all these return fine, clear the warnings
 
     // Check Last Watered
-    let lastWateredBlankBool = checkBlank(lastWatered, lastWateredError, noLastWatered, lastWateredField); //check if name field is blank
-    let dateBool = pastDateOnly(lastWatered, lastWateredError, wrongDate, lastWateredField); //add no-future-dates warning   
-    reset(lastWateredBlankBool && dateBool, lastWateredField, lastWateredError); //if all these return fine, clear the warnings
+    let lastWateredBlankBool = checkBlank(lastWatered, lastWateredError, noLastWatered, last_watered_date); //check if name field is blank
+    let dateBool = pastDateOnly(lastWatered, lastWateredError, wrongDate, last_watered_date); //add no-future-dates warning   
+    reset(lastWateredBlankBool && dateBool, last_watered_date, lastWateredError); //if all these return fine, clear the warnings
 }
 
 ///////////////////////////////////////// Edit Plant Form Validation
@@ -157,13 +157,13 @@ function editPlantForm() {
     const noCommonName = "Please enter the common name of the plant"; //blankFieldErr
     // Water Interval Vars
     let waterInterval = document.editPlant.water_interval.value; //integer (but goes into "string" field in check function)
-    const waterIntervalField = document.getElementById("editWaterIntervalField"); //stringField
+    const water_interval = document.getElementById("editwater_interval"); //stringField
     const waterIntervalError = document.getElementById("edit-water-interval-error"); //stringError
     const noWaterInterval = "Please enter the number of days between watering"; //blankFieldErr
     const wrongNumber = "Please enter a number between 1 and 182"; //wrongNoErr 
     // Last Watered Vars
     let lastWatered = document.editPlant.last_watered_date.value; //integer (but goes into "string" field in check function)
-    const lastWateredField = document.getElementById("editLastWateredField"); //stringField
+    const last_watered_date = document.getElementById("editlast_watered_date"); //stringField
     const lastWateredError = document.getElementById("edit-last-watered-error"); //stringError
     const noLastWatered = "Please enter the date you last watered the plant"; //blankFieldErr
     const wrongDate = "Date cannot be in the future"; //errMessage
@@ -173,14 +173,14 @@ function editPlantForm() {
     reset(commonNameBlankBool, common_name, commonNameError); //if all these return fine, clear the warnings
 
     // Check Water Interval
-    let waterIntervalBlankBool = checkBlank(waterInterval, waterIntervalError, noWaterInterval, waterIntervalField); //check if name field is blank
-    let rightRangeBool = range(wrongNumber, waterInterval, waterIntervalError, waterIntervalField); //check if number is between 1 and 182
-    reset(waterIntervalBlankBool && rightRangeBool, waterIntervalField, waterIntervalError); //if all these return fine, clear the warnings
+    let waterIntervalBlankBool = checkBlank(waterInterval, waterIntervalError, noWaterInterval, water_interval); //check if name field is blank
+    let rightRangeBool = range(wrongNumber, waterInterval, waterIntervalError, water_interval); //check if number is between 1 and 182
+    reset(waterIntervalBlankBool && rightRangeBool, water_interval, waterIntervalError); //if all these return fine, clear the warnings
 
     // Check Last Watered
-    let lastWateredBlankBool = checkBlank(lastWatered, lastWateredError, noLastWatered, lastWateredField); //check if name field is blank
-    let dateBool = pastDateOnly(lastWatered, lastWateredError, wrongDate, lastWateredField); //add no-future-dates warning   
-    reset(lastWateredBlankBool && dateBool, lastWateredField, lastWateredError); //if all these return fine, clear the warnings
+    let lastWateredBlankBool = checkBlank(lastWatered, lastWateredError, noLastWatered, last_watered_date); //check if name field is blank
+    let dateBool = pastDateOnly(lastWatered, lastWateredError, wrongDate, last_watered_date); //add no-future-dates warning   
+    reset(lastWateredBlankBool && dateBool, last_watered_date, lastWateredError); //if all these return fine, clear the warnings
 }
 
 function range(wrongNoErr, string, stringError, stringField) {
