@@ -22,7 +22,7 @@
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
                 <!-- Common Name Label -->
                 <div class="col text-nowrap" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="(Required) Enter the common name of your plant.">
-                    <strong>* {{ form.common_name.label(class="form-label") ~ ':'}}</strong>
+                    <strong>* {{ form.common_name.label(class="form-label" id="common_name") ~ ':'}}</strong>
                 </div>
                 <!-- Common Name Field -->
                 <div class="col text-nowrap">
@@ -31,7 +31,7 @@
                 </div>
                 <!-- Latin Name Label -->
                 <div class="col text-nowrap" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="(Optional) Enter the latin name of your plant">
-                    <strong>{{ form.latin_name.label(class="form-label") ~ ':'}}</strong>
+                    <strong>{{ form.latin_name.label(class="form-label" id="latin_name") ~ ':'}}</strong>
                 </div>
                 <!-- Latin Name Field -->
                 <div class="col text-nowrap">
@@ -39,7 +39,7 @@
                 </div>
                 <!-- Days Between Watering Label -->
                 <div class="col text-nowrap" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="(Required) How many days should there be between watering?">
-                    <strong>* {{ form.water_interval.label(class="form-label") ~ ':'}}</strong>
+                    <strong>* {{ form.water_interval.label(class="form-label" id="water_interval") ~ ':'}}</strong>
                 </div>
                 <!-- Days Between Watering Field -->
                 <div class="col text-nowrap">
@@ -48,7 +48,7 @@
                 </div>
                 <!-- Date Last Watered Label -->
                 <div class="col text-nowrap" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="(Required) When did you last water this plant?">
-                    <strong>* {{ form.last_watered_date.label(class="form-label") ~ ':'}}</strong>
+                    <strong>* {{ form.last_watered_date.label(class="form-label" id="watered_date") ~ ':'}}</strong>
                 </div>
                 <!-- Date Last Watered Field -->
                 <div class="col text-nowrap">
@@ -60,7 +60,7 @@
             <div class="row row-cols-1 row-cols-md-1 row-cols-lg-1 g-4">
                 <!-- Image URL label -->
                 <div class="col text-nowrap" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="(Optional) Upload your photo to a hosting platform such as Flikr, and then paste the image URL here">
-                    <strong>{{ form.pic_url.label(class="form-label") ~ ':'}}</strong>
+                    <strong>{{ form.pic_url.label(class="form-label" id="pic_url") ~ ':'}}</strong>
                 </div>
                 <!-- Image URL Field -->
                 <div class="col">{{ form.pic_url(class="form-control", maxlength="255") }}</div>
@@ -69,7 +69,7 @@
             <div class="row row-cols-1 row-cols-md-1 row-cols-lg-1 g-4">
                 <!-- Notes Label -->
                 <div class="col text-nowrap" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="(Optional) Write notes about your plants here. E.g. how to double check that it needs watering, or when you last gave it fertiliser">
-                    <strong>{{ form.notes.label(class="form-label") ~ ':'}}</strong>
+                    <strong>{{ form.notes.label(class="form-label" id="notes") ~ ':'}}</strong>
                 </div>
                 <!-- Notes Field -->
                 <div class="col">
