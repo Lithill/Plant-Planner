@@ -152,18 +152,18 @@ function addPlantForm() {
 function editPlantForm() {
     // Common Name Vars
     let commonName = document.editPlant.common_name.value; //string
-    const common_name = document.getElementById("editcommon_name"); //stringField
+    const common_name = document.getElementById("common_name"); //stringField
     const commonNameError = document.getElementById("edit-common-name-error"); //stringError
     const noCommonName = "Please enter the common name of the plant"; //blankFieldErr
     // Water Interval Vars
     let waterInterval = document.editPlant.water_interval.value; //integer (but goes into "string" field in check function)
-    const water_interval = document.getElementById("editwater_interval"); //stringField
+    const water_interval = document.getElementById("water_interval"); //stringField
     const waterIntervalError = document.getElementById("edit-water-interval-error"); //stringError
     const noWaterInterval = "Please enter the number of days between watering"; //blankFieldErr
     const wrongNumber = "Please enter a number between 1 and 182"; //wrongNoErr 
     // Last Watered Vars
     let lastWatered = document.editPlant.last_watered_date.value; //integer (but goes into "string" field in check function)
-    const last_watered_date = document.getElementById("editlast_watered_date"); //stringField
+    const last_watered_date = document.getElementById("last_watered_date"); //stringField
     const lastWateredError = document.getElementById("edit-last-watered-error"); //stringError
     const noLastWatered = "Please enter the date you last watered the plant"; //blankFieldErr
     const wrongDate = "Date cannot be in the future"; //errMessage

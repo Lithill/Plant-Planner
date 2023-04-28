@@ -559,9 +559,6 @@ The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTM
    The warning shown derives purely from the jinja code, which as far as I am aware, is necessary to accept if I want to use Jinja in this way. 
 
 * Results from the [add_user](plantplanner/static/images/readme/add_user_val.webp) page check.
-
-   The errors shown derive purely from the jinja code, as previously explained.
-
 * Results from the [edit_plant](plantplanner/static/images/readme/edit_plant_val.webp) page check.
 
    The errors shown derive purely from the jinja code.

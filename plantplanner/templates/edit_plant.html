@@ -22,7 +22,7 @@
                 </div>
                 <!-- Common Name Field -->
                 <div class="col text-nowrap">
-                    {{ form.common_name(class="form-control", id="editCommonNameField", maxlength="255")}}
+                    {{ form.common_name(class="form-control", id="common_name", maxlength="255")}}
                     <p id="edit-common-name-error" class="text-wrap"></p>
                 </div>
                 <!-- Latin Name Label -->
@@ -39,7 +39,7 @@
                 </div>
                 <!-- Days Between Watering Field -->
                 <div class="col text-nowrap">
-                    {{ form.water_interval(class="form-control", id="editWaterIntervalField") }}
+                    {{ form.water_interval(class="form-control", id="water_interval") }}
                     <p id="edit-water-interval-error" class="text-wrap"></p>
                 </div>
                 <!-- Date Last Watered Label -->
@@ -48,7 +48,7 @@
                 </div>
                 <!-- Date Last Watered Field -->
                 <div class="col text-nowrap">
-                    {{ form.last_watered_date(class="form-control", id="editLastWateredField", max=today) }}
+                    {{ form.last_watered_date(class="form-control", id="last_watered_date", max=today) }}
                     <p id="edit-last-watered-error" class="text-wrap"></p>
                 </div>
             </div>
