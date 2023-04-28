@@ -555,14 +555,8 @@ The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTM
 * Results from the [500](plantplanner/static/images/readme/500_val.webp) page check.
 * Results from the [account](plantplanner/static/images/readme/account_val.webp) page check.
 * Results from the [add_plant](plantplanner/static/images/readme/add_plant_val.webp) page check.
-   
-   The warning shown derives purely from the jinja code, which as far as I am aware, is necessary to accept if I want to use Jinja in this way. 
-
 * Results from the [add_user](plantplanner/static/images/readme/add_user_val.webp) page check.
 * Results from the [edit_plant](plantplanner/static/images/readme/edit_plant_val.webp) page check.
-
-   The errors shown derive purely from the jinja code.
-
 * Results from the [index](plantplanner/static/images/readme/index_val.webp) page check: user not logged in.
 * Results from the [index](plantplanner/static/images/readme/index_logged_in_val.webp) page check: user logged in.
 * Results from the [login](plantplanner/static/images/readme/login_val.webp) page check.
