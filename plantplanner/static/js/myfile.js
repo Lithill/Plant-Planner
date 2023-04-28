@@ -60,12 +60,12 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
 function loginForm() {
     // Username vars
     let username = document.login.username.value; //string
-    const usernameField = document.getElementById("loginUsernameField"); //stringField
+    const usernameField = document.getElementById("username"); //stringField
     const usernameError = document.getElementById("login-username-err"); //stringError
     const noUsername = "Please enter your username"; //blankFieldErr
     // Password vars
     let password = document.login.password.value; //string
-    const passwordField = document.getElementById("loginPassword"); //stringField
+    const passwordField = document.getElementById("password"); //stringField
     const passwordError = document.getElementById("login-password-err"); //stringError
     const noPassword = "Please enter your password"; //blankFieldErr
 
