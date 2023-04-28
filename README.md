@@ -579,9 +579,18 @@ The results include an undefined variable, which comes from bootstrap. And six v
 
 ### Pep8 Validator
 
-The [Python Validator](https://www.pythonchecker.com/) was used to validate the Python code.
+The [Python Validator](https://www.pythonchecker.com/) was used to validate the Python code for init.py
 
-Results from the [check](#).
+Results from the [init.py](plantplanner/static/images/readme/init_val.webp) check.
+
+I ignored this suggetion, as it is in relation to a filepath. This strange request led me to use [the CI Python Linter](https://pep8ci.herokuapp.com/) for the rest of my validation. 
+
+Results from the [models.py](plantplanner/static/images/readme/models_val.webp) check.
+Results from the [routes.py](#) check.
+
+Results from the [webforms.py](#) check.
+Results from the [env.py](#) check.
+Results from the [run.py](#) check.
 
 ### Solved Bugs
 

@@ -19,7 +19,7 @@ class Plants(db.Model):
     notes = db.Column(db.Text)
     pic_url = db.Column(db.String(255))
     date_posted = db.Column(db.DateTime, default=datetime.utcnow)
-    # Foreign key to link users 
+    # Foreign key to link users
     # (refer to primary key of the user)
     poster_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 
