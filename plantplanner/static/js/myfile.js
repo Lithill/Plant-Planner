@@ -116,7 +116,7 @@ function editUserForm() {
 function addPlantForm() {
     // Common Name Vars
     let commonName = document.addPlant.common_name.value; //string
-    const commonNameField = document.getElementById("commonNameField"); //stringField
+    const common_name = document.getElementById("common_name"); //stringField
     const commonNameError = document.getElementById("common-name-error"); //stringError
     const noCommonName = "Please enter the common name of the plant"; //blankFieldErr
     // Water Interval Vars
@@ -133,8 +133,8 @@ function addPlantForm() {
     const wrongDate = "Date cannot be in the future"; //errMessage
 
     // Check Common Name
-    let commonNameBlankBool = checkBlank(commonName, commonNameError, noCommonName, commonNameField); //check if name field is blank
-    reset(commonNameBlankBool, commonNameField, commonNameError); //if all these return fine, clear the warnings
+    let commonNameBlankBool = checkBlank(commonName, commonNameError, noCommonName, common_name); //check if name field is blank
+    reset(commonNameBlankBool, common_name, commonNameError); //if all these return fine, clear the warnings
 
     // Check Water Interval
     let waterIntervalBlankBool = checkBlank(waterInterval, waterIntervalError, noWaterInterval, waterIntervalField); //check if name field is blank
@@ -152,7 +152,7 @@ function addPlantForm() {
 function editPlantForm() {
     // Common Name Vars
     let commonName = document.editPlant.common_name.value; //string
-    const commonNameField = document.getElementById("editCommonNameField"); //stringField
+    const common_name = document.getElementById("editcommon_name"); //stringField
     const commonNameError = document.getElementById("edit-common-name-error"); //stringError
     const noCommonName = "Please enter the common name of the plant"; //blankFieldErr
     // Water Interval Vars
@@ -169,8 +169,8 @@ function editPlantForm() {
     const wrongDate = "Date cannot be in the future"; //errMessage
 
     // Check Common Name
-    let commonNameBlankBool = checkBlank(commonName, commonNameError, noCommonName, commonNameField); //check if name field is blank
-    reset(commonNameBlankBool, commonNameField, commonNameError); //if all these return fine, clear the warnings
+    let commonNameBlankBool = checkBlank(commonName, commonNameError, noCommonName, common_name); //check if name field is blank
+    reset(commonNameBlankBool, common_name, commonNameError); //if all these return fine, clear the warnings
 
     // Check Water Interval
     let waterIntervalBlankBool = checkBlank(waterInterval, waterIntervalError, noWaterInterval, waterIntervalField); //check if name field is blank
