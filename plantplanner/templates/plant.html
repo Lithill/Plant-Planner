@@ -11,7 +11,7 @@
 
     {% if plant.poster_id == current_user.id %}
     <!-- Delete modal -->
-    <div class="modal fade blue-text" id="exampleModal{{ plant.id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade blue-text" id="exampleModal{{ plant.id }}" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -19,7 +19,7 @@
                 </div>
                 <div class="modal-body">
                     <p>...that you want to delete your <strong>{{ plant.common_name }}</strong>?</p>
-                    <p><ul>! This action is irreversible !</ul></p>
+                    <p>! This action is irreversible !</p>
                 </div>
                 <div class="modal-footer text-end">
                     <a href="{{ url_for('delete_plant', id=plant.id) }}"><img src="{{ url_for('static', filename='images/delete_red.webp') }}" alt="Delete" class="delete-button"></a>
@@ -42,7 +42,7 @@
         </div>
         <!-- Common Name -->
         <div class="col make-middle">
-            <h5><strong><u>{{ plant.common_name }}</u></h5></strong>
+            <h5><strong><u>{{ plant.common_name }}</u></strong></h5>
         </div>
         <!-- Latin Name -->
         <div class="col make-middle">
