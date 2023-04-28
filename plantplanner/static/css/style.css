@@ -107,15 +107,6 @@ a {
 
 /************************************ Form Fields */
 
-/* .user-name,
-.user-name:focus,
-.user-username,
-.user-username:focus
- {
-    border: 2px solid #cc0000;
-    border-radius: 4px;
-}  */
-
 #name-error,
 #username-error,
 #email-error,

@@ -567,7 +567,7 @@ The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTM
 
 The [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) was used to validate the CSS in the style.css file.
 
-Results from the [check](#).
+Results from the [check](plantplanner/static/images/readme/css_val.webp).
 
 ### JSHint Validator
 
