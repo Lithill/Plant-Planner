@@ -1,4 +1,4 @@
-///////////////////////////////////////// Tooltips
+///////////////////////////////////////// TooltipsnameField
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
@@ -6,28 +6,28 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
  function registrationForm() {
     // Name vars
     let name = document.addUser.name.value; //string
-    const nameField = document.getElementById("nameField"); //stringField
+    const nameField = document.getElementById("name"); //stringField
     const nameError = document.getElementById("name-error"); //stringError
     const noName = "Please enter your name"; //blankFieldErr
     // Username vars
     let username = document.addUser.username.value; //string
-    const usernameField = document.getElementById("usernameField"); //stringField
+    const usernameField = document.getElementById("username"); //stringField
     const usernameError = document.getElementById("username-error"); //stringError
     const noUsername = "Please enter your username"; //blankFieldErr
     // Email vars
     let email = document.addUser.email.value; //string
-    const emailField = document.getElementById("emailField"); //stringField
+    const emailField = document.getElementById("email"); //stringField
     const emailError = document.getElementById("email-error"); //stringError
     const noEmail = "Please enter your email"; //blankFieldErr
     // Password vars
     let password = document.addUser.password_hash.value; //string
-    const passwordField = document.getElementById("passwordHash"); //stringField
+    const passwordField = document.getElementById("password_hash"); //stringField
     const passwordError = document.getElementById("password-error"); //stringError
     const noPassword = "Please enter your password"; //blankFieldErr
 
     // Confirmation password vars (password2)
     let confPassword = document.addUser.password_hash2.value;
-    const confPasswordField = document.getElementById("passwordHash2"); //stringField
+    const confPasswordField = document.getElementById("password_hash2"); //stringField
     const confPasswordError = document.getElementById("password-error-2"); //stringError
     const noConfPassword = "Please confirm your password"; //blankFieldErr
     const passwordMatchErr = "Passwords must match"; //mustMatchErr
