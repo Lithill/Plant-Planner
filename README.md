@@ -573,7 +573,9 @@ Results from the [check](plantplanner/static/images/readme/css_val.webp).
 
 The [JSHint Validator](https://jshint.com/) was used to validate the JavaScript in the script.js file.
 
-Results from the [check](#).
+Results from the [check](plantplanner/static/images/readme/js_val.webp).
+
+The results include an undefined variable, which comes from bootstrap. And six variables that are showing as unused because they come from onclick events in the html. 
 
 ### Pep8 Validator
 

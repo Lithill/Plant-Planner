@@ -1,8 +1,8 @@
 /*jshint esversion: 6 */
 
 ///////////////////////////////////////// TooltipsnameField
-const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 
 ///////////////////////////////////////// User Form Validation
  function registrationForm() {
@@ -52,9 +52,9 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
     reset(usernameBlankBool, usernameField, usernameError); //if all these return fine, clear the warnings
 
     // Check Email
-    let emailBlankBool = checkBlank(email, emailError, noEmail, emailField) //check if email field is blank
+    let emailBlankBool = checkBlank(email, emailError, noEmail, emailField); //check if email field is blank
     let isEmailBool = validateEmail(email, emailError, emailField); 
-    reset(emailBlankBool && isEmailBool, emailField, emailError) //if all these return fine, clear the warnings
+    reset(emailBlankBool && isEmailBool, emailField, emailError); //if all these return fine, clear the warnings
 }
 
 ///////////////////////////////////////// Login Form Validation
@@ -100,9 +100,9 @@ function editUserForm() {
     const noEmail = "Please enter your email"; //blankFieldErr
 
     // Check Email
-    let emailBlankBool = checkBlank(email, emailError, noEmail, emailField) //check if email field is blank
+    let emailBlankBool = checkBlank(email, emailError, noEmail, emailField); //check if email field is blank
     let isEmailBool = validateEmail(email, emailError, emailField); 
-    reset(emailBlankBool && isEmailBool, emailField, emailError) //if all these return fine, clear the warnings
+    reset(emailBlankBool && isEmailBool, emailField, emailError); //if all these return fine, clear the warnings
 
     // Check Name
     let nameBlankBool = checkBlank(name, nameError, noName, nameField); //check if name field is blank
