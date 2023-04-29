@@ -561,7 +561,7 @@ The [W3C HTML Validator](https://validator.w3.org/) was used to validate the HTM
 * Results from the [index](plantplanner/static/images/readme/index_logged_in_val.webp) page check: user logged in.
 * Results from the [login](plantplanner/static/images/readme/login_val.webp) page check.
 * Results from the [plant](plantplanner/static/images/readme/plant_val.webp) page check.
-* Results from the [update](#) page check.
+* Results from the [update](plantplanner/static/images/readme/update_val.webp) page check.
 
 ### CSS Validator
 
