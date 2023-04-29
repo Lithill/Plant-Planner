@@ -53,7 +53,7 @@ def account():
                                    'to your account by '
                                    'clicking the edit button'),
                 page_title="My Account")
-        except:
+        except SQLAlchemyError:
             flash("Error! Looks like there was a problem...try again!")
             return render_template(
                 "account.html",
@@ -196,7 +196,7 @@ def delete(id):
                 our_users=our_users,
                 page_instructions="Answer the questions to create an account",
                 page_title="Create an Account")
-        except:
+        except SQLAlchemyError:
             flash("Sorry, there was a problem deleting the user")
             return render_template(
                 "add_user.html",
@@ -235,7 +235,7 @@ def delete_plant(id):
                 page_instructions="These are your plants",
                 page_title="My Plants"
                 )
-        except:
+        except SQLAlchemyError:
             # Return an error message
             flash("There was a problem deleting the plant")
             # Grab all the plants from the database
@@ -482,7 +482,7 @@ def update(id):
                 page_instructions=("You can make changes to your account"
                                    " by clicking the edit button"),
                 page_title="My Account")
-        except:
+        except SQLAlchemyError:
             flash("It looks like something went wrong... Please try again")
             return render_template(
                 "update.html",
