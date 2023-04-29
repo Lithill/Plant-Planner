@@ -147,7 +147,7 @@ def add_user():
             flash("This username already exists, please try another username.")
             return redirect(url_for("add_user"))
 
-        if user is None and free_username:
+        if user is None:
             # Hash the password
             hashed_pw = generate_password_hash(
                 form.password_hash.data, "sha256"
