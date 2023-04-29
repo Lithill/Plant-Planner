@@ -85,17 +85,17 @@ function loginForm() {
 function editUserForm() {
     // Name vars
     let name = document.editUser.name.value; //string
-    const nameField = document.getElementById("editNameField"); //stringField
+    const nameField = document.getElementById("name"); //stringField
     const nameError = document.getElementById("edit-name-error"); //stringError
     const noName = "Please enter your name"; //blankFieldErr
     // Username vars
     let username = document.editUser.username.value; //string
-    const usernameField = document.getElementById("editUsernameField"); //stringField
+    const usernameField = document.getElementById("username"); //stringField
     const usernameError = document.getElementById("edit-username-error"); //stringError
     const noUsername = "Please enter your username"; //blankFieldErr
     // Email vars
     let email = document.editUser.email.value; //string
-    const emailField = document.getElementById("editEmailField"); //stringField
+    const emailField = document.getElementById("email"); //stringField
     const emailError = document.getElementById("edit-email-error"); //stringError
     const noEmail = "Please enter your email"; //blankFieldErr
 
