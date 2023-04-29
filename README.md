@@ -587,10 +587,9 @@ I ignored this suggetion, as it is in relation to a filepath. This strange reque
 
 Results from the [models.py](plantplanner/static/images/readme/models_val.webp) check.
 Results from the [routes.py](plantplanner/static/images/readme/routes_val.webp) check.
-
-Results from the [webforms.py](#) check.
-Results from the [env.py](#) check.
-Results from the [run.py](#) check.
+Results from the [webforms.py](plantplanner/static/images/readme/webforms_val.webp) check.
+Results from the [env.py](plantplanner/static/images/readme/env_val.webp) check.
+Results from the [run.py](plantplanner/static/images/readme/run_val.webp) check.
 
 ### Solved Bugs
 
