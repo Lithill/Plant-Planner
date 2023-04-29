@@ -49,7 +49,9 @@ def account():
                 "account.html",
                 form=form,
                 name_to_update=name_to_update,
-                page_instructions="You can make changes to your account by clicking the edit button",
+                page_instructions=('You can make changes '
+                                   'to your account by '
+                                   'clicking the edit button'),
                 page_title="My Account")
         except:
             flash("Error! Looks like there was a problem...try again!")
@@ -57,7 +59,8 @@ def account():
                 "account.html",
                 form=form,
                 name_to_update=name_to_update,
-                page_instructions="You can make changes to your account by clicking the edit button",
+                page_instructions=("You can make changes to your account"
+                                   " by clicking the edit button"),
                 page_title="My Account"
                 )
     else:
@@ -66,11 +69,13 @@ def account():
             form=form,
             name_to_update=name_to_update,
             id=id,
-            page_instructions="You can make changes to your account by pressing the edit button",
+            page_instructions=("You can make changes to your account "
+                               "by pressing the edit button"),
             page_title="My Account")
     return render_template(
         'account.html',
-        page_instructions="You can make changes to your account by pressing the edit button",
+        page_instructions=("You can make changes to your account by"
+                           " pressing the edit button"),
         page_title="My Account")
 
 
@@ -85,7 +90,8 @@ def add_plant():
         poster = current_user.id
 
         # Calculate next_water date
-        # Taken from https://stackoverflow.com/questions/25120621/python-get-date-in-future-x-days-and-hours-left-to-date
+        # Taken from https://stackoverflow.com/questions/25120621
+        # /python-get-date-in-future-x-days-and-hours-left-to-date
         dt = form.last_watered_date.data
         td = timedelta(days=form.water_interval.data)
         next_water_date = dt + td
@@ -121,7 +127,8 @@ def add_plant():
         "add_plant.html",
         form=form,
         today=today,
-        page_instructions="Answer the questions and click 'Submit' to add a plant",
+        page_instructions=("Answer the questions and click 'Submit'"
+                           " to add a plant"),
         page_title="Add a Plant")
 
 
@@ -157,7 +164,8 @@ def add_user():
         form=form,
         name=name,
         our_users=our_users,
-        page_instructions="Answer the questions and then click the tick to create an account.",
+        page_instructions=("Answer the questions and then click"
+                           " the tick to create an account."),
         page_title="Create an Account")
 
 
@@ -260,7 +268,8 @@ def edit_plant(id):
 
     if form.validate_on_submit():
         # Calculate next_water date
-        # Taken from https://stackoverflow.com/questions/25120621/python-get-date-in-future-x-days-and-hours-left-to-date
+        # Taken from https://stackoverflow.com/questions/25120621/
+        # python-get-date-in-future-x-days-and-hours-left-to-date
         dt = form.last_watered_date.data
         td = timedelta(days=form.water_interval.data)
         date = dt + td
@@ -291,7 +300,8 @@ def edit_plant(id):
             'edit_plant.html',
             form=form,
             today=today,
-            page_instructions="Change the information in the field boxes and click the tick",
+            page_instructions=("Change the information in the"
+                               " field boxes and click the tick"),
             page_title="Edit Plant")
     else:
         flash("You aren't authorised to edit this plant")
@@ -299,7 +309,8 @@ def edit_plant(id):
         return render_template(
             "plants.html",
             plants=plants,
-            page_instructions="Please go to the 'My Plants' page to see what plants you can edit",
+            page_instructions=("Please go to the 'My Plants' page"
+                               " to see what plants you can edit"),
             page_title="Delete a Plant")
 
 
@@ -313,7 +324,8 @@ def index():
         "index.html",
         first_name=first_name,
         stuff=stuff,
-        page_instructions="Keep track of when you need to water your houseplants.",
+        page_instructions=("Keep track of when you need to"
+                           " water your houseplants."),
         page_title="Plant Planner")
 
 
@@ -417,7 +429,9 @@ def plants():
     return render_template(
         "plants.html",
         plants=plants,
-        page_instructions="Click the '+' button to add a plant. The plant list is ordered based on the date they need to be watered.",
+        page_instructions=("Click the '+' button to add a plant. The"
+                           " plant list is ordered based on the date"
+                           " they need to be watered."),
         now=now,
         page_title="My Plants")
 
@@ -465,7 +479,8 @@ def update(id):
                 form=form,
                 name_to_update=name_to_update,
                 id=id,
-                page_instructions="You can make changes to your account by clicking the edit button",
+                page_instructions=("You can make changes to your account"
+                                   " by clicking the edit button"),
                 page_title="My Account")
         except:
             flash("It looks like something went wrong... Please try again")
@@ -474,7 +489,8 @@ def update(id):
                 form=form,
                 name_to_update=name_to_update,
                 id=id,
-                page_instructions="Enter what you'd like to edit in the text boxes. Then click the tick.",
+                page_instructions=("Enter what you'd like to edit in the"
+                                   " text boxes. Then click the tick."),
                 page_title="Edit User")
     else:
         return render_template(
@@ -482,5 +498,6 @@ def update(id):
             form=form,
             name_to_update=name_to_update,
             id=id,
-            page_instructions="Enter what you'd like to edit in the text boxes. Then click the tick.",
+            page_instructions=("Enter what you'd like to edit in the"
+                               " text boxes. Then click the tick."),
             page_title="Edit User")
