@@ -586,7 +586,7 @@ Results from the [init.py](plantplanner/static/images/readme/init_val.webp) chec
 I ignored this suggetion, as it is in relation to a filepath. This strange request led me to use [the CI Python Linter](https://pep8ci.herokuapp.com/) for the rest of my validation. 
 
 Results from the [models.py](plantplanner/static/images/readme/models_val.webp) check.
-Results from the [routes.py](#) check.
+Results from the [routes.py](plantplanner/static/images/readme/routes_val.webp) check.
 
 Results from the [webforms.py](#) check.
 Results from the [env.py](#) check.
