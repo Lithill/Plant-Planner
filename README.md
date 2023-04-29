@@ -407,6 +407,7 @@ This page has the following features:
 
 ### Future Features
 
+* Prevent users from adding a random string rather than an email
 * Add 'feeding' to the plant information. 
 * Add email alerts, so that the user can get notifications when they need to water / feed plants.
 * Add ability for user to change their password
@@ -610,29 +611,27 @@ Results from the [run.py](plantplanner/static/images/readme/run_val.webp) check.
 
 ### Known Bugs
 
-| Bug Number  | Expected behaviour | Actual behaviour | Solution |
-| ---:        |    :----:          |        :----:    | :---     |
-| 11  | Email entered on user forms would need an @ and . before being accepted | Strings of just letters are being accepted | Solution |
-
-Since adding "let rightRangeBool" to edit plant form, the alert has stopped working properly for the water interval field (but not on the add plant form? It is the same JavaScript)
+No known bugs
 
 ### Lighthouse
 
 I used Lighthouse through Chrome Developer Tools to test accessibility, performance, best practices and SEO of the website.
 
-#### Initial Testing
+#### Results
 
-[Mobile](#)
-
-Improvements recommended:
-
-* 
-
-#### Fixes and Most Recent Lighthouse Testing
-
-After fixing the recommended areas, this is the lighthouse tests that the webpage received:
-
-[Desktop](#) ~ [Mobile](#)
+* 404:         [Desktop](#) ~ [Mobile](#)
+* account:     [Desktop](#) ~ [Mobile](#)
+* add_plant:   [Desktop](#) ~ [Mobile](#)
+* add_user:    [Desktop](#) ~ [Mobile](#)
+* base:        [Desktop](#) ~ [Mobile](#)
+* edit_plant:  [Desktop](#) ~ [Mobile](#)
+* footer:      [Desktop](#) ~ [Mobile](#)
+* index:       [Desktop](#) ~ [Mobile](#)
+* login:       [Desktop](#) ~ [Mobile](#)
+* navbar:      [Desktop](#) ~ [Mobile](#)
+* plant:       [Desktop](#) ~ [Mobile](#)
+* plants:      [Desktop](#) ~ [Mobile](#)
+* update:      [Desktop](#) ~ [Mobile](#)
 
 ### Full Testing
 
