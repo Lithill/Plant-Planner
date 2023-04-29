@@ -139,7 +139,15 @@ def add_user():
     # Validate Form
     if form.validate_on_submit():
         user = Users.query.filter_by(email=form.email.data).first()
-        if user is None:
+        existing_user = Users.query.filter(
+            Users.username == request.form.get("username").lower()).all()
+
+        # If username exists - flash message & reload register page
+        if existing_user:
+            flash("This username already exists, please try another username.")
+            return redirect(url_for("add_user"))
+
+        if user is None and free_username:
             # Hash the password
             hashed_pw = generate_password_hash(
                 form.password_hash.data, "sha256"

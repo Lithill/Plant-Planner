@@ -613,26 +613,6 @@ Results from the [run.py](plantplanner/static/images/readme/run_val.webp) check.
 
 No known bugs
 
-### Lighthouse
-
-I used Lighthouse through Chrome Developer Tools to test accessibility, performance, best practices and SEO of the website.
-
-#### Results
-
-* 404:         [Desktop](#) ~ [Mobile](#)
-* account:     [Desktop](#) ~ [Mobile](#)
-* add_plant:   [Desktop](#) ~ [Mobile](#)
-* add_user:    [Desktop](#) ~ [Mobile](#)
-* base:        [Desktop](#) ~ [Mobile](#)
-* edit_plant:  [Desktop](#) ~ [Mobile](#)
-* footer:      [Desktop](#) ~ [Mobile](#)
-* index:       [Desktop](#) ~ [Mobile](#)
-* login:       [Desktop](#) ~ [Mobile](#)
-* navbar:      [Desktop](#) ~ [Mobile](#)
-* plant:       [Desktop](#) ~ [Mobile](#)
-* plants:      [Desktop](#) ~ [Mobile](#)
-* update:      [Desktop](#) ~ [Mobile](#)
-
 ### Full Testing
 
 To fully test my website, I used Google Chrome Developer Tools to ensure that the page was responsive on all available screen sizes. Testing was performed on a variety of browsers (Chrome, Microsoft Edge and Firefox) and devices (Gigabyte gaming laptop, iPhone SE, Android one+ 9 mobile, Lenovo Legion Laptop, Huawei P Smart Phone, Fair Phone).
@@ -668,6 +648,16 @@ custom code for vertical line separated bootstrap navbar links.
  code for email validation was adapted for the validateEmail javascript function. 
  * [Samuel Meddows'](https://stackoverflow.com/questions/1531093/how-do-i-get-the-current-date-in-javascript)
  code was used for the "today" javascript function. 
+ * [Kera Cudmore's](https://github.com/kera-cudmore/BookWorm/blob/b4d82678bb94e9e7ea1d5923f90807e51421d540/bookworm/auth/routes.py)
+ code was used for the validate username code in def add_user in routes.py.
+  
+         free_username = Users.query.filter(
+            Users.username == request.form.get("username").lower()).all()
+
+         # If username exists - flash message & reload register page
+         if existing_user:
+            flash("This username already exists, please try another username.")
+            return redirect(url_for("auth.register"))
 
 ### Content
 
