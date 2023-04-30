@@ -13,14 +13,6 @@ body {
     background-repeat: no-repeat;
 }
 
-.footer {
-    padding: 5px;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-}
-
 .center-links {
     text-align:center;
 }
@@ -40,6 +32,28 @@ a {
     font-family: Merriweather;
     color: #0B0E5B;
 }
+
+/************************************ Footer */
+
+.footer {
+    padding: 5px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+#three-plants {
+    width: 20%;
+    height: auto;
+    background-image: url("../images/right-logo.webp");
+    background-repeat: no-repeat;
+    background-size: contain; 
+    position: fixed;
+    bottom: 40px;
+    left: 40px;
+    z-index: 200;  
+} 
 
 /************************************ Font */
 
@@ -192,19 +206,4 @@ button {
     .navbar .navbar-nav .nav-item:not(:last-child) .nav-link {
       border-right: 2px solid #000000;
     }
-}
-
-@include media-breakpoint-up(md) {
-
-    #three-plants {
-        width: 20%;
-        height: auto;
-        background-image: url("../images/right-logo.webp");
-        background-repeat: no-repeat;
-        background-size: contain; 
-        position: fixed;
-        bottom: 40px;
-        left: 40px;
-        z-index: 200;  
-    } 
 }
