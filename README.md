@@ -645,6 +645,32 @@ Things checked that are specific to particular forms:
 
 Checked that tooltips behaved appropriately on edit plant page and add plant page.
 
+#### Authentication:
+
+The following was tested and found to be working as expected:
+
+* Users can only access these sections and functions of the website if they are logged in -
+   * User account
+   * Add Plant
+   * Delete Plant
+   * View particular plant
+   * Edit Plant
+   * Log out
+   * My Plants
+   * Edit user details
+* Users cannot view private information about other users, such as user account details or their plants. 
+
+#### Database:
+
+The following was tested and found to be working as expected:
+
+* User data is added and persists over time.
+* Plant data is added and persists over time.
+* User is linked to plant data that they added.
+* Plant data can be edited and deleted from the database.
+* User data can be edited and deleted from the database.
+* On deletion of the user, the plant data associated with that user is also deleted.
+
 ## Credits
 
 Thanks are given for the following posts and tutorials:
