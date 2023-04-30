@@ -1,5 +1,3 @@
-/*jshint esversion: 6 */
-
 ///////////////////////////////////////// TooltipsnameField
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
@@ -7,34 +5,34 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
 ///////////////////////////////////////// User Form Validation
  function registrationForm() {
     // Name vars
-    let name = document.addUser.name.value; //string
-    const nameField = document.getElementById("name"); //stringField
-    const nameError = document.getElementById("name-error"); //stringError
-    const noName = "Please enter your name"; //blankFieldErr
+    let name = document.addUser.name.value; 
+    const nameField = document.getElementById("name");
+    const nameError = document.getElementById("name-error"); 
+    const noName = "Please enter your name"; 
     // Username vars
-    let username = document.addUser.username.value; //string
-    const usernameField = document.getElementById("username"); //stringField
-    const usernameError = document.getElementById("username-error"); //stringError
-    const noUsername = "Please enter your username"; //blankFieldErr
+    let username = document.addUser.username.value; 
+    const usernameField = document.getElementById("username"); 
+    const usernameError = document.getElementById("username-error"); 
+    const noUsername = "Please enter your username"; 
     // Email vars
-    let email = document.addUser.email.value; //string
-    const emailField = document.getElementById("email"); //stringField
-    const emailError = document.getElementById("email-error"); //stringError
-    const noEmail = "Please enter your email"; //blankFieldErr
+    let email = document.addUser.email.value; 
+    const emailField = document.getElementById("email"); 
+    const emailError = document.getElementById("email-error"); 
+    const noEmail = "Please enter your email"; 
     // Password vars
-    let password = document.addUser.password_hash.value; //string
-    const passwordField = document.getElementById("password_hash"); //stringField
-    const passwordError = document.getElementById("password-error"); //stringError
-    const noPassword = "Please enter your password"; //blankFieldErr
+    let password = document.addUser.password_hash.value; 
+    const passwordField = document.getElementById("password_hash"); 
+    const passwordError = document.getElementById("password-error"); 
+    const noPassword = "Please enter your password"; 
 
     // Confirmation password vars (password2)
     let confPassword = document.addUser.password_hash2.value;
-    const confPasswordField = document.getElementById("password_hash2"); //stringField
-    const confPasswordError = document.getElementById("password-error-2"); //stringError
-    const noConfPassword = "Please confirm your password"; //blankFieldErr
-    const passwordMatchErr = "Passwords must match"; //mustMatchErr
+    const confPasswordField = document.getElementById("password_hash2"); 
+    const confPasswordError = document.getElementById("password-error-2"); 
+    const noConfPassword = "Please confirm your password"; 
+    const passwordMatchErr = "Passwords must match"; 
 
-    // Check Password
+    // Check if password
     let passwordBlankBool = checkBlank(password, passwordError, noPassword, passwordField); //check if password field is blank
     let passwordsMatchBool = checkPasswordsMatch(password, confPassword, passwordMatchErr, passwordField, confPasswordError, confPasswordField, passwordError); // Check Passwords match 
     reset(passwordBlankBool && passwordsMatchBool, passwordField, passwordError); //if all these return fine, clear the warnings
@@ -61,15 +59,15 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
 
 function loginForm() {
     // Username vars
-    let username = document.login.username.value; //string
-    const usernameField = document.getElementById("username"); //stringField
-    const usernameError = document.getElementById("login-username-err"); //stringError
-    const noUsername = "Please enter your username"; //blankFieldErr
+    let username = document.login.username.value; 
+    const usernameField = document.getElementById("username");
+    const usernameError = document.getElementById("login-username-err"); 
+    const noUsername = "Please enter your username"; 
     // Password vars
-    let password = document.login.password.value; //string
-    const passwordField = document.getElementById("password"); //stringField
-    const passwordError = document.getElementById("login-password-err"); //stringError
-    const noPassword = "Please enter your password"; //blankFieldErr
+    let password = document.login.password.value; 
+    const passwordField = document.getElementById("password"); 
+    const passwordError = document.getElementById("login-password-err");
+    const noPassword = "Please enter your password"; 
 
     // Check Username
     let usernameBlankBool = checkBlank(username, usernameError, noUsername, usernameField); //check if username field is blank
@@ -84,20 +82,20 @@ function loginForm() {
 
 function editUserForm() {
     // Name vars
-    let name = document.editUser.name.value; //string
-    const nameField = document.getElementById("name"); //stringField
-    const nameError = document.getElementById("edit-name-error"); //stringError
-    const noName = "Please enter your name"; //blankFieldErr
+    let name = document.editUser.name.value; 
+    const nameField = document.getElementById("name"); 
+    const nameError = document.getElementById("edit-name-error");
+    const noName = "Please enter your name"; 
     // Username vars
-    let username = document.editUser.username.value; //string
-    const usernameField = document.getElementById("username"); //stringField
-    const usernameError = document.getElementById("edit-username-error"); //stringError
-    const noUsername = "Please enter your username"; //blankFieldErr
+    let username = document.editUser.username.value; 
+    const usernameField = document.getElementById("username"); 
+    const usernameError = document.getElementById("edit-username-error"); 
+    const noUsername = "Please enter your username"; 
     // Email vars
-    let email = document.editUser.email.value; //string
-    const emailField = document.getElementById("email"); //stringField
-    const emailError = document.getElementById("edit-email-error"); //stringError
-    const noEmail = "Please enter your email"; //blankFieldErr
+    let email = document.editUser.email.value; 
+    const emailField = document.getElementById("email"); 
+    const emailError = document.getElementById("edit-email-error"); 
+    const noEmail = "Please enter your email"; 
 
     // Check Email
     let emailBlankBool = checkBlank(email, emailError, noEmail, emailField); //check if email field is blank
@@ -117,22 +115,22 @@ function editUserForm() {
 
 function addPlantForm() {
     // Common Name Vars
-    let commonName = document.addPlant.common_name.value; //string
-    const common_name = document.getElementById("common_name"); //stringField
-    const commonNameError = document.getElementById("common-name-error"); //stringError
-    const noCommonName = "Please enter the common name of the plant"; //blankFieldErr
+    let commonName = document.addPlant.common_name.value; 
+    const common_name = document.getElementById("common_name");
+    const commonNameError = document.getElementById("common-name-error"); 
+    const noCommonName = "Please enter the common name of the plant";
     // Water Interval Vars
-    let waterInterval = document.addPlant.water_interval.value; //integer or string, (but goes into "string" field in check function)
-    const water_interval = document.getElementById("water_interval"); //stringField
-    const waterIntervalError = document.getElementById("water-interval-error"); //stringError
-    const noWaterInterval = "Please enter the number of days between watering"; //blankFieldErr
-    const wrongNumber = "Please enter a number between 1 and 182"; //wrongNoErr 
+    let waterInterval = document.addPlant.water_interval.value; 
+    const water_interval = document.getElementById("water_interval"); 
+    const waterIntervalError = document.getElementById("water-interval-error"); 
+    const noWaterInterval = "Please enter the number of days between watering";
+    const wrongNumber = "Please enter a number between 1 and 182"; 
     // Last Watered Vars
-    let lastWatered = document.addPlant.last_watered_date.value; //integer (but goes into "string" field in check function)
-    const last_watered_date = document.getElementById("last_watered_date"); //stringField
-    const lastWateredError = document.getElementById("last-watered-error"); //stringError
-    const noLastWatered = "Please enter the date you last watered the plant"; //blankFieldErr
-    const wrongDate = "Date cannot be in the future"; //errMessage
+    let lastWatered = document.addPlant.last_watered_date.value; 
+    const last_watered_date = document.getElementById("last_watered_date"); 
+    const lastWateredError = document.getElementById("last-watered-error"); 
+    const noLastWatered = "Please enter the date you last watered the plant"; 
+    const wrongDate = "Date cannot be in the future"; 
 
     // Check Common Name
     let commonNameBlankBool = checkBlank(commonName, commonNameError, noCommonName, common_name); //check if name field is blank
@@ -153,22 +151,22 @@ function addPlantForm() {
 
 function editPlantForm() {
     // Common Name Vars
-    let commonName = document.editPlant.common_name.value; //string
-    const common_name = document.getElementById("common_name"); //stringField
-    const commonNameError = document.getElementById("edit-common-name-error"); //stringError
-    const noCommonName = "Please enter the common name of the plant"; //blankFieldErr
+    let commonName = document.editPlant.common_name.value; 
+    const common_name = document.getElementById("common_name"); 
+    const commonNameError = document.getElementById("edit-common-name-error"); 
+    const noCommonName = "Please enter the common name of the plant"; 
     // Water Interval Vars
-    let waterInterval = document.editPlant.water_interval.value; //integer (but goes into "string" field in check function)
-    const water_interval = document.getElementById("water_interval"); //stringField
-    const waterIntervalError = document.getElementById("edit-water-interval-error"); //stringError
-    const noWaterInterval = "Please enter the number of days between watering"; //blankFieldErr
-    const wrongNumber = "Please enter a number between 1 and 182"; //wrongNoErr 
+    let waterInterval = document.editPlant.water_interval.value; 
+    const water_interval = document.getElementById("water_interval"); 
+    const waterIntervalError = document.getElementById("edit-water-interval-error"); 
+    const noWaterInterval = "Please enter the number of days between watering"; 
+    const wrongNumber = "Please enter a number between 1 and 182"; 
     // Last Watered Vars
-    let lastWatered = document.editPlant.last_watered_date.value; //integer (but goes into "string" field in check function)
-    const last_watered_date = document.getElementById("last_watered_date"); //stringField
-    const lastWateredError = document.getElementById("edit-last-watered-error"); //stringError
-    const noLastWatered = "Please enter the date you last watered the plant"; //blankFieldErr
-    const wrongDate = "Date cannot be in the future"; //errMessage
+    let lastWatered = document.editPlant.last_watered_date.value; 
+    const last_watered_date = document.getElementById("last_watered_date"); 
+    const lastWateredError = document.getElementById("edit-last-watered-error"); 
+    const noLastWatered = "Please enter the date you last watered the plant"; 
+    const wrongDate = "Date cannot be in the future"; 
 
     // Check Common Name
     let commonNameBlankBool = checkBlank(commonName, commonNameError, noCommonName, common_name); //check if name field is blank
@@ -185,6 +183,7 @@ function editPlantForm() {
     reset(lastWateredBlankBool && dateBool, last_watered_date, lastWateredError); //if all these return fine, clear the warnings
 }
 
+// Check if number is in the appropriate range
 function range(wrongNoErr, string, stringError, stringField) {
     let number = Number(string);
     

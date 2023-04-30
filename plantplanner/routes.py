@@ -404,12 +404,9 @@ def page_not_found(e):
 @app.route('/plants/<int:id>')
 @login_required
 def plant(id):
-    # id = current_user.id
-
     # Create a datetime variable for today's date
     # Then pass it through the template
     now = datetime.utcnow().date()
-
     plant = Plants.query.get_or_404(id)
     return render_template(
         'plant.html',
@@ -417,10 +414,6 @@ def plant(id):
         plant=plant,
         page_instructions="This is one of your plants",
         page_title="My Plant")
-
-
-# def overdue(last_watered_date):
-#     return last_watered_date < date.today()
 
 
 @app.route('/plants')
