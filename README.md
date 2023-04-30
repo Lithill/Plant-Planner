@@ -700,6 +700,8 @@ Content for the website was made by Rossanne Hamilton.
 * [Coffeebeanworks' image on Pixabay](https://pixabay.com/illustrations/social-media-social-media-icons-2083456/) was edited and used for the social media icons.
 * [Mohamed Hassan's image on Pixabay](https://pixabay.com/illustrations/eye-computer-icon-vector-2387853/) was edited and used for the view button. 
 * [Clker-Free-Vector-Images' image on Pixabay](https://pixabay.com/vectors/question-mark-question-icon-blue-310100/) was edited and used for the question button. 
+* [Labunhanglimboo's image on Pixabay](https://pixabay.com/photos/sword-fern-fern-flower-pot-plant-6365766/) was used as an example plant image in the readme. 
+* [Daan Rink's image on Pexels](https://www.pexels.com/photo/potted-plant-beside-the-window-7047366/) was used as an example plant image in the readme. 
 * The add button was made by the creator.
 
 ### Acknowledgements
