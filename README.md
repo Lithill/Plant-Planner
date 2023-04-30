@@ -21,7 +21,7 @@ This website has been created to help people to know when to water their plants.
 
 ### Initial Discussion
 
-It may be helpful for people with with less-than-green thumbs to have an automated list of when their indoor plants next need to be watered. It is usual for people to just water all of their house plants at the same time, perhaps once a week, but different plants need different amounts of water. 
+It may be helpful for people with less-than-green thumbs to have an automated list of when their indoor plants next need to be watered. It is usual for people to just water all their house plants at the same time, perhaps once a week, but different plants need different amounts of water. 
 
 #### Key information for the site
 
@@ -59,7 +59,7 @@ It may be helpful for people with with less-than-green thumbs to have an automat
 
 The Wireframes were made via [Paint.net](https://www.getpaint.net/).
 
-A clean and unclutered approach was sought, so that the user could easily see the information they needed.
+A clean and uncluttered approach was sought, so that the user could easily see the information they needed.
 
 ![Index Page](plantplanner/static/images/readme/my_plants.jpg)
 
@@ -67,7 +67,7 @@ This website was designed desktop-first. This caused issues further on in develo
 
 ![Login Page](plantplanner/static/images/readme/sign_in.jpg)
 
-This is because it was decided early on that Bootstrap would be used in order to speed up the process. But at the time this decision was made, it wasn't understood that Bootstrap is a mobile-first framework.
+This is because it was decided early on that Bootstrap would be used to speed up the process. But at the time this decision was made, it was not understood that Bootstrap is a mobile-first framework.
 
 ![Add Plant Page](plantplanner/static/images/readme/add_plant.jpg)
 
@@ -84,7 +84,7 @@ The website sparingly uses a colour palette often found in nature. This was felt
 Google Fonts was used to import the following fonts:
 
 * Merriweather is a serif font. This is used for the navigation bar and headings.
-* Arimo is a sans-serif font. This is used for all other text.  
+* Arimo is a sans-serif font. This is used for all other text. 
 
 ## Features
 
@@ -132,7 +132,7 @@ The registration page has the following features:
 
    ![User form](plantplanner/static/images/readme/register_form.webp)
 
-* The password is hidden from view, and confirmed using two password fields. 
+* The password is hidden from view and confirmed using two password fields. 
 
    ![Password fields](plantplanner/static/images/readme/password.webp)
 
@@ -152,7 +152,7 @@ The registration page has the following features:
 
 The log in page has the following features:
 
-* A form that takes the users username and password, and compares these to those stored in the database to verify the users identify. 
+* A form that takes the users username and password and compares these to those stored in the database to verify the users identify. 
 
    ![Login form](plantplanner/static/images/readme/login_form.webp)
 
@@ -218,19 +218,19 @@ This page has the following features:
 
    This form includes:
 
-   * Validation warnings when required fields (Common Name, Latin Name, Watering Interval and Date Last Watered) are not completed. Form validation also alerts the user if they type in a watering interval that is less than 1, or type in a last watered date that is in the past.  
+   * Validation warnings when required fields (Common Name, Latin Name, Watering Interval and Date Last Watered) are not completed. Form validation also alerts the user if they type in a watering interval that is less than 1, or type in a last watered date that is in the past. 
 
       ![Form validation](plantplanner/static/images/readme/add_plant_form_val.webp)
 
    * A notes section with a variety of different formatting abilities
    
-      ![Notes formating options](plantplanner/static/images/readme/notes.webp)
+      ![Notes formatting options](plantplanner/static/images/readme/notes.webp)
 
    * A back button that takes the user to their "My Plants" page
 
       ![Back button](plantplanner/static/images/readme/back_button.webp)
 
-   * A submit button that submits the form data to the database, and redirects the user to their "My Plants" page. 
+   * A submit button that submits the form data to the database and redirects the user to their "My Plants" page. 
 
       ![Submit button](plantplanner/static/images/readme/submit.webp)
    
@@ -244,12 +244,11 @@ This page has the following features:
 
       ![Flash message](plantplanner/static/images/readme/plant_added.webp)
 
-
 ### Plant profile
 
 This page has the following features:
 
-* A div that contains all of the information of the plant that the user previously selected. This includes the watering text appearing red if the user needs to water their plant.
+* A div that contains all the information of the plant that the user previously selected. This includes the watering text appearing red if the user needs to water their plant.
 
    ![Plant profile](plantplanner/static/images/readme/plant_profile.webp) 
 
@@ -257,7 +256,7 @@ This page has the following features:
 
       ![Edit button](plantplanner/static/images/readme/edit_plant.webp)
 
-   * Back button, which takes the user to the my plants page. 
+   * Back button, which takes the user to my plants page. 
 
       ![Back button](plantplanner/static/images/readme/back_button.webp)
 
@@ -283,7 +282,7 @@ This page has the following features:
 
 This page has the following features:
 
-* A pre-populated form containing all of the details of the plant the user would like to edit. 
+* A pre-populated form containing all the details of the plant the user would like to edit. 
 
    ![Edit plant form](plantplanner/static/images/readme/edit_plant_form.webp)
 
@@ -337,7 +336,7 @@ This page has the following features:
 
       ![Delete button](plantplanner/static/images/readme/modal_delete_button.webp)
 
-   * close button, which closes the modal without deleting the user account. 
+   * Close button, which closes the modal without deleting the user account. 
 
       ![Close modal](plantplanner/static/images/readme/modal_close_button.webp)
 
@@ -371,7 +370,7 @@ This page has the following features:
 
       ![Delete button](plantplanner/static/images/readme/modal_delete_button.webp)
 
-   * close button, which closes the modal without deleting the user account. 
+   * Close button, which closes the modal without deleting the user account. 
 
       ![Close modal](plantplanner/static/images/readme/modal_close_button.webp)
 
@@ -383,7 +382,7 @@ This page has the following features:
 
 This page has the following features:#
 
-* Informtion to show the user that the page they were looking for wasn't found.
+* Information to show the user that the page they were looking for was not found.
 
    ![404](plantplanner/static/images/readme/404.webp)
 
@@ -391,13 +390,13 @@ This page has the following features:#
 
 This page has the following features:
 
-* Navigation bar, that turns into a hamburger menu on narrower screens. The links included go to the register, login, add a plant and my plants pages. Clicking on "Plant Planner" of the calendar plant icon will also take the user to the home page.
+* Navigation bar, which turns into a hamburger menu on narrower screens. The links included go to the register, login, add a plant and my plants pages. Clicking on "Plant Planner" of the calendar plant icon will also take the user to the home page.
 
    ![Navbar](plantplanner/static/images/readme/navbar.webp)
 
    ![Narrow Navbar](plantplanner/static/images/readme/small_navbar.webp)
 
-* Footer, which includes working buttons to the home pages of instagram, twitter and facebook.
+* Footer, which includes working buttons to the home pages of Instagram, twitter, and Facebook.
 
    ![Footer](plantplanner/static/images/readme/footer.webp)
 
@@ -454,31 +453,31 @@ This project was deployed to Heroku using the following steps:
 #### ElephantSQL
 
 1. Navigate to ElephantSQL.com and create a user account, using log in with GitHub.
-2. Click “Create New Instance”
+2. Click “Create New Instance”.
 3. Set up your plan. (You can leave the 'tags' field blank.)
 4. Select region.
-5. Select a data center near you
-6. Then click “Review”
-7. Check your details are correct and then click “Create instance”
+5. Select a data centre near you
+6. Then click “Review”.
+7. Check your details are correct and then click “Create instance”.
 8. Return to the ElephantSQL dashboard and click on the database instance name for this project
 9. In the URL section, clicking the copy icon will copy the database URL to your clipboard
 10. Leave this tab open, we will come back here later
 
 #### Heroku
 
-1. Log into Heroku.com and click “New” and then “Create a new app”
-2. Choose a unique name for your app, select the region closest to you and click “Create app”
+1. Log into Heroku.com and click “New” and then “Create a new app”.
+2. Choose a unique name for your app, select the region closest to you and click “Create app”.
 3. Go to the Settings tab of your new app
 4. Click Reveal Config Vars
 5. Return to your ElephantSQL tab and copy your database URL
-6. Back on Heroku, add a Config Var called DATABASE_URL and paste your ElephantSQL database URL in as the value. Make sure you click “Add”
+6. Back on Heroku, add a Config Var called DATABASE_URL and paste your ElephantSQL database URL in as the value. Make sure you click “Add.”
 7. Add each of your other environment variables except DEVELOPMENT and DB_URL from the env.py file as a Config Var. 
 8. Navigate to the “Deploy” tab of your app.
-9. In the Deployment method section, select “Connect to GitHub”
+9. In the Deployment method section, select “Connect to GitHub”.
 10. Search for your repo and click Connect
-11. Optional: You can click Enable Automatic Deploys in case you make any further changes to the project. This will trigger any time code is pushed to your GitHub repository
-12. As we already have all our changes pushed to GitHub, we will use the Manual deploy section and click Deploy Branch. This will start the build process. When finished, it should look something like this
-13. Now, we have our project in place, and we have an empty database ready for use. As you may remember from our local development, we still need to add our tables to our database. To do this, we can click the “More” button and select “Run console”
+11. Optional: You can click Enable Automatic Deploys in case you make any further changes to the project. This will trigger any time code is pushed to your GitHub repository.
+12. As we already have all our changes pushed to GitHub, we will use the Manual deploy section and click Deploy Branch. This will start the build process. 
+13. Now, we have our project in place, and we have an empty database ready for use. As you may remember from our local development, we still need to add our tables to our database. To do this, we can click the “More” button and select “Run console.”
 14. Type python3 into the console and click Run
 15. In the terminal that opens, write "from plantplanner import db" and then press enter.
 16. In the terminal, write "db.create_all()" and then press enter.
@@ -506,7 +505,7 @@ To clone the Plant Planner repository:
 5) Click "Choose..." and, using Windows Explorer, navigate to a local path where you want to clone the repository.
 6) Click "Clone".
 
-### How to set up the gitpod environment after session times out:
+### How to set up the Gitpod environment after session times out:
    In the terminal, type:
       - set_pg
       - psql
@@ -543,10 +542,10 @@ To clone the Plant Planner repository:
 
 Testing was ongoing throughout the entire build. I utilised Chrome developer tools while building to pinpoint and troubleshoot any issues as I went along. Both manual and automated testing was employed. The difference between these two types of tests is that:
 
-* manual testing is conducted by a person, who is seeing if they can break the product, or otherwise whether it behaves as expected for users.
-* automatic testing is conducted by automation frameworks, or some other kind of tool or piece of software. 
+* Manual testing is conducted by a person, who is seeing if they can break the product, or otherwise whether it behaves as expected for users.
+* Automatic testing is conducted by automation frameworks, or another kind of tool or piece of software. 
 
-I personally tested the page and had 3 people also manually test it on their own devices. For automated testing, I used W3C validator, CSS validator, Python Checker and Lighthouse.  
+I personally tested the page and had 3 people also manually test it on their own devices. For automated testing, I used W3C validator, CSS validator, Python Checker and Lighthouse. 
 
 ### W3C Validator
 
@@ -584,13 +583,13 @@ The [Python Validator](https://www.pythonchecker.com/) was used to validate the 
 
 Results from the [init.py](plantplanner/static/images/readme/init_val.webp) check.
 
-I ignored this suggetion, as it is in relation to a filepath. This strange request led me to use [the CI Python Linter](https://pep8ci.herokuapp.com/) for the rest of my validation. 
+I ignored this suggestion, as it is in relation to a file path. This strange request led me to use [the CI Python Linter](https://pep8ci.herokuapp.com/) for the rest of my validation. 
 
-Results from the [models.py](plantplanner/static/images/readme/models_val.webp) check.
-Results from the [routes.py](plantplanner/static/images/readme/routes_val.webp) check.
-Results from the [webforms.py](plantplanner/static/images/readme/webforms_val.webp) check.
-Results from the [env.py](plantplanner/static/images/readme/env_val.webp) check.
-Results from the [run.py](plantplanner/static/images/readme/run_val.webp) check.
+* Results from the [models.py](plantplanner/static/images/readme/models_val.webp) check.
+* Results from the [routes.py](plantplanner/static/images/readme/routes_val.webp) check.
+* Results from the [webforms.py](plantplanner/static/images/readme/webforms_val.webp) check.
+* Results from the [env.py](plantplanner/static/images/readme/env_val.webp) check.
+* Results from the [run.py](plantplanner/static/images/readme/run_val.webp) check.
 
 ### Solved Bugs
 
@@ -602,9 +601,9 @@ Results from the [run.py](plantplanner/static/images/readme/run_val.webp) check.
 | 4  | Plants list is always in order of when plants need to be watered - soonest at the top | Plants list re-orders itself after deleting a plant | Did not change code on the delete route when added the list-by-water-date functionality |
 | 5  | When user is deleted, user should be redirected back to register page, and not appear signed in | When user is deleted, user looks like they are on "My Plants" page, and can see "Logout" on the navbar | Change instructions, and add logout to the routes file |
 | 6  | Individual plant pages should only be visible to logged-in user | Individual plant pages can be viewed by other users and people not logged in | Add login required to routes, and jinja if statement to html page |
-| 7  | Cannot see plant that belongs to a deleted user | Can see plant after deleting the user. (this means that cascade delete isn't working AND user auth isn't working on the single plant page. Is user somehow still logged in? Is the model not set up correctly?) | Add delete ascade to user model |
+| 7  | Cannot see plant that belongs to a deleted user | Can see plant after deleting the user. (This means that cascade delete is not working AND user auth is not working on the single plant page. Is user somehow still logged in? Is the model not set up correctly?) | Add delete cascade to user model |
 | 8  | For there only to be one horizontal line above each plant on the My Plants page | There are extra lines at the bottom of plants in the My Plants page | Move the horizontal line into the if statement on the plants page |
-| 9  | User registration form tells the user when their passwords do not match | Does not tell the user when their passords do not match | Added form validation via JavaScript |
+| 9  | User registration form tells the user when their passwords do not match | Does not tell the user when their passwords do not match | Added form validation via JavaScript |
 | 10  | When username is entered and submitted on the update user form that is longer than 20 characters long, it should warn the user this is not acceptable | When username is entered and submitted on the update user form that is longer than 20 characters long, it returns a SQLalchemy "PendingRollbackError" | Add maxlength to the username field on the edit user form |
 | 11  | If there is no input in water interval and last watered fields on add plant form, then they will show a warning | Even if there is no input in these fields, they will not show a warning if the common name field is filled out. This is also happening on the edit page - from common name | Added datarequired validators to flask plant forms |
 | 12 | Plant form does not submit if the date is in the future | Plant form submits if date is in the future | Add max date to input in html |
@@ -615,7 +614,7 @@ No known bugs
 
 ### Full Testing
 
-To fully test my website, I used Google Chrome Developer Tools to ensure that the page was responsive on all available screen sizes. Testing was performed on a variety of browsers (Chrome, Microsoft Edge and Firefox) and devices (Gigabyte gaming laptop, iPhone SE, Android one+ 9 mobile, Fair Phone).
+To fully test my website, I used Google Chrome Developer Tools to ensure that the page was responsive on all available screen sizes. Testing was performed on a variety of browsers (Chrome, Microsoft Edge, and Firefox) and devices (Gigabyte gaming laptop, iPhone SE, Android one+ 9 mobile, Fair Phone).
 
 #### Links:
 
@@ -628,19 +627,19 @@ Tested each button on every page. Each button worked as expected.
 #### Forms:
 
 Checked that all forms behaved as expected in terms of:
-   * Not submiting when required fields are left blank.
+   * Not submitting when required fields are left blank.
    * Returning flash messages when the user has successfully submitted a form.
    * Not allowing users to enter strings that are too long.
 
 Things checked that are specific to particular forms:
    * The login form does not submit if the user picks a username that is already in the database.
    * The registration form:
-      * does not allow the user the enter two different passwords
-      * hashes the password the user chooses before storing it in the database.
+      * Does not allow the user the enter two different passwords
+      * Hashes the password the user chooses before storing it in the database.
    * The add and edit plant forms:
       * Do not allow the user to pick a date in the past from the date picked. If the user types in a past date, the form does not submit, and a warning message is shown to let the user know that the date cannot be in the future.
-      * The watering interval field does not allow the user to select a number that is less that 0, and more than 182 (which is how many days there are in six months). If the user types in an unacceptable number rather than selecting an appropriate number, the form does not submit, and the user is told why. 
-      * I checked that when the user does not include a link in the image url field, a default image is displayed on the plant information pages.
+      * The watering interval field does not allow the user to select a number that is less than 0, and more than 182 (the number of days in six months). If the user types in an unacceptable number rather than selecting an appropriate number, the form does not submit, and the user is told why. 
+      * I checked that when the user does not include a link in the image URL field, a default image is displayed on the plant information pages.
 
 #### Tooltips:
 
@@ -653,7 +652,7 @@ Thanks are given for the following posts and tutorials:
 * [Good explanation of cascade (ON DELETE/UPDATE) behavior](https://dba.stackexchange.com/questions/44956/good-explanation-of-cascade-on-delete-update-behavior)
 by Johntron on Stack Exchange. 
 * [Good tutorial of flash in Flask](https://www.youtube.com/watch?v=abCSKRMGZ3A)
-on Comedy.com's youtube channel. 
+on Comedy.com's YouTube channel. 
 * [Cognitive Robot's post on Stack Overflow](https://stackoverflow.com/questions/52674364/flask-app-cant-passing-a-value-to-a-confirmation-modal-before-deleting-a-post)
 helped me understand how to write the delete plant modal. 
 
@@ -670,9 +669,9 @@ custom code for vertical line separated bootstrap navbar links.
  * [Shinichi Okada's](https://medium.com/mkdir-awesome/how-to-change-the-bootstrap-5-tooltip-background-and-arrow-color-67e6c5aea510)
  code for customising bootstrap tooltips. 
   * [w3schools](https://www.w3schools.blog/email-validation-javascript-js)
- code for email validation was adapted for the validateEmail javascript function. 
+ code for email validation was adapted for the validateEmail JavaScript function. 
  * [Samuel Meddows'](https://stackoverflow.com/questions/1531093/how-do-i-get-the-current-date-in-javascript)
- code was used for the "today" javascript function. 
+ code was used for the "today" JavaScript function. 
  * [Kera Cudmore's](https://github.com/kera-cudmore/BookWorm/blob/b4d82678bb94e9e7ea1d5923f90807e51421d540/bookworm/auth/routes.py)
  code was used for the validate username code in def add_user in routes.py.
 
