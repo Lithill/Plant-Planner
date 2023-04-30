@@ -86,6 +86,12 @@ Google Fonts was used to import the following fonts:
 * Merriweather is a serif font. This is used for the navigation bar and headings.
 * Arimo is a sans-serif font. This is used for all other text. 
 
+### Database Schema
+
+It was felt that a relational database was required, as there was a need for the user and plant data to be related. 
+
+![Schema](plantplanner/static/images/readme/schema.webp)
+
 ## Features
 
 The website is made up of 9 pages:
