@@ -91,18 +91,6 @@ a {
 
 .plant-pic {
     padding-left: 20px;
-}
-
-#three-plants {
-	width: 20%;
-    height: auto;
-	background-image: url("../images/right-logo.webp");
-	background-repeat: no-repeat;
-	background-size: contain; 
-	position: fixed;
-	bottom: 40px;
-    left: 40px;
-	z-index: 200;  
 } 
 
 /************************************ Form Fields */
@@ -196,10 +184,27 @@ button {
 
 /* Taken from https://codingyaar.com/responsive-bootstrap-navbar-with-vertical-line-separator/ */
 @media only screen and (min-width: 992px) {
+
     .navbar .navbar-nav .nav-item .nav-link {
       padding: 0 0.5em;
     }
+
     .navbar .navbar-nav .nav-item:not(:last-child) .nav-link {
       border-right: 2px solid #000000;
     }
-  }
+}
+
+@include media-breakpoint-up(md) {
+
+    #three-plants {
+        width: 20%;
+        height: auto;
+        background-image: url("../images/right-logo.webp");
+        background-repeat: no-repeat;
+        background-size: contain; 
+        position: fixed;
+        bottom: 40px;
+        left: 40px;
+        z-index: 200;  
+    } 
+}

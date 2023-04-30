@@ -615,11 +615,36 @@ No known bugs
 
 ### Full Testing
 
-To fully test my website, I used Google Chrome Developer Tools to ensure that the page was responsive on all available screen sizes. Testing was performed on a variety of browsers (Chrome, Microsoft Edge and Firefox) and devices (Gigabyte gaming laptop, iPhone SE, Android one+ 9 mobile, Lenovo Legion Laptop, Huawei P Smart Phone, Fair Phone).
+To fully test my website, I used Google Chrome Developer Tools to ensure that the page was responsive on all available screen sizes. Testing was performed on a variety of browsers (Chrome, Microsoft Edge and Firefox) and devices (Gigabyte gaming laptop, iPhone SE, Android one+ 9 mobile, Fair Phone).
+
+#### Links:
+
+Tested each link on every page. Each link worked as expected. 
 
 #### Buttons:
 
-Tested each button on the page. Each button worked as expected or was appropriately disabled. All buttons were clicked during a variety of game-play-states, and in a variety of orders. 
+Tested each button on every page. Each button worked as expected. 
+
+#### Forms:
+
+Checked that all forms behaved as expected in terms of:
+   * Not submiting when required fields are left blank.
+   * Returning flash messages when the user has successfully submitted a form.
+   * Not allowing users to enter strings that are too long.
+
+Things checked that are specific to particular forms:
+   * The login form does not submit if the user picks a username that is already in the database.
+   * The registration form:
+      * does not allow the user the enter two different passwords
+      * hashes the password the user chooses before storing it in the database.
+   * The add and edit plant forms:
+      * Do not allow the user to pick a date in the past from the date picked. If the user types in a past date, the form does not submit, and a warning message is shown to let the user know that the date cannot be in the future.
+      * The watering interval field does not allow the user to select a number that is less that 0, and more than 182 (which is how many days there are in six months). If the user types in an unacceptable number rather than selecting an appropriate number, the form does not submit, and the user is told why. 
+      * I checked that when the user does not include a link in the image url field, a default image is displayed on the plant information pages.
+
+#### Tooltips:
+
+Checked that tooltips behaved appropriately on edit plant page and add plant page.
 
 ## Credits
 
@@ -650,7 +675,7 @@ custom code for vertical line separated bootstrap navbar links.
  code was used for the "today" javascript function. 
  * [Kera Cudmore's](https://github.com/kera-cudmore/BookWorm/blob/b4d82678bb94e9e7ea1d5923f90807e51421d540/bookworm/auth/routes.py)
  code was used for the validate username code in def add_user in routes.py.
-  
+
          free_username = Users.query.filter(
             Users.username == request.form.get("username").lower()).all()
 
@@ -683,3 +708,4 @@ I would like to acknowledge the following people who helped me along the way in 
 
 - My mentor Mitko Bachvarov for helpful feedback and sharing links for further learning.
 - My tutor Robert Mclaughlin for helpful feedback and sharing links for further learning.
+- Chris Mugridge and Maya Irish for user and device testing.
